@@ -4,8 +4,6 @@ Current source snapshot of the PlayGTA5 WASM64 engine port to Rust.
 
 ## Included
 
-- All 91,026 translated function bodies in `linked/generated/gen000` through
-  `gen022`, not the earlier signature-only skeletons.
 - Linear-memory runtime, atomics, passive-segment handling, SIMD helpers and tests.
 - Context-aware imports, checked indirect calls, browser export adapters and the
   memory-isolating WASM packager.
