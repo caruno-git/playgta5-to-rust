@@ -86,5 +86,4 @@ Regenerating translated bodies is optional and needs the matching WAT in
 python tools/retranslate_linked.py
 ```
 
-Script author: carunodev @stfu. No repository-wide license grant is implied for
-the recovered game-derived code; upstream rights remain with their owners.
+Script author: carunodev @stfu.
