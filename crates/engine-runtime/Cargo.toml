@@ -1,0 +1,16 @@
+[package]
+name = "engine-runtime"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Deterministic fixed-timestep server runtime (clock, scheduler, job-pool shim) for the recovered GTA V engine port"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+name = "engine_runtime"
+path = "src/lib.rs"
+
+# The crate is self-contained so it can be built without the surrounding
+# recovered/rust workspace manifest, which this task is not allowed to touch.
+[dependencies]

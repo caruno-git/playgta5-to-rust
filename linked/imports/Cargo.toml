@@ -1,0 +1,15 @@
+[package]
+name = "engine-imports"
+version = "0.1.0"
+edition = "2021"
+authors = ["carunodev @stfu"]
+
+[lib]
+name = "wasm_imp"
+
+[dependencies]
+host-imports = { package = "wasm-imp", path = "../../wasm-imp" }
+wasm-rt = { path = "../../wasm-rt" }
+
+[dev-dependencies]
+engine-abi = { path = "../../crates/engine-abi" }

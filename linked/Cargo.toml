@@ -1,0 +1,62 @@
+[package]
+name = "engine-linked"
+version = "0.1.0"
+edition = "2021"
+authors = ["carunodev @stfu"]
+build = "build.rs"
+
+[lib]
+crate-type = ["cdylib"]
+
+[workspace]
+members = ["imports", "generated/*"]
+resolver = "2"
+
+[dependencies]
+wasm-rt = { path = "../wasm-rt" }
+wasm-imp = { package = "engine-imports", path = "imports" }
+gen000 = { path = "generated/gen000" }
+gen001 = { path = "generated/gen001" }
+gen002 = { path = "generated/gen002" }
+gen003 = { path = "generated/gen003" }
+gen004 = { path = "generated/gen004" }
+gen005 = { path = "generated/gen005" }
+gen006 = { path = "generated/gen006" }
+gen007 = { path = "generated/gen007" }
+gen008 = { path = "generated/gen008" }
+gen009 = { path = "generated/gen009" }
+gen010 = { path = "generated/gen010" }
+gen011 = { path = "generated/gen011" }
+gen012 = { path = "generated/gen012" }
+gen013 = { path = "generated/gen013" }
+gen014 = { path = "generated/gen014" }
+gen015 = { path = "generated/gen015" }
+gen016 = { path = "generated/gen016" }
+gen017 = { path = "generated/gen017" }
+gen018 = { path = "generated/gen018" }
+gen019 = { path = "generated/gen019" }
+gen020 = { path = "generated/gen020" }
+gen021 = { path = "generated/gen021" }
+gen022 = { path = "generated/gen022" }
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+engine-abi = { path = "../crates/engine-abi" }
+engine-host = { path = "../crates/engine-host" }
+game-server = { path = "../crates/game-server" }
+
+[build-dependencies]
+serde_json = "1.0"
+wasmparser = "=0.240.0"
+
+[profile.dev]
+debug = false
+incremental = false
+codegen-units = 256
+overflow-checks = false
+panic = "abort"
+
+[profile.release]
+debug = false
+opt-level = 2
+lto = false
+codegen-units = 64

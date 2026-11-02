@@ -1,0 +1,18 @@
+[package]
+name = "wasm-imp"
+version = "0.1.0"
+edition = "2021"
+authors = ["carunodev @stfu"]
+description = "extern declarations for the game.wasm env.* imports"
+
+[lib]
+name = "wasm_imp"
+path = "src/lib.rs"
+
+[dependencies]
+wasm-rt = { path = "../wasm-rt" }
+
+[dev-dependencies]
+engine-abi = { path = "../crates/engine-abi" }
+
+[workspace]

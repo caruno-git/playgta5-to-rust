@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = [
+    "wasm-rt",
+    "crates/engine-host",
+    "crates/engine-abi",
+    "crates/engine-runtime",
+    "crates/game-server",
+]
+exclude = ["linked", "wasm-imp", "tools/wasm-package"]

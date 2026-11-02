@@ -1,0 +1,24 @@
+[package]
+name = "game-server"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Headless server binary for the recovered wasm64 GTA V engine port"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+name = "game_server"
+path = "src/lib.rs"
+
+[[bin]]
+name = "game-server"
+path = "src/main.rs"
+
+# Self-contained: builds without the surrounding recovered/rust workspace
+# manifest, which this task is not allowed to modify.
+[dependencies]
+engine-host = { path = "../engine-host" }
+engine-runtime = { path = "../engine-runtime" }
+wasm-rt = { path = "../../wasm-rt" }
+engine-abi = { path = "../engine-abi" }

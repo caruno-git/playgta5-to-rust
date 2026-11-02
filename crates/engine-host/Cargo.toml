@@ -1,0 +1,22 @@
+[package]
+name = "engine-host"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Browser-free host abstraction for the reconstructed GTA V engine (wasm import surface)"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+serde_json = "1.0"
+
+# Self-contained, like the sibling crates: the root workspace manifest is owned
+# by the integration task, so this crate must build without being listed there.
+[features]
+# The browser host (game.js / wgpu_worker.js shims) is only built for wasm32
+# targets. Server builds compile it out entirely.
+default = []
+browser = []
+
+[lints.rust]
+unsafe_code = "forbid"

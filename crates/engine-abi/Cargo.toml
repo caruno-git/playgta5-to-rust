@@ -1,0 +1,22 @@
+[package]
+name = "engine-abi"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Rust stand-ins for the 85 wasm function imports of the recovered GTA V engine (wasm64), backed by the engine-host Host trait"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+name = "engine_abi"
+path = "src/lib.rs"
+
+# Self-contained so it builds without the surrounding recovered/rust workspace
+# manifest (the workspace root belongs to another task).
+[dependencies]
+engine-host = { path = "../engine-host" }
+wasm-rt = { path = "../../wasm-rt" }
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+missing_docs = "warn"

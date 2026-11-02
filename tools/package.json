@@ -1,0 +1,8 @@
+{
+  "name": "playgta5-rust-build-tools",
+  "private": true,
+  "author": "carunodev @stfu",
+  "dependencies": {
+    "acorn": "8.17.0"
+  }
+}

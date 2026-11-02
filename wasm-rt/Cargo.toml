@@ -1,0 +1,18 @@
+[package]
+name = "wasm-rt"
+version = "0.1.0"
+edition = "2021"
+description = "Runtime support for the machine-translated wasm64 engine: linear memory, passive data segments (memory.init / data.drop), bulk memory ops and the futex pair"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+name = "wasm_rt"
+path = "src/lib.rs"
+
+# Self-contained on purpose: this crate must build without the surrounding
+# recovered/rust workspace manifest, which the port is not allowed to rewrite.
+[dependencies]
+
+[dev-dependencies]
+wasmparser = "=0.240.0"

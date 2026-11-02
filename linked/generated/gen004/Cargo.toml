@@ -1,0 +1,16 @@
+[package]
+name = "gen004"
+version = "0.1.0"
+edition = "2021"
+description = "GTA5 wasm -> Rust machine translation, functions 16469..20564"
+
+[dependencies]
+wasm-rt = { path = "../../../wasm-rt" }
+wasm-imp = { package = "engine-imports", path = "../../imports" }
+
+[lib]
+path = "src/lib.rs"
+
+# standalone: not a member of ../../Cargo.toml (the hand-written
+# reconstruction workspace); it must NOT declare its own [workspace],
+# or cargo refuses to use it as a path dependency (multiple roots).
