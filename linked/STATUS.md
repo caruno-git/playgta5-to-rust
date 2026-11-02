@@ -21,8 +21,10 @@ the actual `i8x16.shuffle` instruction, and 256 executed vectors match the
 independent reference. SIMD tests pass. Short float/vector loads, bulk-memory
 operations and typed table lookups have also been marked for inlining.
 
-The updated full release is still building. Log:
-`work/engine-simd-release.log` in the task workspace. After it finishes, package
+The updated full release attempt stopped in LLVM while compiling `gen005`:
+`Cannot select: v4f32 = WebAssemblyISD::CONVERT_LOW_S`. This is a code-generation
+failure, not a failed runtime test. Log: `work/engine-simd-release.log` in the task
+workspace. After resolving it and completing the build, package
 with `tools/wasm-package` binary `split_memory`, publish its memory report as
 `browser/memory-config.json`, regenerate `browser/game.js` with
 `tools/browser_adapter.cjs`, then repeat gameplay and FPS comparison. Do not

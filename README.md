@@ -23,8 +23,11 @@ This snapshot also includes the subsequent optimization: 86,035 shuffle sites
 use constant lane indices and the standard WASM SIMD intrinsic, with short memory
 operations inlined. A compiled fixture emits `i8x16.shuffle` and passes 256
 reference vectors. The latest complete SIMD-optimized build and its gameplay/FPS
-retest are not yet verified. This is a development snapshot, not a finished
-performance release. See `linked/STATUS.md`.
+retest are not yet verified. The last complete build attempt stopped in the LLVM
+backend while compiling `gen005` (`Cannot select: v4f32 =
+WebAssemblyISD::CONVERT_LOW_S`). Runtime, SIMD fixture and workspace tests pass;
+the full optimized candidate still needs that compiler issue resolved. This is a
+development snapshot, not a finished performance release. See `linked/STATUS.md`.
 
 ## External Inputs
 
