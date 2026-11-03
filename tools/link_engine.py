@@ -3,6 +3,10 @@ import pathlib
 import re
 import shutil
 import sys
+from shader_pass_fixes import apply_shader_pass_fixes
+from task_upload_fixes import apply_task_upload_fixes
+from minimap_mode_fixes import apply_minimap_mode_fixes, apply_minimap_mode_symbols
+from resize_binding_fixes import apply_resize_binding_fixes, apply_resize_binding_symbols
 
 __author__ = "carunodev @stfu"
 
@@ -16,6 +20,11 @@ def static_shuffle(match):
     return "simd::i8x16_shuffle_static::<" + ",".join(map(str, lanes)) + ">(" + match[1] + ")"
 
 shuffle_pattern = r"simd::i8x16_shuffle\(([^\n;]*), 0x([0-9a-fA-F]{32})u128\)"
+conversion_barriers = {
+    "f_021052_audnorthaudioengine_update.rs": ("s",),
+    "f_035418_cminimap_renderthread_setupstateforsupertilerender_rage_vector2.rs": ("u",),
+    "f_044343_centityselect_drawdebug.rs": ("u",),
+}
 if "--static-shuffles-only" in sys.argv:
     count = 0
     for source in (out / "generated").glob("gen*/src/f_*.rs"):
@@ -149,6 +158,19 @@ for crate in sorted(source_root.glob("gen[0-9][0-9][0-9]")):
                 stats["context_invokes"] += count
         text = text.replace("ph: &mut Phantom", "ph: *mut Phantom")
         text = re.sub(r"\bph\.", "(*ph).", text)
+        if source.name in conversion_barriers:
+            prefix = ["use wasm_rt::Phantom;", "mod simd {", "    pub use wasm_rt::simd::*;"]
+            for signed in conversion_barriers[source.name]:
+                name = f"f32x4_convert_i32x4_{signed}"
+                prefix += ["    #[inline(never)]", f"    pub fn {name}(value: u128) -> u128 {{", f"        wasm_rt::simd::{name}(value)", "    }"]
+            prefix.append("}")
+            text = text.replace("use wasm_rt::{simd, Phantom};", "\n".join(prefix))
+        text = apply_shader_pass_fixes(source.name, text)
+        text = apply_task_upload_fixes(source.name, text)
+        text = apply_minimap_mode_fixes(source.name, text)
+        text = apply_minimap_mode_symbols(crate.name, source.name, text)
+        text = apply_resize_binding_fixes(source.name, text)
+        text = apply_resize_binding_symbols(crate.name, source.name, text)
         target = destination / "src" / source.name
         if not target.exists() or target.read_text(encoding="utf-8") != text:
             target.write_text(text, encoding="utf-8")

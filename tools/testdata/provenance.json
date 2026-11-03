@@ -1,0 +1,69 @@
+{
+  "author": "carunodev @stfu",
+  "purpose": "Exact pre-transform translated Rust fixtures for source and native delivery regression tests; no original binary or game assets are included.",
+  "source_root": "recovered/rust",
+  "files": [
+    {
+      "fixture": "f_005100_rage_clothmanager_instanceclothdrawabletask_rage_systaskparamete.rs",
+      "source": "generated/gen001/src/f_005100_rage_clothmanager_instanceclothdrawabletask_rage_systaskparamete.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 1963,
+      "source_sha256": "91cdb6c16111139f1a5a9d13f0788de87e3cd535fcece2435671cb50333caf6c",
+      "fixture_bytes": 1963,
+      "fixture_sha256": "91cdb6c16111139f1a5a9d13f0788de87e3cd535fcece2435671cb50333caf6c"
+    },
+    {
+      "fixture": "f_009678_rage_grcdevice_prepareforshutdown.rs",
+      "source": "linked/raw-generated/gen002/src/f_009678_rage_grcdevice_prepareforshutdown.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 9269,
+      "source_sha256": "c7bf597a277318ea79df071a5cdc105ef888138a088f4b70ffd5c6550a2b92f3",
+      "fixture_bytes": 9269,
+      "fixture_sha256": "c7bf597a277318ea79df071a5cdc105ef888138a088f4b70ffd5c6550a2b92f3"
+    },
+    {
+      "fixture": "f_035298_cminimap_init_unsigned_int.rs",
+      "source": "linked/raw-generated/gen008/src/f_035298_cminimap_init_unsigned_int.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 116050,
+      "source_sha256": "e514e01922d15280d8113b469ecc463dcab21a6b210525f24d1f1d2d7c4f508b",
+      "fixture_bytes": 116050,
+      "fixture_sha256": "e514e01922d15280d8113b469ecc463dcab21a6b210525f24d1f1d2d7c4f508b"
+    },
+    {
+      "fixture": "f_043670_csprite2d_begincustomlist_csprite2d_customshadertype_rage_grctex.rs",
+      "source": "generated/gen010/src/f_043670_csprite2d_begincustomlist_csprite2d_customshadertype_rage_grctex.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 83518,
+      "source_sha256": "5f5dc95bcec23589068a59b34e79dbcce2f3a6c03f9e84e517e78f92a3b22977",
+      "fixture_bytes": 83518,
+      "fixture_sha256": "5f5dc95bcec23589068a59b34e79dbcce2f3a6c03f9e84e517e78f92a3b22977"
+    },
+    {
+      "fixture": "gen002_syms.rs",
+      "source": "linked/raw-generated/gen002/src/syms.rs",
+      "selection": "exact source lines",
+      "source_lines": [
+        9,
+        837
+      ],
+      "source_bytes": 216793,
+      "source_sha256": "b6e4220d70c520da8bfe77df1f581ceb1b0528623a79f61946a9de6770dca4a0",
+      "fixture_bytes": 106,
+      "fixture_sha256": "daf9af3bcc6d3dde6a4ab669e403c757ddd7d35a8d60bf70da8d8f6187104088"
+    },
+    {
+      "fixture": "gen008_syms.rs",
+      "source": "linked/raw-generated/gen008/src/syms.rs",
+      "selection": "exact source lines",
+      "source_lines": [
+        9,
+        1935
+      ],
+      "source_bytes": 431111,
+      "source_sha256": "06cf93f58ba8818a3c2552a3bc90f2fa955bdcd21f81e8fd5a15b348ce20de5c",
+      "fixture_bytes": 108,
+      "fixture_sha256": "6548323c5d4a8759d22039f0112a5bc7bcaabb2e6ddf579822bac0715dfcb1e4"
+    }
+  ]
+}

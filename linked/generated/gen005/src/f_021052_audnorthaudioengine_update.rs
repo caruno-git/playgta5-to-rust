@@ -11,7 +11,14 @@
 #![allow(unused_variables, unused_mut, unused_assignments, unused_parens)]
 #![allow(unreachable_code, unused_imports, non_snake_case)]
 #![allow(improper_ctypes_definitions, clippy::all)]
-use wasm_rt::{simd, Phantom};
+use wasm_rt::Phantom;
+mod simd {
+    pub use wasm_rt::simd::*;
+    #[inline(never)]
+    pub fn f32x4_convert_i32x4_s(value: u128) -> u128 {
+        wasm_rt::simd::f32x4_convert_i32x4_s(value)
+    }
+}
 use wasm_rt as rt;
 use crate::{imp, syms};
 

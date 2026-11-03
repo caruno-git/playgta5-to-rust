@@ -19,6 +19,9 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_005100_rage_clothmanager_instanceclothdrawabletask_rage_systaskparamete(ph: *mut Phantom, mut l0: i64) {
         let mut l1: i64 = 0;
         let mut l2: i64 = 0;
+        (*ph).write_u64(((*ph).g[28] as i64), 4095i64 as u64);
+        (*ph).write_u64(((*ph).g[29] as i64), 4096i64 as u64);
+        (*ph).write_u64(12834520i64, 4097i64 as u64);
         l1 = ((*ph).sp.wrapping_add((-64i64)));
         (*ph).sp = l1;
         let t1: i64 = (*ph).read_u64(l0 + 8) as i64;

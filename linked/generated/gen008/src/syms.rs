@@ -7,6 +7,7 @@
 //! same binary and the identifiers are unique).
 #![allow(improper_ctypes, dead_code, unused_imports)]
 use wasm_rt::Phantom;
+extern "C" { pub fn f_000566_wasm_start_mode_now(ph: *mut Phantom) -> i32; }
 
 extern "C" { pub fn f_000100_op_new_unsigned_long(ph: *mut Phantom, a0: i64) -> i64; }
 extern "C" { pub fn f_000101_op_new_unsigned_long_unsigned_long(ph: *mut Phantom, a0: i64, a1: i64) -> i64; }

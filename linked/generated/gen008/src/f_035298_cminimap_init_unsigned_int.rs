@@ -1069,7 +1069,7 @@ use crate::{imp, syms};
                 if ((t209 == 0) as i32) != 0 {
                     (*ph).write_u8(19520604i64, 0i32 as u8);
                     (*ph).write_u8(6974156i64, 1i32 as u8);
-                    (*ph).write_u8(19520605i64, 0i32 as u8);
+                    (*ph).write_u8(19520605i64, ((syms::f_000566_wasm_start_mode_now(ph) == 2i32) as u8));
                 }
                 syms::f_001514_rage_diagdisplayf_rage_diagchannel_const_ref_char_const_ptr(ph, 19565504i64, 1592278i64, 0i64);
             break 'L2;

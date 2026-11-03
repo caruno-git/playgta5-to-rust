@@ -7,6 +7,12 @@
 //! same binary and the identifiers are unique).
 #![allow(improper_ctypes, dead_code, unused_imports)]
 use wasm_rt::Phantom;
+extern "C" { pub fn f_010440_ragedirect3ddevicecontext11_csclearconstantbuffers(ph: *mut Phantom, a0: i64); }
+extern "C" { pub fn f_010441_ragedirect3ddevicecontext11_dsclearconstantbuffers(ph: *mut Phantom, a0: i64); }
+extern "C" { pub fn f_010442_ragedirect3ddevicecontext11_gsclearconstantbuffers(ph: *mut Phantom, a0: i64); }
+extern "C" { pub fn f_010443_ragedirect3ddevicecontext11_hsclearconstantbuffers(ph: *mut Phantom, a0: i64); }
+extern "C" { pub fn f_010444_ragedirect3ddevicecontext11_psclearconstantbuffers(ph: *mut Phantom, a0: i64); }
+extern "C" { pub fn f_010445_ragedirect3ddevicecontext11_vsclearconstantbuffers(ph: *mut Phantom, a0: i64); }
 
 extern "C" { pub fn f_000100_op_new_unsigned_long(ph: *mut Phantom, a0: i64) -> i64; }
 extern "C" { pub fn f_000101_op_new_unsigned_long_unsigned_long(ph: *mut Phantom, a0: i64, a1: i64) -> i64; }

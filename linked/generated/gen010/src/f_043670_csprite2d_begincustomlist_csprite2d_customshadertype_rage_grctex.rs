@@ -453,7 +453,7 @@ use crate::{imp, syms};
                                                                                                 }
                                                                                                 let t75: i32 = (*ph).read_u32(21395440i64) as i32;
                                                                                                 l54 = t75;
-                                                                                                l53 = 15i32;
+                                                                                                l53 = 14i32;
                                                                                                 break 'L2;
                                                                                             break 'L23;
                                                                                             }
@@ -473,7 +473,7 @@ use crate::{imp, syms};
                                                                                         syms::f_009814_rage_grceffect_setvar_rage_grcinstancedata_ref_rage_grceffectvar(ph, l25, l64, l1);
                                                                                         let t80: i32 = (*ph).read_u32(21395440i64) as i32;
                                                                                         l54 = t80;
-                                                                                        l53 = 17i32;
+                                                                                        l53 = 16i32;
                                                                                         break 'L2;
                                                                                     break 'L21;
                                                                                     }
@@ -487,13 +487,13 @@ use crate::{imp, syms};
                                                                                     syms::f_009814_rage_grceffect_setvar_rage_grcinstancedata_ref_rage_grceffectvar(ph, l27, l65, l1);
                                                                                     let t84: i32 = (*ph).read_u32(21395440i64) as i32;
                                                                                     l54 = t84;
-                                                                                    l53 = 18i32;
+                                                                                    l53 = 17i32;
                                                                                     break 'L2;
                                                                                 break 'L20;
                                                                                 }
                                                                                 let t85: i32 = (*ph).read_u32(21395440i64) as i32;
                                                                                 l54 = t85;
-                                                                                l53 = 19i32;
+                                                                                l53 = 18i32;
                                                                                 break 'L2;
                                                                             break 'L19;
                                                                             }
