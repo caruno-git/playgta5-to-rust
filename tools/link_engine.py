@@ -7,6 +7,7 @@ from shader_pass_fixes import apply_shader_pass_fixes
 from task_upload_fixes import apply_task_upload_fixes
 from minimap_mode_fixes import apply_minimap_mode_fixes, apply_minimap_mode_symbols
 from resize_binding_fixes import apply_resize_binding_fixes, apply_resize_binding_symbols
+from resource_readback_fixes import apply_resource_readback_fixes
 
 __author__ = "carunodev @stfu"
 
@@ -171,6 +172,7 @@ for crate in sorted(source_root.glob("gen[0-9][0-9][0-9]")):
         text = apply_minimap_mode_symbols(crate.name, source.name, text)
         text = apply_resize_binding_fixes(source.name, text)
         text = apply_resize_binding_symbols(crate.name, source.name, text)
+        text = apply_resource_readback_fixes(source.name, text)
         target = destination / "src" / source.name
         if not target.exists() or target.read_text(encoding="utf-8") != text:
             target.write_text(text, encoding="utf-8")

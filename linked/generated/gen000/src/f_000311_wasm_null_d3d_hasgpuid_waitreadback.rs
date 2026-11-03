@@ -38,6 +38,9 @@ use crate::{imp, syms};
             break 'L2;
             }
             syms::f_000138_wasm_wait_end(ph);
+            if (*ph).a_load_u32(l0) == 1 {
+                rt::trap("GPU readback incomplete after wait limit");
+            }
             let t5: f64 = imp::imp_0_wasm_now_ms();
             l1 = rt::i64_trunc_sat_f64_u(((t5 - l2) * 1000.0f64));
             let t6: i64 = (*ph).a_rmw_add_u64(0i64 + 8348888, l1);

@@ -1,0 +1,232 @@
+{
+  "author": "carunodev @stfu",
+  "purpose": "Exact pre-transform Rust readback lifetime fixtures; no engine binary or assets.",
+  "source_root": "recovered/rust",
+  "files": [
+    {
+      "fixture": "f_000310_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture2d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000310_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture2d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2200,
+      "source_sha256": "d0c43dab04c54cb31bfccb79bad08a1c7402977c6ce33399a0f0d6c6ffbc9b30",
+      "fixture_bytes": 2200,
+      "fixture_sha256": "d0c43dab04c54cb31bfccb79bad08a1c7402977c6ce33399a0f0d6c6ffbc9b30"
+    },
+    {
+      "fixture": "f_000311_wasm_null_d3d_hasgpuid_waitreadback.rs",
+      "source": "linked/raw-generated/gen000/src/f_000311_wasm_null_d3d_hasgpuid_waitreadback.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2387,
+      "source_sha256": "ebc855219591f44b9f561816492d9f804e55fc852cce2b5c53999193e497d601",
+      "fixture_bytes": 2387,
+      "fixture_sha256": "ebc855219591f44b9f561816492d9f804e55fc852cce2b5c53999193e497d601"
+    },
+    {
+      "fixture": "f_000312_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture2d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000312_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture2d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2226,
+      "source_sha256": "7612f19c2307bf7e58f8d1641ebc6fd4caeec3032bf6433c64a2bce468beeec2",
+      "fixture_bytes": 2226,
+      "fixture_sha256": "7612f19c2307bf7e58f8d1641ebc6fd4caeec3032bf6433c64a2bce468beeec2"
+    },
+    {
+      "fixture": "f_000315_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000315_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2281,
+      "source_sha256": "132461fbc7f9e507a0542e8594fa019b0805f665157d4d0591dcb9ae70ab2e1b",
+      "fixture_bytes": 2281,
+      "fixture_sha256": "132461fbc7f9e507a0542e8594fa019b0805f665157d4d0591dcb9ae70ab2e1b"
+    },
+    {
+      "fixture": "f_000316_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000316_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2307,
+      "source_sha256": "5daa2d4fff5fa377f87862cbad6af0a4d8addd69ff5f3233a690dbe4cc6d7816",
+      "fixture_bytes": 2307,
+      "fixture_sha256": "5daa2d4fff5fa377f87862cbad6af0a4d8addd69ff5f3233a690dbe4cc6d7816"
+    },
+    {
+      "fixture": "f_000318_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000318_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2276,
+      "source_sha256": "1423d3c65db3eeaf9774ed729792586ab8ec709191cd502a6c9cccc1411e1add",
+      "fixture_bytes": 2276,
+      "fixture_sha256": "1423d3c65db3eeaf9774ed729792586ab8ec709191cd502a6c9cccc1411e1add"
+    },
+    {
+      "fixture": "f_000319_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000319_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2298,
+      "source_sha256": "c1beb865269539aab10d53a0413d1b64f98b8407f7fbdc594c65c7c2fed53ecc",
+      "fixture_bytes": 2298,
+      "fixture_sha256": "c1beb865269539aab10d53a0413d1b64f98b8407f7fbdc594c65c7c2fed53ecc"
+    },
+    {
+      "fixture": "f_000367_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11buffer_d3d11.rs",
+      "source": "linked/raw-generated/gen000/src/f_000367_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11buffer_d3d11.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2194,
+      "source_sha256": "c0dcce5c517950a55e1da430beac407a3abaaf6d3f84762d0a2b81a8f0072545",
+      "fixture_bytes": 2194,
+      "fixture_sha256": "c0dcce5c517950a55e1da430beac407a3abaaf6d3f84762d0a2b81a8f0072545"
+    },
+    {
+      "fixture": "f_000368_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11buffer_d3d11.rs",
+      "source": "linked/raw-generated/gen000/src/f_000368_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11buffer_d3d11.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2220,
+      "source_sha256": "3ba711dd62666e2548323f210d8d3b8f1b947fb80fd76f07efb84cf4c2953488",
+      "fixture_bytes": 2220,
+      "fixture_sha256": "3ba711dd62666e2548323f210d8d3b8f1b947fb80fd76f07efb84cf4c2953488"
+    },
+    {
+      "fixture": "f_000371_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000371_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2275,
+      "source_sha256": "99cc0fa60d4d9484790c1e0bb1ae9b2c8cda35a5fa68974869542c9dfcf69d04",
+      "fixture_bytes": 2275,
+      "fixture_sha256": "99cc0fa60d4d9484790c1e0bb1ae9b2c8cda35a5fa68974869542c9dfcf69d04"
+    },
+    {
+      "fixture": "f_000372_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000372_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2301,
+      "source_sha256": "ea9728117dd4ac95e87774f3d9168ceec31bb535bc88298e871dbccee3fd026f",
+      "fixture_bytes": 2301,
+      "fixture_sha256": "ea9728117dd4ac95e87774f3d9168ceec31bb535bc88298e871dbccee3fd026f"
+    },
+    {
+      "fixture": "f_000374_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000374_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2269,
+      "source_sha256": "e2f2b582cf28fcbaae4634d3824f69507734e4ac356cb4fc8cb0bbe9e987be3f",
+      "fixture_bytes": 2269,
+      "fixture_sha256": "e2f2b582cf28fcbaae4634d3824f69507734e4ac356cb4fc8cb0bbe9e987be3f"
+    },
+    {
+      "fixture": "f_000375_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000375_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2291,
+      "source_sha256": "f44c4aec1c59bd42b1fc9f7d86e5502e217984c7097ee199d341bba25618fd5e",
+      "fixture_bytes": 2291,
+      "fixture_sha256": "f44c4aec1c59bd42b1fc9f7d86e5502e217984c7097ee199d341bba25618fd5e"
+    },
+    {
+      "fixture": "f_000379_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture1d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000379_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture1d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2200,
+      "source_sha256": "3425613541a427fe25d695ddb1fc145501f9d3129bda3493bdd6554cb4fb1afa",
+      "fixture_bytes": 2200,
+      "fixture_sha256": "3425613541a427fe25d695ddb1fc145501f9d3129bda3493bdd6554cb4fb1afa"
+    },
+    {
+      "fixture": "f_000380_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture1d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000380_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture1d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2226,
+      "source_sha256": "6cc8f5e45c6a9514a29d2a85d7e8e0050c0eb351157c22132d61c9ba8e145927",
+      "fixture_bytes": 2226,
+      "fixture_sha256": "6cc8f5e45c6a9514a29d2a85d7e8e0050c0eb351157c22132d61c9ba8e145927"
+    },
+    {
+      "fixture": "f_000382_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000382_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2281,
+      "source_sha256": "4041278b8be813088d6a70fb2483878ed7751a3a1ccaf383146355f76f3acd88",
+      "fixture_bytes": 2281,
+      "fixture_sha256": "4041278b8be813088d6a70fb2483878ed7751a3a1ccaf383146355f76f3acd88"
+    },
+    {
+      "fixture": "f_000383_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000383_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2307,
+      "source_sha256": "2ad7ccc3cb470399fa09eba8c18f01f98be5517f45bbe5000b0e3dac1eee7a90",
+      "fixture_bytes": 2307,
+      "fixture_sha256": "2ad7ccc3cb470399fa09eba8c18f01f98be5517f45bbe5000b0e3dac1eee7a90"
+    },
+    {
+      "fixture": "f_000385_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000385_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2276,
+      "source_sha256": "c81bbacae3643d5f3e57cf02b730bc35869ab70edd3c5ad0eb5b2e6183699db5",
+      "fixture_bytes": 2276,
+      "fixture_sha256": "c81bbacae3643d5f3e57cf02b730bc35869ab70edd3c5ad0eb5b2e6183699db5"
+    },
+    {
+      "fixture": "f_000386_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000386_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2298,
+      "source_sha256": "703f38031d98cc3358d9b9cca32842a42b7a1aeb2ec20f3121b6ea8d1073474b",
+      "fixture_bytes": 2298,
+      "fixture_sha256": "703f38031d98cc3358d9b9cca32842a42b7a1aeb2ec20f3121b6ea8d1073474b"
+    },
+    {
+      "fixture": "f_000390_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture3d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000390_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture3d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2200,
+      "source_sha256": "e0a1d28d39647b22b400d7d73e7e722d76c868f3fc625c192443b5ead64ed7ef",
+      "fixture_bytes": 2200,
+      "fixture_sha256": "e0a1d28d39647b22b400d7d73e7e722d76c868f3fc625c192443b5ead64ed7ef"
+    },
+    {
+      "fixture": "f_000391_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture3d_d3.rs",
+      "source": "linked/raw-generated/gen000/src/f_000391_wasm_null_d3d_nullresource_wasm_null_d3d_stub_id3d11texture3d_d3.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2226,
+      "source_sha256": "b72cea526e159af3e3be2eda0f20b95ca13ca878b90a5405547f943dd3d03612",
+      "fixture_bytes": 2226,
+      "fixture_sha256": "b72cea526e159af3e3be2eda0f20b95ca13ca878b90a5405547f943dd3d03612"
+    },
+    {
+      "fixture": "f_000394_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000394_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2281,
+      "source_sha256": "115388f894c64d7ab0f231cbe94fdb8d942bc26c6bc76bbae4f9ade4ec17612a",
+      "fixture_bytes": 2281,
+      "fixture_sha256": "115388f894c64d7ab0f231cbe94fdb8d942bc26c6bc76bbae4f9ade4ec17612a"
+    },
+    {
+      "fixture": "f_000395_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000395_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2307,
+      "source_sha256": "4c4c08b942a1fa82c6f7d387af2679ee7083fe0aeb4846f28fff34b752b0721f",
+      "fixture_bytes": 2307,
+      "fixture_sha256": "4c4c08b942a1fa82c6f7d387af2679ee7083fe0aeb4846f28fff34b752b0721f"
+    },
+    {
+      "fixture": "f_000396_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000396_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2276,
+      "source_sha256": "8de0d070bf474d082f9b3e6a16f4cfcdcf45a08f18f1ca3c6c553a196d6dfa49",
+      "fixture_bytes": 2276,
+      "fixture_sha256": "8de0d070bf474d082f9b3e6a16f4cfcdcf45a08f18f1ca3c6c553a196d6dfa49"
+    },
+    {
+      "fixture": "f_000397_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "source": "linked/raw-generated/gen000/src/f_000397_non_virtual_thunk_to_wasm_null_d3d_nullresource_wasm_null_d3d_st.rs",
+      "selection": "complete pre-transform source file",
+      "source_bytes": 2298,
+      "source_sha256": "87a4fd9975e2a1a0ed0f707bbf54cbff4db4bc5d51fe5507b66a424289594dfc",
+      "fixture_bytes": 2298,
+      "fixture_sha256": "87a4fd9975e2a1a0ed0f707bbf54cbff4db4bc5d51fe5507b66a424289594dfc"
+    }
+  ]
+}

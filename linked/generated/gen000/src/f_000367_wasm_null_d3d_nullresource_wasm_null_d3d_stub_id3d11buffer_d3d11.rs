@@ -31,9 +31,9 @@ use crate::{imp, syms};
             let t4: i64 = (*ph).read_u64(8324216i64) as i64;
             (*ph).write_u64(8324216i64, (t4.wrapping_sub(1i64)) as u64);
         }
+        syms::f_000311_wasm_null_d3d_hasgpuid_waitreadback(ph, (l0.wrapping_add(24i64)));
         syms::f_091002_emscripten_builtin_free(ph, l1);
         (*ph).write_u64(l0 + 24, 4092096i64 as u64);
-        syms::f_000311_wasm_null_d3d_hasgpuid_waitreadback(ph, (l0.wrapping_add(24i64)));
         let t5: i64 = (*ph).read_u64(8324232i64) as i64;
         let t6: i64 = (*ph).read_u64(l0 + 56) as i64;
         (*ph).write_u64(8324232i64, (t5.wrapping_sub(t6)) as u64);
