@@ -168,7 +168,7 @@ use crate::{imp, syms};
                 r38 = l5;
             }
             l0 = ((((rt::i32_rem_u(r38, 3i32) as u32) as i64).wrapping_mul(24i64)).wrapping_add(23333296i64));
-            let t55: i64 = (*ph).read_u64(23333280i64) as i64;
+            let t55: i64 = (*ph).read_u64(if (r38 as u32) >= 3 { 23333272i64 } else { 23333280i64 }) as i64;
             let t56: i64 = l0;
             l1 = t55;
             if ((t56 == l1) as i32) != 0 {

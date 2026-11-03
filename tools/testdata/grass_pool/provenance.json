@@ -1,0 +1,20 @@
+{
+  "author": "carunodev @stfu",
+  "purpose": "Portable actual-source grass append-buffer pool lifetime and reuse regressions; no game binary or assets.",
+  "files": [
+    {
+      "fixture": "f_046589_ebstatic_preallocatedresourcepool_ebstatic_preallocatedappendbuf.rs",
+      "source": "linked/raw-generated/gen011/src/f_046589_ebstatic_preallocatedresourcepool_ebstatic_preallocatedappendbuf.rs",
+      "selection": "Complete pre-transform translated Rust function",
+      "bytes": 9824,
+      "sha256": "9663b434211e0d8f36d0a3fbe6463dc2bec39e6470d766e13a48f0ca33af0bb8"
+    },
+    {
+      "fixture": "harness.rs",
+      "source": "Task-authored deterministic pool fixture",
+      "selection": "Simulated resource initialization and GPU completion with intrusive-list, age and canary checks",
+      "bytes": 5966,
+      "sha256": "eb289cb754a198002f4df228a31818ac9618007c6577150a4fc57a7924f88986"
+    }
+  ]
+}
