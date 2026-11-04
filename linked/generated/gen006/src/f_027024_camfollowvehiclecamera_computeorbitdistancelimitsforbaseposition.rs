@@ -25,7 +25,7 @@ use crate::{imp, syms};
         l2 = t2;
         (*ph).write_u64(t3, l2 as u64);
         let t4: u128 = (*ph).read_splat(l0 + 1452, 32);
-        let t5: u128 = (*ph).read_splat(0i64 + 19250352, 64);
+        let t5: u128 = (*ph).read_u64(0i64 + 19250352) as u128;
         let t6: u128 = simd::i32x4_splat((l2 as i32) as i32);
         let t7: u128 = simd::i32x4_replace_lane(t6, 1, (((l2 as u64).wrapping_shr((32i64 as u32) & 63) as i64) as i32));
         let t8: i64 = l1;

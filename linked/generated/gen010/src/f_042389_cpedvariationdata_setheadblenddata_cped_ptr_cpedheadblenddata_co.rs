@@ -157,7 +157,7 @@ use crate::{imp, syms};
                     syms::f_004603_rage_fwextensionlist_add_rage_fwextension_ref(ph, l14, l4);
                 break 'L3;
                 }
-                let t27: u128 = (*ph).read_splat(l4 + 279, 32);
+                let t27: u128 = (*ph).read_u32(l4 + 279) as u128;
                 l22 = t27;
                 let t28: i64 = (*ph).read_u64(l4 + 40) as i64;
                 l6 = t28;
@@ -241,7 +241,7 @@ use crate::{imp, syms};
                     syms::f_001535_rage_diaglogf2_rage_diagchannel_const_ref_rage_diagseverity_char(ph, 23314512i64, 5i32, 2119i64, l5);
                 }
                 syms::f_042390_cpedvariationstream_requeststreampedfilesinternal_cped_ptr_cpedv(ph, l1, l0, 0i32);
-                let t61: u128 = (*ph).read_splat(l4 + 279, 32);
+                let t61: u128 = (*ph).read_u32(l4 + 279) as u128;
                 l22 = t61;
                 let t62: i64 = (*ph).read_u64(l4 + 40) as i64;
                 l6 = t62;

@@ -49,7 +49,7 @@ use crate::{imp, syms};
                 l8 = (l10.wrapping_shl((2i64 as u32) & 63));
                 l5 = (t1.wrapping_add(l8));
                 l6 = (l5.wrapping_add(12i64));
-                let t2: u128 = (*ph).read_splat(l5 + 4, 64);
+                let t2: u128 = (*ph).read_u64(l5 + 4) as u128;
                 l25 = t2;
                 let mut r3: i32 = 0;
                 'L3: loop {
@@ -61,7 +61,7 @@ use crate::{imp, syms};
                         l5 = l0;
                         r3 = 0i32; break 'L3;
                     }
-                    let t5: u128 = (*ph).read_splat(l5, 64);
+                    let t5: u128 = (*ph).read_u64(l5) as u128;
                     l26 = t5;
                     l24 = 0x00000000000000000000000000000000u128;
                     l16 = 0i32;

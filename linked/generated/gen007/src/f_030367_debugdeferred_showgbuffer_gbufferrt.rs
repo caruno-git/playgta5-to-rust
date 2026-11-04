@@ -23,7 +23,7 @@ use crate::{imp, syms};
         let mut l4: f32 = 0.0;
         l1 = ((*ph).sp.wrapping_sub(32i64));
         (*ph).sp = l1;
-        let t1: u128 = (*ph).read_splat(0i64 + 6952064, 32);
+        let t1: u128 = (*ph).read_u32(0i64 + 6952064) as u128;
         let t2: i64 = l1;
         l3 = t1;
         let t3: i32 = simd::i8x16_extract_lane_u(l3, 0) as i32;

@@ -57,7 +57,7 @@ use crate::{imp, syms};
                     let t8: i32 = syms::f_045842_cped_forcemotionstatethisframe_cpedmotionstates_emotionstate_boo(ph, l1, 1427811395i32, 0i32);
                 break 'L3;
                 }
-                let t9: u128 = (*ph).read_splat(l1 + 5372, 64);
+                let t9: u128 = (*ph).read_u64(l1 + 5372) as u128;
                 let t10: u128 = simd::v128_or(t9, 0x00000000000000000000040000000800u128);
                 (*ph).store_lane(l1 + 5372, t10, 0, 64);
                 let t11: i64 = (*ph).read_u64(l1 + 4328) as i64;

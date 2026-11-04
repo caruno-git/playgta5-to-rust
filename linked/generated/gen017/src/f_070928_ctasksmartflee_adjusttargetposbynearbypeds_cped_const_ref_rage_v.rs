@@ -184,7 +184,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(25353144i64, 0i32 as u32);
             break 'L15;
             }
-            let t28: u128 = (*ph).read_splat(0i64 + 25353132, 32);
+            let t28: u128 = (*ph).read_u32(0i64 + 25353132) as u128;
             l22 = t28;
             'L17: loop {
                 let t29: i32 = (*ph).a_load_u8(25353152i64) as i32;
@@ -234,7 +234,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(25353160i64, 0i32 as u32);
             break 'L18;
             }
-            let t41: u128 = (*ph).read_splat(0i64 + 25353148, 32);
+            let t41: u128 = (*ph).read_u32(0i64 + 25353148) as u128;
             l31 = t41;
             'L20: loop {
                 let t42: i32 = (*ph).a_load_u8(25353168i64) as i32;
@@ -284,7 +284,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(25353176i64, 0i32 as u32);
             break 'L21;
             }
-            let t54: u128 = (*ph).read_splat(0i64 + 25353164, 32);
+            let t54: u128 = (*ph).read_u32(0i64 + 25353164) as u128;
             l32 = t54;
             'L23: loop {
                 let t55: i32 = (*ph).a_load_u8(25353184i64) as i32;
@@ -334,7 +334,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(25353192i64, 0i32 as u32);
             break 'L24;
             }
-            let t67: u128 = (*ph).read_splat(0i64 + 25353180, 32);
+            let t67: u128 = (*ph).read_u32(0i64 + 25353180) as u128;
             l35 = t67;
             'L26: loop {
                 let t68: i32 = (*ph).a_load_u8(25353200i64) as i32;
@@ -386,7 +386,7 @@ use crate::{imp, syms};
             }
             let t80: u128 = (*ph).read_v128(l1 + 144);
             l29 = t80;
-            let t81: u128 = (*ph).read_splat(0i64 + 25353196, 32);
+            let t81: u128 = (*ph).read_u32(0i64 + 25353196) as u128;
             l36 = t81;
             let t82: u128 = (*ph).read_v128(l2);
             (*ph).write_v128(l0, t82);

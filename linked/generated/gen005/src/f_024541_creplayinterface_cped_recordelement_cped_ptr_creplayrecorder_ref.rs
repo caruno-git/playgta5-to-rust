@@ -718,7 +718,7 @@ use crate::{imp, syms};
                                                 'L51: loop {
                                                     let t226: i32 = (*ph).read_u8(6761074i64) as i32;
                                                     if ((t226 == 1i32) as i32) != 0 {
-                                                        let t227: u128 = (*ph).read_splat(l14, 64);
+                                                        let t227: u128 = (*ph).read_u64(l14) as u128;
                                                         let t228: u128 = simd::f32x4_sub(l39, t227);
                                                         let t229: u128 = simd::f32x4_abs(t228);
                                                         l44 = t229;
@@ -730,7 +730,7 @@ use crate::{imp, syms};
                                                         let t233: f32 = rt::select_f32(((l50 > l51) as i32), l51, t232);
                                                         l50 = t233;
                                                         let t234: u128 = simd::i8x16_shuffle_static::<8,9,10,11,12,13,14,15,0,1,2,3,0,1,2,3>(l39, l39);
-                                                        let t235: u128 = (*ph).read_splat(l14 + 8, 64);
+                                                        let t235: u128 = (*ph).read_u64(l14 + 8) as u128;
                                                         let t236: u128 = simd::f32x4_sub(t234, t235);
                                                         let t237: u128 = simd::f32x4_abs(t236);
                                                         let t238: f32 = l50;
@@ -2055,7 +2055,7 @@ use crate::{imp, syms};
                             let t643: i32 = (*ph).read_u16(l4 + 122) as i32;
                             if t643 != 0 {
                                 l19 = 0i64;
-                                let t644: u128 = (*ph).read_splat(0i64 + 6761244, 32);
+                                let t644: u128 = (*ph).read_u32(0i64 + 6761244) as u128;
                                 l41 = t644;
                                 let t645: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(l41, l41);
                                 l47 = t645;

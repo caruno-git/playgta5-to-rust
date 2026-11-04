@@ -315,7 +315,7 @@ use crate::{imp, syms};
                                     (*ph).write_u64(l2 + 20, 1095233372160i64 as u64);
                                     (*ph).write_u32(l2 + 16, 2147450880i32 as u32);
                                     if ((l3 != 0i64) as i32) != 0 {
-                                        let t66: u128 = (*ph).read_splat(l3 + 8, 64);
+                                        let t66: u128 = (*ph).read_u64(l3 + 8) as u128;
                                         let t67: u128 = (*ph).read_splat(l3 + 16, 32);
                                         let t68: u128 = simd::i8x16_shuffle_static::<8,9,10,11,0,1,2,3,28,29,30,31,0,1,2,3>(t67, 0x00000000000000000000000000000000u128);
                                         let t69: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,16,17,18,19,24,25,26,27>(t66, t68);

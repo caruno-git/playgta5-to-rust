@@ -269,7 +269,7 @@ use crate::{imp, syms};
                         let t53 = (*ph).table_entry_typed(t52, 7);
                         let t54: unsafe extern "C" fn(*mut Phantom, i64, i32) = core::mem::transmute(t53);
                         t54(ph as *mut Phantom, (l4.wrapping_add(3888i64)), 1i32);
-                        let t55: u128 = (*ph).read_splat(l4 + 5384, 64);
+                        let t55: u128 = (*ph).read_u64(l4 + 5384) as u128;
                         let t56: u128 = simd::v128_or(t55, 0x0000000000000000000003c000800000u128);
                         (*ph).store_lane(l4 + 5384, t56, 0, 64);
                         let t57: i32 = (*ph).read_u8(l0 + 450) as i32;

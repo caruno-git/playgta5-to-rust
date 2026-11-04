@@ -292,12 +292,12 @@ use crate::{imp, syms};
                     l6 = (l7.wrapping_add((l5.wrapping_mul(160i64))));
                     let t55: i32 = (*ph).read_u32(l6) as i32;
                     if ((t55 == (-1i32)) as i32) != 0 {
-                        let t56: u128 = (*ph).read_splat(l0 + 816, 32);
+                        let t56: u128 = (*ph).read_u32(l0 + 816) as u128;
                         let t57: u128 = (*ph).load_lane(l0 + 656, t56, 1, 32);
                         let t58: u128 = (*ph).load_lane(l0 + 496, t57, 2, 32);
                         let t59: u128 = (*ph).load_lane(l0 + 336, t58, 3, 32);
                         l15 = t59;
-                        let t60: u128 = (*ph).read_splat(l0 + 1456, 32);
+                        let t60: u128 = (*ph).read_u32(l0 + 1456) as u128;
                         let t61: u128 = (*ph).load_lane(l0 + 1296, t60, 1, 32);
                         let t62: u128 = (*ph).load_lane(l0 + 1136, t61, 2, 32);
                         let t63: u128 = (*ph).load_lane(l0 + 976, t62, 3, 32);

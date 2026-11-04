@@ -176,7 +176,7 @@ use crate::{imp, syms};
                                 let t35: i32 = syms::f_045842_cped_forcemotionstatethisframe_cpedmotionstates_emotionstate_boo(ph, l1, 1427811395i32, 0i32);
                             break 'L12;
                             }
-                            let t36: u128 = (*ph).read_splat(l1 + 5372, 64);
+                            let t36: u128 = (*ph).read_u64(l1 + 5372) as u128;
                             let t37: u128 = simd::v128_or(t36, 0x00000000000000000000040000000800u128);
                             (*ph).store_lane(l1 + 5372, t37, 0, 64);
                         break 'L11;
@@ -330,7 +330,7 @@ use crate::{imp, syms};
                 }
                 let t84: i32 = (*ph).read_u32(l1 + 5384) as i32;
                 (*ph).write_u32(l1 + 5384, (t84 | 33554432i32) as u32);
-                let t85: u128 = (*ph).read_splat(l1 + 5396, 64);
+                let t85: u128 = (*ph).read_u64(l1 + 5396) as u128;
                 let t86: u128 = simd::v128_or(t85, 0x00000000000000001000000000400000u128);
                 (*ph).store_lane(l1 + 5396, t86, 0, 64);
                 'L25: loop {

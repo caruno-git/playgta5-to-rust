@@ -1280,7 +1280,7 @@ use crate::{imp, syms};
                                         let t478: f32 = rt::select_f32(((l37 > l38) as i32), l38, t477);
                                         l37 = t478;
                                         let t479: u128 = simd::i8x16_shuffle_static::<8,9,10,11,12,13,14,15,0,1,2,3,0,1,2,3>(l6, 0x00000000000000000000000000000000u128);
-                                        let t480: u128 = (*ph).read_splat(l3 + 8, 64);
+                                        let t480: u128 = (*ph).read_u64(l3 + 8) as u128;
                                         let t481: u128 = simd::f32x4_sub(t479, t480);
                                         let t482: u128 = simd::f32x4_abs(t481);
                                         let t483: f32 = l37;

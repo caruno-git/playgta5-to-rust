@@ -75,10 +75,10 @@ use crate::{imp, syms};
                             if ((t14 == 3i32) as i32) != 0 {
                                 let t15: i64 = (*ph).read_u64(l2 + 32) as i64;
                                 l2 = t15;
-                                let t16: u128 = (*ph).read_splat(l2 + 68, 64);
+                                let t16: u128 = (*ph).read_u64(l2 + 68) as u128;
                                 l8 = t16;
                                 let t17: i64 = (*ph).read_u8(l2 + 64) as i64;
-                                let t18: u128 = (*ph).read_splat((((t17.wrapping_shl((3i64 as u32) & 63)).wrapping_add(l2)).wrapping_add(60i64)), 64);
+                                let t18: u128 = (*ph).read_u64((((t17.wrapping_shl((3i64 as u32) & 63)).wrapping_add(l2)).wrapping_add(60i64))) as u128;
                                 let t19: u128 = l8;
                                 l11 = t18;
                                 let t20: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,0,1,2,3,0,1,2,3>(t19, l11);

@@ -55,7 +55,7 @@ use crate::{imp, syms};
                         break 'L1;
                     }
                     let t5: i64 = (*ph).read_u64(l0 + 80) as i64;
-                    let t6: u128 = (*ph).read_splat(((l7.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) + 68, 64);
+                    let t6: u128 = (*ph).read_u64(((l7.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) + 68) as u128;
                     let t7: u128 = (*ph).load_lane((t5.wrapping_add((l5.wrapping_shl((2i64 as u32) & 63)))), t6, 2, 32);
                     l9 = t7;
                     (*ph).write_u32(l4 + 16, l5 as u32);
@@ -78,7 +78,7 @@ use crate::{imp, syms};
                             break 'L1;
                         }
                         let t15: i64 = (*ph).read_u64(l0 + 80) as i64;
-                        let t16: u128 = (*ph).read_splat(((l7.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) + 68, 64);
+                        let t16: u128 = (*ph).read_u64(((l7.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) + 68) as u128;
                         let t17: u128 = (*ph).load_lane((t15.wrapping_add((l6.wrapping_shl((2i64 as u32) & 63)))), t16, 2, 32);
                         l10 = t17;
                         (*ph).write_v128(l4 + 176, l9);
@@ -115,7 +115,7 @@ use crate::{imp, syms};
                     }
                     let t23: i64 = (*ph).read_u64(l0 + 80) as i64;
                     let t24: i64 = (*ph).read_u64(l0 + 64) as i64;
-                    let t25: u128 = (*ph).read_splat((t24.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63)))), 64);
+                    let t25: u128 = (*ph).read_u64((t24.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) as u128;
                     let t26: u128 = (*ph).load_lane((t23.wrapping_add((l5.wrapping_shl((2i64 as u32) & 63)))), t25, 2, 32);
                     l9 = t26;
                     (*ph).write_u32(l4, l5 as u32);
@@ -142,7 +142,7 @@ use crate::{imp, syms};
                         }
                         let t34: i64 = (*ph).read_u64(l0 + 80) as i64;
                         let t35: i64 = (*ph).read_u64(l0 + 64) as i64;
-                        let t36: u128 = (*ph).read_splat((t35.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63)))), 64);
+                        let t36: u128 = (*ph).read_u64((t35.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) as u128;
                         let t37: u128 = (*ph).load_lane((t34.wrapping_add((l6.wrapping_shl((2i64 as u32) & 63)))), t36, 2, 32);
                         l10 = t37;
                         (*ph).write_v128(l4 + 176, l9);

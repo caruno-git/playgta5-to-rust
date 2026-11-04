@@ -76,7 +76,7 @@ use crate::{imp, syms};
                         }
                         let t10: i64 = (*ph).read_u64((l8.wrapping_add((l9.wrapping_shl((3i64 as u32) & 63))))) as i64;
                         l8 = t10;
-                        let t11: u128 = (*ph).read_splat(l8 + 264, 32);
+                        let t11: u128 = (*ph).read_u32(l8 + 264) as u128;
                         let t12: f32 = (*ph).read_f32(l7 + 264);
                         l14 = t12;
                         let t13: u128 = simd::f32x4_replace_lane(t11, 1, l14);

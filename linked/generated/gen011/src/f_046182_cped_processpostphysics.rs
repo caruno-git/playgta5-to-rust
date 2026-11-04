@@ -154,7 +154,7 @@ use crate::{imp, syms};
         let t40: u128 = (*ph).read_v128(20160560i64);
         let t41: u128 = simd::v128_andnot(t39, t40);
         (*ph).write_v128(l2 + 60, t41);
-        let t42: u128 = (*ph).read_splat(l2 + 76, 64);
+        let t42: u128 = (*ph).read_u64(l2 + 76) as u128;
         let t43: u128 = (*ph).read_v128(20160576i64);
         let t44: u128 = simd::v128_andnot(t42, t43);
         (*ph).store_lane(l2 + 76, t44, 0, 64);

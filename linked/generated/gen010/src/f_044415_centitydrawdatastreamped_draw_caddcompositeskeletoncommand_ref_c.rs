@@ -1036,7 +1036,7 @@ use crate::{imp, syms};
                                                         break 'L58;
                                                     }
                                                     if l41 != 0 {
-                                                        let t280: u128 = (*ph).read_splat(l10 + 72, 64);
+                                                        let t280: u128 = (*ph).read_u64(l10 + 72) as u128;
                                                         let t281: i64 = l7;
                                                         l54 = t280;
                                                         let t282: i32 = simd::i16x8_extract_lane_s(l54, 0) as i32;

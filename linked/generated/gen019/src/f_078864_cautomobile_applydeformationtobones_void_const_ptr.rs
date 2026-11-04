@@ -720,7 +720,7 @@ use crate::{imp, syms};
                             l18 = (((l18 as i8) as i32));
                             let t335: i64 = (*ph).read_u64(l8 + 24) as i64;
                             l8 = (t335.wrapping_add((((l17 as u32) as i64).wrapping_shl((6i64 as u32) & 63))));
-                            let t336: u128 = (*ph).read_splat(l8 + 8, 32);
+                            let t336: u128 = (*ph).read_u32(l8 + 8) as u128;
                             let t337: u128 = (*ph).load_lane(l8 + 24, t336, 1, 32);
                             l5 = t337;
                             let t338: f32 = (*ph).read_f32(l8 + 40);

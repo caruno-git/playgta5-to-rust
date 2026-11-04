@@ -1309,7 +1309,8 @@ class Emitter(object):
         off, _a, _o = parse_memargs(rest)
         a = self.addr_expr(off)
         t = self.newtemp()
-        self.emit("let %s: u128 = ph.read_splat(%s, %d);" % (t, a, width))
+        expression = ("ph.read_u%d(%s) as u128" % (width, a)) if zero else ("ph.read_splat(%s, %d)" % (a, width))
+        self.emit("let %s: u128 = %s;" % (t, expression))
         self.push("v128", t, (), True)
         return i + 1
 

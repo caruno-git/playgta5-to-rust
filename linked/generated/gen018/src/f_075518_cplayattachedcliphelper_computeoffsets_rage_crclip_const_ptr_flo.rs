@@ -179,7 +179,7 @@ use crate::{imp, syms};
                 break 'L7;
             }
             syms::f_003884_rage_fwanimhelpers_getmovertrackrotationdelta_rage_crclip_const(ph, l23, l1, l2, l3);
-            let t59: u128 = (*ph).read_splat(l23 + 4, 64);
+            let t59: u128 = (*ph).read_u64(l23 + 4) as u128;
             let t60: i64 = l23;
             l9 = t59;
             let t61: u128 = (*ph).read_v128(l23);

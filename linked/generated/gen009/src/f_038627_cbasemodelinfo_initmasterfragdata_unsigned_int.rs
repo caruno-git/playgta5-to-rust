@@ -5376,7 +5376,7 @@ use crate::{imp, syms};
                                         (*ph).write_u32((l4.wrapping_add(l17)), 16i32 as u32);
                                         let t1449: i64 = (*ph).read_u64(l11 + 144) as i64;
                                         (*ph).write_u32(((t1449.wrapping_add(l4))) + 4, 8388608i32 as u32);
-                                        let t1450: u128 = (*ph).read_splat(l23 + 40, 64);
+                                        let t1450: u128 = (*ph).read_u64(l23 + 40) as u128;
                                         let t1451: u128 = simd::v128_or(t1450, 0x00000000000000000080000000000010u128);
                                         (*ph).store_lane(l23 + 40, t1451, 0, 64);
                                         break 'L395;

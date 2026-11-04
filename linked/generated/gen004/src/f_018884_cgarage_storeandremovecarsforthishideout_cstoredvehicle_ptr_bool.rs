@@ -44,11 +44,11 @@ use crate::{imp, syms};
                     if t1 != 0 {
                         let t2: i64 = (*ph).read_u64(l0 + 88) as i64;
                         l3 = t2;
-                        let t3: u128 = (*ph).read_splat(l3 + 20, 64);
+                        let t3: u128 = (*ph).read_u64(l3 + 20) as u128;
                         l18 = t3;
-                        let t4: u128 = (*ph).read_splat(l3 + 12, 64);
+                        let t4: u128 = (*ph).read_u64(l3 + 12) as u128;
                         l19 = t4;
-                        let t5: u128 = (*ph).read_splat(l3, 64);
+                        let t5: u128 = (*ph).read_u64(l3) as u128;
                         l20 = t5;
                         let t6: f32 = (*ph).read_f32(l3 + 28);
                         l13 = t6;

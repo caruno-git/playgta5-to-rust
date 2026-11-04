@@ -191,7 +191,7 @@ use crate::{imp, syms};
                                 let t57: u128 = simd::f32x4_splat(l13 as f32);
                                 l8 = (l4.wrapping_add(176i64));
                                 l9 = (l8.wrapping_add((((l12 as i32) as i64).wrapping_shl((4i64 as u32) & 63))));
-                                let t58: u128 = (*ph).read_splat(l4 + 184, 32);
+                                let t58: u128 = (*ph).read_u32(l4 + 184) as u128;
                                 let t59: u128 = (*ph).load_lane(l9 + 8, t58, 1, 32);
                                 let t60: u128 = simd::f32x4_sub(t57, t59);
                                 l19 = t60;

@@ -121,7 +121,7 @@ use crate::{imp, syms};
                                 if ((t15 != 3.40282347e+38f32) as i32) != 0 {
                                     break 'L9;
                                 }
-                                let t16: u128 = (*ph).read_splat(l5 + 1484, 64);
+                                let t16: u128 = (*ph).read_u64(l5 + 1484) as u128;
                                 l19 = t16;
                                 let t17: u128 = simd::f32x4_ne(l19, 0x00000000000000000000000000000000u128);
                                 let t18: u128 = simd::v128_and(t17, 0x00000000000000003f8000003f800000u128);

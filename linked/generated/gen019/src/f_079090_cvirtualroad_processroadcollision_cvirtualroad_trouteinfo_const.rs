@@ -128,7 +128,7 @@ use crate::{imp, syms};
                         let t17: i64 = l38;
                         l35 = (l36.wrapping_add((l35.wrapping_mul(12i64))));
                         (*ph).write_u64(t17 + 16, l35 as u64);
-                        let t18: u128 = (*ph).read_splat(l35 + 2, 32);
+                        let t18: u128 = (*ph).read_u32(l35 + 2) as u128;
                         l4 = t18;
                         let t19: i32 = simd::i16x8_extract_lane_s(l4, 0) as i32;
                         let t20: u128 = simd::f32x4_splat(((t19 as i32) as f32) as f32);

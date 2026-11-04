@@ -68,7 +68,7 @@ use crate::{imp, syms};
         let t45: u128 = simd::i8x16_narrow_i16x8_u(t23, t44);
         let t46: i32 = simd::v128_any_true(t45);
         if t46 != 0 {
-            let t47: u128 = (*ph).read_splat(l4 + 5376, 64);
+            let t47: u128 = (*ph).read_u64(l4 + 5376) as u128;
             let t48: u128 = simd::v128_or(t47, 0x000000000000000000000400000e0000u128);
             (*ph).store_lane(l4 + 5376, t48, 0, 64);
         }

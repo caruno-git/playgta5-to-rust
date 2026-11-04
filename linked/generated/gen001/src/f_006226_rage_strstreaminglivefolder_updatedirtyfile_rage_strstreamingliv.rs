@@ -113,7 +113,7 @@ use crate::{imp, syms};
                     let t40: i32 = (*ph).read_u32(l0 + 12) as i32;
                     let t41: i64 = syms::f_006072_rage_strstreaminginfomanager_getobjectname_rage_strindex_char_pt(ph, 11607304i64, t40, 11606848i64, 255i64);
                     l7 = t41;
-                    let t42: u128 = (*ph).read_splat(l9 + 8, 64);
+                    let t42: u128 = (*ph).read_u64(l9 + 8) as u128;
                     let t43: i64 = l8;
                     l4 = t42;
                     let t44: u128 = simd::v128_and(l4, 0x02000000020000000200000002000000u128);

@@ -73,7 +73,7 @@ use crate::{imp, syms};
             if ((l16 == 0) as i32) != 0 {
                 break 'L1;
             }
-            let t12: u128 = (*ph).read_splat(l0 + 20, 64);
+            let t12: u128 = (*ph).read_u64(l0 + 20) as u128;
             l13 = t12;
             let t13: u128 = (*ph).read_v128(l0 + 16);
             let t14: u128 = l13;
@@ -84,7 +84,7 @@ use crate::{imp, syms};
             let t17: u128 = l14;
             l9 = t16;
             let t18: u128 = simd::f32x4_mul(t17, l9);
-            let t19: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+            let t19: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
             let t20: u128 = l11;
             l12 = t19;
             let t21: u128 = simd::i8x16_shuffle_static::<4,5,6,7,16,17,18,19,0,1,2,3,0,1,2,3>(l12, l9);

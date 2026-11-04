@@ -5369,7 +5369,7 @@ use crate::{imp, syms};
                 let t1483: f32 = syms::f_077622_cvisualsettings_get_char_const_ptr_float_bool_const(ph, 1885031i64, 1000.0f32);
                 l15 = t1483;
                 (*ph).write_f32(22910856i64, l15);
-                let t1484: u128 = (*ph).read_splat(0i64 + 22910844, 32);
+                let t1484: u128 = (*ph).read_u32(0i64 + 22910844) as u128;
                 let t1485: u128 = (*ph).load_lane(0i64 + 22910848, t1484, 1, 32);
                 let t1486: u128 = (*ph).load_lane(0i64 + 22910852, t1485, 2, 32);
                 let t1487: u128 = simd::f32x4_replace_lane(t1486, 3, l15);

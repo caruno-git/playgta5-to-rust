@@ -158,7 +158,7 @@ use crate::{imp, syms};
             'L13: loop {
                 let t42: i64 = (*ph).read_u64(l4 + 8) as i64;
                 if (((t42 & 251658240i64) == 16777216i64) as i32) != 0 {
-                    let t43: u128 = (*ph).read_splat(l1, 32);
+                    let t43: u128 = (*ph).read_u32(l1) as u128;
                     let t44: u128 = simd::i32x4_extend_low_i16x8_u(t43);
                     let t45: u128 = simd::i32x4_shl(t44, 16i32);
                     let t46: i64 = l0;

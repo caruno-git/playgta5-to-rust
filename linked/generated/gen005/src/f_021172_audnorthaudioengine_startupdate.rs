@@ -11147,11 +11147,11 @@ use crate::{imp, syms};
                             l1 = 0i64;
                             'L798: loop {
                                 l12 = (l1.wrapping_mul(24i64));
-                                let t2770: u128 = (*ph).read_splat(l12 + 15930204, 32);
+                                let t2770: u128 = (*ph).read_u32(l12 + 15930204) as u128;
                                 let t2771: u128 = (*ph).load_lane(l12 + 15930228, t2770, 1, 32);
                                 l29 = t2771;
                                 l2 = (l12.wrapping_add(15930144i64));
-                                let t2772: u128 = (*ph).read_splat(l12 + 15930156, 32);
+                                let t2772: u128 = (*ph).read_u32(l12 + 15930156) as u128;
                                 let t2773: u128 = (*ph).load_lane(l12 + 15930180, t2772, 1, 32);
                                 let t2774: u128 = simd::i64x2_extend_low_i32x4_u(t2773);
                                 let t2775: u128 = simd::i64x2_eq(l26, t2774);

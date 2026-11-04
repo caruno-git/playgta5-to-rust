@@ -2376,7 +2376,7 @@ use crate::{imp, syms};
                                         let t612: i64 = l10;
                                         l2 = (t611 & 2i32);
                                         let t613: i64 = rt::select_i64(l2, 12i64, 16i64);
-                                        let t614: u128 = (*ph).read_splat(l10 + 20, 64);
+                                        let t614: u128 = (*ph).read_u64(l10 + 20) as u128;
                                         let t615: i64 = (t612.wrapping_add(t613));
                                         l26 = t614;
                                         let t616: u128 = (*ph).load_lane(t615, l26, 0, 32);
@@ -2401,7 +2401,7 @@ use crate::{imp, syms};
                                         let t629: i64 = rt::select_i64(l2, 28i64, 32i64);
                                         let t630: f32 = (*ph).read_f32((l10.wrapping_add(t629)));
                                         if (((l1 | ((((t630 > (l18.abs())) as i32) == 0) as i32)) == 0) as i32) != 0 {
-                                            let t631: u128 = (*ph).read_splat(l10 + 36, 64);
+                                            let t631: u128 = (*ph).read_u64(l10 + 36) as u128;
                                             let t632: u128 = simd::f32x4_mul(l26, t631);
                                             l26 = t632;
                                         }

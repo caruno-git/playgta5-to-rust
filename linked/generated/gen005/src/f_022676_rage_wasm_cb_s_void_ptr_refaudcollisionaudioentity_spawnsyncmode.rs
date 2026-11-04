@@ -116,7 +116,7 @@ use crate::{imp, syms};
                             let t25: f32 = (*ph).read_f32(l0 + 44);
                             l9 = (t25 + 2.0f32);
                             l10 = (t24 * l9);
-                            let t26: u128 = (*ph).read_splat(19235024i64 + 4, 32);
+                            let t26: u128 = (*ph).read_u32(19235024i64 + 4) as u128;
                             let t27: u128 = simd::f32x4_splat(l9 as f32);
                             let t28: u128 = simd::f32x4_mul(t26, t27);
                             l12 = t28;
@@ -129,14 +129,14 @@ use crate::{imp, syms};
                                     l1 = 19235056i64;
                                     let t32: f32 = (*ph).read_f32(l1 + 12);
                                     l9 = t32;
-                                    let t33: u128 = (*ph).read_splat(19235056i64 + 4, 64);
+                                    let t33: u128 = (*ph).read_u64(19235056i64 + 4) as u128;
                                     r29 = t33; break 'L7;
                                 }
                                 syms::f_047880_cgameworld_findlocalplayercoors(ph, (l2.wrapping_add(48i64)));
                                 l1 = (l2.wrapping_add(48i64));
                                 let t34: f32 = (*ph).read_f32(l2 + 60);
                                 l9 = t34;
-                                let t35: u128 = (*ph).read_splat(l2 + 52, 64);
+                                let t35: u128 = (*ph).read_u64(l2 + 52) as u128;
                                 r29 = t35;
                             break 'L7;
                             }

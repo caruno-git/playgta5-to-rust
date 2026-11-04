@@ -214,7 +214,7 @@ use crate::{imp, syms};
                     syms::f_001535_rage_diaglogf2_rage_diagchannel_const_ref_rage_diagseverity_char(ph, 23314512i64, 5i32, 2112787i64, l12);
                 break 'L11;
                 }
-                let t51: u128 = (*ph).read_splat(l3, 64);
+                let t51: u128 = (*ph).read_u64(l3) as u128;
                 let t52: i64 = l12;
                 l25 = t51;
                 (*ph).store_lane(t52 + 244, l25, 1, 32);
@@ -315,7 +315,7 @@ use crate::{imp, syms};
                         'L25: loop {
                             let t82: i32 = syms::f_042127_cpeddamagepusharea_calcpushamount_rage_vector2_const_ref_float_r(ph, (l16.wrapping_add((l13.wrapping_mul(20i64)))), (l12.wrapping_add(256i64)), l21, (l12.wrapping_add(168i64)), l18);
                             if t82 != 0 {
-                                let t83: u128 = (*ph).read_splat(l12 + 168, 64);
+                                let t83: u128 = (*ph).read_u64(l12 + 168) as u128;
                                 let t84: u128 = simd::f32x4_add(l25, t83);
                                 let t85: i64 = l12;
                                 l25 = t84;

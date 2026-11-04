@@ -822,7 +822,7 @@ use crate::{imp, syms};
                             let t247: i32 = (*ph).read_u8(26762096i64) as i32;
                             if ((t247 == 1i32) as i32) != 0 {
                                 let t248: u128 = simd::f32x4_replace_lane(0x00000000000000000000000000000000u128, 0, l8);
-                                let t249: u128 = (*ph).read_splat(0i64 + 26762084, 64);
+                                let t249: u128 = (*ph).read_u64(0i64 + 26762084) as u128;
                                 let t250: u128 = simd::f32x4_pmax(t248, t249);
                                 (*ph).store_lane(0i64 + 26762084, t250, 0, 64);
                                 let t251: f32 = (*ph).read_f32(26762080i64);
@@ -853,7 +853,7 @@ use crate::{imp, syms};
                         let t256: i32 = (*ph).read_u8(26762152i64) as i32;
                         if ((t256 == 1i32) as i32) != 0 {
                             let t257: u128 = simd::f32x4_replace_lane(0x00000000000000000000000000000000u128, 0, l8);
-                            let t258: u128 = (*ph).read_splat(0i64 + 26762140, 64);
+                            let t258: u128 = (*ph).read_u64(0i64 + 26762140) as u128;
                             let t259: u128 = simd::f32x4_pmax(t257, t258);
                             (*ph).store_lane(0i64 + 26762140, t259, 0, 64);
                             let t260: f32 = (*ph).read_f32(26762136i64);

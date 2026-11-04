@@ -2700,7 +2700,7 @@ use crate::{imp, syms};
                                                                                         (*ph).write_u8((l16.wrapping_add(19497060i64)), 0i32 as u8);
                                                                                         syms::f_077514_chelpmessage_clearmessage_int(ph, l4);
                                                                                         l1 = (l16.wrapping_shl((3i64 as u32) & 63));
-                                                                                        let t638: u128 = (*ph).read_splat((l1.wrapping_add(25479008i64)), 64);
+                                                                                        let t638: u128 = (*ph).read_u64((l1.wrapping_add(25479008i64))) as u128;
                                                                                         let t639: u128 = simd::f32x4_neg(t638);
                                                                                         (*ph).store_lane((l1.wrapping_add(19496924i64)), t639, 0, 64);
                                                                                         (*ph).write_u32(((l16.wrapping_shl((2i64 as u32) & 63)).wrapping_add(19496912i64)), 5i32 as u32);

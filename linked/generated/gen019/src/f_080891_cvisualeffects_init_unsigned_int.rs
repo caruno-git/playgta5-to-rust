@@ -7177,7 +7177,7 @@ use crate::{imp, syms};
                                     l3 = 0i64;
                                     'L349: loop {
                                         l9 = (l3.wrapping_mul(76i64));
-                                        let t1538: u128 = (*ph).read_splat(l9 + 19616480, 64);
+                                        let t1538: u128 = (*ph).read_u64(l9 + 19616480) as u128;
                                         l32 = t1538;
                                         l2 = ((l7.wrapping_add(1072i64)).wrapping_add((l3.wrapping_shl((4i64 as u32) & 63))));
                                         (*ph).write_u64(l2 + 8, (l9.wrapping_add(19616492i64)) as u64);
@@ -7185,7 +7185,7 @@ use crate::{imp, syms};
                                         (*ph).store_lane(l2, t1539, 0, 64);
                                         l9 = (l3 | 1i64);
                                         l2 = (l9.wrapping_mul(76i64));
-                                        let t1540: u128 = (*ph).read_splat(l2 + 19616480, 64);
+                                        let t1540: u128 = (*ph).read_u64(l2 + 19616480) as u128;
                                         l32 = t1540;
                                         l9 = ((l7.wrapping_add(1072i64)).wrapping_add((l9.wrapping_shl((4i64 as u32) & 63))));
                                         (*ph).write_u64(l9 + 8, (l2.wrapping_add(19616492i64)) as u64);
@@ -7203,7 +7203,7 @@ use crate::{imp, syms};
                                     }
                                 }
                                 l4 = (l3.wrapping_mul(76i64));
-                                let t1542: u128 = (*ph).read_splat(l4 + 19616480, 64);
+                                let t1542: u128 = (*ph).read_u64(l4 + 19616480) as u128;
                                 l32 = t1542;
                                 l3 = ((l7.wrapping_add(1072i64)).wrapping_add((l3.wrapping_shl((4i64 as u32) & 63))));
                                 (*ph).write_u64(l3 + 8, (l4.wrapping_add(19616492i64)) as u64);
@@ -7584,7 +7584,7 @@ use crate::{imp, syms};
                                                         'L388: loop {
                                                             let t1586: i64 = ((l13.wrapping_add(864i64)).wrapping_add((l2.wrapping_shl((2i64 as u32) & 63))));
                                                             l6 = (l10.wrapping_add((l2.wrapping_mul(72i64))));
-                                                            let t1587: u128 = (*ph).read_splat(l6 + 16, 32);
+                                                            let t1587: u128 = (*ph).read_u32(l6 + 16) as u128;
                                                             let t1588: u128 = (*ph).load_lane(l6 + 88, t1587, 1, 32);
                                                             let t1589: u128 = (*ph).load_lane(l6 + 160, t1588, 2, 32);
                                                             let t1590: u128 = (*ph).load_lane(l6 + 232, t1589, 3, 32);
@@ -7834,7 +7834,7 @@ use crate::{imp, syms};
                             'L407: loop {
                                 let t1617: i64 = (l4.wrapping_shl((2i64 as u32) & 63));
                                 l2 = (l6.wrapping_add((l4.wrapping_mul(72i64))));
-                                let t1618: u128 = (*ph).read_splat(l2 + 16, 32);
+                                let t1618: u128 = (*ph).read_u32(l2 + 16) as u128;
                                 let t1619: u128 = (*ph).load_lane(l2 + 88, t1618, 1, 32);
                                 let t1620: u128 = (*ph).load_lane(l2 + 160, t1619, 2, 32);
                                 let t1621: u128 = (*ph).load_lane(l2 + 232, t1620, 3, 32);
@@ -7923,7 +7923,7 @@ use crate::{imp, syms};
                             'L415: loop {
                                 let t1629: i64 = (l4.wrapping_shl((2i64 as u32) & 63));
                                 l2 = (l6.wrapping_add((l4.wrapping_mul(72i64))));
-                                let t1630: u128 = (*ph).read_splat(l2 + 16, 32);
+                                let t1630: u128 = (*ph).read_u32(l2 + 16) as u128;
                                 let t1631: u128 = (*ph).load_lane(l2 + 88, t1630, 1, 32);
                                 let t1632: u128 = (*ph).load_lane(l2 + 160, t1631, 2, 32);
                                 let t1633: u128 = (*ph).load_lane(l2 + 232, t1632, 3, 32);
@@ -8220,7 +8220,7 @@ use crate::{imp, syms};
                                 l2 = (t1680.wrapping_add((l1.wrapping_shl((4i64 as u32) & 63))));
                                 let t1681: f32 = (*ph).read_f32(l2 + 8);
                                 l38 = t1681;
-                                let t1682: u128 = (*ph).read_splat(l2, 64);
+                                let t1682: u128 = (*ph).read_u64(l2) as u128;
                                 l33 = t1682;
                                 let mut r1683: i64 = 0;
                                 'L436: loop {

@@ -45,7 +45,7 @@ use crate::{imp, syms};
                     l6 = (l5.wrapping_add((l4.wrapping_shl((3i64 as u32) & 63))));
                     let t4: i64 = (*ph).read_u64(l6 + 8) as i64;
                     let t5: i64 = (*ph).read_u64(l6) as i64;
-                    let t6: u128 = (*ph).read_splat(t5 + 492, 32);
+                    let t6: u128 = (*ph).read_u32(t5 + 492) as u128;
                     let t7: u128 = (*ph).load_lane(t4 + 492, t6, 1, 32);
                     let t8: u128 = simd::f32x4_le(t7, 0x43af000343af000343af000343af0003u128);
                     let t9: u128 = simd::i8x16_shuffle_static::<0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0>(t8, l2);

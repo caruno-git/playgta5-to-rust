@@ -31,9 +31,9 @@ use crate::{imp, syms};
         (*ph).sp = l4;
         let t1: i32 = (*ph).read_u32(18581244i64) as i32;
         if ((t1 != 2i32) as i32) != 0 {
-            let t2: u128 = (*ph).read_splat(l0 + 1452, 32);
+            let t2: u128 = (*ph).read_u32(l0 + 1452) as u128;
             l2 = t2;
-            let t3: u128 = (*ph).read_splat(l0 + 1440, 32);
+            let t3: u128 = (*ph).read_u32(l0 + 1440) as u128;
             l3 = t3;
             let t4: i64 = (*ph).read_u64(l0 + 400) as i64;
             let t5: u128 = (*ph).read_v128(t4 + 48);

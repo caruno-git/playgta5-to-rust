@@ -859,7 +859,7 @@ use crate::{imp, syms};
                                                             let t274: i32 = rt::select_i32(l32, 0i32, 939524096i32);
                                                             r272 = f32::from_bits(((t274.wrapping_add(((l32 as u32).wrapping_shr((3i32 as u32) & 31) as i32))) | (l30 & (-2147483648i32))) as u32); break 'L38;
                                                         }
-                                                        let t275: u128 = (*ph).read_splat(l2 + 64, 64);
+                                                        let t275: u128 = (*ph).read_u64(l2 + 64) as u128;
                                                         let t276: u128 = simd::i32x4_extend_low_i16x8_u(t275);
                                                         let t277: u128 = simd::i32x4_shl(t276, 16i32);
                                                         l27 = t277;

@@ -780,7 +780,7 @@ use crate::{imp, syms};
                         if ((l2 == 0) as i32) != 0 {
                             break 'L2;
                         }
-                        let t302: u128 = (*ph).read_splat(l4 + 168, 64);
+                        let t302: u128 = (*ph).read_u64(l4 + 168) as u128;
                         let t303: u128 = (*ph).load_lane(l4 + 152, t302, 1, 32);
                         let t304: u128 = simd::f32x4_splat(l32 as f32);
                         let t305: u128 = simd::f32x4_sub(t303, t304);

@@ -375,7 +375,7 @@ use crate::{imp, syms};
                 let t92: i32 = simd::i32x4_extract_lane(l21, 3) as i32;
                 l3 = t92;
                 let t93: u128 = simd::i32x4_replace_lane(t90, 3, ((t91 as u32).wrapping_shr((l3 as u32) & 31) as i32));
-                let t94: u128 = (*ph).read_splat((l14.wrapping_add(l15)), 32);
+                let t94: u128 = (*ph).read_u32((l14.wrapping_add(l15))) as u128;
                 let t95: u128 = simd::i8x16_ne(t94, 0xffffffffffffffffffffffffffffffffu128);
                 l21 = t95;
                 let t96: u128 = simd::i16x8_extend_low_i8x16_s(l21);

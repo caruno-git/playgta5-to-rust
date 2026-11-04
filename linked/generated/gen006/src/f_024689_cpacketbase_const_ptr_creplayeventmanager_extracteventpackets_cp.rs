@@ -294,7 +294,7 @@ use crate::{imp, syms};
                         if ((l10 == 0) as i32) != 0 {
                             break 'L20;
                         }
-                        let t65: u128 = (*ph).read_splat(l6 + 28, 64);
+                        let t65: u128 = (*ph).read_u64(l6 + 28) as u128;
                         let t66: u128 = (*ph).load_lane(l6 + 36, t65, 2, 32);
                         l19 = t66;
                         let t67: u128 = (*ph).read_v128(l8 + 96);

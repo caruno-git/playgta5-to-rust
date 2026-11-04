@@ -23,7 +23,7 @@ use crate::{imp, syms};
             let t1: u128 = (*ph).read_v128(l0 + 16);
             let t2: u128 = simd::f32x4_pmin(0x00000000000000000000000000000000u128, t1);
             (*ph).write_v128(l0 + 16, t2);
-            let t3: u128 = (*ph).read_splat(l0 + 32, 64);
+            let t3: u128 = (*ph).read_u64(l0 + 32) as u128;
             let t4: i64 = l0;
             l5 = t3;
             let t5: u128 = simd::f32x4_lt(l5, l4);

@@ -84,7 +84,7 @@ use crate::{imp, syms};
             let t23: i64 = (*ph).read_u64(l7 + 8) as i64;
             l1 = (1i64.wrapping_shl(((t23 & 15i64) as u32) & 63));
             if (((l1 & 32808i64) != 0i64) as i32) != 0 {
-                let t24: u128 = (*ph).read_splat(l6, 32);
+                let t24: u128 = (*ph).read_u32(l6) as u128;
                 let t25: u128 = simd::i32x4_extend_low_i16x8_u(t24);
                 let t26: u128 = simd::i32x4_shl(t25, 16i32);
                 let t27: i64 = l0;

@@ -65,14 +65,14 @@ use crate::{imp, syms};
             (*ph).write_u64(l1 + 116, t12 as u64);
             let t13: i32 = (*ph).read_u8(l0 + 33) as i32;
             if ((t13 == 1i32) as i32) != 0 {
-                let t14: u128 = (*ph).read_splat(l1 + 144, 64);
+                let t14: u128 = (*ph).read_u64(l1 + 144) as u128;
                 let t15: u128 = simd::f32x4_div(t14, 0x3faaaaab3faaaaab3faaaaab3faaaaabu128);
                 (*ph).store_lane(l1 + 144, t15, 0, 64);
                 l11 = (l11 / 1.33333337f32);
             }
             let t16: u128 = (*ph).read_v128(l7 + 864);
             l13 = t16;
-            let t17: u128 = (*ph).read_splat(l7 + 824, 64);
+            let t17: u128 = (*ph).read_u64(l7 + 824) as u128;
             l14 = t17;
             (*ph).write_u64(l1 + 100, 0i64 as u64);
             let t18: i64 = syms::f_033398_gfxdrawtextmanager_textparams_textparams(ph, (l1.wrapping_add(40i64)));
@@ -256,7 +256,7 @@ use crate::{imp, syms};
                                         syms::f_033402_gfxdrawtextmanager_gettextextent_char_const_ptr_float_gfxdrawtex(ph, (l3.wrapping_add(8i64)), l5, l8, l10, l0);
                                     break 'L19;
                                     }
-                                    let t99: u128 = (*ph).read_splat(l3 + 8, 64);
+                                    let t99: u128 = (*ph).read_u64(l3 + 8) as u128;
                                     l13 = t99;
                                     (*ph).write_u64(l3 + 16, 0i64 as u64);
                                     let t100: u128 = simd::f32x4_add(l13, 0x0000000000000000000000003a83126fu128);

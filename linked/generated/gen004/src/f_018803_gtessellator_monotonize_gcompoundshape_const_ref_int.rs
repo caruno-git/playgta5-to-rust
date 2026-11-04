@@ -1204,13 +1204,13 @@ use crate::{imp, syms};
             break 'L54;
             }
             (*ph).sp = (l11.wrapping_add(640i64));
-            let t448: u128 = (*ph).read_splat(l6 + 432, 64);
+            let t448: u128 = (*ph).read_u64(l6 + 432) as u128;
             let t449: i64 = l6;
             l46 = t448;
             let t450: u128 = simd::f32x4_neg(l46);
             let t451: u128 = simd::f32x4_lt(l46, 0x00000000000000000000000000000000u128);
             let t452: u128 = simd::v128_bitselect(t450, l46, t451);
-            let t453: u128 = (*ph).read_splat(l6 + 440, 64);
+            let t453: u128 = (*ph).read_u64(l6 + 440) as u128;
             l46 = t453;
             let t454: u128 = simd::f32x4_neg(l46);
             let t455: u128 = simd::f32x4_lt(l46, 0x00000000000000000000000000000000u128);

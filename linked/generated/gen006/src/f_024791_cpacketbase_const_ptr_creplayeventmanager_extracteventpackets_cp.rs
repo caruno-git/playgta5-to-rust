@@ -343,7 +343,7 @@ use crate::{imp, syms};
                         let t82: i64 = l7;
                         l10 = t81;
                         (*ph).write_u8(t82 + 68, (l10 & 1i32) as u8);
-                        let t83: u128 = (*ph).read_splat(l6 + 64, 32);
+                        let t83: u128 = (*ph).read_u32(l6 + 64) as u128;
                         l16 = t83;
                         (*ph).write_u8(l7 + 77, (((l10 as u32).wrapping_shr((5i32 as u32) & 31) as i32) & 1i32) as u8);
                         let t84: u128 = simd::i8x16_replace_lane(l16, 4, ((l10 as u32).wrapping_shr((1i32 as u32) & 31) as i32) as i8);

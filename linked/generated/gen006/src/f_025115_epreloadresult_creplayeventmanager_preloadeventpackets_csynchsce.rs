@@ -113,7 +113,7 @@ use crate::{imp, syms};
                     if (l3 & 1i32) != 0 {
                         let t25: i32 = (*ph).read_u32(l1 + 28) as i32;
                         l3 = t25;
-                        let t26: u128 = (*ph).read_splat(l1 + 36, 64);
+                        let t26: u128 = (*ph).read_u64(l1 + 36) as u128;
                         let t27: u128 = (*ph).load_lane(l1 + 44, t26, 2, 32);
                         (*ph).write_v128(l6, t27);
                         syms::f_022729_audcuttracksynchedscene_setposition_unsigned_int_rage_vec3v_cons(ph, 16146944i64, l3, l6);

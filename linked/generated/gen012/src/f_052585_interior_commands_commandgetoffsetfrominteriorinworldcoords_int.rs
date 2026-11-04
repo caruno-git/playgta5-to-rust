@@ -26,7 +26,7 @@ use crate::{imp, syms};
         let t1: i64 = (*ph).read_u64(23412120i64) as i64;
         let t2: i64 = syms::f_008952_rage_fwbasepool_getat_int(ph, t1, l1);
         l6 = t2;
-        let t3: u128 = (*ph).read_splat(l2, 32);
+        let t3: u128 = (*ph).read_u32(l2) as u128;
         let t4: u128 = (*ph).load_lane(l2 + 8, t3, 1, 32);
         let t5: u128 = (*ph).load_lane(l2 + 16, t4, 2, 32);
         l3 = t5;

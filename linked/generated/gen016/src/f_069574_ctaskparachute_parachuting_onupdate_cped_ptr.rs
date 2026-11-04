@@ -368,9 +368,9 @@ use crate::{imp, syms};
                     }
                     l2 = ((*ph).sp.wrapping_sub(4320i64));
                     (*ph).sp = l2;
-                    let t95: u128 = (*ph).read_splat(0i64 + 25317060, 64);
+                    let t95: u128 = (*ph).read_u64(0i64 + 25317060) as u128;
                     l19 = t95;
-                    let t96: u128 = (*ph).read_splat(0i64 + 25317068, 64);
+                    let t96: u128 = (*ph).read_u64(0i64 + 25317068) as u128;
                     l17 = t96;
                     let t97: f32 = (*ph).read_f32(7392316i64);
                     l35 = t97;

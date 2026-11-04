@@ -304,7 +304,7 @@ use crate::{imp, syms};
                                     'L32: loop {
                                         let t50: u128 = l27;
                                         l9 = (l0.wrapping_add((l10.wrapping_shl((5i64 as u32) & 63))));
-                                        let t51: u128 = (*ph).read_splat((l9.wrapping_add(47688i64)), 32);
+                                        let t51: u128 = (*ph).read_u32((l9.wrapping_add(47688i64))) as u128;
                                         let t52: u128 = (*ph).load_lane((l9.wrapping_add(47720i64)), t51, 1, 32);
                                         let t53: u128 = (*ph).load_lane((l9.wrapping_add(47752i64)), t52, 2, 32);
                                         let t54: u128 = (*ph).load_lane((l9.wrapping_add(47784i64)), t53, 3, 32);
@@ -360,7 +360,7 @@ use crate::{imp, syms};
                                     'L37: loop {
                                         let t69: u128 = l27;
                                         l9 = (l0.wrapping_add((l10.wrapping_shl((5i64 as u32) & 63))));
-                                        let t70: u128 = (*ph).read_splat((l9.wrapping_add(47688i64)), 32);
+                                        let t70: u128 = (*ph).read_u32((l9.wrapping_add(47688i64))) as u128;
                                         let t71: u128 = (*ph).load_lane((l9.wrapping_add(47720i64)), t70, 1, 32);
                                         let t72: u128 = (*ph).load_lane((l9.wrapping_add(47752i64)), t71, 2, 32);
                                         let t73: u128 = (*ph).load_lane((l9.wrapping_add(47784i64)), t72, 3, 32);
@@ -457,7 +457,7 @@ use crate::{imp, syms};
                             let t95: u128 = l27;
                             let t96: u128 = l28;
                             l9 = (l0.wrapping_add((l10.wrapping_shl((5i64 as u32) & 63))));
-                            let t97: u128 = (*ph).read_splat((l9.wrapping_add(47688i64)), 32);
+                            let t97: u128 = (*ph).read_u32((l9.wrapping_add(47688i64))) as u128;
                             let t98: u128 = (*ph).load_lane((l9.wrapping_add(47720i64)), t97, 1, 32);
                             let t99: u128 = (*ph).load_lane((l9.wrapping_add(47752i64)), t98, 2, 32);
                             let t100: u128 = (*ph).load_lane((l9.wrapping_add(47784i64)), t99, 3, 32);

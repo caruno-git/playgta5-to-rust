@@ -929,7 +929,7 @@ use crate::{imp, syms};
                     if (((t304.wrapping_shl((16i32 as u32) & 31)) != 196608i32) as i32) != 0 {
                         break 'L48;
                     }
-                    let t305: u128 = (*ph).read_splat(l1 + 5372, 64);
+                    let t305: u128 = (*ph).read_u64(l1 + 5372) as u128;
                     let t306: u128 = simd::v128_or(t305, 0x00000000000000000000040000000800u128);
                     (*ph).store_lane(l1 + 5372, t306, 0, 64);
                     let t307: f32 = syms::f_070002_ctaskjump_getjumplandthreshold_const(ph, l0);

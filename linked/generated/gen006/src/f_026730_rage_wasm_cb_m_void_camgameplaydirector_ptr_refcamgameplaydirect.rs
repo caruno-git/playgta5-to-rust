@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_026730_rage_wasm_cb_m_void_camgameplaydirector_ptr_refcamgameplaydirect(ph: *mut Phantom, mut l0: i64, mut l1: i64, mut l2: i64) {
         (*ph).write_u16(l0 + 1736, 257i32 as u16);
         (*ph).write_u32(l0 + 1680, 1065353216i32 as u32);
-        let t1: u128 = (*ph).read_splat(l0 + 2076, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 2076) as u128;
         let t2: u128 = simd::f32x4_mul(t1, 0x3c8efa353c8efa353c8efa353c8efa35u128);
         (*ph).store_lane(l0 + 1672, t2, 0, 64);
     }

@@ -350,7 +350,7 @@ use crate::{imp, syms};
                                         (*ph).write_f32(l15 + 52, (l29 + ((l17 * l27) + ((l19 * l21) + (l18 * l24)))));
                                         (*ph).write_f32(l15 + 48, (l28 + ((l17 * l26) + ((l19 * l20) + (l18 * l23)))));
                                         syms::f_003160_rage_matrix34_toquaternion_rage_quaternion_ref_const(ph, l15, (l15.wrapping_sub((-64i64))));
-                                        let t149: u128 = (*ph).read_splat(l15 + 68, 64);
+                                        let t149: u128 = (*ph).read_u64(l15 + 68) as u128;
                                         let t150: i64 = l15;
                                         l9 = t149;
                                         let t151: u128 = (*ph).read_v128(l15 + 64);

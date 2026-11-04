@@ -97,7 +97,7 @@ use crate::{imp, syms};
                     let t29: u128 = simd::i8x16_replace_lane(t27, 10, t28 as i8);
                     let t30: i32 = simd::i8x16_extract_lane_u(l4, 12) as i32;
                     let t31: u128 = simd::i8x16_replace_lane(t29, 11, t30 as i8);
-                    let t32: u128 = (*ph).read_splat(l0 + 49, 64);
+                    let t32: u128 = (*ph).read_u64(l0 + 49) as u128;
                     let t33: u128 = (*ph).load_lane(l0 + 57, t32, 2, 32);
                     l4 = t33;
                     let t34: i32 = simd::i8x16_extract_lane_u(l4, 0) as i32;

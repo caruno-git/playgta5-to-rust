@@ -31,7 +31,7 @@ use crate::{imp, syms};
             (*ph).write_v128(l6, t2);
             let t3: f32 = (*ph).read_f32(l6);
             l3 = t3;
-            let t4: u128 = (*ph).read_splat(l6 + 4, 64);
+            let t4: u128 = (*ph).read_u64(l6 + 4) as u128;
             l7 = t4;
             (*ph).write_u32(l0 + 12, 0i32 as u32);
             let t5: u128 = simd::f32x4_splat(l3 as f32);

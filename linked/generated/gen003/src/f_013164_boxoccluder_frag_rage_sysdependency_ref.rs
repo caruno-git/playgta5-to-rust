@@ -41,7 +41,7 @@ use crate::{imp, syms};
         let mut l22: i32 = 0;
         l4 = ((*ph).sp.wrapping_sub(128i64));
         (*ph).sp = l4;
-        let t1: u128 = (*ph).read_splat(l0 + 40, 32);
+        let t1: u128 = (*ph).read_u32(l0 + 40) as u128;
         l11 = t1;
         let t2: i64 = (*ph).read_u64(l0) as i64;
         l3 = t2;

@@ -2294,7 +2294,7 @@ use crate::{imp, syms};
                                         (*ph).write_v128(t548, l52);
                                         if l8 != 0 {
                                             'L201: loop {
-                                                let t549: u128 = (*ph).read_splat(l4, 64);
+                                                let t549: u128 = (*ph).read_u64(l4) as u128;
                                                 let t550: i64 = l21;
                                                 let t551: i64 = l4;
                                                 l49 = t549;
@@ -2336,7 +2336,7 @@ use crate::{imp, syms};
                                         l8 = (l38.wrapping_shl((1i32 as u32) & 31));
                                         l4 = (l21.wrapping_add(32i64));
                                         'L203: loop {
-                                            let t562: u128 = (*ph).read_splat(l4, 64);
+                                            let t562: u128 = (*ph).read_u64(l4) as u128;
                                             let t563: i64 = l21;
                                             let t564: i64 = l4;
                                             l49 = t562;

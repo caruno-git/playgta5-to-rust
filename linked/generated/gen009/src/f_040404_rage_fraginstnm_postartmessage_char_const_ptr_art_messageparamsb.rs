@@ -9091,7 +9091,7 @@ use crate::{imp, syms};
                                 l28 = (l28 / l25);
                                 let t1784: f32 = (*ph).read_f32(l11 + 8);
                                 l25 = t1784;
-                                let t1785: u128 = (*ph).read_splat(l11, 64);
+                                let t1785: u128 = (*ph).read_u64(l11) as u128;
                                 l51 = t1785;
                                 'L941: loop {
                                     let t1786: i32 = (*ph).read_u8(l13) as i32;

@@ -53,7 +53,7 @@ use crate::{imp, syms};
             if l7 != 0 {
                 break 'L1;
             }
-            let t1: u128 = (*ph).read_splat(l6, 64);
+            let t1: u128 = (*ph).read_u64(l6) as u128;
             l28 = t1;
             if (((l2 as i32) > (0i32 as i32)) as i32) != 0 {
                 let t2: i64 = (*ph).read_u64(l0 + 8) as i64;
@@ -69,7 +69,7 @@ use crate::{imp, syms};
                     let t6: u128 = l28;
                     let t7: i64 = l9;
                     l11 = (l5.wrapping_shl((2i64 as u32) & 63));
-                    let t8: u128 = (*ph).read_splat((l11.wrapping_add(l12)), 32);
+                    let t8: u128 = (*ph).read_u32((l11.wrapping_add(l12))) as u128;
                     let t9: u128 = (*ph).load_lane((t7.wrapping_add(l11)), t8, 1, 32);
                     let t10: u128 = simd::f32x4_add(t9, 0x0da242600da242600da242600da24260u128);
                     let t11: u128 = simd::f32x4_add(t6, t10);

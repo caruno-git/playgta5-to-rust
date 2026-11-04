@@ -54,15 +54,15 @@ use crate::{imp, syms};
             'L4: loop {
                 let t2: u128 = l5;
                 l3 = (l1.wrapping_add(l2));
-                let t3: u128 = (*ph).read_splat(l3, 32);
+                let t3: u128 = (*ph).read_u32(l3) as u128;
                 let t4: u128 = simd::i16x8_extend_low_i8x16_u(t3);
                 let t5: u128 = simd::i32x4_extend_low_i16x8_u(t4);
                 let t6: u128 = simd::v128_or(t2, t5);
-                let t7: u128 = (*ph).read_splat(l3 + 4, 32);
+                let t7: u128 = (*ph).read_u32(l3 + 4) as u128;
                 let t8: u128 = simd::i16x8_extend_low_i8x16_u(t7);
                 let t9: u128 = simd::i32x4_extend_low_i16x8_u(t8);
                 let t10: u128 = simd::v128_or(t6, t9);
-                let t11: u128 = (*ph).read_splat(l3 + 8, 32);
+                let t11: u128 = (*ph).read_u32(l3 + 8) as u128;
                 let t12: u128 = simd::i16x8_extend_low_i8x16_u(t11);
                 let t13: u128 = simd::i32x4_extend_low_i16x8_u(t12);
                 let t14: u128 = simd::v128_or(t10, t13);

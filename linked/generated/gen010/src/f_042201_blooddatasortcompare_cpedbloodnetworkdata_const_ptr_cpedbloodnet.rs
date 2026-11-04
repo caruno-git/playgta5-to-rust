@@ -31,7 +31,7 @@ use crate::{imp, syms};
             if l3 != 0 {
                 r3 = l4;
             } else {
-                let t4: u128 = (*ph).read_splat(l1, 32);
+                let t4: u128 = (*ph).read_u32(l1) as u128;
                 let t5: u128 = (*ph).load_lane(l0, t4, 1, 32);
                 let t6: u128 = simd::f32x4_add(t5, 0xbf400000bf400000bf400000bf400000u128);
                 l2 = t6;

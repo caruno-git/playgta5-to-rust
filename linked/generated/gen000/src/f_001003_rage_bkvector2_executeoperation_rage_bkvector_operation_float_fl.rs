@@ -21,8 +21,8 @@ use crate::{imp, syms};
         if ((l1 == 27i32) as i32) != 0 {
             let t1: i64 = (*ph).read_u64(l0 + 104) as i64;
             l0 = t1;
-            let t2: u128 = (*ph).read_splat(l3, 64);
-            let t3: u128 = (*ph).read_splat(l0, 64);
+            let t2: u128 = (*ph).read_u64(l3) as u128;
+            let t3: u128 = (*ph).read_u64(l0) as u128;
             let t4: i64 = l0;
             l4 = t3;
             let t5: u128 = simd::f32x4_sub(t2, l4);

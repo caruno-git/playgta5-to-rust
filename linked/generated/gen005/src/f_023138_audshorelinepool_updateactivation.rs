@@ -220,7 +220,7 @@ use crate::{imp, syms};
                         l1 = ((*ph).sp.wrapping_sub(352i64));
                         (*ph).sp = l1;
                         let t51: u128 = (*ph).read_v128(l7);
-                        let t52: u128 = (*ph).read_splat(l0 + 40, 64);
+                        let t52: u128 = (*ph).read_u64(l0 + 40) as u128;
                         let t53: u128 = (*ph).read_v128(l0 + 48);
                         let t54: u128 = simd::f32x4_add(t52, t53);
                         let t55: u128 = simd::f32x4_mul(t54, 0xbf000000bf000000bf000000bf000000u128);

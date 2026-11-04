@@ -156,7 +156,7 @@ use crate::{imp, syms};
                                                                 }
                                                             break 'L14;
                                                             }
-                                                            let t31: u128 = (*ph).read_splat(l7 + 424, 64);
+                                                            let t31: u128 = (*ph).read_u64(l7 + 424) as u128;
                                                             l63 = t31;
                                                             let t32: i64 = (*ph).read_u64(l1 + 8) as i64;
                                                             let t33: i64 = l5;
@@ -202,7 +202,7 @@ use crate::{imp, syms};
                                                             (*ph).write_v128(l5 + 80, t54);
                                                             let t55: u128 = simd::i8x16_shuffle_static::<4,5,6,7,16,17,18,19,0,1,2,3,0,1,2,3>(l63, l64);
                                                             let t56: u128 = simd::f32x4_mul(t55, 0x3f0000003f0000003f0000003f000000u128);
-                                                            let t57: u128 = (*ph).read_splat(l5 + 84, 64);
+                                                            let t57: u128 = (*ph).read_u64(l5 + 84) as u128;
                                                             let t58: u128 = simd::f32x4_add(t56, t57);
                                                             (*ph).store_lane(l5 + 84, t58, 0, 64);
                                                             syms::f_030531_cdtvstate_render_rage_grctexture_const_ptr_int_rage_fwbox2d_cons(ph, l7, l8, 10i32, (l5.wrapping_add(80i64)), l3);
@@ -363,7 +363,7 @@ use crate::{imp, syms};
                                                     break 'L6;
                                                 break 'L11;
                                                 }
-                                                let t85: u128 = (*ph).read_splat(l7 + 424, 64);
+                                                let t85: u128 = (*ph).read_u64(l7 + 424) as u128;
                                                 l63 = t85;
                                                 let t86: i64 = (*ph).read_u64(l1 + 8) as i64;
                                                 let t87: i64 = l5;
@@ -390,7 +390,7 @@ use crate::{imp, syms};
                                                 let t99: u128 = simd::f32x4_neg(l63);
                                                 let t100: u128 = simd::i8x16_shuffle_static::<20,21,22,23,0,1,2,3,0,1,2,3,0,1,2,3>(t99, l63);
                                                 let t101: u128 = simd::f32x4_mul(t100, 0x3f0000003f0000003f0000003f000000u128);
-                                                let t102: u128 = (*ph).read_splat(l5 + 84, 64);
+                                                let t102: u128 = (*ph).read_u64(l5 + 84) as u128;
                                                 let t103: u128 = simd::f32x4_add(t101, t102);
                                                 (*ph).store_lane(l5 + 84, t103, 0, 64);
                                                 syms::f_030531_cdtvstate_render_rage_grctexture_const_ptr_int_rage_fwbox2d_cons(ph, l7, l8, 10i32, (l5.wrapping_add(80i64)), l3);
@@ -427,7 +427,7 @@ use crate::{imp, syms};
                                                             let t109: i64 = l5;
                                                             l63 = t108;
                                                             let t110: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7>(l63, l63);
-                                                            let t111: u128 = (*ph).read_splat(l7 + 424, 64);
+                                                            let t111: u128 = (*ph).read_u64(l7 + 424) as u128;
                                                             let t112: u128 = simd::f32x4_sub(t111, l63);
                                                             let t113: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7>(t112, l63);
                                                             let t114: u128 = simd::f32x4_replace_lane(l64, 0, ((l23 as u32) as f32));
@@ -768,7 +768,7 @@ use crate::{imp, syms};
                 'L45: loop {
                     let t225: i32 = (*ph).read_u8(l4 + 916) as i32;
                     if ((t225 == 1i32) as i32) != 0 {
-                        let t226: u128 = (*ph).read_splat(l4 + 904, 32);
+                        let t226: u128 = (*ph).read_u32(l4 + 904) as u128;
                         let t227: u128 = (*ph).load_lane(l4 + 900, t226, 1, 32);
                         l35 = (l35 / (l35 - l36));
                         let t228: u128 = simd::f32x4_replace_lane(t227, 2, (l35 * (-l36)));
@@ -1298,7 +1298,7 @@ use crate::{imp, syms};
                     break 'L66;
                 break 'L69;
                 }
-                let t450: u128 = (*ph).read_splat(0i64 + 12622840, 64);
+                let t450: u128 = (*ph).read_u64(0i64 + 12622840) as u128;
                 l63 = t450;
                 let t451: u128 = (*ph).read_v128(12622816i64);
                 l64 = t451;
@@ -1824,7 +1824,7 @@ use crate::{imp, syms};
                         (*ph).write_u64(l4 + 232, 1144258560i64 as u64);
                         (*ph).write_u64(l4 + 208, 4256296i64 as u64);
                         (*ph).write_v128(l4 + 216, 0x41a000004248000042c800003fc00000u128);
-                        let t656: u128 = (*ph).read_splat(0i64 + 15939700, 32);
+                        let t656: u128 = (*ph).read_u32(0i64 + 15939700) as u128;
                         let t657: u128 = (*ph).load_lane(0i64 + 15939704, t656, 1, 32);
                         let t658: i64 = l4;
                         l64 = t657;
@@ -4565,7 +4565,7 @@ use crate::{imp, syms};
                 if ((l2 == 0) as i32) != 0 {
                     break 'L263;
                 }
-                let t1563: u128 = (*ph).read_splat(l3, 32);
+                let t1563: u128 = (*ph).read_u32(l3) as u128;
                 let t1564: u128 = (*ph).load_lane(l4 + 4, t1563, 1, 32);
                 let t1565: u128 = (*ph).read_splat(l2, 32);
                 let t1566: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,4,5,6,7,16,17,18,19>(t1564, t1565);
@@ -7477,7 +7477,7 @@ use crate::{imp, syms};
                 let t2502: i64 = syms::f_007036_rage_audmetadatamanager_getobject_verify_unsigned_int_unsigned_i(ph, 15584440i64, t2501, 35i32);
                 l1 = t2502;
                 if ((l1 != 0i64) as i32) != 0 {
-                    let t2503: u128 = (*ph).read_splat(l1 + 16, 64);
+                    let t2503: u128 = (*ph).read_u64(l1 + 16) as u128;
                     let t2504: i64 = l2;
                     let t2505: i64 = l1;
                     l63 = t2503;

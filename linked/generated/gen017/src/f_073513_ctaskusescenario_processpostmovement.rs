@@ -867,7 +867,7 @@ use crate::{imp, syms};
                             (*ph).write_v128(l1, t223);
                         break 'L51;
                         }
-                        let t224: u128 = (*ph).read_splat(l7 + 4, 64);
+                        let t224: u128 = (*ph).read_u64(l7 + 4) as u128;
                         let t225: i64 = l7;
                         l29 = t224;
                         let t226: u128 = (*ph).read_v128(l7);

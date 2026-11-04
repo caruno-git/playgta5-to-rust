@@ -39,7 +39,7 @@ use crate::{imp, syms};
         l5 = 1i32;
         let t12: i32 = (*ph).read_u32(l3 + 560) as i32;
         (*ph).write_u32(l3 + 560, ((t12 as u32).wrapping_shr((1i32 as u32) & 31) as i32) as u32);
-        let t13: u128 = (*ph).read_splat(l3 + 564, 64);
+        let t13: u128 = (*ph).read_u64(l3 + 564) as u128;
         let t14: u128 = simd::i32x4_add(t13, 0x00000001000000010000000100000001u128);
         (*ph).store_lane(l3 + 564, t14, 0, 64);
         let t15: i32 = (*ph).read_u8(l3 + 657) as i32;

@@ -1,0 +1,10 @@
+{
+  "author": "carunodev @stfu",
+  "sourceCommit": "ea39fd0baaf7bab7d3a0857ec948585314c54fc8",
+  "sourcePath": "linked/generated/gen003/src/f_012912_rage_pack_core32_float_vector_4_ref_float_vector_4.rs",
+  "fixture": "f_012912_before_zero_load_fix.rs",
+  "bytes": 6346,
+  "sha256": "1a3cc154788f9cc87329b00dc4d109efe0ac7fa4e819c6671af476cff4ec9ae5",
+  "historicalCrlfSha256": "ef3109531791d34c735fed5a1f60290873f5020979f76d5d2e987fbc2d87a914",
+  "scope": "Exact pre-fix translated Pack_Core32 source; no original game asset or binary required. The native test substitutes only the symbol name in its temporary copy so both versions can coexist."
+}

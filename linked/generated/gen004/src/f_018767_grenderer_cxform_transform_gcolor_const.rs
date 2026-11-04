@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_018767_grenderer_cxform_transform_gcolor_const(ph: *mut Phantom, mut l0: i64, mut l1: i64, mut l2: i64) {
         let mut l3: u128 = 0;
         let mut l4: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l2, 32);
+        let t1: u128 = (*ph).read_u32(l2) as u128;
         let t2: u128 = simd::i16x8_extend_low_i8x16_u(t1);
         let t3: u128 = simd::i32x4_extend_low_i16x8_u(t2);
         let t4: u128 = simd::f32x4_convert_i32x4_s(t3);

@@ -61,7 +61,7 @@ use crate::{imp, syms};
         (*ph).store_lane(t2 + 40, l10, 2, 32);
         (*ph).store_lane(l0 + 36, l10, 1, 32);
         (*ph).store_lane(l0 + 32, l10, 0, 32);
-        let t23: u128 = (*ph).read_splat(l0 + 20, 64);
+        let t23: u128 = (*ph).read_u64(l0 + 20) as u128;
         let t24: i64 = l0;
         l11 = t23;
         let t25: f32 = simd::f32x4_extract_lane(l11, 0) as f32;
@@ -126,7 +126,7 @@ use crate::{imp, syms};
                     l2 = (l2 * l4);
                     r41 = (l5 * l4); break 'L3;
                 }
-                let t50: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+                let t50: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
                 let t51: u128 = l11;
                 l10 = t50;
                 let t52: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l10, l10);

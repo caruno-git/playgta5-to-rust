@@ -126,7 +126,7 @@ use crate::{imp, syms};
             if ((l3 < 9.99999997e-07f32) as i32) != 0 {
                 break 'L6;
             }
-            let t42: u128 = (*ph).read_splat(l0 + 712, 32);
+            let t42: u128 = (*ph).read_u32(l0 + 712) as u128;
             let t43: u128 = (*ph).load_lane(l0 + 728, t42, 1, 32);
             let t44: u128 = simd::f32x4_splat(l4 as f32);
             let t45: u128 = simd::f32x4_mul(t43, t44);

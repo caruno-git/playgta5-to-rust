@@ -215,7 +215,7 @@ use crate::{imp, syms};
         syms::f_075989_ctaskvehiclefsm_untransformfromworldspacetorelative_cvehicle_con(ph, l1, (l15.wrapping_add(16i64)), l15, (l15.wrapping_add(48i64)), (l15.wrapping_add(32i64)));
         let t135: u128 = (*ph).read_v128(l15 + 48);
         (*ph).write_v128(l0 + 368, t135);
-        let t136: u128 = (*ph).read_splat(l0 + 296, 64);
+        let t136: u128 = (*ph).read_u64(l0 + 296) as u128;
         let t137: u128 = simd::v128_or(t136, 0x00000000000000000000200000000040u128);
         (*ph).store_lane(l0 + 296, t137, 0, 64);
         (*ph).sp = (l15.wrapping_sub((-64i64)));

@@ -546,7 +546,7 @@ use crate::{imp, syms};
                     let t203: i32 = simd::i32x4_extract_lane(l4, 2) as i32;
                     let t204: i32 = simd::i32x4_extract_lane(l4, 1) as i32;
                     let t205: i32 = simd::i32x4_extract_lane(l4, 0) as i32;
-                    let t206: u128 = (*ph).read_splat((l0.wrapping_add((((t205 as u32) as i64).wrapping_shl((2i64 as u32) & 63)))), 32);
+                    let t206: u128 = (*ph).read_u32((l0.wrapping_add((((t205 as u32) as i64).wrapping_shl((2i64 as u32) & 63))))) as u128;
                     let t207: u128 = (*ph).load_lane((l0.wrapping_add((((t204 as u32) as i64).wrapping_shl((2i64 as u32) & 63)))), t206, 1, 32);
                     let t208: u128 = (*ph).load_lane((l0.wrapping_add((((t203 as u32) as i64).wrapping_shl((2i64 as u32) & 63)))), t207, 2, 32);
                     let t209: u128 = (*ph).load_lane((t149.wrapping_add((((t202 as u32) as i64).wrapping_shl((2i64 as u32) & 63)))), t208, 3, 32);

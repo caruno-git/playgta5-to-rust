@@ -1170,7 +1170,7 @@ use crate::{imp, syms};
                                                     l8 = 0i64;
                                                     'L108: loop {
                                                         l1 = (l3.wrapping_add(l8));
-                                                        let t223: u128 = (*ph).read_splat(((l2.wrapping_add(224i64)).wrapping_add(l8)), 64);
+                                                        let t223: u128 = (*ph).read_u64(((l2.wrapping_add(224i64)).wrapping_add(l8))) as u128;
                                                         l33 = t223;
                                                         let t224: i64 = simd::i64x2_extract_lane(l37, 0) as i64;
                                                         l10 = t224;

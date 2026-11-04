@@ -185,7 +185,7 @@ use crate::{imp, syms};
                                                 if ((l31 != (((l30 as u32).wrapping_shr((3i32 as u32) & 31) as i32) & 7i32)) as i32) != 0 {
                                                     break 'L18;
                                                 }
-                                                let t31: u128 = (*ph).read_splat(l25 + 8, 64);
+                                                let t31: u128 = (*ph).read_u64(l25 + 8) as u128;
                                                 l27 = t31;
                                                 let t32: u128 = simd::i16x8_shl(l27, 13i32);
                                                 let t33: u128 = simd::v128_and(l27, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);

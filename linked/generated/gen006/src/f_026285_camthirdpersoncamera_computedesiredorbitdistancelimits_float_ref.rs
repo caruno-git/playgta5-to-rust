@@ -29,7 +29,7 @@ use crate::{imp, syms};
         let mut l15: u128 = 0;
         l12 = ((*ph).sp.wrapping_sub(32i64));
         (*ph).sp = l12;
-        let t1: u128 = (*ph).read_splat(l0 + 712, 32);
+        let t1: u128 = (*ph).read_u32(l0 + 712) as u128;
         let t2: u128 = (*ph).load_lane(l0 + 728, t1, 1, 32);
         let t3: f32 = (*ph).read_f32(l0 + 920);
         let t4: f32 = (*ph).read_f32(l0 + 760);

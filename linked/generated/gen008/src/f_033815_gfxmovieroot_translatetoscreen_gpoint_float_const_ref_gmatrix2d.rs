@@ -66,7 +66,7 @@ use crate::{imp, syms};
         (*ph).write_f32(l4 + 36, t9);
         syms::f_018482_gmatrix2d_prepend_gmatrix2d_const_ref(ph, (l4.wrapping_add(16i64)), l3);
         syms::f_018482_gmatrix2d_prepend_gmatrix2d_const_ref(ph, (l4.wrapping_add(16i64)), (l4.wrapping_add(40i64)));
-        let t10: u128 = (*ph).read_splat(l2, 64);
+        let t10: u128 = (*ph).read_u64(l2) as u128;
         let t11: u128 = simd::f32x4_mul(t10, 0x41a0000041a0000041a0000041a00000u128);
         (*ph).store_lane(l4 + 8, t11, 0, 64);
         syms::f_018484_gmatrix2d_transform_gpoint_float_ptr_gpoint_float_const_ref_cons(ph, (l4.wrapping_add(16i64)), l0, (l4.wrapping_add(8i64)));

@@ -337,7 +337,7 @@ use crate::{imp, syms};
                         let t80: i32 = (*ph).read_u32(l1 + 4) as i32;
                         l11 = t80;
                         if (((l11 & 64i32) == 0) as i32) != 0 {
-                            let t81: u128 = (*ph).read_splat(l1 + 8, 64);
+                            let t81: u128 = (*ph).read_u64(l1 + 8) as u128;
                             l24 = t81;
                             let t82: u128 = simd::i16x8_shl(l24, 13i32);
                             let t83: u128 = simd::v128_and(l24, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);

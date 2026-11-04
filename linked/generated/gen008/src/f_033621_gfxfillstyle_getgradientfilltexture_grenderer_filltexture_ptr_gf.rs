@@ -126,7 +126,7 @@ use crate::{imp, syms};
             syms::f_018481_gmatrix2d_setidentity(ph, l2);
             let t43: i32 = (*ph).read_u8(l0) as i32;
             l9 = t43;
-            let t44: u128 = (*ph).read_splat(l1 + 8, 64);
+            let t44: u128 = (*ph).read_u64(l1 + 8) as u128;
             let t45: i64 = l1;
             l10 = 0x38000000380000003800000038000000u128;
             let t46: u128 = simd::f32x4_mul(t44, l10);

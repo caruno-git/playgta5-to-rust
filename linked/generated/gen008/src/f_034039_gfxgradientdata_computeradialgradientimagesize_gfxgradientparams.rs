@@ -63,9 +63,9 @@ use crate::{imp, syms};
                 l7 = t7;
                 l2 = (((l7 as u32) as f32) - ((l9 as u32) as f32));
                 if ((l2 > 0.0f32) as i32) != 0 {
-                    let t8: u128 = (*ph).read_splat((l12.wrapping_sub(4i64)), 32);
+                    let t8: u128 = (*ph).read_u32((l12.wrapping_sub(4i64))) as u128;
                     l10 = t8;
-                    let t9: u128 = (*ph).read_splat(l12 + 4, 32);
+                    let t9: u128 = (*ph).read_u32(l12 + 4) as u128;
                     let t10: u128 = l10;
                     l11 = t9;
                     let t11: u128 = simd::i8x16_max_u(t10, l11);

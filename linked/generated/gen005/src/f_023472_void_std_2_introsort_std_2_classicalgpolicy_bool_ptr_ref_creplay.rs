@@ -542,7 +542,7 @@ use crate::{imp, syms};
                                         'L35: loop {
                                             l9 = l0;
                                             l8 = (((l9.wrapping_sub(2i64)) as u64).wrapping_shr((1i64 as u32) & 63) as i64);
-                                            let t175: u128 = (*ph).read_splat(l5 + 16, 64);
+                                            let t175: u128 = (*ph).read_u64(l5 + 16) as u128;
                                             l16 = t175;
                                             let t176: i32 = simd::i32x4_extract_lane(l16, 1) as i32;
                                             l17 = t176;

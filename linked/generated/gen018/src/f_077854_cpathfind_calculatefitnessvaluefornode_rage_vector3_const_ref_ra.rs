@@ -105,7 +105,7 @@ use crate::{imp, syms};
                                 let t25: i32 = (*ph).read_u32(l5 + 4) as i32;
                                 l10 = t25;
                                 (*ph).write_v128(l3 + 32, 0x00000000000000000000000000000000u128);
-                                let t26: u128 = (*ph).read_splat(l4 + 28, 32);
+                                let t26: u128 = (*ph).read_u32(l4 + 28) as u128;
                                 let t27: i64 = l3;
                                 l14 = t26;
                                 let t28: i32 = simd::i16x8_extract_lane_s(l14, 0) as i32;

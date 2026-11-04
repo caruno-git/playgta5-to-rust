@@ -49,7 +49,7 @@ use crate::{imp, syms};
         syms::f_009646_rage_grcviewport_transform_rage_vec3v_const_ref_float_ref_float(ph, l0, l1, (l5.wrapping_add(12i64)), (l5.wrapping_add(8i64)));
         let t8: u128 = (*ph).read_v128(l0 + 864);
         l7 = t8;
-        let t9: u128 = (*ph).read_splat(l0 + 824, 64);
+        let t9: u128 = (*ph).read_u64(l0 + 824) as u128;
         l8 = t9;
         let t10: f32 = (*ph).read_f32(l5 + 8);
         l2 = t10;

@@ -60,7 +60,7 @@ use crate::{imp, syms};
                 syms::f_018496_gmatrix3d_setidentity(ph, (l2.wrapping_add(144i64)));
                 syms::f_018496_gmatrix3d_setidentity(ph, (l2.wrapping_add(208i64)));
                 (*ph).write_u16(l2 + 272, 3i32 as u16);
-                let t14: u128 = (*ph).read_splat(l1, 64);
+                let t14: u128 = (*ph).read_u64(l1) as u128;
                 let t15: u128 = simd::f64x2_promote_low_f32x4(t14);
                 (*ph).write_v128(l2 + 48, t15);
                 let t16: i64 = (*ph).read_u64(l0 + 144) as i64;

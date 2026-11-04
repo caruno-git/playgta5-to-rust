@@ -76,7 +76,7 @@ use crate::{imp, syms};
                         let t10: i64 = (*ph).read_u64(l1 + 32) as i64;
                         l11 = t10;
                         if ((l11 != 0i64) as i32) != 0 {
-                            let t11: u128 = (*ph).read_splat(l1 + 8, 64);
+                            let t11: u128 = (*ph).read_u64(l1 + 8) as u128;
                             l9 = t11;
                             let t12: u128 = simd::i16x8_shl(l9, 13i32);
                             let t13: u128 = simd::v128_and(l9, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);

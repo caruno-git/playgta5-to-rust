@@ -18,7 +18,7 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_027031_camtablegamescamera_update(ph: *mut Phantom, mut l0: i64) -> i32 {
         let t1: i64 = (*ph).read_u64(l0 + 1240) as i64;
-        let t2: u128 = (*ph).read_splat(t1 + 852, 64);
+        let t2: u128 = (*ph).read_u64(t1 + 852) as u128;
         let t3: u128 = simd::f32x4_mul(t2, 0x3c8efa353c8efa353c8efa353c8efa35u128);
         (*ph).store_lane(l0 + 1104, t3, 0, 64);
         let t4: i32 = syms::f_026743_camthirdpersoncamera_update(ph, l0);

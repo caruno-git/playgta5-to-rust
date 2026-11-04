@@ -8233,7 +8233,7 @@ use crate::{imp, syms};
                                         l66 = 0i32;
                                         break 'L418;
                                     }
-                                    let t3216: u128 = (*ph).read_splat(l0 + 100, 64);
+                                    let t3216: u128 = (*ph).read_u64(l0 + 100) as u128;
                                     let t3217: i64 = l0;
                                     l55 = t3216;
                                     let t3218: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l55, 0x00000000000000000000000000000000u128);
@@ -8242,7 +8242,7 @@ use crate::{imp, syms};
                                     l56 = t3220;
                                     let t3221: f32 = simd::f32x4_extract_lane(l56, 1) as f32;
                                     l27 = t3221;
-                                    let t3222: u128 = (*ph).read_splat(l0 + 132, 64);
+                                    let t3222: u128 = (*ph).read_u64(l0 + 132) as u128;
                                     let t3223: f32 = l27;
                                     l54 = t3222;
                                     let t3224: f32 = simd::f32x4_extract_lane(l54, 0) as f32;

@@ -147,8 +147,8 @@ use crate::{imp, syms};
         syms::f_009612_rage_grcviewport_setwindow_int_int_int_int_float_float(ph, t58, 0i32, 0i32, t60, l2, 0.0f32, 1.0f32);
         let t61: i32 = (*ph).read_u8(l3 + 916) as i32;
         if ((t61 == 1i32) as i32) != 0 {
-            let t62: u128 = (*ph).read_splat(l3 + 888, 64);
-            let t63: u128 = (*ph).read_splat(l1 + 888, 64);
+            let t62: u128 = (*ph).read_u64(l3 + 888) as u128;
+            let t63: u128 = (*ph).read_u64(l1 + 888) as u128;
             let t64: u128 = simd::f32x4_add(t62, t63);
             (*ph).store_lane(l3 + 888, t64, 0, 64);
             syms::f_009617_rage_grcviewport_regenerateperspective(ph, l3);

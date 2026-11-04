@@ -953,7 +953,7 @@ use crate::{imp, syms};
                     let t287: i32 = (*ph).read_u8(l8 + 40) as i32;
                     l4 = t287;
                     if l4 != 0 {
-                        let t288: u128 = (*ph).read_splat(l0 + 340, 32);
+                        let t288: u128 = (*ph).read_u32(l0 + 340) as u128;
                         let t289: u128 = simd::i16x8_extend_low_i8x16_u(t288);
                         let t290: u128 = simd::i32x4_extend_low_i16x8_u(t289);
                         let t291: u128 = simd::f32x4_convert_i32x4_s(t290);

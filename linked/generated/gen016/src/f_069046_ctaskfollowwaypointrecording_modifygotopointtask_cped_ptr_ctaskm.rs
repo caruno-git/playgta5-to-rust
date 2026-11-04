@@ -48,7 +48,7 @@ use crate::{imp, syms};
         if ((t8 == 0) as i32) != 0 {
             let t9: u128 = (*ph).read_v128(l0 + 160);
             l5 = t9;
-            let t10: u128 = (*ph).read_splat(l4, 64);
+            let t10: u128 = (*ph).read_u64(l4) as u128;
             l6 = t10;
             let t11: f32 = (*ph).read_f32(l4 + 8);
             let t12: f32 = (*ph).read_f32(l0 + 168);

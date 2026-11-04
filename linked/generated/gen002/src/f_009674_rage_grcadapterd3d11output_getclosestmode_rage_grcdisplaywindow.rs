@@ -116,14 +116,14 @@ use crate::{imp, syms};
                     if (((l6 as i32) >= (0i32 as i32)) as i32) != 0 {
                         break 'L1;
                     }
-                    let t26: u128 = (*ph).read_splat(l1, 64);
+                    let t26: u128 = (*ph).read_u64(l1) as u128;
                     l13 = t26;
                     let t27: i64 = (*ph).read_u64(l0 + 8) as i64;
                     l3 = t27;
                     l11 = 0xffffffffffffffffffffffffffffffffu128;
                     l2 = 0i64;
                     'L8: loop {
-                        let t28: u128 = (*ph).read_splat((l3.wrapping_add((l2.wrapping_mul(28i64)))), 64);
+                        let t28: u128 = (*ph).read_u64((l3.wrapping_add((l2.wrapping_mul(28i64))))) as u128;
                         let t29: u128 = simd::i32x4_sub(l13, t28);
                         let t30: u128 = simd::i32x4_abs(t29);
                         let t31: i32 = l6;

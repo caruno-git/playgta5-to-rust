@@ -60,7 +60,7 @@ use crate::{imp, syms};
             (*ph).write_f32(l1 + 72, l2);
             (*ph).store_lane(l1 + 64, l10, 0, 64);
             let t10: u128 = (*ph).read_v128(10852336i64);
-            let t11: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+            let t11: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
             l10 = t11;
             let t12: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l10, l10);
             let t13: f32 = (*ph).read_f32(10852768i64);

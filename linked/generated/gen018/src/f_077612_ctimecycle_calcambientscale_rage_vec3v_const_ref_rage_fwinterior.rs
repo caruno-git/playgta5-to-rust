@@ -1350,12 +1350,12 @@ use crate::{imp, syms};
                                     l30 = t477;
                                 break 'L37;
                                 }
-                                let t478: u128 = (*ph).read_splat(l4 + 88, 32);
+                                let t478: u128 = (*ph).read_u32(l4 + 88) as u128;
                                 let t479: u128 = simd::f32x4_replace_lane(t478, 1, l29);
                                 let t480: u128 = (*ph).read_splat(l4 + 80, 32);
                                 let t481: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,4,5,6,7,20,21,22,23>(t479, t480);
                                 (*ph).write_v128(l6, t481);
-                                let t482: u128 = (*ph).read_splat(l4 + 92, 32);
+                                let t482: u128 = (*ph).read_u32(l4 + 92) as u128;
                                 let t483: u128 = simd::f32x4_replace_lane(t482, 1, l30);
                                 let t484: u128 = (*ph).read_splat(l4 + 84, 32);
                                 let t485: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,4,5,6,7,20,21,22,23>(t483, t484);

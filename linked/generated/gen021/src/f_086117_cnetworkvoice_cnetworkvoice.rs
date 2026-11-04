@@ -148,7 +148,7 @@ use crate::{imp, syms};
         (*ph).write_v128(28719472i64, 0x00000000000000000000000000000000u128);
         let t11: i32 = (*ph).read_u32(28718856i64) as i32;
         (*ph).write_u32(28719496i64, t11 as u32);
-        let t12: u128 = (*ph).read_splat(28697040i64 + 21808, 64);
+        let t12: u128 = (*ph).read_u64(28697040i64 + 21808) as u128;
         let t13: u128 = simd::f32x4_convert_i32x4_s(t12);
         (*ph).store_lane(28697040i64 + 22448, t13, 0, 64);
         let t14: i64 = syms::f_007396_rage_audentity_audentity(ph, 28719536i64);

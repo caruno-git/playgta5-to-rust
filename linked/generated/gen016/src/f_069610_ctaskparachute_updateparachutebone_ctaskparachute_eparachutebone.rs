@@ -76,7 +76,7 @@ use crate::{imp, syms};
             }
             let t16: u128 = (*ph).read_v128(l6 + 208);
             let t17: u128 = (*ph).read_v128(l6 + 192);
-            let t18: u128 = (*ph).read_splat(l3, 64);
+            let t18: u128 = (*ph).read_u64(l3) as u128;
             let t19: i64 = l6;
             let t20: i64 = l3;
             l10 = t18;

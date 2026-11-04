@@ -121,12 +121,12 @@ use crate::{imp, syms};
                 l5 = t20;
                 let t22: f32 = simd::f32x4_extract_lane(l5, 0) as f32;
                 l8 = t22;
-                let t23: u128 = (*ph).read_splat(l0 + 36, 64);
+                let t23: u128 = (*ph).read_u64(l0 + 36) as u128;
                 let t24: f32 = l8;
                 l3 = t23;
                 let t25: f32 = simd::f32x4_extract_lane(l3, 0) as f32;
                 l10 = t25;
-                let t26: u128 = (*ph).read_splat(l2 + 4, 64);
+                let t26: u128 = (*ph).read_u64(l2 + 4) as u128;
                 let t27: f32 = (t24 * l10);
                 l4 = t26;
                 let t28: f32 = simd::f32x4_extract_lane(l4, 0) as f32;
@@ -181,7 +181,7 @@ use crate::{imp, syms};
             if ((t56 != 8i32) as i32) != 0 {
                 break 'L1;
             }
-            let t57: u128 = (*ph).read_splat(l2 + 4, 64);
+            let t57: u128 = (*ph).read_u64(l2 + 4) as u128;
             let t58: i64 = l2;
             l4 = t57;
             let t59: u128 = (*ph).read_v128(l2);

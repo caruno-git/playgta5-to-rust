@@ -250,7 +250,7 @@ use crate::{imp, syms};
                     (*ph).sp = l7;
                     let t54: f32 = (*ph).read_f32(l6 + 40);
                     l16 = t54;
-                    let t55: u128 = (*ph).read_splat(l6 + 32, 64);
+                    let t55: u128 = (*ph).read_u64(l6 + 32) as u128;
                     l17 = t55;
                     let t56: i64 = (*ph).read_u64(19230168i64) as i64;
                     l9 = t56;

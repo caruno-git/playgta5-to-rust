@@ -107,7 +107,7 @@ use crate::{imp, syms};
         l10 = t50;
         'L3: loop {
             if ((l3 == 0) as i32) != 0 {
-                let t51: u128 = (*ph).read_splat(l7 + 4, 64);
+                let t51: u128 = (*ph).read_u64(l7 + 4) as u128;
                 l8 = t51;
                 break 'L3;
             }
@@ -115,8 +115,8 @@ use crate::{imp, syms};
             let t53: i64 = l7;
             l10 = (l10 - t52);
             (*ph).write_f32(t53, l10);
-            let t54: u128 = (*ph).read_splat(l7 + 4, 64);
-            let t55: u128 = (*ph).read_splat(l3 + 4, 64);
+            let t54: u128 = (*ph).read_u64(l7 + 4) as u128;
+            let t55: u128 = (*ph).read_u64(l3 + 4) as u128;
             let t56: u128 = simd::f32x4_sub(t54, t55);
             let t57: i64 = l7;
             l8 = t56;
@@ -131,7 +131,7 @@ use crate::{imp, syms};
         (*ph).write_f32(t60 + 16, ((l4 * l10) + t61));
         let t62: u128 = simd::f32x4_splat(l4 as f32);
         let t63: u128 = simd::f32x4_mul(t62, l8);
-        let t64: u128 = (*ph).read_splat(l7 + 20, 64);
+        let t64: u128 = (*ph).read_u64(l7 + 20) as u128;
         let t65: u128 = simd::f32x4_add(t63, t64);
         (*ph).store_lane(l7 + 20, t65, 0, 64);
         syms::f_040570_art_nmrsgenericpart_applyimpulse_rage_vector3_const_ref_rage_vec(ph, l1, (l7.wrapping_add(16i64)), (l7.wrapping_add(32i64)));

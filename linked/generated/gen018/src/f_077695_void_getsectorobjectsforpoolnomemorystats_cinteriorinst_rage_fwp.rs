@@ -71,7 +71,7 @@ use crate::{imp, syms};
                     if (((l3 as u32) >= (t11 as u32)) as i32) != 0 {
                         break 'L3;
                     }
-                    let t12: u128 = (*ph).read_splat(0i64 + 25515336, 64);
+                    let t12: u128 = (*ph).read_u64(0i64 + 25515336) as u128;
                     let t13: u128 = l12;
                     l11 = t12;
                     let t14: u128 = simd::f32x4_mul(t13, l11);

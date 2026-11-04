@@ -98,7 +98,7 @@ use crate::{imp, syms};
         (*ph).write_v128(l0 + 288, t15);
         let t16: i32 = (*ph).read_u32(13350920i64) as i32;
         (*ph).write_u32(l0 + 336, t16 as u32);
-        let t17: u128 = (*ph).read_splat(0i64 + 13350924, 32);
+        let t17: u128 = (*ph).read_u32(0i64 + 13350924) as u128;
         (*ph).write_v128(l0 + 340, t17);
         (*ph).sp = (l1.wrapping_add(16i64));
     }

@@ -145,7 +145,7 @@ use crate::{imp, syms};
             l23 = (l3.wrapping_add(144i64));
             l0 = l5;
             'L3: loop {
-                let t22: u128 = (*ph).read_splat(l0, 32);
+                let t22: u128 = (*ph).read_u32(l0) as u128;
                 l26 = t22;
                 let t23: i32 = (*ph).read_u16(l0 + 4) as i32;
                 l2 = t23;

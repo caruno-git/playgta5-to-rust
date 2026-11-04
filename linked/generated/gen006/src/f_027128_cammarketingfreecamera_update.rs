@@ -969,7 +969,7 @@ use crate::{imp, syms};
             l1 = (l1 / (45.0f32 - t434));
             let t435: f32 = rt::select_f32(((l1 > -1.0f32) as i32), -1.0f32, l1);
             let t436: u128 = simd::f32x4_splat(t435 as f32);
-            let t437: u128 = (*ph).read_splat(l0 + 712, 64);
+            let t437: u128 = (*ph).read_u64(l0 + 712) as u128;
             let t438: u128 = simd::f32x4_sub(l15, t437);
             let t439: u128 = simd::f32x4_mul(t436, t438);
             let t440: u128 = simd::f32x4_add(t439, l15);

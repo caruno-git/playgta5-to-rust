@@ -2718,7 +2718,7 @@ use crate::{imp, syms};
                         let mut r714: u128 = 0;
                         'L226: loop {
                             if ((l1 == 0) as i32) != 0 {
-                                let t715: u128 = (*ph).read_splat(l4 + 96, 32);
+                                let t715: u128 = (*ph).read_u32(l4 + 96) as u128;
                                 let t716: u128 = simd::f32x4_replace_lane(t715, 1, l13);
                                 let t717: u128 = simd::f32x4_neg(t716);
                                 let t718: f32 = (*ph).read_f32(l4 + 104);

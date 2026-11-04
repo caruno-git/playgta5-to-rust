@@ -30,7 +30,7 @@ use crate::{imp, syms};
         (*ph).write_v128(l1, l3);
         syms::f_004683_rage_fwentity_getaabb_rage_spdaabb_ref_const(ph, l0, l1);
         (*ph).write_u32(l1 + 56, l2 as u32);
-        let t3: u128 = (*ph).read_splat(l1 + 20, 64);
+        let t3: u128 = (*ph).read_u64(l1 + 20) as u128;
         let t4: i64 = l1;
         l3 = 0x41200000412000004120000041200000u128;
         let t5: u128 = simd::f32x4_mul(t3, l3);

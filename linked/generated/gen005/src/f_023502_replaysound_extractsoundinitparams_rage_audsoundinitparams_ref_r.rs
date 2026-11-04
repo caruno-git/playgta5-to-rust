@@ -172,7 +172,7 @@ use crate::{imp, syms};
                     break 'L12;
                 }
                 syms::f_022659_naenvironmentgroup_init_naaudioentity_ptr_float_unsigned_int_uns(ph, l3, 0i64, 40.0f32, 0i32);
-                let t31: u128 = (*ph).read_splat(l1, 64);
+                let t31: u128 = (*ph).read_u64(l1) as u128;
                 let t32: u128 = (*ph).load_lane(l1 + 8, t31, 2, 32);
                 (*ph).write_v128(l8, t32);
                 syms::f_022660_naenvironmentgroup_setsource_rage_vec3v_const_ref(ph, l3, l8);

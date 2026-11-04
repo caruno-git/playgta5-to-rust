@@ -74,7 +74,7 @@ use crate::{imp, syms};
                             syms::f_001523_quitf_char_const_ptr(ph, 2120837i64, l3);
                             break 'L4;
                         }
-                        let t13: u128 = (*ph).read_splat(l5 + 28, 32);
+                        let t13: u128 = (*ph).read_u32(l5 + 28) as u128;
                         let t14: i64 = l3;
                         l9 = t13;
                         let t15: i32 = simd::i16x8_extract_lane_s(l9, 0) as i32;

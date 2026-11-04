@@ -26,7 +26,7 @@ use crate::{imp, syms};
         if (((t1 & 2i32) == 0) as i32) != 0 {
             let t2: i32 = (*ph).read_u32(l1 + 152) as i32;
             l3 = t2;
-            let t3: u128 = (*ph).read_splat(l0 + 28, 64);
+            let t3: u128 = (*ph).read_u64(l0 + 28) as u128;
             let t4: i64 = l2;
             let t5: i64 = l0;
             l4 = t3;

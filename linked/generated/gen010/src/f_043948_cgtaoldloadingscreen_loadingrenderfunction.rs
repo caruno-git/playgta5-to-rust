@@ -259,8 +259,8 @@ use crate::{imp, syms};
                                     break 'L16;
                                 }
                                 let t73: i64 = (*ph).read_u64(19584064i64) as i64;
-                                let t74: u128 = (*ph).read_splat(t73 + 16, 64);
-                                let t75: u128 = (*ph).read_splat(l0 + 88, 64);
+                                let t74: u128 = (*ph).read_u64(t73 + 16) as u128;
+                                let t75: u128 = (*ph).read_u64(l0 + 88) as u128;
                                 let t76: i64 = l0;
                                 l7 = t75;
                                 let t77: u128 = simd::f32x4_mul(l7, 0xbf000000bf000000bf000000bf000000u128);

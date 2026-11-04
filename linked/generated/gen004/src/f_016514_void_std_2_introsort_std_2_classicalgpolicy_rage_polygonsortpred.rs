@@ -641,7 +641,7 @@ use crate::{imp, syms};
                                 break 'L42;
                             }
                             l10 = (((l5.wrapping_sub(2i64)) as u64).wrapping_shr((1i64 as u32) & 63) as i64);
-                            let t124: u128 = (*ph).read_splat(l0, 64);
+                            let t124: u128 = (*ph).read_u64(l0) as u128;
                             let t125: u128 = (*ph).load_lane(l0 + 8, t124, 2, 32);
                             l20 = t125;
                             l2 = l0;

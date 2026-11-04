@@ -120,7 +120,7 @@ use crate::{imp, syms};
                             'L10: loop {
                                 let t20: u128 = l12;
                                 l7 = (l8.wrapping_add((l11.wrapping_mul(20i64))));
-                                let t21: u128 = (*ph).read_splat(l7 + 4, 32);
+                                let t21: u128 = (*ph).read_u32(l7 + 4) as u128;
                                 let t22: u128 = (*ph).load_lane(l7 + 24, t21, 1, 32);
                                 let t23: u128 = (*ph).load_lane(l7 + 44, t22, 2, 32);
                                 let t24: u128 = (*ph).load_lane(l7 + 64, t23, 3, 32);

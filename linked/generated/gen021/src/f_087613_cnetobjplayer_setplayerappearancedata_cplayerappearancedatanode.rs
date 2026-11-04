@@ -761,11 +761,11 @@ use crate::{imp, syms};
                         break 'L42;
                     }
                     if (((((((l0.wrapping_add(2313i64)) as u64) < ((l1.wrapping_add(1054i64)) as u64)) as i32) & ((((l1.wrapping_add(1042i64)) as u64) < ((l0.wrapping_add(2396i64)) as u64)) as i32)) == 0) as i32) != 0 {
-                        let t225: u128 = (*ph).read_splat(l1 + 1050, 32);
+                        let t225: u128 = (*ph).read_u32(l1 + 1050) as u128;
                         l29 = t225;
-                        let t226: u128 = (*ph).read_splat(l1 + 1042, 32);
+                        let t226: u128 = (*ph).read_u32(l1 + 1042) as u128;
                         l30 = t226;
-                        let t227: u128 = (*ph).read_splat(l1 + 1046, 32);
+                        let t227: u128 = (*ph).read_u32(l1 + 1046) as u128;
                         l31 = t227;
                         let t228: i32 = (*ph).read_u16(l0 + 2313) as i32;
                         (*ph).write_u16(l0 + 2313, (t228 | 32i32) as u16);

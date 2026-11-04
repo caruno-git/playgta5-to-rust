@@ -50,7 +50,7 @@ use crate::{imp, syms};
             (*ph).write_u32((l7.wrapping_sub(20i64)), l1 as u32);
         break 'L1;
         }
-        let t7: u128 = (*ph).read_splat(l0 + 56, 64);
+        let t7: u128 = (*ph).read_u64(l0 + 56) as u128;
         let t8: u128 = simd::i32x4_add(t7, 0x00000001000000010000000100000001u128);
         (*ph).store_lane(l0 + 56, t8, 0, 64);
         let t9: i32 = (*ph).read_u8(l0 + 68) as i32;

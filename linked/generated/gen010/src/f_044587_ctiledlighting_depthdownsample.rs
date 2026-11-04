@@ -219,7 +219,7 @@ use crate::{imp, syms};
                 (*ph).write_f32(l33 + 8, (1.0f32 / l0));
                 let t66: i64 = (*ph).read_u64(l29 + 8) as i64;
                 syms::f_009875_rage_grceffect_setlocalcommon_rage_grcinstancedata_ref_rage_grce(ph, l29, l42, l33, 16i32, 1i32);
-                let t67: u128 = (*ph).read_splat(l28, 64);
+                let t67: u128 = (*ph).read_u64(l28) as u128;
                 let t68: u128 = simd::f32x4_convert_i32x4_s(t67);
                 let t69: i64 = l33;
                 l69 = t68;

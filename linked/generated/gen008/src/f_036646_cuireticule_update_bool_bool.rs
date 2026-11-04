@@ -1668,11 +1668,11 @@ use crate::{imp, syms};
                                                 if ((t413 != 1i32) as i32) != 0 {
                                                     break 'L128;
                                                 }
-                                                let t414: u128 = (*ph).read_splat(19502872i64 + 56, 64);
+                                                let t414: u128 = (*ph).read_u64(19502872i64 + 56) as u128;
                                                 l36 = t414;
                                                 let t415: f32 = (*ph).read_f32(12321260i64);
                                                 let t416: u128 = simd::f32x4_splat(((t415 / 0.0333333351f32) * 0.25f32) as f32);
-                                                let t417: u128 = (*ph).read_splat(l3 + 2296, 64);
+                                                let t417: u128 = (*ph).read_u64(l3 + 2296) as u128;
                                                 let t418: u128 = l36;
                                                 l37 = t417;
                                                 let t419: u128 = simd::f32x4_sub(l37, l36);

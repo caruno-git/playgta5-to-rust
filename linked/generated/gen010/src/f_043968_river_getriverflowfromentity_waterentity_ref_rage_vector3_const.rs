@@ -252,7 +252,7 @@ use crate::{imp, syms};
                     let t73: i64 = (((((rt::i32_div_s((l3.wrapping_add(3i32)), 4i32).wrapping_mul(rt::i32_div_s(l6, 4i32))).wrapping_add(rt::i32_div_s(l5, 4i32))).wrapping_shl((3i32 as u32) & 31)) as i32) as i64);
                     let t74: i64 = l1;
                     l0 = (t72.wrapping_add(t73));
-                    let t75: u128 = (*ph).read_splat(l0, 32);
+                    let t75: u128 = (*ph).read_u32(l0) as u128;
                     l21 = t75;
                     let t76: u128 = simd::i16x8_shr_u(l21, 11i32);
                     let t77: u128 = simd::i32x4_extend_low_i16x8_u(t76);

@@ -32,9 +32,9 @@ use crate::{imp, syms};
         if (((t1 as u32) > (l4 as u32)) as i32) != 0 {
             let t2: u128 = simd::f32x4_splat(l1 as f32);
             let t3: u128 = simd::f32x4_replace_lane(t2, 1, l2);
-            let t4: u128 = (*ph).read_splat(l0 + 168, 64);
+            let t4: u128 = (*ph).read_u64(l0 + 168) as u128;
             let t5: u128 = simd::f32x4_mul(t3, t4);
-            let t6: u128 = (*ph).read_splat(l0 + 176, 64);
+            let t6: u128 = (*ph).read_u64(l0 + 176) as u128;
             let t7: u128 = simd::f32x4_add(t5, t6);
             let t8: u128 = simd::f32x4_mul(t7, 0x41a0000041a0000041a0000041a00000u128);
             l15 = t8;

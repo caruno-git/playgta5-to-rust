@@ -612,7 +612,7 @@ use crate::{imp, syms};
                     break 'L33;
                     }
                     let t162: u128 = simd::f32x4_replace_lane(l30, 0, l41);
-                    let t163: u128 = (*ph).read_splat(l6, 64);
+                    let t163: u128 = (*ph).read_u64(l6) as u128;
                     let t164: u128 = simd::f32x4_mul(t162, t163);
                     (*ph).store_lane(l7 + 8, t164, 0, 64);
                     l15 = 0i32;

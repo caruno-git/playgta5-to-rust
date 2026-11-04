@@ -740,7 +740,7 @@ use crate::{imp, syms};
             let t392: i64 = l2;
             let t393: u128 = l8;
             l15 = (t390.wrapping_add(t391));
-            let t394: u128 = (*ph).read_splat(l15 + 640, 32);
+            let t394: u128 = (*ph).read_u32(l15 + 640) as u128;
             let t395: u128 = (*ph).read_splat(l15 + 644, 16);
             let t396: u128 = simd::i8x16_shuffle_static::<0,1,2,3,20,21,0,1,0,1,0,1,0,1,0,1>(t394, t395);
             let t397: u128 = simd::i32x4_extend_low_i16x8_s(t396);

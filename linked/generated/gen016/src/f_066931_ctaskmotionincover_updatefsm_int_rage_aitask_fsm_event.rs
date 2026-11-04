@@ -6094,7 +6094,7 @@ use crate::{imp, syms};
                                                         (*ph).write_u8(l4 + 4483, (t1624 | 64i32) as u8);
                                                         let t1625: i32 = syms::f_045913_cped_isfirstpersonshootermodeenabledforplayer_bool_bool_bool_boo(ph, l4, 0i32, 0i32, 0i32, 1i32, 1i32);
                                                         if t1625 != 0 {
-                                                            let t1626: u128 = (*ph).read_splat(l4 + 5376, 64);
+                                                            let t1626: u128 = (*ph).read_u64(l4 + 5376) as u128;
                                                             let t1627: u128 = simd::v128_or(t1626, 0x00000000000000000000010000000800u128);
                                                             (*ph).store_lane(l4 + 5376, t1627, 0, 64);
                                                         }

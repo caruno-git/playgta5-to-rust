@@ -50,7 +50,7 @@ use crate::{imp, syms};
             if ((l5 == 0) as i32) != 0 {
                 break 'L1;
             }
-            let t7: u128 = (*ph).read_splat(l0, 32);
+            let t7: u128 = (*ph).read_u32(l0) as u128;
             let t8: u128 = (*ph).load_lane(l0 + 8, t7, 1, 32);
             let t9: u128 = (*ph).load_lane(l0 + 16, t8, 2, 32);
             l7 = t9;

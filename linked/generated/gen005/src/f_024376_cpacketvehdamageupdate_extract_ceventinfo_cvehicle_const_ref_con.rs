@@ -103,7 +103,7 @@ use crate::{imp, syms};
                     syms::f_001527_warningf_char_const_ptr(ph, 1903880i64, 0i64);
                     return;
                 }
-                let t15: u128 = (*ph).read_splat(l0 + 31, 32);
+                let t15: u128 = (*ph).read_u32(l0 + 31) as u128;
                 l10 = t15;
                 let t16: i32 = (*ph).read_i8(l0 + 28) as i32;
                 l3 = t16;

@@ -8172,7 +8172,7 @@ use crate::{imp, syms};
                 let t2650: u128 = (*ph).read_v128(20160752i64);
                 let t2651: u128 = simd::v128_andnot(t2649, t2650);
                 (*ph).write_v128(l1 + 60, t2651);
-                let t2652: u128 = (*ph).read_splat(l1 + 76, 64);
+                let t2652: u128 = (*ph).read_u64(l1 + 76) as u128;
                 let t2653: u128 = (*ph).read_v128(20160768i64);
                 let t2654: u128 = simd::v128_andnot(t2652, t2653);
                 let t2655: i64 = l1;

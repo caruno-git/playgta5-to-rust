@@ -158,7 +158,7 @@ use crate::{imp, syms};
                         l3 = ((l6 | (-2i64)).wrapping_add(l6));
                         'L12: loop {
                             l9 = (l2.wrapping_add((l5.wrapping_mul(24i64))));
-                            let t45: u128 = (*ph).read_splat(l9 + 32, 64);
+                            let t45: u128 = (*ph).read_u64(l9 + 32) as u128;
                             let t46: u128 = (*ph).load_lane(l9 + 56, t45, 1, 64);
                             let t47: u128 = simd::i64x2_add(t46, l15);
                             l15 = t47;

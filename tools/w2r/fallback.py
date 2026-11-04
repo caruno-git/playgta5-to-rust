@@ -371,11 +371,12 @@ class StateMachine(Emitter):
                 self.emit("%s;" % call)
             return
         if op in SPLAT_LOADS:
-            width, _z = SPLAT_LOADS[op]
+            width, zero = SPLAT_LOADS[op]
             off, _a, _o = parse_memargs(rest)
             a = self.pop_as("i64")
             e = ("%s + %d" % (a, off)) if off else a
-            self.pushv("v128", "ph.read_splat(%s, %d)" % (e, width))
+            expression = ("ph.read_u%d(%s) as u128" % (width, e)) if zero else ("ph.read_splat(%s, %d)" % (e, width))
+            self.pushv("v128", expression)
             return
         if op in LANE_LOADS:
             width = LANE_LOADS[op]

@@ -88,7 +88,7 @@ use crate::{imp, syms};
         let t30: u128 = (*ph).load_lane(0i64 + 7245504, l7, 1, 32);
         let t31: f32 = simd::f32x4_extract_lane(l7, 2) as f32;
         let t32: u128 = simd::f32x4_replace_lane(t30, 2, t31);
-        let t33: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+        let t33: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
         let t34: u128 = simd::f32x4_convert_i32x4_s(t33);
         let t35: u128 = simd::f32x4_div(t34, 0x00000000000000004561000042700000u128);
         l7 = t35;

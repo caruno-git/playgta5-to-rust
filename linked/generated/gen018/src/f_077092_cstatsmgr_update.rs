@@ -2073,7 +2073,7 @@ use crate::{imp, syms};
                                                             break 'L142;
                                                         }
                                                         let t468: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(l22, l25);
-                                                        let t469: u128 = (*ph).read_splat(l1 + 12, 64);
+                                                        let t469: u128 = (*ph).read_u64(l1 + 12) as u128;
                                                         let t470: u128 = simd::f32x4_add(t468, t469);
                                                         (*ph).store_lane(l1 + 12, t470, 0, 64);
                                                         let t471: i32 = (*ph).read_u32(l1 + 8) as i32;

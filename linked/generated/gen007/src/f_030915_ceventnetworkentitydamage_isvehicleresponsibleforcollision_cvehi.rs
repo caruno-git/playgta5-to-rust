@@ -605,7 +605,7 @@ use crate::{imp, syms};
                 let t187: unsafe extern "C" fn(*mut Phantom, i64) -> i64 = core::mem::transmute(t186);
                 let t188: i64 = t187(ph as *mut Phantom, l0);
                 l7 = t188;
-                let t189: u128 = (*ph).read_splat(l7 + 8, 64);
+                let t189: u128 = (*ph).read_u64(l7 + 8) as u128;
                 l19 = t189;
                 let t190: u128 = (*ph).read_v128(l7);
                 l20 = t190;

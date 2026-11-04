@@ -52,7 +52,7 @@ use crate::{imp, syms};
                     if (((l5 as u64) >= (t4 as u64)) as i32) != 0 {
                         break 'L1;
                     }
-                    let t5: u128 = (*ph).read_splat(((l7.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) + 36, 64);
+                    let t5: u128 = (*ph).read_u64(((l7.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) + 36) as u128;
                     l9 = t5;
                     let t6: i64 = (*ph).read_u64(l0 + 80) as i64;
                     let t7: f32 = (*ph).read_f32((t6.wrapping_add((l5.wrapping_shl((2i64 as u32) & 63)))));
@@ -79,7 +79,7 @@ use crate::{imp, syms};
                         if (((l6 as u64) >= (t16 as u64)) as i32) != 0 {
                             break 'L1;
                         }
-                        let t17: u128 = (*ph).read_splat(((l7.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) + 36, 64);
+                        let t17: u128 = (*ph).read_u64(((l7.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) + 36) as u128;
                         l10 = t17;
                         let t18: i64 = (*ph).read_u64(l0 + 80) as i64;
                         let t19: f32 = (*ph).read_f32((t18.wrapping_add((l6.wrapping_shl((2i64 as u32) & 63)))));
@@ -118,7 +118,7 @@ use crate::{imp, syms};
                         break 'L1;
                     }
                     let t26: i64 = (*ph).read_u64(l0 + 64) as i64;
-                    let t27: u128 = (*ph).read_splat((t26.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63)))), 64);
+                    let t27: u128 = (*ph).read_u64((t26.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) as u128;
                     l9 = t27;
                     let t28: i64 = (*ph).read_u64(l0 + 80) as i64;
                     let t29: f32 = (*ph).read_f32((t28.wrapping_add((l5.wrapping_shl((2i64 as u32) & 63)))));
@@ -149,7 +149,7 @@ use crate::{imp, syms};
                             break 'L1;
                         }
                         let t39: i64 = (*ph).read_u64(l0 + 64) as i64;
-                        let t40: u128 = (*ph).read_splat((t39.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63)))), 64);
+                        let t40: u128 = (*ph).read_u64((t39.wrapping_add((l6.wrapping_shl((3i64 as u32) & 63))))) as u128;
                         l10 = t40;
                         let t41: i64 = (*ph).read_u64(l0 + 80) as i64;
                         let t42: f32 = (*ph).read_f32((t41.wrapping_add((l6.wrapping_shl((2i64 as u32) & 63)))));

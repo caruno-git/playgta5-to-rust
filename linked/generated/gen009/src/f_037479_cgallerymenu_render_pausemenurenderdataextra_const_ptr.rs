@@ -140,9 +140,9 @@ use crate::{imp, syms};
             }
             let t38: f32 = (*ph).read_f32(l1 + 72);
             syms::f_036239_cscaleformmgr_scaleposandsize_rage_vector2_ref_rage_vector2_ref(ph, (l2.wrapping_add(32i64)), (l2.wrapping_add(24i64)), t38);
-            let t39: u128 = (*ph).read_splat(l2 + 32, 64);
+            let t39: u128 = (*ph).read_u64(l2 + 32) as u128;
             let t40: u128 = (*ph).load_lane(l2 + 24, t39, 1, 64);
-            let t41: u128 = (*ph).read_splat(0i64 + 21388328, 32);
+            let t41: u128 = (*ph).read_u32(0i64 + 21388328) as u128;
             let t42: u128 = (*ph).load_lane(0i64 + 21388332, t41, 1, 32);
             let t43: u128 = simd::f32x4_convert_i32x4_s(t42);
             let t44: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7>(t43, 0x00000000000000000000000000000000u128);

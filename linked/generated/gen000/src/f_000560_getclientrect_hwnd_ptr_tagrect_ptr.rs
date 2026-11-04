@@ -18,8 +18,8 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_000560_getclientrect_hwnd_ptr_tagrect_ptr(ph: *mut Phantom, mut l0: i64) -> i32 {
         (*ph).write_u64(l0, 0i64 as u64);
-        let t1: u128 = (*ph).read_splat(0i64 + 6583424, 64);
-        let t2: u128 = (*ph).read_splat(0i64 + 6583416, 64);
+        let t1: u128 = (*ph).read_u64(0i64 + 6583424) as u128;
+        let t2: u128 = (*ph).read_u64(0i64 + 6583416) as u128;
         let t3: u128 = simd::i32x4_sub(t1, t2);
         (*ph).store_lane(l0 + 8, t3, 0, 64);
         return 1i32;

@@ -91,7 +91,7 @@ use crate::{imp, syms};
                                 l2 = ((l2.wrapping_add(5i64)) & (-2i64));
                                 l0 = (l2.wrapping_add(4i64));
                                 l7 = ((((l5 as u32).wrapping_shr((1i32 as u32) & 31) as i32) & 3i32).wrapping_add(1i32));
-                                let t11: u128 = (*ph).read_splat(l2, 32);
+                                let t11: u128 = (*ph).read_u32(l2) as u128;
                                 let t12: u128 = simd::i32x4_extend_low_i16x8_s(t11);
                                 l16 = t12;
                                 break 'L7;
@@ -119,7 +119,7 @@ use crate::{imp, syms};
                                 l0 = (l2.wrapping_add(6i64));
                                 let t19: i32 = (*ph).read_u16(l2 + 4) as i32;
                                 l6 = t19;
-                                let t20: u128 = (*ph).read_splat(l2, 32);
+                                let t20: u128 = (*ph).read_u32(l2) as u128;
                                 let t21: u128 = simd::i32x4_extend_low_i16x8_s(t20);
                                 l16 = t21;
                                 l3 = 0i64;
@@ -133,7 +133,7 @@ use crate::{imp, syms};
                             l3 = (l2.wrapping_add(12i64));
                             let t23: i32 = (*ph).read_u32(l2 + 8) as i32;
                             l6 = t23;
-                            let t24: u128 = (*ph).read_splat(l2, 64);
+                            let t24: u128 = (*ph).read_u64(l2) as u128;
                             l16 = t24;
                         break 'L7;
                         }
@@ -171,7 +171,7 @@ use crate::{imp, syms};
                                                             r36 = (l0.wrapping_add(2i64));
                                                         }
                                                         l2 = r36;
-                                                        let t38: u128 = (*ph).read_splat(l2, 32);
+                                                        let t38: u128 = (*ph).read_u32(l2) as u128;
                                                         l15 = t38;
                                                         if (l5 & l6) != 0 {
                                                             break 'L18;
@@ -194,7 +194,7 @@ use crate::{imp, syms};
                                                         break 'L17;
                                                     }
                                                     l3 = (l0.wrapping_add(8i64));
-                                                    let t42: u128 = (*ph).read_splat(l0, 64);
+                                                    let t42: u128 = (*ph).read_u64(l0) as u128;
                                                     l13 = t42;
                                                     r35 = 0i64;
                                                 break 'L19;
@@ -210,16 +210,16 @@ use crate::{imp, syms};
                                             }
                                             let t47: u128 = simd::i32x4_extend_low_i16x8_s(l15);
                                             l15 = t47;
-                                            let t48: u128 = (*ph).read_splat(l2 + 4, 32);
+                                            let t48: u128 = (*ph).read_u32(l2 + 4) as u128;
                                             let t49: u128 = simd::i32x4_extend_low_i16x8_s(t48);
                                             l14 = t49;
                                             r34 = (l2.wrapping_add(8i64)); break 'L16;
                                         break 'L17;
                                         }
                                         l3 = (l0.wrapping_add(16i64));
-                                        let t50: u128 = (*ph).read_splat(l0 + 8, 64);
+                                        let t50: u128 = (*ph).read_u64(l0 + 8) as u128;
                                         l14 = t50;
-                                        let t51: u128 = (*ph).read_splat(l0, 64);
+                                        let t51: u128 = (*ph).read_u64(l0) as u128;
                                         l15 = t51;
                                         r34 = 0i64;
                                     break 'L16;

@@ -494,7 +494,7 @@ use crate::{imp, syms};
             }
             (*ph).write_u32(l4, (l14.wrapping_add((l15.wrapping_mul(300i32)))) as u32);
             syms::f_001514_rage_diagdisplayf_rage_diagchannel_const_ref_char_const_ptr(ph, 15718264i64, 2145800i64, l4);
-            let t111: u128 = (*ph).read_splat(0i64 + 16124800, 32);
+            let t111: u128 = (*ph).read_u32(0i64 + 16124800) as u128;
             let t112: u128 = (*ph).load_lane(0i64 + 16124804, t111, 1, 32);
             let t113: u128 = simd::f32x4_convert_i32x4_s(t112);
             let t114: u128 = simd::f32x4_mul(t113, 0x43160000431600004316000043160000u128);

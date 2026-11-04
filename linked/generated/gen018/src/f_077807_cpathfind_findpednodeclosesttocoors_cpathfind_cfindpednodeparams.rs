@@ -44,7 +44,7 @@ use crate::{imp, syms};
         syms::f_077808_cpathfind_findpednodeclosestinregion_rage_cnodeaddress_ptr_float(ph, t8, t9, ((t10.wrapping_shl((5i32 as u32) & 31)) | t11), l1);
         'L1: loop {
             'L2: loop {
-                let t12: u128 = (*ph).read_splat(((l9.wrapping_shl((3i64 as u32) & 63))) + 5993136, 64);
+                let t12: u128 = (*ph).read_u64(((l9.wrapping_shl((3i64 as u32) & 63))) + 5993136) as u128;
                 let t13: u128 = simd::i32x4_add(t12, l4);
                 l3 = t13;
                 let t14: u128 = simd::i32x4_lt_u(l3, 0x00000020000000200000002000000020u128);

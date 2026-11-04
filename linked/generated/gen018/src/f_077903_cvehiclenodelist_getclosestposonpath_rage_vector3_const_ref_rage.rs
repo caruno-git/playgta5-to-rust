@@ -94,7 +94,7 @@ use crate::{imp, syms};
                                     break 'L3;
                                 }
                                 l21 = (l21.wrapping_add((((((l7 as u32).wrapping_shr((16i32 as u32) & 31) as i32) as u32) as i64).wrapping_mul(40i64))));
-                                let t7: u128 = (*ph).read_splat(l21 + 28, 32);
+                                let t7: u128 = (*ph).read_u32(l21 + 28) as u128;
                                 l22 = t7;
                                 let t8: i32 = simd::i16x8_extract_lane_s(l22, 0) as i32;
                                 let t9: u128 = simd::f32x4_splat(((t8 as i32) as f32) as f32);
@@ -115,7 +115,7 @@ use crate::{imp, syms};
                                     let t18: f32 = (l11 * 0.0f32);
                                     l10 = t17;
                                     let t19: f32 = simd::f32x4_extract_lane(l22, 0) as f32;
-                                    let t20: u128 = (*ph).read_splat(l19 + 28, 32);
+                                    let t20: u128 = (*ph).read_u32(l19 + 28) as u128;
                                     let t21: f32 = (l10 - t19);
                                     l24 = t20;
                                     let t22: i32 = simd::i16x8_extract_lane_s(l24, 0) as i32;

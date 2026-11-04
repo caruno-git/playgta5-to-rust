@@ -63,7 +63,7 @@ use crate::{imp, syms};
                     break 'L2;
                 break 'L3;
                 }
-                let t12: u128 = (*ph).read_splat(0i64 + 25309076, 64);
+                let t12: u128 = (*ph).read_u64(0i64 + 25309076) as u128;
                 let t13: u128 = simd::f32x4_div(l7, t12);
                 l7 = t13;
                 let t14: f32 = simd::f32x4_extract_lane(l7, 0) as f32;

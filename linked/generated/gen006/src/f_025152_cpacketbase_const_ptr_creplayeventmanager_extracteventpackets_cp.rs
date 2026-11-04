@@ -281,7 +281,7 @@ use crate::{imp, syms};
                         syms::f_082069_cweapon_getmuzzleposition_rage_matrix34_const_ref_rage_vector3_r(ph, l10, t61, (l7.wrapping_add(96i64)));
                         let t62: u128 = (*ph).read_v128(l7 + 96);
                         (*ph).write_v128(l7 + 16, t62);
-                        let t63: u128 = (*ph).read_splat(l6 + 32, 64);
+                        let t63: u128 = (*ph).read_u64(l6 + 32) as u128;
                         let t64: i64 = l7;
                         let t65: i64 = l6;
                         l17 = t63;
@@ -295,7 +295,7 @@ use crate::{imp, syms};
                         let t69: i32 = (*ph).read_u8(6760448i64) as i32;
                         let t70: i32 = (*ph).read_u8(l6 + 7) as i32;
                         if (((t69 as u32) <= (t70 as u32)) as i32) != 0 {
-                            let t71: u128 = (*ph).read_splat(l6 + 48, 64);
+                            let t71: u128 = (*ph).read_u64(l6 + 48) as u128;
                             let t72: u128 = (*ph).load_lane(l6 + 56, t71, 2, 32);
                             let t73: i32 = (*ph).read_u8(23149196i64) as i32;
                             let t74: u128 = rt::select_v128(t73, t72, 0x3f8000003f8000003f8000003f800000u128);

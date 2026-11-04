@@ -155,7 +155,7 @@ use crate::{imp, syms};
             l9 = t50;
             let t51: i32 = (*ph).read_u32(l3 + 88) as i32;
             (*ph).write_u32(l3 + 124, t51 as u32);
-            let t52: u128 = (*ph).read_splat(l3 + 92, 64);
+            let t52: u128 = (*ph).read_u64(l3 + 92) as u128;
             let t53: u128 = simd::i32x4_max_s(l9, t52);
             (*ph).store_lane(l3 + 92, t53, 0, 64);
         break 'L4;

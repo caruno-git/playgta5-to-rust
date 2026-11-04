@@ -83,7 +83,7 @@ use crate::{imp, syms};
                                 if (((((t10 as u32).wrapping_shr((3i32 as u32) & 31) as i32) & 7i32) != l10) as i32) != 0 {
                                     break 'L6;
                                 }
-                                let t11: u128 = (*ph).read_splat(l1 + 8, 64);
+                                let t11: u128 = (*ph).read_u64(l1 + 8) as u128;
                                 l11 = t11;
                                 let t12: u128 = simd::i16x8_shl(l11, 13i32);
                                 let t13: u128 = simd::v128_and(l11, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);
@@ -178,7 +178,7 @@ use crate::{imp, syms};
                                 if (((((t43 as u32).wrapping_shr((3i32 as u32) & 31) as i32) & 7i32) != l10) as i32) != 0 {
                                     break 'L11;
                                 }
-                                let t44: u128 = (*ph).read_splat(l2 + 8, 64);
+                                let t44: u128 = (*ph).read_u64(l2 + 8) as u128;
                                 l11 = t44;
                                 let t45: u128 = simd::i16x8_shl(l11, 13i32);
                                 let t46: u128 = simd::v128_and(l11, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);

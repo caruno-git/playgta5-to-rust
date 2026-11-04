@@ -45,7 +45,7 @@ use crate::{imp, syms};
                 syms::f_019647_cmoveped_clearmotiontasknetwork_cmovenetworkhelper_ref_float(ph, t7, l0);
             break 'L2;
             }
-            let t8: u128 = (*ph).read_splat(l1 + 5412, 64);
+            let t8: u128 = (*ph).read_u64(l1 + 5412) as u128;
             let t9: u128 = simd::v128_and(t8, 0x0000000000000000effffffffffffdffu128);
             (*ph).store_lane(l1 + 5412, t9, 0, 64);
             let t10: i32 = (*ph).read_u32(l1 + 5328) as i32;

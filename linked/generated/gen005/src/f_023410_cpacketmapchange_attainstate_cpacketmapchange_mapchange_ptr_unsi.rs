@@ -268,7 +268,7 @@ use crate::{imp, syms};
                     if (((t65 & 4i32) == 0) as i32) != 0 {
                         break 'L18;
                     }
-                    let t66: u128 = (*ph).read_splat(l2 + 16, 64);
+                    let t66: u128 = (*ph).read_u64(l2 + 16) as u128;
                     let t67: u128 = (*ph).read_splat(l2 + 24, 32);
                     let t68: u128 = (*ph).read_splat(l2 + 28, 32);
                     let t69: u128 = simd::i8x16_shuffle_static::<8,9,10,11,0,1,2,3,16,17,18,19,0,1,2,3>(t67, t68);

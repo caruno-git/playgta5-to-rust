@@ -1631,7 +1631,7 @@ use crate::{imp, syms};
                 t548(ph as *mut Phantom, l0, l4);
                 'L91: loop {
                     'L92: loop {
-                        let t549: u128 = (*ph).read_splat(l0 + 1720, 64);
+                        let t549: u128 = (*ph).read_u64(l0 + 1720) as u128;
                         l24 = t549;
                         let t550: f32 = simd::f32x4_extract_lane(l24, 0) as f32;
                         if ((t550 != 0.0f32) as i32) != 0 {

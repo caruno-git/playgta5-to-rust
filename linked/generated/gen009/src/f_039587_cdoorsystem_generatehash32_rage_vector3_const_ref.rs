@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_039587_cdoorsystem_generatehash32_rage_vector3_const_ref(ph: *mut Phantom, mut l0: i64) -> i32 {
         let mut l1: u128 = 0;
         let t1: f32 = (*ph).read_f32(l0);
-        let t2: u128 = (*ph).read_splat(l0 + 4, 64);
+        let t2: u128 = (*ph).read_u64(l0 + 4) as u128;
         let t3: u128 = simd::f32x4_add(t2, 0x00000000000000008000000046000000u128);
         let t4: u128 = simd::f32x4_add(t3, 0x3f0000003f0000003f0000003f000000u128);
         let t5: u128 = simd::f32x4_floor(t4);

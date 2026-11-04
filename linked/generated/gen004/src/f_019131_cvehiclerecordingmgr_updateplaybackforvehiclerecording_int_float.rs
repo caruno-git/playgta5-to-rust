@@ -862,7 +862,7 @@ use crate::{imp, syms};
                 let t347: u128 = simd::f32x4_sub(t344, t346);
                 l2 = t347;
                 let t348: u128 = simd::f32x4_mul(l2, l2);
-                let t349: u128 = (*ph).read_splat(l11 + 20, 64);
+                let t349: u128 = (*ph).read_u64(l11 + 20) as u128;
                 let t350: i64 = l7;
                 l2 = t349;
                 let t351: u128 = (*ph).load_lane(t350 + 20, l2, 1, 32);
@@ -1207,7 +1207,7 @@ use crate::{imp, syms};
             l23 = t537;
             if (((l23 + l23) > 9.99999997e-07f32) as i32) != 0 {
                 syms::f_003160_rage_matrix34_toquaternion_rage_quaternion_ref_const(ph, (l7.wrapping_add(176i64)), (l7.wrapping_add(112i64)));
-                let t538: u128 = (*ph).read_splat(l7 + 116, 64);
+                let t538: u128 = (*ph).read_u64(l7 + 116) as u128;
                 let t539: i64 = l7;
                 l2 = t538;
                 let t540: u128 = (*ph).read_v128(l7 + 112);

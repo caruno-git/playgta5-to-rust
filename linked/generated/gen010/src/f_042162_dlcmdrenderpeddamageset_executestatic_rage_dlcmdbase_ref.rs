@@ -817,7 +817,7 @@ use crate::{imp, syms};
                                                             let t229: f32 = rt::select_f32(((l56 < 0.0f32) as i32), l56, 0.0f32);
                                                             let t230: f32 = rt::select_f32(l34, l56, t229);
                                                             l56 = t230;
-                                                            let t231: u128 = (*ph).read_splat(l3 + 8, 64);
+                                                            let t231: u128 = (*ph).read_u64(l3 + 8) as u128;
                                                             l70 = t231;
                                                             l34 = 0i32;
                                                             'L52: loop {
@@ -1457,7 +1457,7 @@ use crate::{imp, syms};
                                                         syms::f_001535_rage_diaglogf2_rage_diagchannel_const_ref_rage_diagseverity_char(ph, 23314512i64, 5i32, 654065i64, 0i64);
                                                     break 'L94;
                                                     }
-                                                    let t428: u128 = (*ph).read_splat(l3 + 8, 64);
+                                                    let t428: u128 = (*ph).read_u64(l3 + 8) as u128;
                                                     let t429: i64 = l5;
                                                     l71 = t428;
                                                     let t430: u128 = simd::i16x8_shl(l71, 13i32);

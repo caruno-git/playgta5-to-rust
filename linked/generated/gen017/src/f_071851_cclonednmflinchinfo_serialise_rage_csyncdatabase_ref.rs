@@ -31,7 +31,7 @@ use crate::{imp, syms};
         let t3 = (*ph).table_entry_typed(t2, 30);
         let t4: unsafe extern "C" fn(*mut Phantom, i64, i64, i64, i32) = core::mem::transmute(t3);
         t4(ph as *mut Phantom, l1, (l0.wrapping_add(48i64)), 1151363i64, 19i32);
-        let t5: u128 = (*ph).read_splat(l0 + 88, 32);
+        let t5: u128 = (*ph).read_u32(l0 + 88) as u128;
         let t6: f32 = (*ph).read_f32(l0 + 72);
         let t7: u128 = simd::f32x4_replace_lane(t5, 1, t6);
         let t8: i64 = l2;

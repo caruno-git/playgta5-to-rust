@@ -31,7 +31,7 @@ use crate::{imp, syms};
             l6 = t3;
             let t4: i64 = syms::f_033129_gasenvironment_getmovieroot_const(ph, l1);
             let t5: i64 = rt::select_i64((((l2 as u32) <= (3i32 as u32)) as i32), 0i64, ((t4.wrapping_add((((l2 as u32) as i64).wrapping_mul(48i64)))).wrapping_add(2464i64)));
-            let t6: u128 = (*ph).read_splat(t5 + 32, 64);
+            let t6: u128 = (*ph).read_u64(t5 + 32) as u128;
             let t7: u128 = simd::f32x4_div(t6, 0x41a0000041a0000041a0000041a00000u128);
             let t8: u128 = simd::i32x4_trunc_sat_f32x4_s(t7);
             l9 = t8;

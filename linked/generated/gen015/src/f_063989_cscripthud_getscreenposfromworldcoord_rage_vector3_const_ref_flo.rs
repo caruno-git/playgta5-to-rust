@@ -38,7 +38,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(l3 + 28, 0i32 as u32);
                 (*ph).write_u32(l3 + 24, 0i32 as u32);
                 syms::f_009646_rage_grcviewport_transform_rage_vec3v_const_ref_float_ref_float(ph, l4, l0, (l3.wrapping_add(28i64)), (l3.wrapping_add(24i64)));
-                let t8: u128 = (*ph).read_splat(l4 + 824, 64);
+                let t8: u128 = (*ph).read_u64(l4 + 824) as u128;
                 let t9: u128 = (*ph).read_v128(l4 + 864);
                 let t10: u128 = simd::f32x4_convert_i32x4_s(t9);
                 let t11: u128 = simd::f32x4_mul(t8, t10);

@@ -88,7 +88,7 @@ use crate::{imp, syms};
         let t32: u128 = simd::f32x4_add(t30, t31);
         (*ph).store_lane(l2, t32, 0, 64);
         syms::f_003884_rage_fwanimhelpers_getmovertrackrotationdelta_rage_crclip_const(ph, l17, l0, 0.0f32, l1);
-        let t33: u128 = (*ph).read_splat(l3 + 4, 64);
+        let t33: u128 = (*ph).read_u64(l3 + 4) as u128;
         let t34: i64 = l3;
         l5 = t33;
         let t35: u128 = (*ph).read_v128(l3);

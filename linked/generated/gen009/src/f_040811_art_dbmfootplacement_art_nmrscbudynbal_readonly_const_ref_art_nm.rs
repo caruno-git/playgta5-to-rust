@@ -1704,24 +1704,24 @@ use crate::{imp, syms};
             'L61: loop {
                 let t679: i32 = (*ph).read_u8(l0 + 399) as i32;
                 if ((t679 == 1i32) as i32) != 0 {
-                    let t680: u128 = (*ph).read_splat(l2 + 52, 64);
+                    let t680: u128 = (*ph).read_u64(l2 + 52) as u128;
                     l58 = t680;
                     let t681: f32 = (*ph).read_f32(l2 + 48);
                     l3 = t681;
                     if ((l42 == 2i32) as i32) != 0 {
-                        let t682: u128 = (*ph).read_splat(l2 + 4, 64);
+                        let t682: u128 = (*ph).read_u64(l2 + 4) as u128;
                         let t683: u128 = simd::f32x4_add(t682, l58);
                         l60 = t683;
                         let t684: f32 = (*ph).read_f32(l2);
                         r678 = (t684 + l3); break 'L61;
                     }
-                    let t685: u128 = (*ph).read_splat(l2 + 20, 64);
+                    let t685: u128 = (*ph).read_u64(l2 + 20) as u128;
                     let t686: u128 = simd::f32x4_add(t685, l58);
                     l60 = t686;
                     let t687: f32 = (*ph).read_f32(l2 + 16);
                     r678 = (t687 + l3); break 'L61;
                 }
-                let t688: u128 = (*ph).read_splat(l2 + 52, 64);
+                let t688: u128 = (*ph).read_u64(l2 + 52) as u128;
                 l60 = t688;
                 let t689: f32 = (*ph).read_f32(l2 + 48);
                 r678 = t689;

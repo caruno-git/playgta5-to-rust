@@ -140,7 +140,7 @@ use crate::{imp, syms};
             let t37: f32 = (*ph).read_f32(25501480i64);
             let t38: i32 = syms::f_037665_time_add_int_int_int(ph, l1, 0i32, rt::i32_trunc_sat_f32_s(t37), 0i32);
         }
-        let t39: u128 = (*ph).read_splat(l1 + 4, 64);
+        let t39: u128 = (*ph).read_u64(l1 + 4) as u128;
         let t40: u128 = simd::f32x4_convert_i32x4_s(t39);
         let t41: u128 = simd::f32x4_div(t40, 0x00000000000000004561000042700000u128);
         l8 = t41;

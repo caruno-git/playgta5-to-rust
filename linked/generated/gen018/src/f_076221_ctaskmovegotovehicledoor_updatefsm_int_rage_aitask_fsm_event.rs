@@ -1803,7 +1803,7 @@ use crate::{imp, syms};
                                         if (((((t509 - t510) < -1.0f32) as i32) == 0) as i32) != 0 {
                                             break 'L89;
                                         }
-                                        let t511: u128 = (*ph).read_splat(l9 + 4936, 64);
+                                        let t511: u128 = (*ph).read_u64(l9 + 4936) as u128;
                                         let t512: u128 = simd::f32x4_mul(l63, 0x80000000800000008000000080000000u128);
                                         let t513: u128 = simd::f32x4_add(t511, t512);
                                         (*ph).store_lane(l9 + 4936, t513, 0, 64);

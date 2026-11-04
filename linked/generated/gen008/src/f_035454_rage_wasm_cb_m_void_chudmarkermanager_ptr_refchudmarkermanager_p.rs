@@ -58,7 +58,7 @@ use crate::{imp, syms};
                         (*ph).write_u16(l1 + 80, 0i32 as u16);
                         (*ph).write_u64(l1 + 68, 0i64 as u64);
                         (*ph).write_v128(l1 + 52, 0x000000007f7fffff7f7fffff43fa0000u128);
-                        let t4: u128 = (*ph).read_splat(l0 + 44456, 32);
+                        let t4: u128 = (*ph).read_u32(l0 + 44456) as u128;
                         l3 = t4;
                         let t5: i32 = syms::f_090911_rand(ph);
                         l5 = t5;

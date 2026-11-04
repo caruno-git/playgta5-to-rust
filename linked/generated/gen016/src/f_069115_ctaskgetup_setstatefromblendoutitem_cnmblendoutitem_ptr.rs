@@ -182,7 +182,7 @@ use crate::{imp, syms};
                                                     }
                                                     let t46: i64 = (*ph).read_u64(l0 + 16) as i64;
                                                     l1 = t46;
-                                                    let t47: u128 = (*ph).read_splat(l1 + 5376, 64);
+                                                    let t47: u128 = (*ph).read_u64(l1 + 5376) as u128;
                                                     let t48: u128 = simd::v128_or(t47, 0x000000000000000000000400000e0000u128);
                                                     (*ph).store_lane(l1 + 5376, t48, 0, 64);
                                                     syms::f_005919_rage_aitask_setstate_int(ph, l0, 13i32);

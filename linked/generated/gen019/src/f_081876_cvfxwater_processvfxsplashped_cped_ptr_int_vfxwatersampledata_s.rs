@@ -433,7 +433,7 @@ use crate::{imp, syms};
                                     break 'L28;
                                 }
                                 (*ph).write_u64(l5 + 572, 4575657222473777152i64 as u64);
-                                let t141: u128 = (*ph).read_splat(l5 + 556, 64);
+                                let t141: u128 = (*ph).read_u64(l5 + 556) as u128;
                                 let t142: u128 = simd::i32x4_max_s(t141, 0x00000003000000030000000300000003u128);
                                 (*ph).store_lane(l5 + 556, t142, 0, 64);
                             break 'L28;

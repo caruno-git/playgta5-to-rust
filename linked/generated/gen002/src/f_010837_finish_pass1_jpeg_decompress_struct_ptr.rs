@@ -376,7 +376,7 @@ use crate::{imp, syms};
                                     l1 = 0i64;
                                     l38 = l39;
                                     'L26: loop {
-                                        let t94: u128 = (*ph).read_splat((l4.wrapping_add((l1.wrapping_shl((1i64 as u32) & 63)))), 32);
+                                        let t94: u128 = (*ph).read_u32((l4.wrapping_add((l1.wrapping_shl((1i64 as u32) & 63))))) as u128;
                                         let t95: u128 = l36;
                                         let t96: u128 = l32;
                                         l37 = t94;

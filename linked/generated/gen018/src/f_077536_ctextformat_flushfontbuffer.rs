@@ -46,7 +46,7 @@ use crate::{imp, syms};
                 let t4: i64 = (*ph).read_u64(12374976i64) as i64;
                 l1 = t4;
                 if ((l1 != 0i64) as i32) != 0 {
-                    let t5: u128 = (*ph).read_splat(l1 + 824, 64);
+                    let t5: u128 = (*ph).read_u64(l1 + 824) as u128;
                     l7 = t5;
                     let t6: u128 = (*ph).read_v128(l1 + 864);
                     l8 = t6;
@@ -124,7 +124,7 @@ use crate::{imp, syms};
                             let t36: i32 = (*ph).read_u8(l2 + 39) as i32;
                             if ((t36 == 1i32) as i32) != 0 {
                                 syms::f_018481_gmatrix2d_setidentity(ph, l0);
-                                let t37: u128 = (*ph).read_splat(l0, 64);
+                                let t37: u128 = (*ph).read_u64(l0) as u128;
                                 let t38: u128 = simd::f32x4_mul(t37, 0x3faaaaab3faaaaab3faaaaab3faaaaabu128);
                                 (*ph).store_lane(l0, t38, 0, 64);
                                 let t39: f32 = (*ph).read_f32(l0 + 8);

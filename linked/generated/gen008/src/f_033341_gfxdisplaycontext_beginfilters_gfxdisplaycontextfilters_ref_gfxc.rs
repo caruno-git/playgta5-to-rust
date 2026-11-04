@@ -45,7 +45,7 @@ use crate::{imp, syms};
                 l8 = (l10 & 15i32);
                 'L4: loop {
                     'L5: loop {
-                        let t4: u128 = (*ph).read_splat(l3 + 12, 64);
+                        let t4: u128 = (*ph).read_u64(l3 + 12) as u128;
                         l13 = t4;
                         let t5: u128 = simd::f32x4_gt(l13, 0x3f8000003f8000003f8000003f800000u128);
                         l12 = t5;
@@ -192,7 +192,7 @@ use crate::{imp, syms};
             (*ph).write_v128(t67 + 64, t71);
             let t72: u128 = simd::i8x16_shuffle_static::<8,9,10,11,12,13,14,15,0,1,2,3,0,1,2,3>(l12, l12);
             let t73: u128 = simd::f32x4_sub(t72, l11);
-            let t74: u128 = (*ph).read_splat(l0 + 88, 64);
+            let t74: u128 = (*ph).read_u64(l0 + 88) as u128;
             let t75: u128 = simd::f32x4_mul(t73, t74);
             let t76: u128 = simd::f32x4_ceil(t75);
             let t77: u128 = simd::i32x4_trunc_sat_f32x4_u(t76);

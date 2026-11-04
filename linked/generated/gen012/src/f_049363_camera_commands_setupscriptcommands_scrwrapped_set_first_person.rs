@@ -22,7 +22,7 @@ use crate::{imp, syms};
         let mut l3: u128 = 0;
         let t1: i64 = (*ph).read_u64(l0 + 16) as i64;
         l0 = t1;
-        let t2: u128 = (*ph).read_splat(l0, 32);
+        let t2: u128 = (*ph).read_u32(l0) as u128;
         let t3: u128 = (*ph).load_lane(l0 + 8, t2, 1, 32);
         l1 = t3;
         syms::f_028241_cammanager_debugregisterscriptcommand_char_const_ptr_char_const(ph, 3435443i64, 4086926i64, 0i64);

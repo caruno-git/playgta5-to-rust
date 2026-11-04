@@ -656,7 +656,7 @@ use crate::{imp, syms};
         'L47: loop {
             let t150: i32 = (*ph).read_u8(19436016i64) as i32;
             if ((t150 == 1i32) as i32) != 0 {
-                let t151: u128 = (*ph).read_splat(0i64 + 19436660, 32);
+                let t151: u128 = (*ph).read_u32(0i64 + 19436660) as u128;
                 let t152: u128 = (*ph).load_lane(0i64 + 19436668, t151, 1, 32);
                 let t153: u128 = (*ph).load_lane(0i64 + 19436628, t152, 2, 32);
                 let t154: u128 = (*ph).load_lane(0i64 + 19436684, t153, 3, 32);
@@ -672,7 +672,7 @@ use crate::{imp, syms};
                 let t162: u128 = simd::f64x2_promote_low_f32x4(l14);
                 (*ph).write_v128(l2 + 32, t162);
                 let t163: i32 = syms::f_090922_small_sprintf(ph, 19436032i64, 2351015i64, (l2.wrapping_add(32i64)));
-                let t164: u128 = (*ph).read_splat(0i64 + 19436664, 32);
+                let t164: u128 = (*ph).read_u32(0i64 + 19436664) as u128;
                 let t165: u128 = (*ph).load_lane(0i64 + 19436672, t164, 1, 32);
                 let t166: u128 = (*ph).load_lane(0i64 + 19436632, t165, 2, 32);
                 let t167: u128 = (*ph).load_lane(0i64 + 19436688, t166, 3, 32);

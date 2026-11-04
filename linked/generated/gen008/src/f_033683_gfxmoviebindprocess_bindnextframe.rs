@@ -2807,7 +2807,7 @@ use crate::{imp, syms};
                                             l1 = (l13.wrapping_add((l5.wrapping_mul(48i64))));
                                             let t892: i32 = (*ph).read_u32(l1 + 16) as i32;
                                             if ((t891 == t892) as i32) != 0 {
-                                                let t893: u128 = (*ph).read_splat(l1 + 28, 64);
+                                                let t893: u128 = (*ph).read_u64(l1 + 28) as u128;
                                                 let t894: u128 = simd::f32x4_ceil(t893);
                                                 let t895: u128 = simd::i32x4_trunc_sat_f32x4_s(t894);
                                                 let t896: u128 = simd::i32x4_max_s(l33, t895);
@@ -3046,7 +3046,7 @@ use crate::{imp, syms};
                                             if ((t979 != l31) as i32) != 0 {
                                                 break 'L245;
                                             }
-                                            let t980: u128 = (*ph).read_splat(l5 + 36, 64);
+                                            let t980: u128 = (*ph).read_u64(l5 + 36) as u128;
                                             l34 = t980;
                                             let t981: u128 = (*ph).read_v128(l5 + 20);
                                             l35 = t981;

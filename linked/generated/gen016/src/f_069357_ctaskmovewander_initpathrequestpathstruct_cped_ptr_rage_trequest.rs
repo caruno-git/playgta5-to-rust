@@ -181,7 +181,7 @@ use crate::{imp, syms};
         l9 = (l2.wrapping_add(128i64));
         l8 = ((*ph).sp.wrapping_sub(16i64));
         (*ph).sp = l8;
-        let t57: u128 = (*ph).read_splat(l7, 32);
+        let t57: u128 = (*ph).read_u32(l7) as u128;
         l16 = t57;
         let t58: i64 = syms::f_030741_geteventglobalgroup(ph);
         l6 = t58;

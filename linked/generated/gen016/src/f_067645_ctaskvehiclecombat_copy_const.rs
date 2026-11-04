@@ -32,7 +32,7 @@ use crate::{imp, syms};
             (*ph).write_u64(l2, 224i64 as u64);
             syms::f_001534_quitf_int_char_const_ptr(ph, 595118i64, l2);
         }
-        let t3: u128 = (*ph).read_splat(l0 + 192, 32);
+        let t3: u128 = (*ph).read_u32(l0 + 192) as u128;
         l5 = t3;
         let t4: f32 = (*ph).read_f32(l0 + 208);
         l6 = t4;

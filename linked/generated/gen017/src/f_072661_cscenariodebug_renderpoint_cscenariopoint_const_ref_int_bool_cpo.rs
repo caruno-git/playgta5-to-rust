@@ -820,7 +820,7 @@ use crate::{imp, syms};
                                     l27 = 0x00000000000000000000000000000000u128;
                                     l29 = l27;
                                     'L78: loop {
-                                        let t219: u128 = (*ph).read_splat((l8.wrapping_add(l10)), 32);
+                                        let t219: u128 = (*ph).read_u32((l8.wrapping_add(l10))) as u128;
                                         l28 = t219;
                                         let t220: u128 = simd::i8x16_eq(l28, 0x2f2f2f2f2f2f2f2f2f2f2f2f2f2f2f2fu128);
                                         let t221: u128 = simd::i8x16_eq(l28, 0x5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5cu128);

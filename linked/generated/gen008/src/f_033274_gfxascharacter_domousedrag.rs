@@ -39,11 +39,11 @@ use crate::{imp, syms};
             if ((t3 != t7) as i32) != 0 {
                 break 'L1;
             }
-            let t8: u128 = (*ph).read_splat(l2 + 9460, 64);
+            let t8: u128 = (*ph).read_u64(l2 + 9460) as u128;
             l5 = t8;
-            let t9: u128 = (*ph).read_splat(l2 + 9452, 64);
+            let t9: u128 = (*ph).read_u64(l2 + 9452) as u128;
             l6 = t9;
-            let t10: u128 = (*ph).read_splat(l2 + 9444, 64);
+            let t10: u128 = (*ph).read_u64(l2 + 9444) as u128;
             l7 = t10;
             let t11: i32 = (*ph).read_u8(l2 + 9441) as i32;
             l8 = t11;
@@ -208,7 +208,7 @@ use crate::{imp, syms};
                 syms::f_018540_gscreentoworld_getworldpoint_gpoint_float_ptr(ph, (t70.wrapping_add(264i64)), (l1.wrapping_add(96i64)));
             break 'L3;
             }
-            let t71: u128 = (*ph).read_splat(l1 + 96, 64);
+            let t71: u128 = (*ph).read_u64(l1 + 96) as u128;
             let t72: u128 = simd::f32x4_add(l5, t71);
             let t73: i64 = l1;
             let t74: u128 = l6;

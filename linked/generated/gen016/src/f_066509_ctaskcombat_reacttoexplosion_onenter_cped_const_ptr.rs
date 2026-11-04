@@ -50,7 +50,7 @@ use crate::{imp, syms};
             (*ph).write_u64(l3, 400i64 as u64);
             syms::f_001534_quitf_int_char_const_ptr(ph, 595118i64, l3);
         }
-        let t7: u128 = (*ph).read_splat(l0 + 628, 64);
+        let t7: u128 = (*ph).read_u64(l0 + 628) as u128;
         let t8: i64 = l3;
         l6 = t7;
         let t9: u128 = simd::f32x4_replace_lane(l6, 2, l5);

@@ -156,12 +156,12 @@ use crate::{imp, syms};
             let t23: i32 = (*ph).read_u8(l4 + 56) as i32;
             if (t23 & 16i32) != 0 {
                 l9 = 1.0f32;
-                let t24: u128 = (*ph).read_splat(l4 + 16, 64);
+                let t24: u128 = (*ph).read_u64(l4 + 16) as u128;
                 l8 = t24;
                 let t25: u128 = simd::f32x4_neg(l8);
                 let t26: u128 = simd::f32x4_ge(l8, 0x00000000000000000000000000000000u128);
                 let t27: u128 = simd::v128_bitselect(l8, t25, t26);
-                let t28: u128 = (*ph).read_splat(l4 + 8, 64);
+                let t28: u128 = (*ph).read_u64(l4 + 8) as u128;
                 l8 = t28;
                 let t29: u128 = simd::f32x4_neg(l8);
                 let t30: u128 = simd::f32x4_ge(l8, 0x00000000000000000000000000000000u128);

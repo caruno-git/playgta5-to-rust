@@ -47,7 +47,7 @@ use crate::{imp, syms};
                     }
                 }
                 let t2: f32 = (*ph).read_f32(l0);
-                let t3: u128 = (*ph).read_splat(l0 + 4, 64);
+                let t3: u128 = (*ph).read_u64(l0 + 4) as u128;
                 let t4: u128 = simd::f32x4_add(t3, 0x00000000000000008000000046000000u128);
                 let t5: u128 = simd::f32x4_add(t4, 0x3f0000003f0000003f0000003f000000u128);
                 let t6: u128 = simd::f32x4_floor(t5);
@@ -221,7 +221,7 @@ use crate::{imp, syms};
                             syms::f_001527_warningf_char_const_ptr(ph, 1151464i64, 0i64);
                             (*ph).write_u64(l10 + 64, l12 as u64);
                             let t47: f32 = (*ph).read_f32(l12 + 112);
-                            let t48: u128 = (*ph).read_splat(l12 + 116, 64);
+                            let t48: u128 = (*ph).read_u64(l12 + 116) as u128;
                             let t49: u128 = simd::f32x4_add(t48, 0x00000000000000008000000046000000u128);
                             let t50: u128 = simd::f32x4_add(t49, 0x3f0000003f0000003f0000003f000000u128);
                             let t51: u128 = simd::f32x4_floor(t50);

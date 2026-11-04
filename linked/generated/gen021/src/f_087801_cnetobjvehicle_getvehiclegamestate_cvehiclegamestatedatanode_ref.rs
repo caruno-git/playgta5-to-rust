@@ -110,7 +110,7 @@ use crate::{imp, syms};
             (*ph).write_u8(l1 + 356, ((t18 != 0i32) as i32) as u8);
             let t19: i32 = (*ph).read_u32(l2 + 2400) as i32;
             (*ph).write_u8(l1 + 357, (((t19 as u32).wrapping_shr((17i32 as u32) & 31) as i32) & 1i32) as u8);
-            let t20: u128 = (*ph).read_splat(l2 + 5136, 32);
+            let t20: u128 = (*ph).read_u32(l2 + 5136) as u128;
             (*ph).write_v128(l1 + 284, t20);
             (*ph).write_u8(l1 + 335, 0i32 as u8);
             let t21: i64 = (*ph).read_u64(l2 + 72) as i64;

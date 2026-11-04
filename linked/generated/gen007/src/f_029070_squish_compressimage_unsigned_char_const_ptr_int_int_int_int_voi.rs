@@ -537,7 +537,7 @@ use crate::{imp, syms};
                                 l4 = t75;
                                 let t76: i32 = rt::select_i32((((l4 as i32) >= (255i32 as i32)) as i32), l4, 255i32);
                                 (*ph).write_u8(t74 + 12, t76 as u8);
-                                let t77: u128 = (*ph).read_splat(l9 + 8, 64);
+                                let t77: u128 = (*ph).read_u64(l9 + 8) as u128;
                                 l56 = t77;
                                 (*ph).write_u32(l13 + 48, 2147483647i32 as u32);
                                 let t78: u128 = simd::f32x4_mul(l56, 0x437f0000437f0000437f0000437f0000u128);
@@ -839,7 +839,7 @@ use crate::{imp, syms};
                             let t188: i64 = l13;
                             let mut r189: u128 = 0;
                             if (l4 & 32i32) != 0 {
-                                let t190: u128 = (*ph).read_splat(0i64 + 6928532, 32);
+                                let t190: u128 = (*ph).read_u32(0i64 + 6928532) as u128;
                                 let t191: u128 = (*ph).load_lane(0i64 + 6928536, t190, 1, 32);
                                 let t192: u128 = (*ph).load_lane(0i64 + 6928540, t191, 2, 32);
                                 r189 = t192;

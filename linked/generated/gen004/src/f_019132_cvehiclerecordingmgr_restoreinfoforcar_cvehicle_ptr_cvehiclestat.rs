@@ -309,7 +309,7 @@ use crate::{imp, syms};
         (*ph).write_f32(l0 + 2528, (((t197 as i32) as f32) / 100.0f32));
         let t198: i32 = (*ph).read_u8(l1 + 19) as i32;
         (*ph).write_u8(l0 + 2532, ((t198 != 0i32) as i32) as u8);
-        let t199: u128 = (*ph).read_splat(l1 + 4, 32);
+        let t199: u128 = (*ph).read_u32(l1 + 4) as u128;
         l4 = t199;
         let t200: i32 = (*ph).read_i16(l1 + 8) as i32;
         (*ph).write_f32(l13 + 8, (l2 * (((t200 as i32) as f32) / 273.058319f32)));

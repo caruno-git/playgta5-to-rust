@@ -37,7 +37,7 @@ use crate::{imp, syms};
             }
             let t3: u128 = (*ph).read_v128(23404720i64);
             l2 = t3;
-            let t4: u128 = (*ph).read_splat(8i64 + 23404720, 64);
+            let t4: u128 = (*ph).read_u64(8i64 + 23404720) as u128;
             l3 = t4;
             syms::f_047175_cscenememorycheck_setstate_cscenememorycheck_estate(ph, 0i32);
             let t5: u128 = simd::i32x4_max_u(l3, l2);

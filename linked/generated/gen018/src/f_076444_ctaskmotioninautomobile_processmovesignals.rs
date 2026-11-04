@@ -136,7 +136,7 @@ use crate::{imp, syms};
                     (*ph).write_u8(l0 + 764, 0i32 as u8);
                 break 'L5;
                 }
-                let t24: u128 = (*ph).read_splat(l10 + 5396, 64);
+                let t24: u128 = (*ph).read_u64(l10 + 5396) as u128;
                 let t25: u128 = simd::v128_or(t24, 0x00000000000000000000000204000000u128);
                 (*ph).store_lane(l10 + 5396, t25, 0, 64);
                 'L6: loop {

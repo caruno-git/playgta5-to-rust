@@ -34,7 +34,7 @@ use crate::{imp, syms};
         l3 = t1;
         let t2: f32 = (*ph).read_f32(l1 + 16);
         l11 = t2;
-        let t3: u128 = (*ph).read_splat(l1 + 8, 64);
+        let t3: u128 = (*ph).read_u64(l1 + 8) as u128;
         l2 = t3;
         let t4: i32 = (*ph).read_u32(l1 + 44) as i32;
         let t5: i32 = syms::f_080865_cvfxhelper_getmatrixfrombonetag_rage_mat34v_ref_centity_const_pt(ph, (l10.wrapping_add(16i64)), l0, t4);

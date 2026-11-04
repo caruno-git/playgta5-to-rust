@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_003169_rage_packeulersto32_rage_vector3_const_ref(ph: *mut Phantom, mut l0: i64) -> i32 {
         let mut l1: u128 = 0;
         let mut l2: i32 = 0;
-        let t1: u128 = (*ph).read_splat(l0 + 4, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 4) as u128;
         let t2: u128 = simd::f32x4_div(t1, 0xc0490fdbc0490fdbc0490fdbc0490fdbu128);
         l1 = 0x00000000000000004400000044800000u128;
         let t3: u128 = simd::f32x4_mul(t2, l1);

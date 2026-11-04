@@ -83,7 +83,7 @@ use crate::{imp, syms};
         }
         syms::f_012435_rage_atmapentry_unsigned_int_void_ptr_rage_ptxbehaviour_ptr_rage(ph, 19669064i64, (l5.wrapping_add(56i64)), (l5.wrapping_add(48i64)));
         let t15: f32 = (*ph).read_f32(l2);
-        let t16: u128 = (*ph).read_splat(l2 + 4, 64);
+        let t16: u128 = (*ph).read_u64(l2 + 4) as u128;
         let t17: u128 = simd::f32x4_add(t16, 0x00000000000000008000000046000000u128);
         let t18: u128 = simd::f32x4_add(t17, 0x3f0000003f0000003f0000003f000000u128);
         let t19: u128 = simd::f32x4_floor(t18);

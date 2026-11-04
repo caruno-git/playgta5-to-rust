@@ -168,7 +168,7 @@ use crate::{imp, syms};
         let t58: f32 = simd::f32x4_extract_lane(l32, 0) as f32;
         let t59: f32 = (t55 - l22);
         l23 = t58;
-        let t60: u128 = (*ph).read_splat(l0 + 36, 64);
+        let t60: u128 = (*ph).read_u64(l0 + 36) as u128;
         let t61: f32 = l23;
         let t62: i64 = l0;
         l36 = t60;

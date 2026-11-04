@@ -264,7 +264,7 @@ use crate::{imp, syms};
                 let mut r69: i64 = 0;
                 'L15: loop {
                     if (((l6 & 255i32) == 0) as i32) != 0 {
-                        let t70: u128 = (*ph).read_splat(l4 + 8, 32);
+                        let t70: u128 = (*ph).read_u32(l4 + 8) as u128;
                         l23 = t70;
                         let t71: u128 = (*ph).read_v128(l4);
                         l22 = t71;

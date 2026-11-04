@@ -98,7 +98,7 @@ use crate::{imp, syms};
                 'L5: loop {
                     let t17: i64 = (*ph).read_u64(25010104i64) as i64;
                     l3 = (t17.wrapping_add((l0.wrapping_mul(8024i64))));
-                    let t18: u128 = (*ph).read_splat(l3, 64);
+                    let t18: u128 = (*ph).read_u64(l3) as u128;
                     l22 = t18;
                     let t19: f32 = (*ph).read_f32(l3 + 8);
                     (*ph).write_f64(l4, ((1000.0f32 / t19) as f64));

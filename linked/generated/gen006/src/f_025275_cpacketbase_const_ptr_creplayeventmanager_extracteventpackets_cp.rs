@@ -277,7 +277,7 @@ use crate::{imp, syms};
                         (*ph).write_u32(l8 + 4, (-2125298364i32) as u32);
                         let t62: f32 = (*ph).read_f32(l6 + 40);
                         syms::f_012207_rage_ptxeffectinst_setevovaluefromhash_rage_athashvalue_float(ph, l7, (l8.wrapping_add(4i64)), t62);
-                        let t63: u128 = (*ph).read_splat(l6 + 44, 64);
+                        let t63: u128 = (*ph).read_u64(l6 + 44) as u128;
                         let t64: u128 = (*ph).read_splat(l6 + 52, 32);
                         let t65: u128 = (*ph).read_v128(l7 + 320);
                         let t66: u128 = simd::i8x16_shuffle_static::<8,9,10,11,0,1,2,3,28,29,30,31,0,1,2,3>(t64, t65);

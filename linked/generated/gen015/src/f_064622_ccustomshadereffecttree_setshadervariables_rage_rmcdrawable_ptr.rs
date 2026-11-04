@@ -183,7 +183,7 @@ use crate::{imp, syms};
                 let t45: f32 = (*ph).read_f32(l0 + 40);
                 l12 = t45;
                 (*ph).write_f32(23983688i64, l12);
-                let t46: u128 = (*ph).read_splat(l2, 32);
+                let t46: u128 = (*ph).read_u32(l2) as u128;
                 let t47: u128 = (*ph).load_lane(l2 + 4, t46, 1, 32);
                 let t48: u128 = (*ph).load_lane(l2 + 8, t47, 2, 32);
                 let t49: u128 = simd::f32x4_replace_lane(t48, 3, l12);
@@ -462,7 +462,7 @@ use crate::{imp, syms};
             let t126: u128 = (*ph).read_v128(23983472i64);
             let t127: u128 = (*ph).load_lane(0i64 + 23983488, t126, 3, 32);
             (*ph).write_v128(l2 + 128, t127);
-            let t128: u128 = (*ph).read_splat(0i64 + 23983492, 32);
+            let t128: u128 = (*ph).read_u32(0i64 + 23983492) as u128;
             (*ph).write_v128(l2 + 112, t128);
             let t129: i64 = (*ph).read_u64(l0 + 24) as i64;
             l1 = t129;
@@ -720,7 +720,7 @@ use crate::{imp, syms};
                     let t214: i32 = (*ph).read_u32(l1 + 120) as i32;
                     l9 = t214;
                     if l9 != 0 {
-                        let t215: u128 = (*ph).read_splat(0i64 + 23983504, 32);
+                        let t215: u128 = (*ph).read_u32(0i64 + 23983504) as u128;
                         (*ph).write_v128(l0, t215);
                         syms::f_009333_rage_grmshadergroup_setvarcommon_rage_grmshadergroupvar_void_con(ph, l3, l9, l0, 16i32, 1i32);
                     }
@@ -734,7 +734,7 @@ use crate::{imp, syms};
                     let t218: i32 = (*ph).read_u32(l1 + 128) as i32;
                     l9 = t218;
                     if l9 != 0 {
-                        let t219: u128 = (*ph).read_splat(0i64 + 23983504, 32);
+                        let t219: u128 = (*ph).read_u32(0i64 + 23983504) as u128;
                         (*ph).write_v128(l0, t219);
                         syms::f_009333_rage_grmshadergroup_setvarcommon_rage_grmshadergroupvar_void_con(ph, l3, l9, l0, 16i32, 1i32);
                     }

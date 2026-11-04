@@ -721,9 +721,9 @@ use crate::{imp, syms};
                                                             if ((l32 == 2i32) as i32) != 0 {
                                                                 break 'L33;
                                                             }
-                                                            let t308: u128 = (*ph).read_splat(l13, 64);
+                                                            let t308: u128 = (*ph).read_u64(l13) as u128;
                                                             l24 = t308;
-                                                            let t309: u128 = (*ph).read_splat(l13 + 8, 64);
+                                                            let t309: u128 = (*ph).read_u64(l13 + 8) as u128;
                                                             l25 = t309;
                                                             let t310: f32 = (*ph).read_f32(l13 + 16);
                                                             l4 = t310;
@@ -982,9 +982,9 @@ use crate::{imp, syms};
                                                             l10 = t435;
                                                             let t436: f32 = (*ph).read_f32(l13 + 16);
                                                             l4 = t436;
-                                                            let t437: u128 = (*ph).read_splat(l13 + 8, 64);
+                                                            let t437: u128 = (*ph).read_u64(l13 + 8) as u128;
                                                             l25 = t437;
-                                                            let t438: u128 = (*ph).read_splat(l13, 64);
+                                                            let t438: u128 = (*ph).read_u64(l13) as u128;
                                                             l24 = t438;
                                                             (*ph).write_u32(l14 + 108, (l32.wrapping_add(2i32)) as u32);
                                                             let t439: i32 = (*ph).read_u8(l13 + 33) as i32;

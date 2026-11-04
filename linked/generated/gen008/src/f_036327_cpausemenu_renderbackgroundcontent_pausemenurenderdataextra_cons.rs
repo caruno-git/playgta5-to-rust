@@ -367,7 +367,7 @@ use crate::{imp, syms};
                         }
                         let t64: i32 = syms::f_035107_chudtools_getformatfromstring_char_const_ptr(ph, (l6.wrapping_add(99i64)));
                         syms::f_034954_chudtools_adjustnormalized16_9valuesforcurrentaspectratio_ewides(ph, t64, (l5.wrapping_add(16i64)), (l5.wrapping_add(8i64)), 1i32);
-                        let t65: u128 = (*ph).read_splat(l5 + 16, 64);
+                        let t65: u128 = (*ph).read_u64(l5 + 16) as u128;
                         let t66: i64 = l5;
                         l11 = t65;
                         let t67: f32 = (*ph).read_f32(l0 + 72);

@@ -1596,7 +1596,7 @@ use crate::{imp, syms};
             break 'L113;
             }
             syms::f_043565_cplantmgr_calculatewindbending_rage_vector2_ref(ph, (l1.wrapping_add(304i64)));
-            let t304: u128 = (*ph).read_splat(l1 + 304, 64);
+            let t304: u128 = (*ph).read_u64(l1 + 304) as u128;
             let t305: i64 = l1;
             l28 = t304;
             let t306: u128 = simd::f32x4_neg(l28);

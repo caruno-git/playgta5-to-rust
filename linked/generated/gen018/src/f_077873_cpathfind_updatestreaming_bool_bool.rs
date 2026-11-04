@@ -392,14 +392,14 @@ use crate::{imp, syms};
                                 break 'L31;
                             }
                             l1 = (l7.wrapping_shl((2i64 as u32) & 63));
-                            let t95: u128 = (*ph).read_splat((l1.wrapping_add(25835052i64)), 32);
+                            let t95: u128 = (*ph).read_u32((l1.wrapping_add(25835052i64))) as u128;
                             let t96: u128 = (*ph).load_lane((l1.wrapping_add(25835032i64)), t95, 1, 32);
                             let t97: u128 = simd::f32x4_add(t96, 0x46000000460000004600000046000000u128);
                             let t98: u128 = simd::f32x4_mul(t97, 0x3b0000003b0000003b0000003b000000u128);
                             let t99: u128 = simd::i32x4_trunc_sat_f32x4_s(t98);
                             let t100: u128 = simd::i32x4_max_s(t99, 0x00000000000000000000000000000000u128);
                             l18 = t100;
-                            let t101: u128 = (*ph).read_splat((l1.wrapping_add(25835072i64)), 32);
+                            let t101: u128 = (*ph).read_u32((l1.wrapping_add(25835072i64))) as u128;
                             let t102: u128 = (*ph).load_lane((l1.wrapping_add(25835012i64)), t101, 1, 32);
                             let t103: u128 = simd::f32x4_add(t102, 0x46000000460000004600000046000000u128);
                             let t104: u128 = simd::f32x4_mul(t103, 0x3b0000003b0000003b0000003b000000u128);

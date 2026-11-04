@@ -2745,7 +2745,7 @@ use crate::{imp, syms};
                             l23 = t740;
                             let t744: i64 = simd::i64x2_extract_lane(l23, 1) as i64;
                             let t745: i64 = simd::i64x2_extract_lane(l23, 0) as i64;
-                            let t746: u128 = (*ph).read_splat((l7.wrapping_add((t745.wrapping_shl((2i64 as u32) & 63)))), 32);
+                            let t746: u128 = (*ph).read_u32((l7.wrapping_add((t745.wrapping_shl((2i64 as u32) & 63))))) as u128;
                             let t747: u128 = (*ph).load_lane((t743.wrapping_add((t744.wrapping_shl((2i64 as u32) & 63)))), t746, 1, 32);
                             let t748: u128 = (*ph).load_lane(t742, t747, 2, 32);
                             let t749: u128 = (*ph).load_lane(t741, t748, 3, 32);

@@ -67,7 +67,7 @@ use crate::{imp, syms};
         let t8: unsafe extern "C" fn(*mut Phantom, i64, i32) -> i64 = core::mem::transmute(t7);
         let t9: i64 = t8(ph as *mut Phantom, l3, 1i32);
         l3 = t9;
-        let t10: u128 = (*ph).read_splat(l1 + 8, 64);
+        let t10: u128 = (*ph).read_u64(l1 + 8) as u128;
         l20 = 0x3f0000003f0000003f0000003f000000u128;
         let t11: u128 = simd::f32x4_mul(t10, l20);
         let t12: u128 = (*ph).read_v128(l1);

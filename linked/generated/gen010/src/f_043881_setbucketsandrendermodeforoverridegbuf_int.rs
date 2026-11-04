@@ -66,7 +66,7 @@ use crate::{imp, syms};
                 l1 = t11;
                 let t12: i32 = (*ph).read_u32(l1 + 16872) as i32;
                 (*ph).write_u32(l1 + 16872, (t12.wrapping_add(1i32)) as u32);
-                let t13: u128 = (*ph).read_splat(l1 + 13624, 64);
+                let t13: u128 = (*ph).read_u64(l1 + 13624) as u128;
                 let t14: u128 = simd::i32x4_add(t13, 0x00000000000000000000001000000001u128);
                 (*ph).store_lane(l1 + 13624, t14, 0, 64);
                 syms::f_043872_void_rage_dlc_addinternal_void_ptr_int_int_void_ptr_int_char_con(ph, 40654i64, 342658i64, (l2.wrapping_add(12i64)));

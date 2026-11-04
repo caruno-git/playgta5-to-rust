@@ -219,7 +219,7 @@ use crate::{imp, syms};
             let t106: i32 = (*ph).read_u8(23981600i64) as i32;
             let t107: f32 = rt::select_f32(t106, 0.0f32, 1.0f32);
             (*ph).write_f32(l2 + 76, t107);
-            let t108: u128 = (*ph).read_splat(0i64 + 7340356, 32);
+            let t108: u128 = (*ph).read_u32(0i64 + 7340356) as u128;
             let t109: i32 = (*ph).read_u32(23981596i64) as i32;
             let t110: i64 = l2;
             l24 = t109;

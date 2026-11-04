@@ -119,7 +119,7 @@ use crate::{imp, syms};
             l16 = t32;
             let t33: f32 = simd::f32x4_extract_lane(l10, 1) as f32;
             l17 = t33;
-            let t34: u128 = (*ph).read_splat(l0 + 96, 64);
+            let t34: u128 = (*ph).read_u64(l0 + 96) as u128;
             l10 = t34;
             let t35: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l10, l10);
             let t36: i32 = (*ph).read_u32(l0 + 100) as i32;

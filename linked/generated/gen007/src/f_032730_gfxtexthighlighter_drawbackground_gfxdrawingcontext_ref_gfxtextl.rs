@@ -683,10 +683,10 @@ use crate::{imp, syms};
                                         }
                                     break 'L33;
                                     }
-                                    let t137: u128 = (*ph).read_splat(l3, 64);
+                                    let t137: u128 = (*ph).read_u64(l3) as u128;
                                     l54 = t137;
                                     let t138: u128 = simd::f32x4_sub(l53, l55);
-                                    let t139: u128 = (*ph).read_splat(l8 + 12, 64);
+                                    let t139: u128 = (*ph).read_u64(l8 + 12) as u128;
                                     let t140: u128 = simd::f32x4_convert_i32x4_s(t139);
                                     let t141: u128 = l54;
                                     l52 = t140;

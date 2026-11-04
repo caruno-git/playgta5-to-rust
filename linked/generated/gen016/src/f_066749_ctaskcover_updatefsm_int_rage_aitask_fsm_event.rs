@@ -2248,7 +2248,7 @@ use crate::{imp, syms};
                                                                 l9 = ((t672 + (l9 * l9)).sqrt());
                                                                 let t674: f32 = (*ph).read_f32(l4 + 152);
                                                                 l14 = t674;
-                                                                let t675: u128 = (*ph).read_splat(l5 + 52, 64);
+                                                                let t675: u128 = (*ph).read_u64(l5 + 52) as u128;
                                                                 l17 = t675;
                                                                 l20 = 0i32;
                                                                 'L161: loop {

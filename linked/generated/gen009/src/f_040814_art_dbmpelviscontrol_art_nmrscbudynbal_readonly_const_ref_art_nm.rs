@@ -150,9 +150,9 @@ use crate::{imp, syms};
         if ((t50 != 1i32) as i32) != 0 {
             r51 = 0x3f8000003f8000003f8000003f800000u128;
         } else {
-            let t52: u128 = (*ph).read_splat(l1 + 1192, 32);
+            let t52: u128 = (*ph).read_u32(l1 + 1192) as u128;
             let t53: u128 = (*ph).load_lane(l1 + 2168, t52, 1, 32);
-            let t54: u128 = (*ph).read_splat(l0 + 72, 32);
+            let t54: u128 = (*ph).read_u32(l0 + 72) as u128;
             let t55: u128 = (*ph).load_lane(l0 + 120, t54, 1, 32);
             let t56: u128 = simd::f32x4_mul(t53, t55);
             let t57: u128 = (*ph).read_v128(l1 + 1184);

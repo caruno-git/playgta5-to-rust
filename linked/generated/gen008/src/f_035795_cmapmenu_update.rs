@@ -1512,7 +1512,7 @@ use crate::{imp, syms};
                 let t331: i32 = l18;
                 l16 = t330;
                 if (((t331 as i32) < (l16 as i32)) as i32) != 0 {
-                    let t332: u128 = (*ph).read_splat(0i64 + 19508568, 64);
+                    let t332: u128 = (*ph).read_u64(0i64 + 19508568) as u128;
                     l29 = t332;
                     let t333: u128 = l29;
                     l23 = (((l18 as i32) as f32) / ((l16 as i32) as f32));
@@ -1521,7 +1521,7 @@ use crate::{imp, syms};
                     let t336: i32 = (*ph).read_u32(6981044i64) as i32;
                     let t337: f32 = syms::f_034885_rage_tweenstar_computeeasedvalue_float_rage_tweenstar_easetype(ph, t335, t336);
                     let t338: u128 = simd::f32x4_splat(t337 as f32);
-                    let t339: u128 = (*ph).read_splat(l0 + 136, 64);
+                    let t339: u128 = (*ph).read_u64(l0 + 136) as u128;
                     let t340: u128 = simd::f32x4_sub(t339, l29);
                     let t341: u128 = simd::f32x4_mul(t338, t340);
                     let t342: u128 = simd::f32x4_add(t333, t341);

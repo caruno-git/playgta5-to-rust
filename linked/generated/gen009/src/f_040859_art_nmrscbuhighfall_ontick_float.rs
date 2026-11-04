@@ -634,7 +634,7 @@ use crate::{imp, syms};
                             l5 = t279;
                             break 'L15;
                         }
-                        let t280: u128 = (*ph).read_splat(l3 + 4, 64);
+                        let t280: u128 = (*ph).read_u64(l3 + 4) as u128;
                         l39 = t280;
                         let t281: u128 = simd::f32x4_splat(l14 as f32);
                         let t282: u128 = simd::f32x4_replace_lane(t281, 1, l21);

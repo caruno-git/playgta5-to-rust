@@ -93,7 +93,7 @@ use crate::{imp, syms};
                 'L5: loop {
                     let t19: i32 = syms::f_042127_cpeddamagepusharea_calcpushamount_rage_vector2_const_ref_float_r(ph, (l15.wrapping_add((l12.wrapping_mul(20i64)))), (l11.wrapping_add(24i64)), l16, l11, l5);
                     if t19 != 0 {
-                        let t20: u128 = (*ph).read_splat(l11, 64);
+                        let t20: u128 = (*ph).read_u64(l11) as u128;
                         let t21: u128 = simd::f32x4_add(l18, t20);
                         let t22: i64 = l11;
                         l18 = t21;
@@ -235,7 +235,7 @@ use crate::{imp, syms};
                         l12 = (t56.wrapping_add((t57.wrapping_mul(1557985959i64))));
                         l14 = (((l12 & 4294967295i64).wrapping_mul(1557985959i64)).wrapping_add(((l12 as u64).wrapping_shr((32i64 as u32) & 63) as i64)));
                         (*ph).write_u64(20219248i64, l14 as u64);
-                        let t58: u128 = (*ph).read_splat(l1, 64);
+                        let t58: u128 = (*ph).read_u64(l1) as u128;
                         let t59: u128 = simd::i32x4_splat((l12 as i32) as i32);
                         let t60: u128 = simd::i32x4_replace_lane(t59, 1, (l14 as i32));
                         let t61: u128 = simd::v128_and(t60, 0x007fffff007fffff007fffff007fffffu128);

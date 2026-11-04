@@ -108,8 +108,8 @@ use crate::{imp, syms};
                 if ((l2 == 0) as i32) != 0 {
                     break 'L5;
                 }
-                let t38: u128 = (*ph).read_splat(0i64 + 19405976, 64);
-                let t39: u128 = (*ph).read_splat(l2 + 8, 64);
+                let t38: u128 = (*ph).read_u64(0i64 + 19405976) as u128;
+                let t39: u128 = (*ph).read_u64(l2 + 8) as u128;
                 let t40: u128 = simd::f32x4_sub(t38, t39);
                 (*ph).store_lane(l3 + 8, t40, 0, 64);
                 syms::f_030050_cuigadgetbase_applymovement_rage_vector2_const_ref(ph, l2, (l3.wrapping_add(8i64)));

@@ -360,7 +360,7 @@ use crate::{imp, syms};
                     'L22: loop {
                         let t107: i64 = l30;
                         l28 = (l23.wrapping_add(l24));
-                        let t108: u128 = (*ph).read_splat((l32.wrapping_add((l28.wrapping_shl((1i64 as u32) & 63)))), 64);
+                        let t108: u128 = (*ph).read_u64((l32.wrapping_add((l28.wrapping_shl((1i64 as u32) & 63))))) as u128;
                         let t109: i64 = (t107.wrapping_add((l28.wrapping_shl((2i64 as u32) & 63))));
                         let t110: u128 = l19;
                         l20 = t108;
@@ -408,7 +408,7 @@ use crate::{imp, syms};
                 l20 = t125;
                 let t126: i32 = (*ph).read_u16(l0 + 4304) as i32;
                 l10 = t126;
-                let t127: u128 = (*ph).read_splat(l0 + 4296, 64);
+                let t127: u128 = (*ph).read_u64(l0 + 4296) as u128;
                 l19 = t127;
                 let t128: i32 = (*ph).read_u32(l0 + 4292) as i32;
                 l9 = t128;
@@ -562,7 +562,7 @@ use crate::{imp, syms};
                             l1 = (l28.wrapping_add(10i64));
                             l23 = 0i64;
                             'L33: loop {
-                                let t191: u128 = (*ph).read_splat((((l22.wrapping_add(16i64)).wrapping_add((l23.wrapping_shl((1i64 as u32) & 63))))) + 20, 64);
+                                let t191: u128 = (*ph).read_u64((((l22.wrapping_add(16i64)).wrapping_add((l23.wrapping_shl((1i64 as u32) & 63))))) + 20) as u128;
                                 let t192: u128 = l19;
                                 l20 = t191;
                                 let t193: u128 = simd::i32x4_extend_low_i16x8_s(l20);

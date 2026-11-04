@@ -2568,7 +2568,7 @@ use crate::{imp, syms};
                 let t957: u128 = simd::f32x4_add(t953, t956);
                 let t958: i64 = (*ph).read_u64(l0 + 4856) as i64;
                 let t959: u128 = (*ph).read_splat(t958 + 32, 32);
-                let t960: u128 = (*ph).read_splat(0i64 + 7278200, 32);
+                let t960: u128 = (*ph).read_u32(0i64 + 7278200) as u128;
                 let t961: u128 = simd::f32x4_add(t959, t960);
                 let t962: u128 = simd::f32x4_sub(t957, t961);
                 let t963: u128 = simd::f32x4_mul(t962, l39);

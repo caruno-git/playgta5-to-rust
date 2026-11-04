@@ -752,7 +752,7 @@ use crate::{imp, syms};
                             (*ph).write_v128(l2, 0x00000000000000000000000000000000u128);
                             syms::f_004683_rage_fwentity_getaabb_rage_spdaabb_ref_const(ph, l3, l2);
                             (*ph).write_u32(l2 + 56, l17 as u32);
-                            let t182: u128 = (*ph).read_splat(l2 + 20, 64);
+                            let t182: u128 = (*ph).read_u64(l2 + 20) as u128;
                             let t183: u128 = simd::f32x4_mul(t182, 0x41200000412000004120000041200000u128);
                             let t184: u128 = simd::i32x4_trunc_sat_f32x4_s(t183);
                             (*ph).store_lane(l2 + 48, t184, 0, 64);

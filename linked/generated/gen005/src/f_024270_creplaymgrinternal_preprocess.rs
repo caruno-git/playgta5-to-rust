@@ -5822,7 +5822,7 @@ use crate::{imp, syms};
                                         l14 = t1392;
                                         if l14 != 0 {
                                             l6 = (l8.wrapping_add((l1.wrapping_mul(24i64))));
-                                            let t1393: u128 = (*ph).read_splat(l6 + 4, 64);
+                                            let t1393: u128 = (*ph).read_u64(l6 + 4) as u128;
                                             let t1394: u128 = (*ph).load_lane(l6 + 12, t1393, 2, 32);
                                             l25 = t1394;
                                             let t1395: i32 = (*ph).read_u32(l6) as i32;

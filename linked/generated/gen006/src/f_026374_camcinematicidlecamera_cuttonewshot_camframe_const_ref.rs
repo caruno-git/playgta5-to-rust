@@ -218,11 +218,11 @@ use crate::{imp, syms};
                     }
                     let t40: f32 = (*ph).read_f32(l2 + 4308);
                     l39 = t40;
-                    let t41: u128 = (*ph).read_splat(l2 + 4304, 64);
+                    let t41: u128 = (*ph).read_u64(l2 + 4304) as u128;
                     l63 = t41;
                     let t42: i32 = syms::f_090911_rand(ph);
                     l57 = t42;
-                    let t43: u128 = (*ph).read_splat(l2 + 4312, 64);
+                    let t43: u128 = (*ph).read_u64(l2 + 4312) as u128;
                     l62 = t43;
                     let t44: u128 = simd::i32x4_splat(l57 as i32);
                     let t45: i32 = syms::f_090911_rand(ph);

@@ -219,10 +219,10 @@ use crate::{imp, syms};
                     }
                     l8 = ((*ph).sp.wrapping_sub(112i64));
                     (*ph).sp = l8;
-                    let t54: u128 = (*ph).read_splat(l6 + 40, 64);
+                    let t54: u128 = (*ph).read_u64(l6 + 40) as u128;
                     let t55: u128 = (*ph).load_lane(l6 + 48, t54, 2, 32);
                     l17 = t55;
-                    let t56: u128 = (*ph).read_splat(l6 + 52, 64);
+                    let t56: u128 = (*ph).read_u64(l6 + 52) as u128;
                     let t57: u128 = (*ph).load_lane(l6 + 60, t56, 2, 32);
                     l18 = t57;
                     let t58: i64 = (*ph).read_u64(19224632i64) as i64;

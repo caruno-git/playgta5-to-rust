@@ -133,7 +133,7 @@ use crate::{imp, syms};
                 let t29: i32 = syms::f_019297_caitarget_getposition_rage_vector3_ref_const(ph, (l1.wrapping_add(400i64)), l2);
                 let t30: i64 = (*ph).read_u64(l1 + 16) as i64;
                 l1 = t30;
-                let t31: u128 = (*ph).read_splat(l1 + 1440, 32);
+                let t31: u128 = (*ph).read_u32(l1 + 1440) as u128;
                 let t32: f32 = (*ph).read_f32(l1 + 144);
                 let t33: f32 = (*ph).read_f32(l2);
                 let t34: f32 = (*ph).read_f32(l2 + 4);

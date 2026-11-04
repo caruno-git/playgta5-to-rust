@@ -8536,7 +8536,7 @@ use crate::{imp, syms};
                 l49 = t1934;
                 l51 = 0x00000003000000020000000100000000u128;
                 'L766: loop {
-                    let t1935: u128 = (*ph).read_splat((l0.wrapping_add(((l4 as i32) as i64))), 32);
+                    let t1935: u128 = (*ph).read_u32((l0.wrapping_add(((l4 as i32) as i64)))) as u128;
                     let t1936: u128 = simd::i8x16_gt_s(t1935, 0xffffffffffffffffffffffffffffffffu128);
                     let t1937: u128 = simd::i16x8_extend_low_i8x16_s(t1936);
                     let t1938: u128 = simd::i32x4_extend_low_i16x8_s(t1937);
@@ -9434,14 +9434,14 @@ use crate::{imp, syms};
                         let t2186: i64 = (*ph).read_u64(l14) as i64;
                         let t2187: i64 = l10;
                         l14 = t2186;
-                        let t2188: u128 = (*ph).read_splat(l14 + 12, 32);
+                        let t2188: u128 = (*ph).read_u32(l14 + 12) as u128;
                         let t2189: u128 = (*ph).load_lane(t2187 + 12, t2188, 1, 32);
                         let t2190: u128 = simd::f32x4_div(t2189, 0x444ccccd444ccccd444ccccd444ccccdu128);
                         let t2191: u128 = simd::f32x4_add(t2190, 0x41200000412000004120000041200000u128);
                         let t2192: u128 = simd::f32x4_floor(t2191);
                         let t2193: u128 = simd::i32x4_trunc_sat_f32x4_s(t2192);
                         let t2194: u128 = simd::i32x4_mul(t2193, 0x00000014000000140000001400000014u128);
-                        let t2195: u128 = (*ph).read_splat(l14 + 8, 32);
+                        let t2195: u128 = (*ph).read_u32(l14 + 8) as u128;
                         let t2196: u128 = (*ph).load_lane(l10 + 8, t2195, 1, 32);
                         let t2197: u128 = simd::f32x4_div(t2196, 0x444ccccd444ccccd444ccccd444ccccdu128);
                         let t2198: u128 = simd::f32x4_add(t2197, 0x41200000412000004120000041200000u128);
@@ -9461,7 +9461,7 @@ use crate::{imp, syms};
                 }
                 'L849: loop {
                     let t2202: i64 = (*ph).read_u64((l18.wrapping_add((l0.wrapping_shl((3i64 as u32) & 63))))) as i64;
-                    let t2203: u128 = (*ph).read_splat(t2202 + 8, 64);
+                    let t2203: u128 = (*ph).read_u64(t2202 + 8) as u128;
                     let t2204: u128 = simd::f32x4_div(t2203, 0x444ccccd444ccccd444ccccd444ccccdu128);
                     let t2205: u128 = simd::f32x4_add(t2204, 0x41200000412000004120000041200000u128);
                     let t2206: u128 = simd::f32x4_floor(t2205);

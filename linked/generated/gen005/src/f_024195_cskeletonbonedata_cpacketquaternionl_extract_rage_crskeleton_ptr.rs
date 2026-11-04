@@ -317,7 +317,7 @@ use crate::{imp, syms};
                     break 'L9;
                     }
                     l62 = r62;
-                    let t75: u128 = (*ph).read_splat(l11 + 36, 64);
+                    let t75: u128 = (*ph).read_u64(l11 + 36) as u128;
                     l54 = t75;
                     'L12: loop {
                         let mut r76: f32 = 0.0;

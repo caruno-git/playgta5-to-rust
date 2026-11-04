@@ -45,7 +45,7 @@ use crate::{imp, syms};
             syms::f_031116_ceventcrimecryforhelp_createandcommunicateevent_cped_ptr_cped_co(ph, l3, l1);
         break 'L1;
         }
-        let t6: u128 = (*ph).read_splat(0i64 + 25352944, 64);
+        let t6: u128 = (*ph).read_u64(0i64 + 25352944) as u128;
         l4 = t6;
         let t7: i32 = syms::f_090911_rand(ph);
         l5 = t7;

@@ -266,7 +266,7 @@ use crate::{imp, syms};
                 l5 = 0i64;
                 'L13: loop {
                     l9 = (l5.wrapping_add(l7));
-                    let t46: u128 = (*ph).read_splat(l9 + 4, 32);
+                    let t46: u128 = (*ph).read_u32(l9 + 4) as u128;
                     let t47: u128 = simd::v128_xor(t46, l15);
                     (*ph).store_lane(l9 + 4, t47, 0, 32);
                     l5 = (l5.wrapping_add(4i64));

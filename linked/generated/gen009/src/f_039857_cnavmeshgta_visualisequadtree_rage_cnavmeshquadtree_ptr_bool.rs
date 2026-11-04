@@ -180,7 +180,7 @@ use crate::{imp, syms};
                 let t43: i64 = (*ph).read_u64(l5 + 16) as i64;
                 let t44: i64 = l3;
                 l5 = (t43.wrapping_add((l4.wrapping_shl((3i64 as u32) & 63))));
-                let t45: u128 = (*ph).read_splat(l5, 32);
+                let t45: u128 = (*ph).read_u32(l5) as u128;
                 l8 = t45;
                 let t46: i32 = simd::i16x8_extract_lane_u(l8, 0) as i32;
                 let t47: u128 = simd::f32x4_splat(((t46 as u32) as f32) as f32);

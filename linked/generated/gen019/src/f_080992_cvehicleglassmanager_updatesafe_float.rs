@@ -428,7 +428,7 @@ use crate::{imp, syms};
             (*ph).write_u32(26684852i64, l7 as u32);
             let t107: u128 = simd::i32x4_splat(l10 as i32);
             let t108: u128 = simd::i32x4_replace_lane(t107, 1, l8);
-            let t109: u128 = (*ph).read_splat(26684672i64 + 184, 64);
+            let t109: u128 = (*ph).read_u64(26684672i64 + 184) as u128;
             let t110: u128 = simd::i32x4_max_s(t108, t109);
             (*ph).store_lane(26684672i64 + 184, t110, 0, 64);
             (*ph).write_u32(l5 + 36, l7 as u32);

@@ -419,7 +419,7 @@ use crate::{imp, syms};
                         let t63: i64 = (*ph).read_u64(t62 + 16) as i64;
                         l5 = t63;
                         let t64: u128 = (*ph).read_v128(l5 + 128);
-                        let t65: u128 = (*ph).read_splat(l5 + 1476, 32);
+                        let t65: u128 = (*ph).read_u32(l5 + 1476) as u128;
                         let t66: u128 = (*ph).load_lane(l5 + 1480, t65, 1, 32);
                         l21 = t66;
                         let t67: u128 = simd::i8x16_shuffle_static::<8,9,10,11,8,9,10,11,8,9,10,11,8,9,10,11>(l21, 0x00000000000000000000000000000000u128);

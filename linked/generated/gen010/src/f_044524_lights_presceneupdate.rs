@@ -161,7 +161,7 @@ use crate::{imp, syms};
                                 l2 = (t26.wrapping_sub(t27));
                                 'L12: loop {
                                     l0 = (l3.wrapping_add((l4.wrapping_mul(24i64))));
-                                    let t28: u128 = (*ph).read_splat(l0, 32);
+                                    let t28: u128 = (*ph).read_u32(l0) as u128;
                                     let t29: u128 = (*ph).load_lane(l0 + 24, t28, 1, 32);
                                     let t30: u128 = (*ph).load_lane(l0 + 48, t29, 2, 32);
                                     let t31: u128 = (*ph).load_lane(l0 + 72, t30, 3, 32);
@@ -211,7 +211,7 @@ use crate::{imp, syms};
                                 l4 = 0i64;
                                 'L20: loop {
                                     l0 = (l3.wrapping_add((l4.wrapping_mul(24i64))));
-                                    let t40: u128 = (*ph).read_splat(l0, 32);
+                                    let t40: u128 = (*ph).read_u32(l0) as u128;
                                     let t41: u128 = (*ph).load_lane(l0 + 24, t40, 1, 32);
                                     let t42: u128 = (*ph).load_lane(l0 + 48, t41, 2, 32);
                                     let t43: u128 = (*ph).load_lane(l0 + 72, t42, 3, 32);
@@ -1289,7 +1289,7 @@ use crate::{imp, syms};
                         l0 = 0i64;
                         'L106: loop {
                             l3 = (l4.wrapping_add((l0.wrapping_mul(24i64))));
-                            let t193: u128 = (*ph).read_splat(l3, 32);
+                            let t193: u128 = (*ph).read_u32(l3) as u128;
                             let t194: u128 = (*ph).load_lane(l3 + 24, t193, 1, 32);
                             let t195: u128 = (*ph).load_lane(l3 + 48, t194, 2, 32);
                             let t196: u128 = (*ph).load_lane(l3 + 72, t195, 3, 32);

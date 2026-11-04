@@ -270,7 +270,7 @@ use crate::{imp, syms};
                         if ((l8 == 0) as i32) != 0 {
                             break 'L20;
                         }
-                        let t60: u128 = (*ph).read_splat(l6 + 32, 64);
+                        let t60: u128 = (*ph).read_u64(l6 + 32) as u128;
                         let t61: u128 = (*ph).load_lane(l6 + 40, t60, 2, 32);
                         l16 = t61;
                         syms::f_007528_rage_ptfxattach_attach_rage_ptxeffectinst_ptr_rage_fwentity_ptr(ph, l8, l9, (-1i32), 0i32, 0i32);

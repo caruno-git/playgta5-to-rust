@@ -89,14 +89,14 @@ use crate::{imp, syms};
                     }
                 break 'L3;
                 }
-                let t3: u128 = (*ph).read_splat(l0 + 92, 64);
+                let t3: u128 = (*ph).read_u64(l0 + 92) as u128;
                 let t4: i64 = l1;
                 let t5: i64 = l0;
                 l4 = t3;
                 let t6: u128 = (*ph).load_lane(t5 + 100, l4, 2, 32);
                 let t7: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,8,9,10,11,16,17,18,19>(t6, l4);
                 (*ph).write_v128(t4, t7);
-                let t8: u128 = (*ph).read_splat(l0 + 104, 64);
+                let t8: u128 = (*ph).read_u64(l0 + 104) as u128;
                 let t9: i64 = l2;
                 let t10: i64 = l0;
                 l4 = t8;

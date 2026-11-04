@@ -25,7 +25,7 @@ use crate::{imp, syms};
         let mut l5: f32 = 0.0;
         let t1: i32 = (*ph).read_u8(23153676i64) as i32;
         if ((t1 == 1i32) as i32) != 0 {
-            let t2: u128 = (*ph).read_splat(0i64 + 7249300, 64);
+            let t2: u128 = (*ph).read_u64(0i64 + 7249300) as u128;
             l2 = t2;
             let t3: f32 = (*ph).read_f32(7249308i64);
             let t4: u128 = l2;

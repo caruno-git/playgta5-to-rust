@@ -296,7 +296,7 @@ use crate::{imp, syms};
                                     if (t86 & 1i32) != 0 {
                                         (*ph).write_u32(l5 + 60, 0i32 as u32);
                                         (*ph).write_v128(l5 + 32, 0x00000000000000000000000000000000u128);
-                                        let t87: u128 = (*ph).read_splat(l9 + 28, 32);
+                                        let t87: u128 = (*ph).read_u32(l9 + 28) as u128;
                                         let t88: i64 = l5;
                                         l13 = t87;
                                         let t89: i32 = simd::i16x8_extract_lane_s(l13, 0) as i32;
@@ -322,7 +322,7 @@ use crate::{imp, syms};
                                     if (t100 & 1i32) != 0 {
                                         (*ph).write_u32(l5 + 60, 0i32 as u32);
                                         (*ph).write_v128(l5 + 32, 0x00000000000000000000000000000000u128);
-                                        let t101: u128 = (*ph).read_splat(l7 + 28, 32);
+                                        let t101: u128 = (*ph).read_u32(l7 + 28) as u128;
                                         let t102: i64 = l5;
                                         l13 = t101;
                                         let t103: i32 = simd::i16x8_extract_lane_s(l13, 0) as i32;
@@ -359,7 +359,7 @@ use crate::{imp, syms};
                                     if (t117 & 1i32) != 0 {
                                         (*ph).write_u32(l5 + 60, 0i32 as u32);
                                         (*ph).write_v128(l5 + 32, 0x00000000000000000000000000000000u128);
-                                        let t118: u128 = (*ph).read_splat(l7 + 28, 32);
+                                        let t118: u128 = (*ph).read_u32(l7 + 28) as u128;
                                         let t119: i64 = l5;
                                         l13 = t118;
                                         let t120: i32 = simd::i16x8_extract_lane_s(l13, 0) as i32;

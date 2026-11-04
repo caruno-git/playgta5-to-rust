@@ -87,7 +87,7 @@ use crate::{imp, syms};
                 l15 = t20;
                 r17 = 1.0f32; break 'L5;
             }
-            let t21: u128 = (*ph).read_splat(0i64 + 20212496, 64);
+            let t21: u128 = (*ph).read_u64(0i64 + 20212496) as u128;
             let t22: u128 = (*ph).load_lane(0i64 + 20212492, 0x00000000000000003f80000000000000u128, 0, 32);
             l20 = t22;
             let t23: u128 = simd::f32x4_sub(t21, l20);

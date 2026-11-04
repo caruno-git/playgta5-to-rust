@@ -169,7 +169,7 @@ use crate::{imp, syms};
         l13 = t36;
         let t37: f32 = (*ph).read_f32(10852760i64);
         l14 = t37;
-        let t38: u128 = (*ph).read_splat(4i64 + 10852752, 64);
+        let t38: u128 = (*ph).read_u64(4i64 + 10852752) as u128;
         l22 = t38;
         'L8: loop {
             let t39: i32 = (*ph).read_u32(28499548i64) as i32;

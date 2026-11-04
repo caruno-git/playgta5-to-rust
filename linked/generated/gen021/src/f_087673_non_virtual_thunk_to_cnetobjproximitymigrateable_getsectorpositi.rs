@@ -30,7 +30,7 @@ use crate::{imp, syms};
         let t4 = (*ph).table_entry_typed(t3, 3);
         let t5: unsafe extern "C" fn(*mut Phantom, i64, i64) = core::mem::transmute(t4);
         t5(ph as *mut Phantom, t1, l0);
-        let t6: u128 = (*ph).read_splat(l7 + 4, 64);
+        let t6: u128 = (*ph).read_u64(l7 + 4) as u128;
         l6 = t6;
         let t7: f32 = (*ph).read_f32(l7);
         let t8: i64 = l1;

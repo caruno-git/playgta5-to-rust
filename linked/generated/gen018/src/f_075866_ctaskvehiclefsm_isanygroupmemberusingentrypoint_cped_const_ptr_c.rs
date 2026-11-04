@@ -422,7 +422,7 @@ use crate::{imp, syms};
                         if (l15 & ((((l17.wrapping_sub(6i32)) as u32) < (29i32 as u32)) as i32)) != 0 {
                             break 'L10;
                         }
-                        let t91: u128 = (*ph).read_splat(l7 + 152, 32);
+                        let t91: u128 = (*ph).read_u32(l7 + 152) as u128;
                         let t92: u128 = (*ph).load_lane(l0 + 152, t91, 1, 32);
                         let t93: u128 = (*ph).read_splat(l4 + 8, 32);
                         let t94: u128 = simd::f32x4_sub(t92, t93);

@@ -43,8 +43,8 @@ use crate::{imp, syms};
                 if ((t7 == 0) as i32) != 0 {
                     break 'L1;
                 }
-                let t8: u128 = (*ph).read_splat(0i64 + 19440188, 64);
-                let t9: u128 = (*ph).read_splat(l0 + 8, 64);
+                let t8: u128 = (*ph).read_u64(0i64 + 19440188) as u128;
+                let t9: u128 = (*ph).read_u64(l0 + 8) as u128;
                 let t10: u128 = simd::f32x4_sub(t8, t9);
                 (*ph).store_lane(l0 + 76, t10, 0, 64);
                 r3 = 1i32;

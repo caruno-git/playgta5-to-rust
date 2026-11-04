@@ -298,7 +298,7 @@ use crate::{imp, syms};
                         l2 = 0i64;
                         'L19: loop {
                             l4 = (l7.wrapping_add((l2.wrapping_shl((4i64 as u32) & 63))));
-                            let t77: u128 = (*ph).read_splat(l4 + 8, 32);
+                            let t77: u128 = (*ph).read_u32(l4 + 8) as u128;
                             let t78: u128 = (*ph).load_lane(l4 + 24, t77, 1, 32);
                             let t79: u128 = (*ph).load_lane(l4 + 40, t78, 2, 32);
                             let t80: u128 = (*ph).load_lane(l4 + 56, t79, 3, 32);
@@ -782,7 +782,7 @@ use crate::{imp, syms};
             let t394: i64 = (*ph).read_u64(12374976i64) as i64;
             let t395: i64 = l5;
             l3 = t394;
-            let t396: u128 = (*ph).read_splat(l3 + 824, 64);
+            let t396: u128 = (*ph).read_u64(l3 + 824) as u128;
             let t397: u128 = (*ph).read_v128(l3 + 864);
             let t398: u128 = simd::f32x4_convert_i32x4_s(t397);
             let t399: u128 = simd::f32x4_mul(t396, t398);

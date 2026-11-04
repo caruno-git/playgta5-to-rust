@@ -2569,7 +2569,7 @@ use crate::{imp, syms};
                                     l17 = t486;
                                     let t488: f32 = rt::select_f32(((l17 < 0.0f32) as i32), l17, (-l17));
                                     (*ph).write_f32(t487 + 28, t488);
-                                    let t489: u128 = (*ph).read_splat(l2 + 20, 64);
+                                    let t489: u128 = (*ph).read_u64(l2 + 20) as u128;
                                     let t490: u128 = simd::f32x4_mul(t489, 0x3c8efa353c8efa353c8efa353c8efa35u128);
                                     let t491: i64 = l2;
                                     l14 = t490;

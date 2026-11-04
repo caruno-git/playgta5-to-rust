@@ -168,7 +168,7 @@ use crate::{imp, syms};
                     let t49: i32 = t48(ph as *mut Phantom, l3);
                     l1 = ((t49 as u32).wrapping_shr((6i32 as u32) & 31) as i32);
                     (*ph).write_u32(t46, l1 as u32);
-                    let t50: u128 = (*ph).read_splat(l5, 32);
+                    let t50: u128 = (*ph).read_u32(l5) as u128;
                     let t51: u128 = simd::i32x4_replace_lane(t50, 1, l1);
                     let t52: u128 = simd::f32x4_convert_i32x4_u(t51);
                     let t53: u128 = simd::f32x4_div(0x3f8000003f8000003f8000003f800000u128, t52);

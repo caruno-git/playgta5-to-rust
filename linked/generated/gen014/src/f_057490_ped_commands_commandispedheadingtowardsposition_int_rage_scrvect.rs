@@ -49,7 +49,7 @@ use crate::{imp, syms};
                 r3 = 0i32; break 'L1;
             break 'L2;
             }
-            let t11: u128 = (*ph).read_splat(l1 + 1440, 32);
+            let t11: u128 = (*ph).read_u32(l1 + 1440) as u128;
             let t12: f32 = (*ph).read_f32(l1 + 144);
             let t13: f32 = (*ph).read_f32(l1 + 148);
             let t14: f32 = syms::f_090713_atan2f(ph, ((t12 - l4) + 0.0f32), (l3 - t13));

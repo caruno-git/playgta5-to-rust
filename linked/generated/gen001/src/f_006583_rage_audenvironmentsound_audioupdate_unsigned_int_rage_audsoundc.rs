@@ -1276,7 +1276,7 @@ use crate::{imp, syms};
                                                             if ((l29 == 0.0f32) as i32) != 0 {
                                                                 r365 = 0.0f32; break 'L83;
                                                             }
-                                                            let t370: u128 = (*ph).read_splat(l13 + 124, 64);
+                                                            let t370: u128 = (*ph).read_u64(l13 + 124) as u128;
                                                             let t371: f32 = l29;
                                                             l33 = t370;
                                                             let t372: u128 = simd::v128_and(l33, 0x007fffff007fffff007fffff007fffffu128);
@@ -1333,7 +1333,7 @@ use crate::{imp, syms};
                                                             if ((l29 == 0.0f32) as i32) != 0 {
                                                                 break 'L84;
                                                             }
-                                                            let t402: u128 = (*ph).read_splat(l13 + 268, 64);
+                                                            let t402: u128 = (*ph).read_u64(l13 + 268) as u128;
                                                             let t403: f32 = l26;
                                                             let t404: f32 = l29;
                                                             l33 = t402;
@@ -1546,17 +1546,17 @@ use crate::{imp, syms};
                                 l14 = ((*ph).sp.wrapping_sub(160i64));
                                 (*ph).sp = l14;
                                 l13 = (l17.wrapping_add(16i64));
-                                let t499: u128 = (*ph).read_splat(l13 + 60, 32);
+                                let t499: u128 = (*ph).read_u32(l13 + 60) as u128;
                                 let t500: u128 = (*ph).load_lane(l13 + 72, t499, 1, 32);
                                 let t501: u128 = (*ph).load_lane(l13 + 84, t500, 2, 32);
                                 let t502: u128 = (*ph).load_lane(l13 + 96, t501, 3, 32);
                                 l37 = t502;
-                                let t503: u128 = (*ph).read_splat(l13 + 64, 32);
+                                let t503: u128 = (*ph).read_u32(l13 + 64) as u128;
                                 let t504: u128 = (*ph).load_lane(l13 + 76, t503, 1, 32);
                                 let t505: u128 = (*ph).load_lane(l13 + 88, t504, 2, 32);
                                 let t506: u128 = (*ph).load_lane(l13 + 100, t505, 3, 32);
                                 l38 = t506;
-                                let t507: u128 = (*ph).read_splat(l13 + 48, 64);
+                                let t507: u128 = (*ph).read_u64(l13 + 48) as u128;
                                 let t508: u128 = (*ph).load_lane(l13 + 56, t507, 2, 32);
                                 let t509: u128 = (*ph).load_lane(l13 + 68, t508, 3, 32);
                                 l34 = t509;
@@ -1881,7 +1881,7 @@ use crate::{imp, syms};
                                                     let t604: u128 = simd::f32x4_ge(l33, 0xcf000000cf000000cf000000cf000000u128);
                                                     let t605: u128 = simd::v128_and(t603, t604);
                                                     let t606: u128 = simd::v128_bitselect(t602, 0x80000000800000008000000080000000u128, t605);
-                                                    let t607: u128 = (*ph).read_splat(l15 + 16, 64);
+                                                    let t607: u128 = (*ph).read_u64(l15 + 16) as u128;
                                                     let t608: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,24,25,26,27,28,29,30,31>(t607, 0x00000000000000000000000000000000u128);
                                                     let t609: u128 = simd::f32x4_mul(t608, 0x47000000470000004700000047000000u128);
                                                     l33 = t609;

@@ -446,7 +446,7 @@ use crate::{imp, syms};
                         if ((t173 != 1i32) as i32) != 0 {
                             break 'L13;
                         }
-                        let t174: u128 = (*ph).read_splat(0i64 + 25041816, 32);
+                        let t174: u128 = (*ph).read_u32(0i64 + 25041816) as u128;
                         l11 = t174;
                         let t175: u128 = simd::f32x4_mul(l11, l11);
                         let t176: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(t175, l11);

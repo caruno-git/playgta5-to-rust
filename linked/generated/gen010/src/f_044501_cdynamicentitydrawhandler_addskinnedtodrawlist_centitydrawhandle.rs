@@ -862,7 +862,7 @@ use crate::{imp, syms};
             l6 = t370;
             let t371: i32 = (*ph).read_u32(l6 + 16872) as i32;
             (*ph).write_u32(l6 + 16872, (t371.wrapping_add(1i32)) as u32);
-            let t372: u128 = (*ph).read_splat(l6 + 14472, 64);
+            let t372: u128 = (*ph).read_u64(l6 + 14472) as u128;
             let t373: u128 = simd::i32x4_add(t372, 0x00000000000000000000001400000001u128);
             (*ph).store_lane(l6 + 14472, t373, 0, 64);
             syms::f_044481_centitydrawhandler_afteraddtodrawlist_rage_fwentity_ptr_unsigned(ph, l0, l1, l2);

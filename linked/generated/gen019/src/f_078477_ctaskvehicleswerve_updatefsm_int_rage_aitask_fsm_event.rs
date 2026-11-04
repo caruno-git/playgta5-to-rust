@@ -100,7 +100,7 @@ use crate::{imp, syms};
                                             break 'L13;
                                             }
                                             let t19: u128 = (*ph).read_v128(r15);
-                                            let t20: u128 = (*ph).read_splat(l0 + 260, 64);
+                                            let t20: u128 = (*ph).read_u64(l0 + 260) as u128;
                                             let t21: u128 = simd::f32x4_sub(t19, t20);
                                             l8 = t21;
                                             let t22: f32 = simd::f32x4_extract_lane(l8, 0) as f32;

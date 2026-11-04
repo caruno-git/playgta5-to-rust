@@ -96,7 +96,7 @@ use crate::{imp, syms};
                 break 'L3;
             }
             syms::f_078932_cvehicle_getvelocityincludingreferenceframe_const(ph, (l1.wrapping_add(208i64)), l2);
-            let t24: u128 = (*ph).read_splat(l1 + 216, 64);
+            let t24: u128 = (*ph).read_u64(l1 + 216) as u128;
             l5 = t24;
             let t25: u128 = (*ph).read_v128(l1 + 208);
             l6 = t25;

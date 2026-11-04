@@ -75,7 +75,7 @@ use crate::{imp, syms};
             (*ph).write_u64(l1 + 84, t17 as u64);
             let t18: i32 = (*ph).read_u8(l0 + 33) as i32;
             if ((t18 == 1i32) as i32) != 0 {
-                let t19: u128 = (*ph).read_splat(l1 + 112, 64);
+                let t19: u128 = (*ph).read_u64(l1 + 112) as u128;
                 let t20: u128 = simd::f32x4_div(t19, 0x3faaaaab3faaaaab3faaaaab3faaaaabu128);
                 (*ph).store_lane(l1 + 112, t20, 0, 64);
                 l11 = (l11 / 1.33333337f32);

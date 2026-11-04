@@ -226,7 +226,7 @@ use crate::{imp, syms};
                                 l4 = t50;
                                 let t51: i32 = (*ph).read_i8(48i64) as i32;
                                 l10 = t51;
-                                let t52: u128 = (*ph).read_splat(0i64 + 32, 64);
+                                let t52: u128 = (*ph).read_u64(0i64 + 32) as u128;
                                 let t53: u128 = (*ph).load_lane(0i64 + 40, t52, 2, 32);
                                 (*ph).write_v128(l6 + 16, t53);
                                 let t54: u128 = simd::i16x8_splat(l4 as i16);

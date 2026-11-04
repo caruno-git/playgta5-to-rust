@@ -495,7 +495,7 @@ use crate::{imp, syms};
                                     l30 = t138;
                                     l36 = (t133 + (t137 + (t139 * l30)));
                                     (*ph).write_f32(t128 + 56, l36);
-                                    let t140: u128 = (*ph).read_splat(l2 + 24, 64);
+                                    let t140: u128 = (*ph).read_u64(l2 + 24) as u128;
                                     let t141: u128 = (*ph).load_lane(l2 + 40, t140, 1, 32);
                                     l17 = t141;
                                     let t142: f32 = (*ph).read_f32(l1 + 104);

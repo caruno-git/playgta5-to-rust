@@ -18,7 +18,7 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_036239_cscaleformmgr_scaleposandsize_rage_vector2_ref_rage_vector2_ref(ph: *mut Phantom, mut l0: i64, mut l1: i64, mut l2: f32) {
         let mut l3: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l0, 64);
+        let t1: u128 = (*ph).read_u64(l0) as u128;
         let t2: i64 = l0;
         l3 = t1;
         let t3: u128 = simd::f32x4_splat((l2 + -1.0f32) as f32);

@@ -1279,7 +1279,7 @@ use crate::{imp, syms};
                                                     let t366: f32 = (*ph).read_f32(l10 + 4);
                                                     let t367: f32 = l38;
                                                     l39 = t366;
-                                                    let t368: u128 = (*ph).read_splat(l14, 64);
+                                                    let t368: u128 = (*ph).read_u64(l14) as u128;
                                                     let t369: f32 = l39;
                                                     l43 = t368;
                                                     let t370: f32 = simd::f32x4_extract_lane(l43, 1) as f32;
@@ -1290,7 +1290,7 @@ use crate::{imp, syms};
                                                     if ((((t372 - (l41 * (l37 - t373))) as f64) < -0.10000000000000001f64) as i32) != 0 {
                                                         break 'L89;
                                                     }
-                                                    let t374: u128 = (*ph).read_splat(l13, 64);
+                                                    let t374: u128 = (*ph).read_u64(l13) as u128;
                                                     let t375: u128 = l43;
                                                     l44 = t374;
                                                     let t376: u128 = simd::f32x4_sub(t375, l44);
@@ -1299,7 +1299,7 @@ use crate::{imp, syms};
                                                     let t378: f32 = simd::f32x4_extract_lane(l45, 1) as f32;
                                                     l36 = ((t377 * l41) - (t378 * l38));
                                                     let t379: u128 = (*ph).load_lane(l10, l44, 1, 64);
-                                                    let t380: u128 = (*ph).read_splat(l17, 64);
+                                                    let t380: u128 = (*ph).read_u64(l17) as u128;
                                                     let t381: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,16,17,18,19,20,21,22,23>(l43, t380);
                                                     let t382: u128 = simd::f32x4_sub(t379, t381);
                                                     let t383: u128 = simd::f32x4_abs(t382);

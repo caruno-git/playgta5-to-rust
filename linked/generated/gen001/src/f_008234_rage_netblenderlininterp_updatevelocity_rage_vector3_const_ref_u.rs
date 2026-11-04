@@ -118,7 +118,7 @@ use crate::{imp, syms};
                         }
                     break 'L4;
                     }
-                    let t36: u128 = (*ph).read_splat(l18 + 4, 64);
+                    let t36: u128 = (*ph).read_u64(l18 + 4) as u128;
                     l27 = t36;
                     let t37: f32 = rt::select_f32(((l4 > l7) as i32), l4, l7);
                     let t38: u128 = l27;

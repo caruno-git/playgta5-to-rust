@@ -132,7 +132,7 @@ use crate::{imp, syms};
                                 if (((l5 as u64) > (1i64 as u64)) as i32) != 0 {
                                     break 'L1;
                                 }
-                                let t34: u128 = (*ph).read_splat(l2 + 32, 64);
+                                let t34: u128 = (*ph).read_u64(l2 + 32) as u128;
                                 let t35: i64 = l2;
                                 l3 = t34;
                                 let t36: u128 = (*ph).load_lane(t35 + 40, l3, 2, 32);

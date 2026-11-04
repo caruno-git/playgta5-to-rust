@@ -4633,7 +4633,7 @@ use crate::{imp, syms};
                                                                     r1340 = rt::i32_trunc_sat_f32_s((t1367 * 1000.0f32)); break 'L336;
                                                                 break 'L339;
                                                                 }
-                                                                let t1368: u128 = (*ph).read_splat(0i64 + 25353016, 64);
+                                                                let t1368: u128 = (*ph).read_u64(0i64 + 25353016) as u128;
                                                                 let t1369: u128 = simd::f32x4_mul(t1368, 0x447a0000447a0000447a0000447a0000u128);
                                                                 let t1370: u128 = simd::i32x4_trunc_sat_f32x4_s(t1369);
                                                                 l18 = t1370;

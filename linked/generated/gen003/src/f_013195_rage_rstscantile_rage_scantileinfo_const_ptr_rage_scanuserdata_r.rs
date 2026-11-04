@@ -316,7 +316,7 @@ use crate::{imp, syms};
                 (*ph).write_v128(l72 + 16, t114);
                 'L8: loop {
                     if (l83 & 4i32) != 0 {
-                        let t115: u128 = (*ph).read_splat(l1, 64);
+                        let t115: u128 = (*ph).read_u64(l1) as u128;
                         let t116: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,4,5,6,7,4,5,6,7>(t115, l17);
                         l16 = t116;
                         let t117: u128 = simd::f32x4_add(l16, 0x41a0000041a0000041e0000041e00000u128);

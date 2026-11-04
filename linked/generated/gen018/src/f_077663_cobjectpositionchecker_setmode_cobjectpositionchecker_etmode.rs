@@ -65,15 +65,15 @@ use crate::{imp, syms};
             break 'L2;
             }
             l4 = r1;
-            let t7: u128 = (*ph).read_splat(l1, 32);
+            let t7: u128 = (*ph).read_u32(l1) as u128;
             let t8: u128 = (*ph).load_lane(l3, t7, 1, 32);
-            let t9: u128 = (*ph).read_splat(0i64 + 25515336, 64);
+            let t9: u128 = (*ph).read_u64(0i64 + 25515336) as u128;
             l8 = t9;
             let t10: u128 = simd::f32x4_div(t8, l8);
             let t11: u128 = simd::f32x4_floor(t10);
             let t12: u128 = simd::i32x4_trunc_sat_f32x4_s(t11);
             l9 = t12;
-            let t13: u128 = (*ph).read_splat(l4, 32);
+            let t13: u128 = (*ph).read_u32(l4) as u128;
             let t14: u128 = (*ph).load_lane(l2, t13, 1, 32);
             let t15: u128 = simd::f32x4_div(t14, l8);
             let t16: u128 = simd::f32x4_floor(t15);

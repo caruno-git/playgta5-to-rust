@@ -17,7 +17,7 @@ use crate::{imp, syms};
 
     #[no_mangle]
     pub unsafe extern "C" fn f_020098_fwmotiontreetester_visit_rage_crmtnode_ref(ph: *mut Phantom, mut l0: i64, mut l1: i64) {
-        let t1: u128 = (*ph).read_splat(l0 + 12, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 12) as u128;
         let t2: u128 = simd::i32x4_add(t1, 0x0000000000000000ffffffff00000001u128);
         (*ph).store_lane(l0 + 12, t2, 0, 64);
     }

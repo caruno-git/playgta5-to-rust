@@ -72,13 +72,13 @@ use crate::{imp, syms};
         'L5: loop {
             let t12: u128 = simd::f32x4_splat(l4 as f32);
             let t13: u128 = (*ph).load_lane((l0.wrapping_add(l13)), t12, 1, 32);
-            let t14: u128 = (*ph).read_splat(l0 + 336, 32);
+            let t14: u128 = (*ph).read_u32(l0 + 336) as u128;
             let t15: u128 = (*ph).load_lane(l0 + 344, t14, 1, 32);
             let t16: u128 = simd::f32x4_sub(t13, t15);
             let t17: f32 = l2;
             l11 = t16;
             let t18: u128 = simd::f32x4_neg(l11);
-            let t19: u128 = (*ph).read_splat(l14 + 8, 32);
+            let t19: u128 = (*ph).read_u32(l14 + 8) as u128;
             let t20: u128 = l11;
             l12 = t19;
             let t21: i32 = simd::i8x16_extract_lane_u(l12, 0) as i32;

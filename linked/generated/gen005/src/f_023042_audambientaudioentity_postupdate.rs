@@ -1614,7 +1614,7 @@ use crate::{imp, syms};
                         if ((t425 != 1i32) as i32) != 0 {
                             break 'L99;
                         }
-                        let t426: u128 = (*ph).read_splat(l2 + 24, 32);
+                        let t426: u128 = (*ph).read_u32(l2 + 24) as u128;
                         let t427: u128 = (*ph).load_lane(l2 + 72, t426, 1, 32);
                         let t428: u128 = (*ph).read_splat(l2 + 56, 32);
                         let t429: u128 = simd::f32x4_sub(t427, t428);

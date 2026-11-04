@@ -69,7 +69,7 @@ use crate::{imp, syms};
             if ((t8 == 0) as i32) != 0 {
                 break 'L4;
             }
-            let t9: u128 = (*ph).read_splat(0i64 + 6706236, 32);
+            let t9: u128 = (*ph).read_u32(0i64 + 6706236) as u128;
             let t10: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,28,29,30,31,16,17,18,19>(0x00000000000000000000000000000000u128, t9);
             (*ph).write_v128(13070784i64, t10);
             syms::f_091077_cxa_guard_release(ph, 13070800i64);
@@ -84,7 +84,7 @@ use crate::{imp, syms};
             if ((t12 == 0) as i32) != 0 {
                 break 'L5;
             }
-            let t13: u128 = (*ph).read_splat(0i64 + 6706240, 32);
+            let t13: u128 = (*ph).read_u32(0i64 + 6706240) as u128;
             let t14: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,28,29,30,31,16,17,18,19>(0x00000000000000000000000000000000u128, t13);
             (*ph).write_v128(13070816i64, t14);
             syms::f_091077_cxa_guard_release(ph, 13070832i64);
@@ -99,7 +99,7 @@ use crate::{imp, syms};
             if ((t16 == 0) as i32) != 0 {
                 break 'L6;
             }
-            let t17: u128 = (*ph).read_splat(0i64 + 6706244, 32);
+            let t17: u128 = (*ph).read_u32(0i64 + 6706244) as u128;
             let t18: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,28,29,30,31,16,17,18,19>(0x00000000000000000000000000000000u128, t17);
             (*ph).write_v128(13070848i64, t18);
             syms::f_091077_cxa_guard_release(ph, 13070864i64);

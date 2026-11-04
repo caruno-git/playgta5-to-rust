@@ -44,15 +44,15 @@ use crate::{imp, syms};
         'L1: loop {
             let t1: u128 = simd::f32x4_splat(l3 as f32);
             let t2: u128 = simd::f32x4_replace_lane(t1, 1, l4);
-            let t3: u128 = (*ph).read_splat(l0 + 104, 64);
+            let t3: u128 = (*ph).read_u64(l0 + 104) as u128;
             l7 = t3;
             let t4: u128 = simd::f32x4_sub(t2, l7);
-            let t5: u128 = (*ph).read_splat(l0 + 212, 64);
+            let t5: u128 = (*ph).read_u64(l0 + 212) as u128;
             l9 = t5;
             let t6: u128 = simd::f32x4_mul(t4, l9);
             let t7: u128 = simd::f32x4_ceil(t6);
             let t8: u128 = simd::i32x4_trunc_sat_f32x4_s(t7);
-            let t9: u128 = (*ph).read_splat(l0 + 88, 64);
+            let t9: u128 = (*ph).read_u64(l0 + 88) as u128;
             l8 = t9;
             let t10: u128 = simd::i32x4_min_s(t8, l8);
             l10 = t10;

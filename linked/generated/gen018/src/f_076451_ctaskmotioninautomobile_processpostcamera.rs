@@ -332,7 +332,7 @@ use crate::{imp, syms};
                             l15 = r83;
                             let t85: i32 = (*ph).read_u8(25451836i64) as i32;
                             if ((t85 == 1i32) as i32) != 0 {
-                                let t86: u128 = (*ph).read_splat(0i64 + 7737312, 32);
+                                let t86: u128 = (*ph).read_u32(0i64 + 7737312) as u128;
                                 let t87: u128 = (*ph).load_lane(0i64 + 7737316, t86, 1, 32);
                                 let t88: u128 = (*ph).load_lane(0i64 + 7737320, t87, 2, 32);
                                 l15 = t88;

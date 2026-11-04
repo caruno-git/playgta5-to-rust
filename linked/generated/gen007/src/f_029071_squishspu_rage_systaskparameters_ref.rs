@@ -87,7 +87,7 @@ use crate::{imp, syms};
                 }
             }
             'L4: loop {
-                let t15: u128 = (*ph).read_splat((l1.wrapping_add(l5)), 32);
+                let t15: u128 = (*ph).read_u32((l1.wrapping_add(l5))) as u128;
                 let t16: u128 = simd::i8x16_shuffle_static::<2,1,0,3,0,0,0,0,0,0,0,0,0,0,0,0>(t15, l10);
                 (*ph).store_lane((l1.wrapping_add(l2)), t16, 0, 32);
                 l1 = (l1.wrapping_add(4i64));

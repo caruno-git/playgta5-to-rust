@@ -31,7 +31,7 @@ use crate::{imp, syms};
             l1 = t4;
             let t5: i32 = (*ph).read_u32(l1 + 16872) as i32;
             (*ph).write_u32(l1 + 16872, (t5.wrapping_add(1i32)) as u32);
-            let t6: u128 = (*ph).read_splat(l1 + 12968, 64);
+            let t6: u128 = (*ph).read_u64(l1 + 12968) as u128;
             let t7: u128 = simd::i32x4_add(t6, 0x00000000000000000000000800000001u128);
             (*ph).store_lane(l1 + 12968, t7, 0, 64);
             'L2: loop {
@@ -62,7 +62,7 @@ use crate::{imp, syms};
             l1 = t17;
             let t18: i32 = (*ph).read_u32(l1 + 16872) as i32;
             (*ph).write_u32(l1 + 16872, (t18.wrapping_add(1i32)) as u32);
-            let t19: u128 = (*ph).read_splat(l1 + 12968, 64);
+            let t19: u128 = (*ph).read_u64(l1 + 12968) as u128;
             let t20: u128 = simd::i32x4_add(t19, 0x00000000000000000000000800000001u128);
             (*ph).store_lane(l1 + 12968, t20, 0, 64);
         }

@@ -316,7 +316,7 @@ use crate::{imp, syms};
         let t139: f32 = rt::select_f32(((l22 > 1.0f32) as i32), l22, 1.0f32);
         let t140: f32 = rt::select_f32(((l22 < 0.200000003f32) as i32), (t139 + -0.200000003f32), 0.0f32);
         let t141: u128 = simd::f32x4_splat(l20 as f32);
-        let t142: u128 = (*ph).read_splat(l15 + 24, 64);
+        let t142: u128 = (*ph).read_u64(l15 + 24) as u128;
         let t143: u128 = (*ph).load_lane(l15 + 40, t142, 1, 32);
         let t144: u128 = simd::f32x4_mul(t141, t143);
         let t145: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(l35, l35);

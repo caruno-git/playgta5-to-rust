@@ -18,7 +18,7 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_016737_rage_phcontactmgr_markscratchpadused_unsigned_int(ph: *mut Phantom, mut l0: i64, mut l1: i32) {
         let t1: u128 = simd::i32x4_splat(l1 as i32);
-        let t2: u128 = (*ph).read_splat(l0 + 228, 64);
+        let t2: u128 = (*ph).read_u64(l0 + 228) as u128;
         let t3: u128 = simd::i32x4_max_u(t1, t2);
         (*ph).store_lane(l0 + 228, t3, 0, 64);
     }

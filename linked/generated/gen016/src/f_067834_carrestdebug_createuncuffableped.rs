@@ -47,7 +47,7 @@ use crate::{imp, syms};
             let t6: i64 = (*ph).read_u64(20160216i64) as i64;
             l0 = t6;
             if ((l0 != 0i64) as i32) != 0 {
-                let t7: u128 = (*ph).read_splat(l0 + 5296, 64);
+                let t7: u128 = (*ph).read_u64(l0 + 5296) as u128;
                 let t8: u128 = simd::v128_or(t7, 0x00000000000000002000000001000000u128);
                 (*ph).store_lane(l0 + 5296, t8, 0, 64);
                 let t9: i64 = syms::f_042040_crelationshipmanager_findrelationshipgroup_unsigned_int(ph, 296331235i32);

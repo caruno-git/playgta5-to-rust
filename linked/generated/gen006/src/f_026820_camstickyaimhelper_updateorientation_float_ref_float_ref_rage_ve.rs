@@ -428,7 +428,7 @@ use crate::{imp, syms};
                 (*ph).write_v128(l7, t156);
                 syms::f_009647_rage_grcviewport_transform_rage_vec3v_const_ref_const(ph, (l7.wrapping_add(16i64)), (l7.wrapping_add(32i64)), l7);
                 let t157: u128 = (*ph).read_v128(l7 + 16);
-                let t158: u128 = (*ph).read_splat(0i64 + 21388320, 32);
+                let t158: u128 = (*ph).read_u32(0i64 + 21388320) as u128;
                 let t159: u128 = (*ph).load_lane(0i64 + 21388324, t158, 1, 32);
                 let t160: u128 = simd::f32x4_convert_i32x4_s(t159);
                 let t161: u128 = simd::f32x4_div(0x3f8000003f8000003f8000003f800000u128, t160);

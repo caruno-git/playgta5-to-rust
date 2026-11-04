@@ -50,7 +50,7 @@ use crate::{imp, syms};
             (*ph).write_u32(l2 + 216, 1050253722i32 as u32);
             let t3: f32 = (*ph).read_f32(l2 + 212);
             let t4: f32 = (*ph).read_f32(l2 + 208);
-            let t5: u128 = (*ph).read_splat(l3 + 840, 64);
+            let t5: u128 = (*ph).read_u64(l3 + 840) as u128;
             let t6: u128 = (*ph).read_v128(l3 + 880);
             let t7: u128 = simd::f32x4_convert_i32x4_s(t6);
             let t8: u128 = simd::f32x4_mul(t5, t7);

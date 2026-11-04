@@ -43,7 +43,7 @@ use crate::{imp, syms};
         let t1: i64 = syms::f_004792_rage_fwpickermanager_getselectedentity(ph);
         l0 = t1;
         if ((l0 != 0i64) as i32) != 0 {
-            let t2: u128 = (*ph).read_splat(l0 + 148, 64);
+            let t2: u128 = (*ph).read_u64(l0 + 148) as u128;
             l7 = t2;
             let t3: u128 = simd::f32x4_add(l7, 0x00000000000000004248000080000000u128);
             let t4: u128 = l7;
@@ -71,7 +71,7 @@ use crate::{imp, syms};
             let t14: u128 = simd::f32x4_splat(l10 as f32);
             let t15: u128 = simd::f32x4_mul(l7, t14);
             l7 = t15;
-            let t16: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+            let t16: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
             let t17: u128 = l7;
             l9 = t16;
             let t18: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l9, l7);

@@ -84,7 +84,7 @@ use crate::{imp, syms};
                 }
                 let t21: i64 = syms::f_070881_ctaskagitatedaction_ctaskagitatedaction_rage_aitask_ptr(ph, l6, l5);
                 l6 = t21;
-                let t22: u128 = (*ph).read_splat(l3 + 5300, 64);
+                let t22: u128 = (*ph).read_u64(l3 + 5300) as u128;
                 let t23: u128 = simd::v128_or(t22, 0x00000000000000000080000000000001u128);
                 (*ph).store_lane(l3 + 5300, t23, 0, 64);
                 let t24: i64 = (*ph).read_u64(25408152i64) as i64;

@@ -51,7 +51,7 @@ use crate::{imp, syms};
             let t12: i64 = l2;
             l9 = (((t11 as u32) as f32) * 0.00390625f32);
             (*ph).write_f32(t12 + 4, l9);
-            let t13: u128 = (*ph).read_splat(l1 + 24, 64);
+            let t13: u128 = (*ph).read_u64(l1 + 24) as u128;
             l3 = t13;
             let t14: i32 = (*ph).read_i16(l1 + 32) as i32;
             let t15: i32 = (*ph).read_i16(l1 + 34) as i32;

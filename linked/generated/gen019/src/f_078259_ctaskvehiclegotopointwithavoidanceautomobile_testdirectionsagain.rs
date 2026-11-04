@@ -565,7 +565,7 @@ use crate::{imp, syms};
                         l13 = (l1 | 1i64);
                         l4 = (l13 as i32);
                         let t204: i32 = rt::select_i32((((l4 as u32) < (l58 as u32)) as i32), l58, l4);
-                        let t205: u128 = (*ph).read_splat(((l6.wrapping_add((l1.wrapping_shl((6i64 as u32) & 63))))) + 36, 32);
+                        let t205: u128 = (*ph).read_u32(((l6.wrapping_add((l1.wrapping_shl((6i64 as u32) & 63))))) + 36) as u128;
                         let t206: u128 = (*ph).load_lane(((t203.wrapping_add((((t204 as u32) as i64).wrapping_shl((6i64 as u32) & 63))))) + 36, t205, 1, 32);
                         let t207: u128 = (*ph).load_lane(t202 + 36, t206, 2, 32);
                         let t208: u128 = (*ph).load_lane(t199 + 36, t207, 3, 32);

@@ -88,7 +88,7 @@ use crate::{imp, syms};
                                         l11 = (l6 + 1.0f32);
                                         syms::f_003163_rage_quaternion_slerp_float_rage_quaternion_const_ref_rage_quate(ph, t13, l11, 16400080i64, (l8.wrapping_add(16i64)));
                                         syms::f_003159_rage_matrix34_fromquaternion_rage_quaternion_const_ref(ph, (l8.wrapping_add(48i64)), (l8.wrapping_add(32i64)));
-                                        let t14: u128 = (*ph).read_splat(l0 + 24, 64);
+                                        let t14: u128 = (*ph).read_u64(l0 + 24) as u128;
                                         l17 = t14;
                                         let t15: f32 = (*ph).read_f32(l0 + 32);
                                         let t16: i64 = l8;

@@ -59,7 +59,7 @@ use crate::{imp, syms};
                 syms::f_004785_rage_fwregdref_rage_fwentity_rage_fwrefawarebase_reset_rage_fwen(ph, (l2.wrapping_add(32i64)), t9);
             break 'L2;
             }
-            let t10: u128 = (*ph).read_splat(l0 + 628, 64);
+            let t10: u128 = (*ph).read_u64(l0 + 628) as u128;
             let t11: i64 = l3;
             l8 = t10;
             let t12: i64 = (*ph).read_u64(l0 + 16) as i64;

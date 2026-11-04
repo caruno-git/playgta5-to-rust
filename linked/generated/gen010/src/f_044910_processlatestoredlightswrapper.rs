@@ -155,7 +155,7 @@ use crate::{imp, syms};
                         let t65: u128 = simd::f32x4_mul(t51, t64);
                         let t66: u128 = simd::f32x4_replace_lane(t65, 3, 1.0f32);
                         (*ph).write_v128(t50 + 16, t66);
-                        let t67: u128 = (*ph).read_splat(0i64 + 28414344, 64);
+                        let t67: u128 = (*ph).read_u64(0i64 + 28414344) as u128;
                         let t68: u128 = simd::i32x4_add(t67, 0x00000001000000010000000100000001u128);
                         (*ph).store_lane(0i64 + 28414344, t68, 0, 64);
                         l6 = 1i32;

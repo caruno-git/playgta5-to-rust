@@ -3537,7 +3537,7 @@ use crate::{imp, syms};
                                                     l15 = (t773.wrapping_sub(l18));
                                                     l19 = (l17.wrapping_add(l18));
                                                     'L327: loop {
-                                                        let t774: u128 = (*ph).read_splat((l1.wrapping_add((((l16.wrapping_add(l17)) as u32) as i64))), 32);
+                                                        let t774: u128 = (*ph).read_u32((l1.wrapping_add((((l16.wrapping_add(l17)) as u32) as i64)))) as u128;
                                                         let t775: u128 = l26;
                                                         l28 = t774;
                                                         let t776: u128 = simd::i8x16_eq(l28, 0xddddddddddddddddddddddddddddddddu128);

@@ -534,7 +534,7 @@ use crate::{imp, syms};
                                         if ((l16 == 0) as i32) != 0 {
                                             r192 = 0i32;
                                         } else {
-                                            let t193: u128 = (*ph).read_splat(l5 + 40, 32);
+                                            let t193: u128 = (*ph).read_u32(l5 + 40) as u128;
                                             let t194: u128 = (*ph).load_lane(l5 + 24, t193, 1, 32);
                                             l20 = t194;
                                             let t195: u128 = simd::f32x4_mul(l20, l20);
@@ -558,7 +558,7 @@ use crate::{imp, syms};
                                             l32 = 3.40282347e+38f32;
                                             l6 = 0i64;
                                             'L34: loop {
-                                                let t206: u128 = (*ph).read_splat(((l19.wrapping_add((l6.wrapping_mul(24i64))))) + 16, 64);
+                                                let t206: u128 = (*ph).read_u64(((l19.wrapping_add((l6.wrapping_mul(24i64))))) + 16) as u128;
                                                 l20 = t206;
                                                 let t207: u128 = simd::f32x4_lt(l20, 0x00000000000000000000000000000000u128);
                                                 l21 = t207;

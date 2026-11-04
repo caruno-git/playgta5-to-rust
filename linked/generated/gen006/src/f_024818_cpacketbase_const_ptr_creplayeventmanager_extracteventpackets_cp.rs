@@ -226,7 +226,7 @@ use crate::{imp, syms};
                         if ((t53 != l4) as i32) != 0 {
                             break 'L16;
                         }
-                        let t54: u128 = (*ph).read_splat(l6 + 28, 64);
+                        let t54: u128 = (*ph).read_u64(l6 + 28) as u128;
                         let t55: u128 = (*ph).load_lane(l6 + 36, t54, 2, 32);
                         (*ph).write_v128(l9, t55);
                         let t56: f32 = (*ph).read_f32(l6 + 40);

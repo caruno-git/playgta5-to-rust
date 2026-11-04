@@ -380,7 +380,7 @@ use crate::{imp, syms};
                                 break 'L10;
                             }
                             l2 = (l8.wrapping_add((l4.wrapping_mul(20i64))));
-                            let t128: u128 = (*ph).read_splat(l2 + 12, 64);
+                            let t128: u128 = (*ph).read_u64(l2 + 12) as u128;
                             l21 = t128;
                             let t129: i32 = (*ph).read_i16(l2) as i32;
                             l12 = t129;

@@ -96,7 +96,7 @@ use crate::{imp, syms};
                         (*ph).write_v128(l2 + 80, 0x00000000bfc90fdb0000000000000000u128);
                         let t11: f32 = (*ph).read_f32(l0 + 48);
                         l14 = t11;
-                        let t12: u128 = (*ph).read_splat(l0 + 36, 64);
+                        let t12: u128 = (*ph).read_u64(l0 + 36) as u128;
                         let t13: i64 = l2;
                         let t14: i64 = l0;
                         l7 = t12;

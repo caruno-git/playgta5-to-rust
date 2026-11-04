@@ -204,15 +204,15 @@ use crate::{imp, syms};
             'L13: loop {
                 let t54: i32 = (*ph).read_u8(26611233i64) as i32;
                 if ((t54 == 1i32) as i32) != 0 {
-                    let t55: u128 = (*ph).read_splat(l0 + 4, 64);
-                    let t56: u128 = (*ph).read_splat(l1 + 4, 64);
+                    let t55: u128 = (*ph).read_u64(l0 + 4) as u128;
+                    let t56: u128 = (*ph).read_u64(l1 + 4) as u128;
                     let t57: u128 = simd::f32x4_add(t55, t56);
                     l14 = t57;
                     let t58: f32 = (*ph).read_f32(l1);
                     l3 = (l3 + t58);
                     break 'L13;
                 }
-                let t59: u128 = (*ph).read_splat(l0 + 4, 64);
+                let t59: u128 = (*ph).read_u64(l0 + 4) as u128;
                 l14 = t59;
                 let t60: f32 = (*ph).read_f32(l0 + 12);
                 (*ph).write_f32(l11 + 12, t60);

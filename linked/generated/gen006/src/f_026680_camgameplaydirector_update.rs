@@ -2552,7 +2552,7 @@ use crate::{imp, syms};
                             l37 = t696;
                             let t697: f32 = (*ph).read_f32(19254676i64);
                             l25 = t697;
-                            let t698: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+                            let t698: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
                             l47 = t698;
                             let t699: f32 = (*ph).read_f32(10852772i64);
                             l26 = t699;
@@ -4347,7 +4347,7 @@ use crate::{imp, syms};
                                                                                                     if ((t1257 == 0) as i32) != 0 {
                                                                                                         break 'L295;
                                                                                                     }
-                                                                                                    let t1258: u128 = (*ph).read_splat(l4 + 100, 64);
+                                                                                                    let t1258: u128 = (*ph).read_u64(l4 + 100) as u128;
                                                                                                     l48 = t1258;
                                                                                                     let t1259: f32 = simd::f32x4_extract_lane(l48, 1) as f32;
                                                                                                     let t1260: f32 = (*ph).read_f32(l7 + 152);
@@ -4538,7 +4538,7 @@ use crate::{imp, syms};
                                                                                                     l51 = t1364;
                                                                                                     let t1365: u128 = l51;
                                                                                                     l19 = (l19 * l20);
-                                                                                                    let t1366: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+                                                                                                    let t1366: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
                                                                                                     let t1367: f32 = l19;
                                                                                                     l48 = t1366;
                                                                                                     let t1368: f32 = simd::f32x4_extract_lane(l48, 1) as f32;

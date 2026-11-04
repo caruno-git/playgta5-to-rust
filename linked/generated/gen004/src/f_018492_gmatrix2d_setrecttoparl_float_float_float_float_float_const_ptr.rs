@@ -62,11 +62,11 @@ use crate::{imp, syms};
         l10 = (l9 - l2);
         (*ph).write_f32(t11, l10);
         l9 = 0.0f32;
-        let t12: u128 = (*ph).read_splat(l5 + 16, 64);
+        let t12: u128 = (*ph).read_u64(l5 + 16) as u128;
         l13 = t12;
-        let t13: u128 = (*ph).read_splat(l5, 64);
+        let t13: u128 = (*ph).read_u64(l5) as u128;
         l12 = t13;
-        let t14: u128 = (*ph).read_splat(l5 + 8, 64);
+        let t14: u128 = (*ph).read_u64(l5 + 8) as u128;
         l14 = t14;
         'L1: loop {
             l7 = ((l10 * l1) - (l4 * l3));

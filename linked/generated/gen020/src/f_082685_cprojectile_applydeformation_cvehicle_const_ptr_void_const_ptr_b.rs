@@ -413,7 +413,7 @@ use crate::{imp, syms};
                     }
                 break 'L16;
                 }
-                let t167: u128 = (*ph).read_splat(l4 + 40, 64);
+                let t167: u128 = (*ph).read_u64(l4 + 40) as u128;
                 let t168: u128 = (*ph).load_lane(l4 + 56, t167, 1, 32);
                 l13 = t168;
                 let t169: u128 = (*ph).read_v128(l4 + 48);

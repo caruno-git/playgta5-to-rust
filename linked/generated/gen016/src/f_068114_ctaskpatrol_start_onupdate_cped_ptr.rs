@@ -89,7 +89,7 @@ use crate::{imp, syms};
                             'L7: loop {
                                 l5 = l3;
                                 if ((l4 != 0i64) as i32) != 0 {
-                                    let t14: u128 = (*ph).read_splat(l4 + 40, 32);
+                                    let t14: u128 = (*ph).read_u32(l4 + 40) as u128;
                                     let t15: u128 = (*ph).load_lane(l3 + 40, t14, 1, 32);
                                     let t16: u128 = simd::f32x4_sub(t15, l13);
                                     let t17: i64 = l3;

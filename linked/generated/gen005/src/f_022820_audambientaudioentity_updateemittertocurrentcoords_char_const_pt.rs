@@ -407,7 +407,7 @@ use crate::{imp, syms};
                 syms::f_001514_rage_diagdisplayf_rage_diagchannel_const_ref_char_const_ptr(ph, 15718264i64, 858222i64, (l1.wrapping_add(496i64)));
                 let t127: i64 = syms::f_090927_strcat(ph, l2, (l1.wrapping_add(1920i64)));
                 l2 = t127;
-                let t128: u128 = (*ph).read_splat(l0 + 80, 32);
+                let t128: u128 = (*ph).read_u32(l0 + 80) as u128;
                 l11 = t128;
                 (*ph).write_u64(l1 + 480, 1740099i64 as u64);
                 (*ph).write_u64(l1 + 464, 1740099i64 as u64);

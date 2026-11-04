@@ -36,7 +36,7 @@ use crate::{imp, syms};
         l4 = t9;
         let t10: f32 = syms::f_090918_sinf(ph, l4);
         l6 = t10;
-        let t11: u128 = (*ph).read_splat(l2 + 148, 64);
+        let t11: u128 = (*ph).read_u64(l2 + 148) as u128;
         l7 = t11;
         let t12: f32 = (*ph).read_f32(l2 + 144);
         (*ph).write_f32(l3, (t12 - (l5 * l6)));

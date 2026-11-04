@@ -44,7 +44,7 @@ use crate::{imp, syms};
         }
         let t9: i64 = syms::f_016949_rage_scrthread_getactivethread(ph);
         l2 = t9;
-        let t10: u128 = (*ph).read_splat(l0, 32);
+        let t10: u128 = (*ph).read_u32(l0) as u128;
         let t11: u128 = (*ph).load_lane(l0 + 8, t10, 1, 32);
         let t12: u128 = (*ph).read_splat(l0 + 16, 32);
         let t13: u128 = simd::f32x4_splat(l5 as f32);

@@ -276,7 +276,7 @@ use crate::{imp, syms};
                         if ((t61 != 1i32) as i32) != 0 {
                             break 'L20;
                         }
-                        let t62: u128 = (*ph).read_splat(l6 + 36, 64);
+                        let t62: u128 = (*ph).read_u64(l6 + 36) as u128;
                         let t63: u128 = (*ph).load_lane(l6 + 44, t62, 2, 32);
                         (*ph).write_v128(l7, t63);
                         syms::f_007570_rage_ptfxwrapper_setcolourtint_rage_ptxeffectinst_ptr_rage_vec3v(ph, l8, l7);

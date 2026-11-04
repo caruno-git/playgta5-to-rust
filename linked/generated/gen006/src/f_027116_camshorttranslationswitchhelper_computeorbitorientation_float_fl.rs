@@ -97,7 +97,7 @@ use crate::{imp, syms};
             break 'L2;
             }
             l8 = r23;
-            let t25: u128 = (*ph).read_splat(l2, 32);
+            let t25: u128 = (*ph).read_u32(l2) as u128;
             let t26: u128 = (*ph).load_lane(l3, t25, 1, 32);
             l4 = t26;
             let t27: i64 = (*ph).read_u64(l0 + 80) as i64;

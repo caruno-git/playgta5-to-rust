@@ -28,7 +28,7 @@ use crate::{imp, syms};
             if ((l2 < 0.0f32) as i32) != 0 {
                 syms::f_003883_rage_fwanimhelpers_getcameratrackrotationdiff_rage_crclip_const(ph, l0, l1, 1.0f32);
                 syms::f_003883_rage_fwanimhelpers_getcameratrackrotationdiff_rage_crclip_const(ph, l7, l1, l2);
-                let t1: u128 = (*ph).read_splat(l0 + 4, 64);
+                let t1: u128 = (*ph).read_u64(l0 + 4) as u128;
                 let t2: i64 = l0;
                 l4 = t1;
                 let t3: u128 = (*ph).read_v128(l0);

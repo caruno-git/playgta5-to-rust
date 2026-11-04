@@ -838,7 +838,7 @@ use crate::{imp, syms};
                             let t312: u128 = simd::f32x4_add(t301, t311);
                             (*ph).store_lane(l3 + 192, t312, 0, 64);
                             syms::f_003884_rage_fwanimhelpers_getmovertrackrotationdelta_rage_crclip_const(ph, (l3.wrapping_add(208i64)), l4, l13, l16);
-                            let t313: u128 = (*ph).read_splat(l3 + 180, 64);
+                            let t313: u128 = (*ph).read_u64(l3 + 180) as u128;
                             let t314: i64 = l3;
                             l33 = t313;
                             let t315: u128 = (*ph).read_v128(l3 + 176);
@@ -1590,7 +1590,7 @@ use crate::{imp, syms};
                     break 'L90;
                 }
                 syms::f_083127_networkinterface_getpredictedvelocity_cdynamicentity_const_ptr_f(ph, (l3.wrapping_add(176i64)), l5, 10.0f32);
-                let t540: u128 = (*ph).read_splat(l3 + 184, 64);
+                let t540: u128 = (*ph).read_u64(l3 + 184) as u128;
                 let t541: u128 = simd::f32x4_replace_lane(t540, 1, l17);
                 l32 = t541;
                 let t542: u128 = simd::f32x4_mul(l32, l32);

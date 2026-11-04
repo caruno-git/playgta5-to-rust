@@ -49,7 +49,7 @@ use crate::{imp, syms};
                 if (((l2 as u32) >= (4i32 as u32)) as i32) != 0 {
                     l3 = (l7 & 2147483644i64);
                     'L4: loop {
-                        let t2: u128 = (*ph).read_splat((l6.wrapping_add(l9)), 32);
+                        let t2: u128 = (*ph).read_u32((l6.wrapping_add(l9))) as u128;
                         let t3: i64 = (l4.wrapping_add(224i64));
                         l21 = t2;
                         let t4: u128 = simd::i16x8_extend_low_i8x16_u(l21);

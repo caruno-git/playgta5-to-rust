@@ -51,7 +51,7 @@ use crate::{imp, syms};
                 break 'L2;
             }
             let t13: i64 = rt::select_i64((((l6 as u32) <= (3i32 as u32)) as i32), 0i64, ((l1.wrapping_add((((l6 as u32) as i64).wrapping_mul(48i64)))).wrapping_add(2464i64)));
-            let t14: u128 = (*ph).read_splat(t13 + 32, 64);
+            let t14: u128 = (*ph).read_u64(t13 + 32) as u128;
             l7 = t14;
             let t15: i64 = (*ph).read_u64(l0 + 48) as i64;
             let t16: i64 = (*ph).read_u64(t15 + 232) as i64;

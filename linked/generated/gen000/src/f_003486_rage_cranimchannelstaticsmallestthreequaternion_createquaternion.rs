@@ -51,7 +51,7 @@ use crate::{imp, syms};
                 l7 = t10;
                 let t12: f32 = rt::select_f32(((l3 > l7) as i32), l7, t11);
                 l3 = t12;
-                let t13: u128 = (*ph).read_splat(l1 + 24, 64);
+                let t13: u128 = (*ph).read_u64(l1 + 24) as u128;
                 let t14: u128 = simd::f32x4_sub(l6, t13);
                 let t15: f32 = l3;
                 l4 = t14;

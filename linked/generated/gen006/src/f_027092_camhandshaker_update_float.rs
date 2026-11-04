@@ -70,7 +70,7 @@ use crate::{imp, syms};
             let t16: f32 = (*ph).read_f32(l0 + 88);
             l3 = (l3 * t16);
         }
-        let t17: u128 = (*ph).read_splat(l0 + 48, 32);
+        let t17: u128 = (*ph).read_u32(l0 + 48) as u128;
         l10 = t17;
         let t18: i32 = syms::f_090911_rand(ph);
         l14 = t18;
@@ -129,7 +129,7 @@ use crate::{imp, syms};
                 break 'L4;
             break 'L5;
             }
-            let t49: u128 = (*ph).read_splat(l0 + 108, 32);
+            let t49: u128 = (*ph).read_u32(l0 + 108) as u128;
             l10 = t49;
             let t50: i32 = syms::f_090911_rand(ph);
             l14 = t50;

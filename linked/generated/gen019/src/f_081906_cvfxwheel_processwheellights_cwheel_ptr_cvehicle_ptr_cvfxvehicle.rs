@@ -92,7 +92,7 @@ use crate::{imp, syms};
             (*ph).write_u64(l6 + 48, 0i64 as u64);
             let t32: i32 = (*ph).read_u16(l3 + 129) as i32;
             l16 = t32;
-            let t33: u128 = (*ph).read_splat(l3 + 125, 32);
+            let t33: u128 = (*ph).read_u32(l3 + 125) as u128;
             l9 = t33;
             l3 = (l6.wrapping_add(164i64));
             syms::f_005730_rage_fwinteriorlocation_makeinvalid(ph, l3);

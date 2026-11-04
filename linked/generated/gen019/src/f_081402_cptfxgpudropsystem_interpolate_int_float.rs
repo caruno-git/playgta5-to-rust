@@ -435,8 +435,8 @@ use crate::{imp, syms};
                 (*ph).write_f32(t242 + 472, ((t243 * (t240 - l6)) + l6));
             break 'L8;
             }
-            let t244: u128 = (*ph).read_splat(l5 + 8, 64);
-            let t245: u128 = (*ph).read_splat(l0 + 12, 64);
+            let t244: u128 = (*ph).read_u64(l5 + 8) as u128;
+            let t245: u128 = (*ph).read_u64(l0 + 12) as u128;
             let t246: i64 = l0;
             l7 = t245;
             let t247: u128 = simd::f32x4_sub(t244, l7);

@@ -166,7 +166,7 @@ use crate::{imp, syms};
             l1 = t86;
             let t87: u128 = simd::f32x4_add(l3, l7);
             l2 = t87;
-            let t88: u128 = (*ph).read_splat(l11 + 304, 64);
+            let t88: u128 = (*ph).read_u64(l11 + 304) as u128;
             let t89: i64 = l11;
             l3 = t88;
             let t90: u128 = (*ph).load_lane(t89 + 312, l3, 2, 32);

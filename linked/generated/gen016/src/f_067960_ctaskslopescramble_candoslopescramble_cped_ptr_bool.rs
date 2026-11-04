@@ -234,7 +234,7 @@ use crate::{imp, syms};
                         let t60: i64 = (*ph).read_u64(l3 + 5736) as i64;
                         let t61: i32 = syms::f_068074_ctaskslopescramble_canslideonsurface_rage_vector3_const_ref_unsi(ph, l5, t60);
                         if t61 != 0 {
-                            let t62: u128 = (*ph).read_splat(l3 + 980, 64);
+                            let t62: u128 = (*ph).read_u64(l3 + 980) as u128;
                             l16 = t62;
                             let t63: u128 = (*ph).read_v128(l3 + 976);
                             l19 = t63;
@@ -270,7 +270,7 @@ use crate::{imp, syms};
                             l8 = t82;
                             let t83: u128 = (*ph).read_v128(l3 + 144);
                             l18 = t83;
-                            let t84: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+                            let t84: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
                             let t85: u128 = l16;
                             let t86: u128 = l19;
                             l21 = t84;

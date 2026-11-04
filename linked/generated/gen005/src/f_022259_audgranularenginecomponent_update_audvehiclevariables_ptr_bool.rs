@@ -176,7 +176,7 @@ use crate::{imp, syms};
                                             let t62: u128 = (*ph).load_lane(l4 + 104, t61, 2, 32);
                                             let t63: u128 = (*ph).load_lane(l4 + 112, t62, 3, 32);
                                             l31 = t63;
-                                            let t64: u128 = (*ph).read_splat(l4 + 92, 32);
+                                            let t64: u128 = (*ph).read_u32(l4 + 92) as u128;
                                             let t65: u128 = (*ph).load_lane(l4 + 100, t64, 1, 32);
                                             let t66: u128 = (*ph).load_lane(l4 + 108, t65, 2, 32);
                                             let t67: u128 = (*ph).load_lane(l4 + 116, t66, 3, 32);
@@ -245,7 +245,7 @@ use crate::{imp, syms};
                                     if t93 != 0 {
                                         break 'L8;
                                     }
-                                    let t94: u128 = (*ph).read_splat(l4 + 92, 32);
+                                    let t94: u128 = (*ph).read_u32(l4 + 92) as u128;
                                     let t95: u128 = (*ph).load_lane(l4 + 100, t94, 1, 32);
                                     let t96: u128 = (*ph).load_lane(l4 + 108, t95, 2, 32);
                                     let t97: u128 = (*ph).load_lane(l4 + 116, t96, 3, 32);
@@ -1121,7 +1121,7 @@ use crate::{imp, syms};
                                 let t404: u128 = simd::v128_and(t403, 0x007fffff007fffff007fffff007fffffu128);
                                 let t405: u128 = simd::f32x4_convert_i32x4_s(t404);
                                 let t406: u128 = simd::f32x4_mul(t405, 0x34000000340000003400000034000000u128);
-                                let t407: u128 = (*ph).read_splat(0i64 + 16053716, 32);
+                                let t407: u128 = (*ph).read_u32(0i64 + 16053716) as u128;
                                 let t408: u128 = (*ph).load_lane(0i64 + 16053720, t407, 1, 32);
                                 let t409: u128 = (*ph).load_lane(0i64 + 16053724, t408, 2, 32);
                                 let t410: u128 = (*ph).load_lane(0i64 + 16053728, t409, 3, 32);

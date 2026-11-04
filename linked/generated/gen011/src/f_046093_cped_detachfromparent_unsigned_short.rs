@@ -1307,7 +1307,7 @@ use crate::{imp, syms};
                                                             let t402: i64 = (*ph).read_u64((((((l30 as u32) as i64).wrapping_shl((3i64 as u32) & 63)).wrapping_add(25810128i64))) + 10072) as i64;
                                                             let t403: i64 = (*ph).read_u64(t402 + 16) as i64;
                                                             l8 = (t403.wrapping_add((((((l32 as u32).wrapping_shr((16i32 as u32) & 31) as i32) as u32) as i64).wrapping_mul(40i64))));
-                                                            let t404: u128 = (*ph).read_splat(l8 + 28, 32);
+                                                            let t404: u128 = (*ph).read_u32(l8 + 28) as u128;
                                                             l12 = t404;
                                                             let t405: i32 = (*ph).read_i16(l8 + 34) as i32;
                                                             (*ph).write_f32(l2 + 56, (((t405 as i32) as f32) * 0.03125f32));

@@ -219,11 +219,11 @@ use crate::{imp, syms};
                     }
                     let t79: u128 = simd::f32x4_splat(l8 as f32);
                     let t80: u128 = simd::f32x4_replace_lane(t79, 1, l9);
-                    let t81: u128 = (*ph).read_splat(l3 + 176, 64);
+                    let t81: u128 = (*ph).read_u64(l3 + 176) as u128;
                     let t82: u128 = simd::f32x4_mul(t81, 0xc1a00000c1a00000c1a00000c1a00000u128);
                     let t83: u128 = simd::f32x4_add(t80, t82);
-                    let t84: u128 = (*ph).read_splat(l3 + 200, 64);
-                    let t85: u128 = (*ph).read_splat(l3 + 192, 64);
+                    let t84: u128 = (*ph).read_u64(l3 + 200) as u128;
+                    let t85: u128 = (*ph).read_u64(l3 + 192) as u128;
                     let t86: u128 = simd::f32x4_sub(t84, t85);
                     let t87: u128 = simd::f32x4_div(t83, t86);
                     let t88: u128 = simd::f32x4_add(t87, 0xbf000000bf000000bf000000bf000000u128);

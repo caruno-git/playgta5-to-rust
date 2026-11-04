@@ -558,7 +558,7 @@ use crate::{imp, syms};
                                                     l8 = t139;
                                                     l6 = ((*ph).sp.wrapping_sub(32i64));
                                                     (*ph).sp = l6;
-                                                    let t140: u128 = (*ph).read_splat(l3 + 5384, 64);
+                                                    let t140: u128 = (*ph).read_u64(l3 + 5384) as u128;
                                                     let t141: u128 = simd::v128_or(t140, 0x00000000000000002000000000000200u128);
                                                     (*ph).store_lane(l3 + 5384, t141, 0, 64);
                                                     'L49: loop {

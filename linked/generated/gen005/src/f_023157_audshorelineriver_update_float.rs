@@ -430,7 +430,7 @@ use crate::{imp, syms};
                         l1 = (l19 * l1);
                         if ((((t110 + (t112 + (l1 * l22))).abs()) > (((l21 * l18) + ((l23 * l17) + (l1 * l20))).abs())) as i32) != 0 {
                             let t113: u128 = (*ph).read_splat(l2 + 40, 32);
-                            let t114: u128 = (*ph).read_splat(l7 + 8, 32);
+                            let t114: u128 = (*ph).read_u32(l7 + 8) as u128;
                             let t115: u128 = simd::f32x4_replace_lane(t114, 1, l26);
                             let t116: u128 = simd::f32x4_sub(t113, t115);
                             l34 = t116;
@@ -463,7 +463,7 @@ use crate::{imp, syms};
                             r108 = t136; break 'L17;
                         }
                         let t137: u128 = simd::f32x4_splat(l26 as f32);
-                        let t138: u128 = (*ph).read_splat(l7 + 8, 32);
+                        let t138: u128 = (*ph).read_u32(l7 + 8) as u128;
                         let t139: u128 = (*ph).load_lane(l2 + 8, t138, 1, 32);
                         let t140: u128 = simd::f32x4_sub(t137, t139);
                         l31 = t140;

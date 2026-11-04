@@ -1228,7 +1228,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(18581440i64, t232 as u32);
                 let t233: i32 = (*ph).read_u32(12321220i64) as i32;
                 (*ph).write_u32(18581448i64, t233 as u32);
-                let t234: u128 = (*ph).read_splat(16i64 + 12321304, 32);
+                let t234: u128 = (*ph).read_u32(16i64 + 12321304) as u128;
                 let t235: u128 = (*ph).load_lane(16i64 + 12321248, t234, 1, 32);
                 let t236: u128 = (*ph).load_lane(16i64 + 12321360, t235, 2, 32);
                 let t237: u128 = (*ph).load_lane(16i64 + 12321388, t236, 3, 32);

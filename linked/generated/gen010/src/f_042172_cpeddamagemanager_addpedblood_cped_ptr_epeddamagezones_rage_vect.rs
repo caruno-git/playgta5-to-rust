@@ -173,7 +173,7 @@ use crate::{imp, syms};
                     r38 = t45;
                 }
                 l15 = r38;
-                let t46: u128 = (*ph).read_splat(l3, 64);
+                let t46: u128 = (*ph).read_u64(l3) as u128;
                 l16 = t46;
                 l4 = (((l10 as u32) as i64).wrapping_add((((l11 as u32) as i64).wrapping_mul(1557985959i64))));
                 l7 = (((l4 & 4294967295i64).wrapping_mul(1557985959i64)).wrapping_add(((l4 as u64).wrapping_shr((32i64 as u32) & 63) as i64)));

@@ -240,13 +240,13 @@ use crate::{imp, syms};
                                             syms::f_007497_rage_decalmanager_remove_int(ph, t54, t55);
                                             break 'L22;
                                         }
-                                        let t56: u128 = (*ph).read_splat(l6 + 52, 64);
+                                        let t56: u128 = (*ph).read_u64(l6 + 52) as u128;
                                         let t57: u128 = (*ph).load_lane(l6 + 60, t56, 2, 32);
                                         l15 = t57;
-                                        let t58: u128 = (*ph).read_splat(l6 + 40, 64);
+                                        let t58: u128 = (*ph).read_u64(l6 + 40) as u128;
                                         let t59: u128 = (*ph).load_lane(l6 + 48, t58, 2, 32);
                                         l16 = t59;
-                                        let t60: u128 = (*ph).read_splat(l6 + 28, 64);
+                                        let t60: u128 = (*ph).read_u64(l6 + 28) as u128;
                                         let t61: u128 = (*ph).load_lane(l6 + 36, t60, 2, 32);
                                         l17 = t61;
                                         syms::f_081166_cdecalmanager_findrendersettinginfo_unsigned_int_int_ref_int_ref(ph, 1010i32, (l7.wrapping_add(60i64)), (l7.wrapping_add(56i64)));

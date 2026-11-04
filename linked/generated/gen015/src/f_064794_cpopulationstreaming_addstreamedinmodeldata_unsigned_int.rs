@@ -44,7 +44,7 @@ use crate::{imp, syms};
                         }
                     }
                     (*ph).write_u32(l6, l0 as u32);
-                    let t3: u128 = (*ph).read_splat(0i64 + 12321248, 32);
+                    let t3: u128 = (*ph).read_u32(0i64 + 12321248) as u128;
                     l9 = t3;
                     (*ph).write_u8(l6 + 28, 0i32 as u8);
                     (*ph).write_v128(l6 + 4, l9);

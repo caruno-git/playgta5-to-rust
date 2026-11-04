@@ -159,7 +159,7 @@ use crate::{imp, syms};
         (*ph).write_f32(l7 + 64, t83);
         let t84: f32 = (*ph).read_f32(l1 + 12);
         (*ph).write_f32(l7 + 68, t84);
-        let t85: u128 = (*ph).read_splat(l1 + 80, 64);
+        let t85: u128 = (*ph).read_u64(l1 + 80) as u128;
         l9 = t85;
         let t86: i32 = simd::i16x8_extract_lane_u(l8, 6) as i32;
         let t87: i64 = l7;

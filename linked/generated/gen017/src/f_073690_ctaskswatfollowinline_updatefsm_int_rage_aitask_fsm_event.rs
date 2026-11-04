@@ -626,7 +626,7 @@ use crate::{imp, syms};
                                                     if ((((((l16 * (l8 * 0.0f32)) + ((l10 * (l15 * l8)) + (l13 * (l14 * l8)))) < 0.980000019f32) as i32) == 0) as i32) != 0 {
                                                         break 'L49;
                                                     }
-                                                    let t165: u128 = (*ph).read_splat(l4 + 2212, 64);
+                                                    let t165: u128 = (*ph).read_u64(l4 + 2212) as u128;
                                                     l24 = t165;
                                                     (*ph).write_f32(l0 + 184, l17);
                                                     (*ph).write_f32(l0 + 180, l11);
@@ -651,7 +651,7 @@ use crate::{imp, syms};
                                                     (*ph).write_f32(l4 + 2160, l19);
                                                     let t167: f32 = (*ph).read_f32(10852768i64);
                                                     (*ph).write_f32(l4 + 2176, (l21 + t167));
-                                                    let t168: u128 = (*ph).read_splat(4i64 + 10852768, 64);
+                                                    let t168: u128 = (*ph).read_u64(4i64 + 10852768) as u128;
                                                     let t169: u128 = simd::f32x4_add(l24, t168);
                                                     (*ph).store_lane(l4 + 2180, t169, 0, 64);
                                                     syms::f_043085_worldprobe_cshapetestdesc_setexcludeentity_centity_const_ptr_uns(ph, l4, l3, 0i32);

@@ -382,10 +382,10 @@ use crate::{imp, syms};
                         'L20: loop {
                             let t109: i32 = (*ph).read_u8(26762208i64) as i32;
                             if ((t109 == 1i32) as i32) != 0 {
-                                let t110: u128 = (*ph).read_splat(0i64 + 26762192, 64);
+                                let t110: u128 = (*ph).read_u64(0i64 + 26762192) as u128;
                                 let t111: u128 = simd::f32x4_pmax(0x0000000000000000000000003f800000u128, t110);
                                 (*ph).store_lane(0i64 + 26762192, t111, 0, 64);
-                                let t112: u128 = (*ph).read_splat(0i64 + 26762200, 64);
+                                let t112: u128 = (*ph).read_u64(0i64 + 26762200) as u128;
                                 let t113: u128 = simd::f32x4_pmax(0x00000000000000003f80000000000000u128, t112);
                                 l15 = t113;
                                 (*ph).store_lane(0i64 + 26762200, l15, 0, 32);

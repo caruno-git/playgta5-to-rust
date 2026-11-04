@@ -766,7 +766,7 @@ use crate::{imp, syms};
                                 let t179: i32 = syms::f_013867_rage_nethardware_getmacaddress_unsigned_char_ref_6(ph, (l2.wrapping_add(170i64)));
                                 if t179 != 0 {
                                     l3 = (l2.wrapping_add(170i64));
-                                    let t180: u128 = (*ph).read_splat(l3, 32);
+                                    let t180: u128 = (*ph).read_u32(l3) as u128;
                                     let t181: u128 = simd::v128_xor(t180, 0x0000000000000000000000002442eeabu128);
                                     (*ph).store_lane(l3, t181, 0, 32);
                                     let t182: i32 = (*ph).read_u8(l3 + 4) as i32;

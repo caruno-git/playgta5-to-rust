@@ -8212,8 +8212,8 @@ use crate::{imp, syms};
                                                                                         break 'L196;
                                                                                     }
                                                                                     let t2945: u128 = (*ph).read_v128(l8 + 432);
-                                                                                    let t2946: u128 = (*ph).read_splat(0i64 + 7277880, 32);
-                                                                                    let t2947: u128 = (*ph).read_splat(0i64 + 7277884, 32);
+                                                                                    let t2946: u128 = (*ph).read_u32(0i64 + 7277880) as u128;
+                                                                                    let t2947: u128 = (*ph).read_u32(0i64 + 7277884) as u128;
                                                                                     let t2948: u128 = l48;
                                                                                     let t2949: u128 = l48;
                                                                                     l49 = t2947;
@@ -10320,7 +10320,7 @@ use crate::{imp, syms};
                                         if (((l26 as i32) < (0i32 as i32)) as i32) != 0 {
                                             break 'L196;
                                         }
-                                        let t3710: u128 = (*ph).read_splat(l5, 32);
+                                        let t3710: u128 = (*ph).read_u32(l5) as u128;
                                         let t3711: u128 = (*ph).load_lane(l12, t3710, 1, 32);
                                         let t3712: u128 = (*ph).load_lane(l9, t3711, 2, 32);
                                         let t3713: u128 = (*ph).load_lane(l3, t3712, 3, 32);

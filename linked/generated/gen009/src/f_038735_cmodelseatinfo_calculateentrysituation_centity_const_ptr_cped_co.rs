@@ -333,7 +333,7 @@ use crate::{imp, syms};
                     } else {
                         let t96: i64 = (*ph).read_u64(l0 + 2392) as i64;
                         l12 = t96;
-                        let t97: u128 = (*ph).read_splat(l12 + 268, 32);
+                        let t97: u128 = (*ph).read_u32(l12 + 268) as u128;
                         let t98: u128 = (*ph).load_lane(l12 + 272, t97, 1, 32);
                         let t99: u128 = (*ph).load_lane(l12 + 276, t98, 2, 32);
                         r95 = t99;
@@ -871,9 +871,9 @@ use crate::{imp, syms};
                         }
                         let t333: i64 = (*ph).read_u64(l10 + 24) as i64;
                         l10 = (t333.wrapping_add((((l48 as u32) as i64).wrapping_shl((6i64 as u32) & 63))));
-                        let t334: u128 = (*ph).read_splat(l10 + 52, 64);
+                        let t334: u128 = (*ph).read_u64(l10 + 52) as u128;
                         l16 = t334;
-                        let t335: u128 = (*ph).read_splat(l10 + 20, 64);
+                        let t335: u128 = (*ph).read_u64(l10 + 20) as u128;
                         l18 = t335;
                         let t336: f32 = (*ph).read_f32(l10 + 48);
                         l6 = t336;
@@ -887,7 +887,7 @@ use crate::{imp, syms};
                         l32 = t340;
                         let t341: f32 = (*ph).read_f32(l10);
                         l27 = t341;
-                        let t342: u128 = (*ph).read_splat(l10 + 4, 64);
+                        let t342: u128 = (*ph).read_u64(l10 + 4) as u128;
                         r300 = t342; break 'L32;
                     break 'L33;
                     }
@@ -1245,7 +1245,7 @@ use crate::{imp, syms};
                 }
                 l48 = (l51 & 131072i32);
                 if ((l7 != 0i64) as i32) != 0 {
-                    let t494: u128 = (*ph).read_splat(l7 + 4, 64);
+                    let t494: u128 = (*ph).read_u64(l7 + 4) as u128;
                     let t495: u128 = simd::f32x4_add(l16, t494);
                     l16 = t495;
                     let t496: f32 = (*ph).read_f32(l7);

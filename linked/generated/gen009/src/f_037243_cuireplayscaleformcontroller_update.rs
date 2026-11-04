@@ -2047,7 +2047,7 @@ use crate::{imp, syms};
                                             'L169: loop {
                                                 let t524: u128 = l15;
                                                 l4 = (l5.wrapping_add((l2.wrapping_shl((9i64 as u32) & 63))));
-                                                let t525: u128 = (*ph).read_splat(l4 + 440, 32);
+                                                let t525: u128 = (*ph).read_u32(l4 + 440) as u128;
                                                 let t526: u128 = (*ph).load_lane(l4 + 952, t525, 1, 32);
                                                 let t527: u128 = (*ph).load_lane(l4 + 1464, t526, 2, 32);
                                                 let t528: u128 = (*ph).load_lane(l4 + 1976, t527, 3, 32);
@@ -2215,7 +2215,7 @@ use crate::{imp, syms};
                                                 'L183: loop {
                                                     let t550: u128 = l15;
                                                     l4 = (l5.wrapping_add((l2.wrapping_shl((9i64 as u32) & 63))));
-                                                    let t551: u128 = (*ph).read_splat(l4 + 440, 32);
+                                                    let t551: u128 = (*ph).read_u32(l4 + 440) as u128;
                                                     let t552: u128 = (*ph).load_lane(l4 + 952, t551, 1, 32);
                                                     let t553: u128 = (*ph).load_lane(l4 + 1464, t552, 2, 32);
                                                     let t554: u128 = (*ph).load_lane(l4 + 1976, t553, 3, 32);

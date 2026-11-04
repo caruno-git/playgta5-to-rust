@@ -116,7 +116,7 @@ use crate::{imp, syms};
                                         break 'L8;
                                     }
                                     l12 = 0.0f32;
-                                    let t23: u128 = (*ph).read_splat(l2 + 8, 64);
+                                    let t23: u128 = (*ph).read_u64(l2 + 8) as u128;
                                     l21 = t23;
                                     let t24: u128 = simd::i16x8_shl(l21, 13i32);
                                     let t25: u128 = simd::v128_and(l21, 0x7fff7fff7fff7fff7fff7fff7fff7fffu128);

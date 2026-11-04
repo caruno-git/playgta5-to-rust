@@ -51,7 +51,7 @@ use crate::{imp, syms};
         break 'L1;
         }
         (*ph).write_u32(15680512i64, 0i32 as u32);
-        let t1: u128 = (*ph).read_splat(0i64 + 16336980, 32);
+        let t1: u128 = (*ph).read_u32(0i64 + 16336980) as u128;
         let t2: u128 = (*ph).load_lane(0i64 + 16336984, t1, 1, 32);
         l11 = t2;
         (*ph).write_u32(l2 + 24, 0i32 as u32);

@@ -392,7 +392,7 @@ use crate::{imp, syms};
                     syms::f_003159_rage_matrix34_fromquaternion_rage_quaternion_const_ref(ph, l15, l14);
                     let t152: u128 = (*ph).read_splat(l5 + 8, 32);
                     l22 = t152;
-                    let t153: u128 = (*ph).read_splat(l15 + 40, 32);
+                    let t153: u128 = (*ph).read_u32(l15 + 40) as u128;
                     let t154: u128 = (*ph).load_lane(l15 + 8, t153, 1, 32);
                     let t155: u128 = (*ph).load_lane(l15 + 24, t154, 2, 32);
                     l23 = t155;

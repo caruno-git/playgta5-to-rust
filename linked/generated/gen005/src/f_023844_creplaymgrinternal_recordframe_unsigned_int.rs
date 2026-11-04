@@ -1927,7 +1927,7 @@ use crate::{imp, syms};
                                                 (*ph).write_u64(l4 + 112, l1 as u64);
                                                 (*ph).write_u64(l1 + 120, l4 as u64);
                                                 (*ph).write_u64(l8 + 112, l4 as u64);
-                                                let t405: u128 = (*ph).read_splat(l6 + 12, 32);
+                                                let t405: u128 = (*ph).read_u32(l6 + 12) as u128;
                                                 let t406: u128 = simd::i16x8_add(t405, 0x0000000000000000000000000001ffffu128);
                                                 (*ph).store_lane(l6 + 12, t406, 0, 32);
                                                 (*ph).write_u8(l4 + 108, 1i32 as u8);

@@ -440,7 +440,7 @@ use crate::{imp, syms};
                         let t148: i32 = (*ph).read_u32(l1 + 152) as i32;
                         l3 = (l12.wrapping_sub(t148));
                         l12 = (((l3 as u32) > (l12 as u32)) as i32);
-                        let t149: u128 = (*ph).read_splat(l1 + 520, 32);
+                        let t149: u128 = (*ph).read_u32(l1 + 520) as u128;
                         let t150: u128 = (*ph).load_lane(l0 + 840, t149, 1, 32);
                         l33 = t150;
                         let t151: u128 = simd::f32x4_mul(l33, l33);

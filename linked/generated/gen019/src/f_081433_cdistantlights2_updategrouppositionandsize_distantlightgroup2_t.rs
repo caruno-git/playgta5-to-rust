@@ -49,7 +49,7 @@ use crate::{imp, syms};
                     r5 = l4;
                 } else {
                     l5 = ((l4.wrapping_mul(6i64)).wrapping_add(27140884i64));
-                    let t6: u128 = (*ph).read_splat(l5, 32);
+                    let t6: u128 = (*ph).read_u32(l5) as u128;
                     let t7: u128 = simd::i32x4_extend_low_i16x8_s(t6);
                     let t8: u128 = simd::f32x4_convert_i32x4_s(t7);
                     l1 = t8;
@@ -66,7 +66,7 @@ use crate::{imp, syms};
                 'L4: loop {
                     let t12: u128 = l1;
                     l5 = ((l7.wrapping_mul(6i64)).wrapping_add(27140884i64));
-                    let t13: u128 = (*ph).read_splat(l5, 32);
+                    let t13: u128 = (*ph).read_u32(l5) as u128;
                     let t14: u128 = simd::i32x4_extend_low_i16x8_s(t13);
                     let t15: u128 = simd::f32x4_convert_i32x4_s(t14);
                     l2 = t15;
@@ -74,7 +74,7 @@ use crate::{imp, syms};
                     let t17: u128 = simd::f32x4_replace_lane(l2, 2, ((t16 as i32) as f32));
                     let t18: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,8,9,10,11,16,17,18,19>(t17, l2);
                     let t19: u128 = simd::f32x4_add(t12, t18);
-                    let t20: u128 = (*ph).read_splat((l5.wrapping_add(6i64)), 32);
+                    let t20: u128 = (*ph).read_u32((l5.wrapping_add(6i64))) as u128;
                     let t21: u128 = simd::i32x4_extend_low_i16x8_s(t20);
                     let t22: u128 = simd::f32x4_convert_i32x4_s(t21);
                     l1 = t22;
@@ -107,7 +107,7 @@ use crate::{imp, syms};
                 'L6: loop {
                     let t32: u128 = l1;
                     l5 = ((l4.wrapping_mul(6i64)).wrapping_add(27140884i64));
-                    let t33: u128 = (*ph).read_splat(l5, 32);
+                    let t33: u128 = (*ph).read_u32(l5) as u128;
                     let t34: u128 = simd::i32x4_extend_low_i16x8_s(t33);
                     let t35: u128 = simd::f32x4_convert_i32x4_s(t34);
                     l2 = t35;

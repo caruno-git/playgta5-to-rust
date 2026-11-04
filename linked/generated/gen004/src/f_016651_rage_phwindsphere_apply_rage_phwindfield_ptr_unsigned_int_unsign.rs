@@ -172,7 +172,7 @@ use crate::{imp, syms};
                             let t62: u128 = simd::f32x4_lt(l10, 0x3f8000003f8000003f8000003f800000u128);
                             let t63: u128 = simd::v128_bitselect(l10, 0x3f8000003f8000003f8000003f800000u128, t62);
                             let t64: u128 = simd::f32x4_mul(t52, t63);
-                            let t65: u128 = (*ph).read_splat(l19, 32);
+                            let t65: u128 = (*ph).read_u32(l19) as u128;
                             l10 = t65;
                             let t66: i32 = simd::i16x8_extract_lane_s(l10, 0) as i32;
                             let t67: u128 = simd::f32x4_splat(((t66 as i32) as f32) as f32);

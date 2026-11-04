@@ -32,19 +32,19 @@ use crate::{imp, syms};
             if ((l7 == 0) as i32) != 0 {
                 break 'L1;
             }
-            let t3: u128 = (*ph).read_splat(l2, 32);
+            let t3: u128 = (*ph).read_u32(l2) as u128;
             let t4: u128 = (*ph).load_lane(l2 + 8, t3, 1, 32);
             let t5: u128 = (*ph).load_lane(l2 + 16, t4, 2, 32);
             (*ph).write_v128(l6 + 16, t5);
-            let t6: u128 = (*ph).read_splat(l3, 32);
+            let t6: u128 = (*ph).read_u32(l3) as u128;
             let t7: u128 = (*ph).load_lane(l3 + 8, t6, 1, 32);
             let t8: u128 = (*ph).load_lane(l3 + 16, t7, 2, 32);
             (*ph).write_v128(l6 + 32, t8);
-            let t9: u128 = (*ph).read_splat(l4, 32);
+            let t9: u128 = (*ph).read_u32(l4) as u128;
             let t10: u128 = (*ph).load_lane(l4 + 8, t9, 1, 32);
             let t11: u128 = (*ph).load_lane(l4 + 16, t10, 2, 32);
             (*ph).write_v128(l6 + 48, t11);
-            let t12: u128 = (*ph).read_splat(l5, 32);
+            let t12: u128 = (*ph).read_u32(l5) as u128;
             let t13: u128 = (*ph).load_lane(l5 + 8, t12, 1, 32);
             let t14: u128 = (*ph).load_lane(l5 + 16, t13, 2, 32);
             (*ph).write_v128(l6 + 64, t14);

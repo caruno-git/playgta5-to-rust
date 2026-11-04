@@ -120,7 +120,7 @@ use crate::{imp, syms};
                     if ((l24 == 0) as i32) != 0 {
                         break 'L12;
                     }
-                    let t12: u128 = (*ph).read_splat(0i64 + 7420848, 32);
+                    let t12: u128 = (*ph).read_u32(0i64 + 7420848) as u128;
                     l10 = t12;
                     let t13: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(l10, l4);
                     l12 = t13;

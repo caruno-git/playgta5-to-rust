@@ -209,7 +209,7 @@ use crate::{imp, syms};
                             l2 = t40;
                             let t41: i32 = rt::select_i32((((l2 as i32) >= (255i32 as i32)) as i32), l2, 255i32);
                             l2 = t41;
-                            let t42: u128 = (*ph).read_splat(l18, 32);
+                            let t42: u128 = (*ph).read_u32(l18) as u128;
                             let t43: u128 = (*ph).load_lane(l19, t42, 1, 32);
                             let t44: u128 = simd::f32x4_mul(t43, 0x437f0000437f0000437f0000437f0000u128);
                             let t45: u128 = simd::i32x4_trunc_sat_f32x4_s(t44);

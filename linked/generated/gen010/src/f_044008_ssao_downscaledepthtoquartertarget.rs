@@ -112,7 +112,7 @@ use crate::{imp, syms};
         l22 = t24;
         syms::f_009875_rage_grceffect_setlocalcommon_rage_grcinstancedata_ref_rage_grce(ph, l4, l22, (l1.wrapping_add(80i64)), 16i32, 1i32);
         (*ph).write_u64(l1 + 64, 0i64 as u64);
-        let t25: u128 = (*ph).read_splat(0i64 + 21388320, 32);
+        let t25: u128 = (*ph).read_u32(0i64 + 21388320) as u128;
         let t26: u128 = (*ph).load_lane(0i64 + 21388324, t25, 1, 32);
         let t27: u128 = simd::f32x4_convert_i32x4_s(t26);
         let t28: u128 = simd::f32x4_div(0x3f8000003f8000003f8000003f800000u128, t27);

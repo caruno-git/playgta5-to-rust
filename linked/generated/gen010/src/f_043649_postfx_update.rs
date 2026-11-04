@@ -2003,7 +2003,7 @@ use crate::{imp, syms};
                 if (((l29 as i32) <= (0i32 as i32)) as i32) != 0 {
                     break 'L116;
                 }
-                let t613: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                let t613: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                 let t614: u128 = simd::f32x4_convert_i32x4_s(t613);
                 let t615: u128 = simd::f32x4_div(t614, 0x00000000000000004561000042700000u128);
                 l36 = t615;
@@ -2735,7 +2735,7 @@ use crate::{imp, syms};
                                                 t830(ph as *mut Phantom, 0i64, 1888804i64, 1063156i64, 322i32, 0i32, 0.0f32, 0i32);
                                                 let t831: i64 = (*ph).read_u64(12374984i64) as i64;
                                                 l2 = t831;
-                                                let t832: u128 = (*ph).read_splat(l2 + 824, 64);
+                                                let t832: u128 = (*ph).read_u64(l2 + 824) as u128;
                                                 let t833: u128 = (*ph).read_v128(l2 + 864);
                                                 let t834: u128 = simd::f32x4_convert_i32x4_s(t833);
                                                 let t835: u128 = simd::f32x4_mul(t832, t834);
@@ -3095,7 +3095,7 @@ use crate::{imp, syms};
                                             }
                                             let t964: i64 = (*ph).read_u64(19275152i64) as i64;
                                             let t965: u128 = (*ph).read_splat(((t964.wrapping_add(l8))) + 8, 32);
-                                            let t966: u128 = (*ph).read_splat(l3 + 124, 64);
+                                            let t966: u128 = (*ph).read_u64(l3 + 124) as u128;
                                             let t967: u128 = simd::f32x4_mul(t965, t966);
                                             let t968: u128 = simd::f32x4_add(t967, l37);
                                             l37 = t968;

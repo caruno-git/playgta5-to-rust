@@ -35,7 +35,7 @@ use crate::{imp, syms};
             if ((l2 > l3) as i32) != 0 {
                 syms::f_003882_rage_fwanimhelpers_getmovertrackrotationdiff_rage_crclip_const_r(ph, l0, l1, l2, 1.0f32);
                 syms::f_003882_rage_fwanimhelpers_getmovertrackrotationdiff_rage_crclip_const_r(ph, l14, l1, 0.0f32, l3);
-                let t1: u128 = (*ph).read_splat(l0 + 4, 64);
+                let t1: u128 = (*ph).read_u64(l0 + 4) as u128;
                 let t2: i64 = l0;
                 l5 = t1;
                 let t3: u128 = (*ph).read_v128(l0);

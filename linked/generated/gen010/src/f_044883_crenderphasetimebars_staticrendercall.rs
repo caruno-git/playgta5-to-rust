@@ -80,7 +80,7 @@ use crate::{imp, syms};
             l0 = t9;
             let t10: u128 = (*ph).read_v128(l0 + 864);
             l27 = t10;
-            let t11: u128 = (*ph).read_splat(l0 + 824, 64);
+            let t11: u128 = (*ph).read_u64(l0 + 824) as u128;
             l28 = t11;
             (*ph).memory_fill((l2.wrapping_sub((-64i64))), 0i32, 80i64);
             let t12: i64 = (*ph).read_u64(19592992i64) as i64;

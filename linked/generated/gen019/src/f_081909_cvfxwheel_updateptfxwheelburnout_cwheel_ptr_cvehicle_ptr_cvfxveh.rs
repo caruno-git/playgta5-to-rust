@@ -407,7 +407,7 @@ use crate::{imp, syms};
                 'L9: loop {
                     let t224: i32 = (*ph).read_u8(27064232i64) as i32;
                     if ((t224 == 1i32) as i32) != 0 {
-                        let t225: u128 = (*ph).read_splat(27021120i64 + 43096, 64);
+                        let t225: u128 = (*ph).read_u64(27021120i64 + 43096) as u128;
                         let t226: i64 = l15;
                         l8 = t225;
                         let t227: u128 = (*ph).load_lane(27021120i64 + 43104, l8, 2, 32);

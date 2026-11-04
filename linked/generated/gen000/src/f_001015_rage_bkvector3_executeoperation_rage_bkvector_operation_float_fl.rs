@@ -24,7 +24,7 @@ use crate::{imp, syms};
             l4 = t1;
             let t2: i64 = (*ph).read_u64(l0 + 104) as i64;
             l0 = t2;
-            let t3: u128 = (*ph).read_splat(l3, 64);
+            let t3: u128 = (*ph).read_u64(l3) as u128;
             let t4: u128 = (*ph).read_v128(l0);
             let t5: i64 = l0;
             l5 = t4;

@@ -18,7 +18,7 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_010724_rage_spdgrid2d_initcalculatedmembers(ph: *mut Phantom, mut l0: i64) {
         let mut l1: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l0 + 44, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 44) as u128;
         let t2: i64 = l0;
         l1 = t1;
         let t3: u128 = simd::f32x4_div(0x3f8000003f8000003f8000003f800000u128, l1);

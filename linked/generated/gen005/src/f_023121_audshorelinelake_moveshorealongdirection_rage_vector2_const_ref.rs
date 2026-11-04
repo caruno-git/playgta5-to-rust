@@ -24,8 +24,8 @@ use crate::{imp, syms};
             'L2: loop {
                 let t2: i64 = (*ph).read_u64(l0 + 64) as i64;
                 l4 = (t2.wrapping_add((l3.wrapping_shl((3i64 as u32) & 63))));
-                let t3: u128 = (*ph).read_splat(l4, 64);
-                let t4: u128 = (*ph).read_splat(l1, 64);
+                let t3: u128 = (*ph).read_u64(l4) as u128;
+                let t4: u128 = (*ph).read_u64(l1) as u128;
                 let t5: u128 = simd::f32x4_add(t3, t4);
                 (*ph).store_lane(l4, t5, 0, 64);
                 l3 = (l3.wrapping_add(1i64));

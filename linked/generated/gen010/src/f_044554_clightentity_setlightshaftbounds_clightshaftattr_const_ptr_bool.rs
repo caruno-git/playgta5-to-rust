@@ -82,7 +82,7 @@ use crate::{imp, syms};
             let t19: f32 = l20;
             l22 = t18;
             if ((t19 != l22) as i32) != 0 {
-                let t20: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                let t20: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                 let t21: u128 = simd::f32x4_convert_i32x4_s(t20);
                 let t22: u128 = simd::f32x4_div(t21, 0x00000000000000004561000042700000u128);
                 l5 = t22;

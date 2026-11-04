@@ -112,7 +112,7 @@ use crate::{imp, syms};
                         let t46: f32 = rt::select_f32((t45 & 1i32), 0.0f32, l14);
                         l14 = t46;
                     }
-                    let t47: u128 = (*ph).read_splat(0i64 + 21388324, 32);
+                    let t47: u128 = (*ph).read_u32(0i64 + 21388324) as u128;
                     let t48: u128 = (*ph).load_lane(0i64 + 21388320, t47, 1, 32);
                     l7 = t48;
                     l6 = 20i32;

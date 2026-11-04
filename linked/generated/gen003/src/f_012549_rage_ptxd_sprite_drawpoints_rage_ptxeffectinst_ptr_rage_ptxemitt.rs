@@ -1913,13 +1913,13 @@ use crate::{imp, syms};
                                 let t1039: i64 = (*ph).read_u64(l23 + 16) as i64;
                                 let t1040: i64 = l4;
                                 l23 = t1039;
-                                let t1041: u128 = (*ph).read_splat(l23, 64);
+                                let t1041: u128 = (*ph).read_u64(l23) as u128;
                                 let t1042: u128 = (*ph).load_lane(l23 + 8, t1041, 2, 32);
                                 let t1043: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,8,9,10,11,16,17,18,19>(t1042, l14);
                                 l10 = t1043;
                                 let t1044: u128 = simd::i32x4_shr_u(l10, 16i32);
                                 let t1045: u128 = simd::i32x4_add(t1044, 0xffff8000ffff8000ffff8000ffff8000u128);
-                                let t1046: u128 = (*ph).read_splat(l23 + 16, 64);
+                                let t1046: u128 = (*ph).read_u64(l23 + 16) as u128;
                                 let mut r1047: f32 = 0.0;
                                 'L79: loop {
                                     let t1048: i32 = (*ph).read_u8(l18 + 32) as i32;

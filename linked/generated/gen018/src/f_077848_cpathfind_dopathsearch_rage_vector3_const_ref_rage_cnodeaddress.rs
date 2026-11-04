@@ -611,13 +611,13 @@ use crate::{imp, syms};
                                                                     if (((l27 as i32) > (9999i32 as i32)) as i32) != 0 {
                                                                         break 'L52;
                                                                     }
-                                                                    let t129: u128 = (*ph).read_splat(l1 + 28, 32);
+                                                                    let t129: u128 = (*ph).read_u32(l1 + 28) as u128;
                                                                     l54 = t129;
                                                                     let t130: i32 = (*ph).read_i16(l1 + 34) as i32;
                                                                     l30 = t130;
                                                                     let t131: i64 = l21;
                                                                     l47 = (((l27 as i32) as i64).wrapping_shl((4i64 as u32) & 63));
-                                                                    let t132: u128 = (*ph).read_splat(l46 + 28, 32);
+                                                                    let t132: u128 = (*ph).read_u32(l46 + 28) as u128;
                                                                     let t133: i64 = (t131.wrapping_add(l47));
                                                                     l55 = t132;
                                                                     let t134: i32 = simd::i16x8_extract_lane_s(l55, 0) as i32;
@@ -1305,11 +1305,11 @@ use crate::{imp, syms};
                                                                         if ((l47 == 0) as i32) != 0 {
                                                                             break 'L67;
                                                                         }
-                                                                        let t274: u128 = (*ph).read_splat(l47 + 28, 32);
+                                                                        let t274: u128 = (*ph).read_u32(l47 + 28) as u128;
                                                                         l55 = t274;
-                                                                        let t275: u128 = (*ph).read_splat(l21 + 28, 32);
+                                                                        let t275: u128 = (*ph).read_u32(l21 + 28) as u128;
                                                                         l56 = t275;
-                                                                        let t276: u128 = (*ph).read_splat(l0 + 28, 32);
+                                                                        let t276: u128 = (*ph).read_u32(l0 + 28) as u128;
                                                                         let t277: i64 = l45;
                                                                         l54 = t276;
                                                                         let t278: i32 = simd::i16x8_extract_lane_s(l54, 0) as i32;
@@ -1317,7 +1317,7 @@ use crate::{imp, syms};
                                                                         let t280: i32 = simd::i16x8_extract_lane_s(l54, 1) as i32;
                                                                         let t281: u128 = simd::f32x4_replace_lane(t279, 1, ((t280 as i32) as f32));
                                                                         let t282: u128 = simd::f32x4_mul(t281, 0x3e8000003e8000003e8000003e800000u128);
-                                                                        let t283: u128 = (*ph).read_splat(l46 + 28, 32);
+                                                                        let t283: u128 = (*ph).read_u32(l46 + 28) as u128;
                                                                         l54 = t283;
                                                                         let t284: i32 = simd::i16x8_extract_lane_s(l54, 0) as i32;
                                                                         let t285: u128 = simd::f32x4_splat(((t284 as i32) as f32) as f32);

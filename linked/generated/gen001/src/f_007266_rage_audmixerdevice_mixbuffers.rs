@@ -1169,7 +1169,7 @@ use crate::{imp, syms};
                                                                                         break 'L71;
                                                                                     break 'L78;
                                                                                     }
-                                                                                    let t249: u128 = (*ph).read_splat(l3 + 4, 32);
+                                                                                    let t249: u128 = (*ph).read_u32(l3 + 4) as u128;
                                                                                     let t250: u128 = simd::i32x4_extend_low_i16x8_u(t249);
                                                                                     let t251: u128 = (*ph).load_lane(0i64 + 6629428, 0x0000000000000000ffffffff00000000u128, 0, 32);
                                                                                     let t252: u128 = simd::i32x4_min_u(t250, t251);

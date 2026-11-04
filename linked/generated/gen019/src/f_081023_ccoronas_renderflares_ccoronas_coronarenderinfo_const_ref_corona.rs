@@ -60,7 +60,7 @@ use crate::{imp, syms};
             (*ph).write_u64(l9 + 104, 0i64 as u64);
             let t3: i64 = (*ph).read_u64(21388048i64) as i64;
             syms::f_043939_csprite2d_setdepthtexture_rage_grctexture_ptr(ph, t3);
-            let t4: u128 = (*ph).read_splat(27075648i64 + 52308, 32);
+            let t4: u128 = (*ph).read_u32(27075648i64 + 52308) as u128;
             let t5: u128 = (*ph).load_lane(27075648i64 + 52312, t4, 1, 32);
             (*ph).write_v128(l9 + 80, t5);
             let t6: i32 = (*ph).read_u32(12374272i64) as i32;

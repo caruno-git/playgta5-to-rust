@@ -73,7 +73,7 @@ use crate::{imp, syms};
             l1 = t15;
             let t16: i32 = (*ph).read_u32(l1 + 16872) as i32;
             (*ph).write_u32(l1 + 16872, (t16.wrapping_add(1i32)) as u32);
-            let t17: u128 = (*ph).read_splat(l1 + 13368, 64);
+            let t17: u128 = (*ph).read_u64(l1 + 13368) as u128;
             let t18: u128 = simd::i32x4_add(t17, 0x00000000000000000000001800000001u128);
             (*ph).store_lane(l1 + 13368, t18, 0, 64);
             'L3: loop {
@@ -111,7 +111,7 @@ use crate::{imp, syms};
             l1 = t28;
             let t29: i32 = (*ph).read_u32(l1 + 16872) as i32;
             (*ph).write_u32(l1 + 16872, (t29.wrapping_add(1i32)) as u32);
-            let t30: u128 = (*ph).read_splat(l1 + 13384, 64);
+            let t30: u128 = (*ph).read_u64(l1 + 13384) as u128;
             let t31: u128 = simd::i32x4_add(t30, 0x00000000000000000000000400000001u128);
             (*ph).store_lane(l1 + 13384, t31, 0, 64);
             syms::f_005298_rage_fwrenderphase_drawlistepilogue(ph);

@@ -242,7 +242,7 @@ use crate::{imp, syms};
                 syms::f_078998_cvehicle_switchengineoff_bool(ph, l0, 1i32);
             break 'L13;
             }
-            let t70: u128 = (*ph).read_splat(l0 + 11656, 64);
+            let t70: u128 = (*ph).read_u64(l0 + 11656) as u128;
             let t71: u128 = simd::f32x4_splat(l1 as f32);
             let t72: u128 = simd::f32x4_sub(t70, t71);
             let t73: i64 = l0;

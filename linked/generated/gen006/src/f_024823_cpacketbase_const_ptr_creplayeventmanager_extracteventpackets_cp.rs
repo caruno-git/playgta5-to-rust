@@ -267,7 +267,7 @@ use crate::{imp, syms};
                     }
                     l6 = ((*ph).sp.wrapping_sub(192i64));
                     (*ph).sp = l6;
-                    let t57: u128 = (*ph).read_splat(l7 + 40, 32);
+                    let t57: u128 = (*ph).read_u32(l7 + 40) as u128;
                     l11 = t57;
                     let t58: i32 = simd::i8x16_extract_lane_s(l11, 0) as i32;
                     let t59: u128 = simd::f32x4_splat(((t58 as i32) as f32) as f32);
@@ -277,7 +277,7 @@ use crate::{imp, syms};
                     let t63: i32 = (*ph).read_i8(l7 + 42) as i32;
                     let t64: u128 = simd::f32x4_replace_lane(t62, 2, (((t63 as i32) as f32) * 0.00787401572f32));
                     l11 = t64;
-                    let t65: u128 = (*ph).read_splat(l7 + 28, 64);
+                    let t65: u128 = (*ph).read_u64(l7 + 28) as u128;
                     let t66: u128 = (*ph).load_lane(l7 + 36, t65, 2, 32);
                     l10 = t66;
                     let t67: i64 = (*ph).read_u64(19225408i64) as i64;

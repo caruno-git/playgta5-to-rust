@@ -106,7 +106,7 @@ use crate::{imp, syms};
             'L7: loop {
                 let t13: i32 = (*ph).read_u8(l5 + 916) as i32;
                 if ((t13 == 1i32) as i32) != 0 {
-                    let t14: u128 = (*ph).read_splat(l5 + 904, 32);
+                    let t14: u128 = (*ph).read_u32(l5 + 904) as u128;
                     let t15: u128 = (*ph).load_lane(l5 + 900, t14, 1, 32);
                     l9 = (l9 / (l9 - l6));
                     let t16: u128 = simd::f32x4_replace_lane(t15, 2, (l9 * (-l6)));

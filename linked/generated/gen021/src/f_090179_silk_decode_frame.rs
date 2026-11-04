@@ -420,7 +420,7 @@ use crate::{imp, syms};
                                         l50 = 0x00000000000000000000000000008000u128;
                                         l7 = 0i64;
                                         'L33: loop {
-                                            let t97: u128 = (*ph).read_splat(((l19.wrapping_add(((l10.wrapping_sub(l7)).wrapping_shl((1i64 as u32) & 63)))).wrapping_sub(6i64)), 64);
+                                            let t97: u128 = (*ph).read_u64(((l19.wrapping_add(((l10.wrapping_sub(l7)).wrapping_shl((1i64 as u32) & 63)))).wrapping_sub(6i64))) as u128;
                                             let t98: u128 = simd::i8x16_shuffle_static::<6,7,4,5,2,3,0,1,0,1,0,1,0,1,0,1>(t97, l50);
                                             let t99: u128 = simd::i32x4_extend_low_i16x8_s(t98);
                                             let t100: u128 = simd::i32x4_sub(l50, t99);
@@ -1152,7 +1152,7 @@ use crate::{imp, syms};
                                                         let t351: i64 = l23;
                                                         let t352: i32 = l41;
                                                         l5 = ((l1 as i32) ^ (-1i32));
-                                                        let t353: u128 = (*ph).read_splat(((l29.wrapping_add(((((l4.wrapping_add(l5)) as i32) as i64).wrapping_shl((1i64 as u32) & 63)))).wrapping_sub(6i64)), 64);
+                                                        let t353: u128 = (*ph).read_u64(((l29.wrapping_add(((((l4.wrapping_add(l5)) as i32) as i64).wrapping_shl((1i64 as u32) & 63)))).wrapping_sub(6i64))) as u128;
                                                         let t354: i64 = ((t351.wrapping_add(((((t352.wrapping_add(l5)) as i32) as i64).wrapping_shl((2i64 as u32) & 63)))).wrapping_sub(12i64));
                                                         let t355: u128 = l49;
                                                         l51 = t353;

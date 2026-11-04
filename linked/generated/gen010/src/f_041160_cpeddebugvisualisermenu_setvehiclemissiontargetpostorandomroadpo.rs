@@ -55,7 +55,7 @@ use crate::{imp, syms};
             let t4: i64 = (*ph).read_u64((((((l2 as u32) as i64).wrapping_shl((3i64 as u32) & 63)).wrapping_add(25810128i64))) + 10072) as i64;
             let t5: i64 = (*ph).read_u64(t4 + 16) as i64;
             l4 = (t5.wrapping_add((((((l0 as u32).wrapping_shr((16i32 as u32) & 31) as i32) as u32) as i64).wrapping_mul(40i64))));
-            let t6: u128 = (*ph).read_splat(l4 + 28, 32);
+            let t6: u128 = (*ph).read_u32(l4 + 28) as u128;
             l5 = t6;
             let t7: i32 = (*ph).read_i16(l4 + 34) as i32;
             (*ph).write_f32(20154232i64, (((t7 as i32) as f32) * 0.03125f32));

@@ -71,13 +71,13 @@ use crate::{imp, syms};
                     break 'L3;
                 }
                 syms::f_083043_networkinterface_getplayerfocusposition_rage_netplayer_const_ref(ph, (l2.wrapping_add(32i64)), l0, 0i64, 0i32, 0i64);
-                let t6: u128 = (*ph).read_splat(0i64 + 29248744, 32);
+                let t6: u128 = (*ph).read_u32(0i64 + 29248744) as u128;
                 l4 = t6;
-                let t7: u128 = (*ph).read_splat(0i64 + 29248736, 32);
+                let t7: u128 = (*ph).read_u32(0i64 + 29248736) as u128;
                 l5 = t7;
-                let t8: u128 = (*ph).read_splat(0i64 + 29248740, 32);
+                let t8: u128 = (*ph).read_u32(0i64 + 29248740) as u128;
                 l6 = t8;
-                let t9: u128 = (*ph).read_splat(l2 + 40, 64);
+                let t9: u128 = (*ph).read_u64(l2 + 40) as u128;
                 l7 = t9;
                 let t10: u128 = (*ph).read_v128(l2 + 32);
                 l3 = t10;

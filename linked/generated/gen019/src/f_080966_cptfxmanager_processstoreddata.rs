@@ -1003,14 +1003,14 @@ use crate::{imp, syms};
                         'L51: loop {
                             let t403: i32 = (*ph).read_u32(l0 + 48) as i32;
                             if (((t403 as i32) >= (0i32 as i32)) as i32) != 0 {
-                                let t404: u128 = (*ph).read_splat(l0 + 65, 32);
+                                let t404: u128 = (*ph).read_u32(l0 + 65) as u128;
                                 let t405: u128 = simd::i16x8_extend_low_i8x16_u(t404);
                                 let t406: u128 = simd::i32x4_extend_low_i16x8_u(t405);
                                 let t407: u128 = simd::f32x4_convert_i32x4_s(t406);
                                 let t408: u128 = simd::f32x4_div(t407, 0x437f0000437f0000437f0000437f0000u128);
                                 let t409: i32 = (*ph).read_u32((l3.wrapping_add(26680416i64))) as i32;
                                 l22 = t409;
-                                let t410: u128 = (*ph).read_splat(((((l22 as i32) as i64).wrapping_mul(96i64)).wrapping_add(26956840i64)), 32);
+                                let t410: u128 = (*ph).read_u32(((((l22 as i32) as i64).wrapping_mul(96i64)).wrapping_add(26956840i64))) as u128;
                                 let t411: u128 = simd::i16x8_extend_low_i8x16_u(t410);
                                 let t412: u128 = simd::i32x4_extend_low_i16x8_u(t411);
                                 let t413: u128 = simd::f32x4_convert_i32x4_s(t412);
@@ -1024,7 +1024,7 @@ use crate::{imp, syms};
                                 l24 = 0i32;
                                 r402 = (l22.wrapping_add(4i32)); break 'L51;
                             }
-                            let t419: u128 = (*ph).read_splat(l0 + 65, 32);
+                            let t419: u128 = (*ph).read_u32(l0 + 65) as u128;
                             l10 = t419;
                             let t420: i32 = (*ph).read_u32(l0 + 52) as i32;
                             let t421: i32 = syms::f_007512_rage_decalsettingsmanager_findrendersettinginfo_unsigned_int_uns(ph, t420, (l1.wrapping_add(396i64)), (l1.wrapping_add(392i64)));
@@ -1291,9 +1291,9 @@ use crate::{imp, syms};
                                 break 'L57;
                             break 'L61;
                             }
-                            let t513: u128 = (*ph).read_splat((((((l23 as i32) as i64).wrapping_mul(96i64)).wrapping_add(26956752i64))) + 88, 32);
+                            let t513: u128 = (*ph).read_u32((((((l23 as i32) as i64).wrapping_mul(96i64)).wrapping_add(26956752i64))) + 88) as u128;
                             l10 = t513;
-                            let t514: u128 = (*ph).read_splat(l0 + 73, 32);
+                            let t514: u128 = (*ph).read_u32(l0 + 73) as u128;
                             l11 = t514;
                             (*ph).write_u64(l1 + 200, 0i64 as u64);
                             let t515: i64 = (*ph).read_u64(l0) as i64;

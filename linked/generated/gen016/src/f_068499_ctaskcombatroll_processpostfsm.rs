@@ -79,7 +79,7 @@ use crate::{imp, syms};
                     if (((l13 & 64i32) == 0) as i32) != 0 {
                         r9 = t12; break 'L4;
                     }
-                    let t13: u128 = (*ph).read_splat(l10 + 1484, 64);
+                    let t13: u128 = (*ph).read_u64(l10 + 1484) as u128;
                     l14 = t13;
                     let t14: u128 = simd::f32x4_ne(l14, 0x00000000000000000000000000000000u128);
                     let t15: u128 = simd::f32x4_replace_lane(0x00000000000000003f8000003f800000u128, 2, l1);

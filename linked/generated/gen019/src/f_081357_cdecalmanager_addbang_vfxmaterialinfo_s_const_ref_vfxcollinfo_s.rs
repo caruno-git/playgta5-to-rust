@@ -74,7 +74,7 @@ use crate::{imp, syms};
             if ((t17 == 0) as i32) != 0 {
                 break 'L1;
             }
-            let t18: u128 = (*ph).read_splat(l1 + 72, 32);
+            let t18: u128 = (*ph).read_u32(l1 + 72) as u128;
             let t19: i64 = (*ph).read_u32(9721836i64) as i64;
             let t20: i64 = (*ph).read_u32(9721832i64) as i64;
             l2 = (t19.wrapping_add((t20.wrapping_mul(1557985959i64))));

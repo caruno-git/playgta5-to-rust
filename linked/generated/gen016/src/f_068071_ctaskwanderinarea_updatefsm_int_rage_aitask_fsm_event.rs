@@ -80,7 +80,7 @@ use crate::{imp, syms};
                     l6 = (t6 - t7);
                     (*ph).write_f32(t8 + 156, l6);
                     if ((l6 < 0.0f32) as i32) != 0 {
-                        let t9: u128 = (*ph).read_splat(l0 + 152, 32);
+                        let t9: u128 = (*ph).read_u32(l0 + 152) as u128;
                         l10 = t9;
                         let t10: i32 = syms::f_090911_rand(ph);
                         l1 = t10;

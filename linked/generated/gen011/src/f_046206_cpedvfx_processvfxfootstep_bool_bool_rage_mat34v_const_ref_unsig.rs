@@ -631,7 +631,7 @@ use crate::{imp, syms};
                 l13 = (l15.wrapping_add(2368i64));
                 let t151: i32 = syms::f_021448_audpedfootstepaudio_getshoetype(ph, l13);
                 l20 = t151;
-                let t152: u128 = (*ph).read_splat(l7 + 72, 64);
+                let t152: u128 = (*ph).read_u64(l7 + 72) as u128;
                 l33 = t152;
                 'L37: loop {
                     'L38: loop {

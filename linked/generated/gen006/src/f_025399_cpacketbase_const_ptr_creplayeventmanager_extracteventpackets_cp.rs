@@ -262,7 +262,7 @@ use crate::{imp, syms};
                     let t58: i64 = syms::f_081191_cvfxvehicleinfomgr_getinfo_cvehicle_ptr(ph, l8);
                     l9 = t58;
                     if ((l9 != 0i64) as i32) != 0 {
-                        let t59: u128 = (*ph).read_splat(l6 + 28, 64);
+                        let t59: u128 = (*ph).read_u64(l6 + 28) as u128;
                         let t60: u128 = (*ph).load_lane(l6 + 36, t59, 2, 32);
                         l16 = t60;
                         let t61: f32 = (*ph).read_f32(l6 + 40);

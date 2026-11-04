@@ -128,7 +128,7 @@ use crate::{imp, syms};
             if ((l6 == 0) as i32) != 0 {
                 l6 = 10852368i64;
             }
-            let t28: u128 = (*ph).read_splat(l6, 32);
+            let t28: u128 = (*ph).read_u32(l6) as u128;
             let t29: u128 = (*ph).load_lane((l6.wrapping_add(4i64)), t28, 1, 32);
             let t30: u128 = (*ph).load_lane((l6.wrapping_add(8i64)), t29, 2, 32);
             let t31: u128 = (*ph).load_lane((l6.wrapping_add(12i64)), t30, 3, 32);

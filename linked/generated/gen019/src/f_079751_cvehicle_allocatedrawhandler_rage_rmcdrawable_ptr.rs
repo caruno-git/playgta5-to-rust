@@ -49,7 +49,7 @@ use crate::{imp, syms};
         (*ph).memory_fill((l2.wrapping_add(882i64)), 255i32, 65i64);
         l8 = (((((l2.wrapping_add(816i64)) as u64) <= (10852368i64 as u64)) as i32) | (((l2 as u64) >= (10852384i64 as u64)) as i32));
         if l8 != 0 {
-            let t3: u128 = (*ph).read_splat(0i64 + 10852368, 32);
+            let t3: u128 = (*ph).read_u32(0i64 + 10852368) as u128;
             let t4: u128 = (*ph).load_lane(4i64 + 10852368, t3, 1, 32);
             let t5: u128 = (*ph).load_lane(8i64 + 10852368, t4, 2, 32);
             let t6: u128 = (*ph).load_lane(12i64 + 10852368, t5, 3, 32);

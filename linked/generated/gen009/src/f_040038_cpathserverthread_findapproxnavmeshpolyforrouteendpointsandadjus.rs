@@ -85,7 +85,7 @@ use crate::{imp, syms};
             let t4: u128 = simd::f32x4_splat(l2 as f32);
             l30 = t4;
             'L5: loop {
-                let t5: u128 = (*ph).read_splat(((l13.wrapping_shl((3i64 as u32) & 63))) + 20028608, 64);
+                let t5: u128 = (*ph).read_u64(((l13.wrapping_shl((3i64 as u32) & 63))) + 20028608) as u128;
                 let t6: u128 = simd::f32x4_mul(t5, l30);
                 let t7: u128 = (*ph).read_v128(l1);
                 let t8: u128 = simd::f32x4_add(t6, t7);

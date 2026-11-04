@@ -96,7 +96,7 @@ use crate::{imp, syms};
         }
         l9 = (l1.wrapping_add(48i64));
         (*ph).write_u64(l1 + 24, l0 as u64);
-        let t25: u128 = (*ph).read_splat(l2 + 68, 64);
+        let t25: u128 = (*ph).read_u64(l2 + 68) as u128;
         let t26: i64 = l0;
         l11 = t25;
         let t27: u128 = simd::i32x4_eq(l11, 0xffffffffffffffffffffffffffffffffu128);

@@ -384,10 +384,10 @@ use crate::{imp, syms};
                 break 'L22;
                 }
                 (*ph).write_f32(l0 + 352, l7);
-                let t166: u128 = (*ph).read_splat(l0 + 356, 64);
+                let t166: u128 = (*ph).read_u64(l0 + 356) as u128;
                 l10 = t166;
                 let t167: i64 = (*ph).read_u64(l0 + 256) as i64;
-                let t168: u128 = (*ph).read_splat(t167 + 36, 64);
+                let t168: u128 = (*ph).read_u64(t167 + 36) as u128;
                 l11 = t168;
                 let t169: i64 = l0;
                 let t170: f32 = syms::f_090732_cosf(ph, l7);
@@ -678,10 +678,10 @@ use crate::{imp, syms};
                 break 'L34;
                 }
                 (*ph).write_f32(l0 + 464, l7);
-                let t288: u128 = (*ph).read_splat(l0 + 468, 64);
+                let t288: u128 = (*ph).read_u64(l0 + 468) as u128;
                 l10 = t288;
                 let t289: i64 = (*ph).read_u64(l0 + 368) as i64;
-                let t290: u128 = (*ph).read_splat(t289 + 36, 64);
+                let t290: u128 = (*ph).read_u64(t289 + 36) as u128;
                 l11 = t290;
                 let t291: i64 = l0;
                 let t292: f32 = syms::f_090732_cosf(ph, l7);

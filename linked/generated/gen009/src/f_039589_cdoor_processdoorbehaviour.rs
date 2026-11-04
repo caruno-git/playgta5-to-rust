@@ -596,7 +596,7 @@ use crate::{imp, syms};
                                             let t202 = (*ph).table_entry_typed(t200, 0);
                                             let t203: unsafe extern "C" fn(*mut Phantom, i64) -> i64 = core::mem::transmute(t202);
                                             let t204: i64 = t203(ph as *mut Phantom, l0);
-                                            let t205: u128 = (*ph).read_splat(t204, 32);
+                                            let t205: u128 = (*ph).read_u32(t204) as u128;
                                             let t206: u128 = simd::f32x4_replace_lane(t205, 1, (l30 * (-l29)));
                                             let t207: i64 = (*ph).read_u64(l0) as i64;
                                             let t208: i64 = (*ph).read_u64(t207 + 472) as i64;

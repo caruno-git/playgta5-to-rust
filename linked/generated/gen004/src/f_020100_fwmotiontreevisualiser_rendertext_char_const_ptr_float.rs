@@ -98,7 +98,7 @@ use crate::{imp, syms};
                     (*ph).write_u32(15576716i64, 0i32 as u32);
                 break 'L5;
                 }
-                let t22: u128 = (*ph).read_splat(0i64 + 6737172, 32);
+                let t22: u128 = (*ph).read_u32(0i64 + 6737172) as u128;
                 let t23: u128 = (*ph).load_lane(0i64 + 6737168, t22, 1, 32);
                 let t24: u128 = simd::f32x4_mul(t23, 0x437f0000437f0000437f0000437f0000u128);
                 let t25: u128 = simd::i32x4_trunc_sat_f32x4_s(t24);
@@ -252,7 +252,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(15576736i64, 0i32 as u32);
             break 'L13;
             }
-            let t72: u128 = (*ph).read_splat(0i64 + 15576728, 32);
+            let t72: u128 = (*ph).read_u32(0i64 + 15576728) as u128;
             let t73: u128 = (*ph).load_lane(0i64 + 6737180, t72, 1, 32);
             let t74: u128 = (*ph).load_lane(0i64 + 6737176, t73, 2, 32);
             let t75: f32 = (*ph).read_f32(6737184i64);

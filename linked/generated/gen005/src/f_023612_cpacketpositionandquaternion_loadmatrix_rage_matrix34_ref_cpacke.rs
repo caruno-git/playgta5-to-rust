@@ -90,7 +90,7 @@ use crate::{imp, syms};
             }
             let t7: f32 = (*ph).read_f32(l2 + 8);
             l13 = t7;
-            let t8: u128 = (*ph).read_splat(l2, 64);
+            let t8: u128 = (*ph).read_u64(l2) as u128;
             l15 = t8;
             (*ph).write_f32(l4 + 44, l8);
             (*ph).write_f32(l4 + 40, l7);
@@ -179,7 +179,7 @@ use crate::{imp, syms};
             }
             syms::f_003163_rage_quaternion_slerp_float_rage_quaternion_const_ref_rage_quate(ph, l4, l3, (l4.wrapping_add(16i64)), (l4.wrapping_add(32i64)));
             syms::f_003159_rage_matrix34_fromquaternion_rage_quaternion_const_ref(ph, l1, l4);
-            let t31: u128 = (*ph).read_splat(l0, 64);
+            let t31: u128 = (*ph).read_u64(l0) as u128;
             l14 = t31;
             let t32: i64 = l1;
             let t33: f32 = (l3 * l13);

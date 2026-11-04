@@ -42,11 +42,11 @@ use crate::{imp, syms};
                         l2 = (l0.wrapping_add(16i64));
                         let t6: i64 = syms::f_009645_rage_grcviewport_getunclippedwindow_const(ph, l2);
                         l3 = t6;
-                        let t7: u128 = (*ph).read_splat(l3 + 8, 64);
+                        let t7: u128 = (*ph).read_u64(l3 + 8) as u128;
                         l8 = t7;
                         let mut r8: u128 = 0;
                         'L5: loop {
-                            let t9: u128 = (*ph).read_splat(l3, 64);
+                            let t9: u128 = (*ph).read_u64(l3) as u128;
                             l9 = t9;
                             let t10: i32 = (*ph).read_u8(l0 + 988) as i32;
                             let t11: u128 = l9;
@@ -88,7 +88,7 @@ use crate::{imp, syms};
                                 }
                                 l4 = ((1.0f32 - r18) * 0.5f32);
                             }
-                            let t20: u128 = (*ph).read_splat(l0 + 968, 64);
+                            let t20: u128 = (*ph).read_u64(l0 + 968) as u128;
                             let t21: u128 = (*ph).read_v128(l0 + 960);
                             l7 = t21;
                             let t22: u128 = simd::f32x4_sub(t20, l7);
@@ -135,7 +135,7 @@ use crate::{imp, syms};
                                     }
                                     l4 = ((1.0f32 - r33) * 0.5f32);
                                 }
-                                let t35: u128 = (*ph).read_splat(l0 + 1000, 64);
+                                let t35: u128 = (*ph).read_u64(l0 + 1000) as u128;
                                 let t36: u128 = (*ph).read_v128(l0 + 992);
                                 l6 = t36;
                                 let t37: u128 = simd::f32x4_sub(t35, l6);

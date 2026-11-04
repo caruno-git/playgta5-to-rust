@@ -1291,7 +1291,7 @@ use crate::{imp, syms};
                                     }
                                     let t279: i64 = (*ph).read_u64(l6 + 8) as i64;
                                     syms::f_009869_rage_grceffect_getlocalcommon_rage_grcinstancedata_const_ref_rag(ph, l6, l18, (l5.wrapping_add(128i64)), 16i64);
-                                    let t280: u128 = (*ph).read_splat(l5 + 132, 64);
+                                    let t280: u128 = (*ph).read_u64(l5 + 132) as u128;
                                     let t281: u128 = simd::f32x4_pmax(l22, t280);
                                     l22 = t281;
                                 break 'L95;

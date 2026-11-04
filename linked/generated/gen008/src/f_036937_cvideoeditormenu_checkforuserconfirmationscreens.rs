@@ -1626,7 +1626,7 @@ use crate::{imp, syms};
                                                     'L128: loop {
                                                         let t298: u128 = l16;
                                                         l15 = (l13.wrapping_add((l14.wrapping_mul(160i64))));
-                                                        let t299: u128 = (*ph).read_splat(l15 + 144, 64);
+                                                        let t299: u128 = (*ph).read_u64(l15 + 144) as u128;
                                                         let t300: u128 = (*ph).load_lane(l15 + 304, t299, 1, 64);
                                                         let t301: u128 = simd::i64x2_eq(t300, l17);
                                                         let t302: u128 = simd::i8x16_shuffle_static::<0,1,2,3,8,9,10,11,0,1,2,3,0,1,2,3>(t301, l16);

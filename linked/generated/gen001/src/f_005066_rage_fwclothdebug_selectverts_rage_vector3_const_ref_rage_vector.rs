@@ -93,7 +93,7 @@ use crate::{imp, syms};
                             (*ph).store_lane(l11, t23, 0, 64);
                             syms::f_009646_rage_grcviewport_transform_rage_vec3v_const_ref_float_ref_float(ph, l4, l11, (l11.wrapping_add(28i64)), (l11.wrapping_add(24i64)));
                             let t24: f32 = (*ph).read_f32(l11 + 24);
-                            let t25: u128 = (*ph).read_splat(l4 + 824, 64);
+                            let t25: u128 = (*ph).read_u64(l4 + 824) as u128;
                             let t26: u128 = (*ph).read_v128(l4 + 864);
                             let t27: u128 = simd::f32x4_convert_i32x4_s(t26);
                             let t28: u128 = simd::f32x4_mul(t25, t27);

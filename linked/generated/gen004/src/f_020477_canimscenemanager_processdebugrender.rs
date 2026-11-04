@@ -6243,7 +6243,7 @@ use crate::{imp, syms};
                                     let t2045: f32 = (*ph).read_f32(l1 + 4);
                                     let t2046: f32 = (*ph).read_f32(l7 + 2360);
                                     l19 = (t2045 + t2046);
-                                    let t2047: u128 = (*ph).read_splat(l1, 32);
+                                    let t2047: u128 = (*ph).read_u32(l1) as u128;
                                     let t2048: u128 = (*ph).load_lane(l1 + 8, t2047, 1, 32);
                                     let t2049: u128 = simd::i64x2_extend_low_i32x4_u(t2048);
                                     l44 = t2049;
@@ -6619,7 +6619,7 @@ use crate::{imp, syms};
                                                 if l38 != 0 {
                                                     break 'L439;
                                                 }
-                                                let t2180: u128 = (*ph).read_splat(l4 + 12, 64);
+                                                let t2180: u128 = (*ph).read_u64(l4 + 12) as u128;
                                                 let t2181: u128 = (*ph).read_splat(l2 + 136, 32);
                                                 let t2182: u128 = (*ph).load_lane(l4 + 24, t2181, 3, 32);
                                                 let t2183: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,24,25,26,27,28,29,30,31>(t2180, t2182);

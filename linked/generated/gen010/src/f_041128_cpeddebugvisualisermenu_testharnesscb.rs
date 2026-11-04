@@ -1617,19 +1617,19 @@ use crate::{imp, syms};
                                                                                             }
                                                                                             let t333: u128 = (*ph).read_v128(20154272i64);
                                                                                             l11 = t333;
-                                                                                            let t334: u128 = (*ph).read_splat(0i64 + 20154276, 32);
+                                                                                            let t334: u128 = (*ph).read_u32(0i64 + 20154276) as u128;
                                                                                             l12 = t334;
-                                                                                            let t335: u128 = (*ph).read_splat(0i64 + 20154280, 64);
+                                                                                            let t335: u128 = (*ph).read_u64(0i64 + 20154280) as u128;
                                                                                             l13 = t335;
-                                                                                            let t336: u128 = (*ph).read_splat(0i64 + 20154284, 32);
+                                                                                            let t336: u128 = (*ph).read_u32(0i64 + 20154284) as u128;
                                                                                             l14 = t336;
                                                                                             let t337: u128 = (*ph).read_v128(20154288i64);
                                                                                             l15 = t337;
-                                                                                            let t338: u128 = (*ph).read_splat(0i64 + 20154292, 32);
+                                                                                            let t338: u128 = (*ph).read_u32(0i64 + 20154292) as u128;
                                                                                             l16 = t338;
-                                                                                            let t339: u128 = (*ph).read_splat(0i64 + 20154296, 64);
+                                                                                            let t339: u128 = (*ph).read_u64(0i64 + 20154296) as u128;
                                                                                             l17 = t339;
-                                                                                            let t340: u128 = (*ph).read_splat(0i64 + 20154300, 32);
+                                                                                            let t340: u128 = (*ph).read_u32(0i64 + 20154300) as u128;
                                                                                             l18 = t340;
                                                                                             'L89: loop {
                                                                                                 'L90: loop {

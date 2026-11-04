@@ -37,7 +37,7 @@ use crate::{imp, syms};
                 if ((t3 == 1i32) as i32) != 0 {
                     let t4: i32 = (*ph).read_u32(23412016i64) as i32;
                     let t5: f32 = (*ph).read_f32(l0 + 144);
-                    let t6: u128 = (*ph).read_splat(l0 + 148, 64);
+                    let t6: u128 = (*ph).read_u64(l0 + 148) as u128;
                     let t7: u128 = simd::f32x4_add(t6, 0x00000000000000008000000045800000u128);
                     let t8: u128 = simd::f32x4_add(t7, 0x3f0000003f0000003f0000003f000000u128);
                     let t9: u128 = simd::f32x4_floor(t8);

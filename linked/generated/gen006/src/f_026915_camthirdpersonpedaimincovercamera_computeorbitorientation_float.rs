@@ -80,14 +80,14 @@ use crate::{imp, syms};
                 }
                 let t16: i64 = (*ph).read_u64(l0 + 1520) as i64;
                 let t17: f32 = (*ph).read_f32(t16 + 1128);
-                let t18: u128 = (*ph).read_splat(l0 + 740, 64);
+                let t18: u128 = (*ph).read_u64(l0 + 740) as u128;
                 l20 = t18;
                 let t19: u128 = (*ph).read_v128(l0 + 736);
                 let t20: u128 = l20;
                 l19 = t19;
                 let t21: u128 = simd::i8x16_shuffle_static::<4,5,6,7,16,17,18,19,0,1,2,3,0,1,2,3>(t20, l19);
                 l22 = t21;
-                let t22: u128 = (*ph).read_splat(l0 + 932, 64);
+                let t22: u128 = (*ph).read_u64(l0 + 932) as u128;
                 let t23: u128 = l22;
                 let t24: u128 = l22;
                 l21 = t22;

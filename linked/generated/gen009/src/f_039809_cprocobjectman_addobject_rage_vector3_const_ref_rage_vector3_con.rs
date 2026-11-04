@@ -293,7 +293,7 @@ use crate::{imp, syms};
                 break 'L18;
                 }
                 l9 = (((r76 as u32) as i64).wrapping_add((((l35 as u32) as i64).wrapping_mul(1557985959i64))));
-                let t83: u128 = (*ph).read_splat(l2 + 30, 32);
+                let t83: u128 = (*ph).read_u32(l2 + 30) as u128;
                 let t84: u128 = simd::i32x4_extend_low_i16x8_u(t83);
                 let t85: u128 = simd::i32x4_shl(t84, 16i32);
                 let t86: f32 = (((((l9 as i32) & 8388607i32) as u32) as f32) * 1.1920929e-07f32);
@@ -332,11 +332,11 @@ use crate::{imp, syms};
                     l10 = ((l9 as u64).wrapping_shr((32i64 as u32) & 63) as i64);
                 break 'L20;
                 }
-                let t101: u128 = (*ph).read_splat(l2 + 18, 64);
+                let t101: u128 = (*ph).read_u64(l2 + 18) as u128;
                 l13 = t101;
-                let t102: u128 = (*ph).read_splat(l2 + 26, 32);
+                let t102: u128 = (*ph).read_u32(l2 + 26) as u128;
                 l17 = t102;
-                let t103: u128 = (*ph).read_splat(l2 + 38, 32);
+                let t103: u128 = (*ph).read_u32(l2 + 38) as u128;
                 l16 = t103;
                 l10 = (((l9 & 4294967295i64).wrapping_mul(1557985959i64)).wrapping_add(l10));
                 l11 = (((l10 & 4294967295i64).wrapping_mul(1557985959i64)).wrapping_add(((l10 as u64).wrapping_shr((32i64 as u32) & 63) as i64)));

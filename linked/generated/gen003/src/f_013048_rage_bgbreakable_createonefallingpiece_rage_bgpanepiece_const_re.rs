@@ -50,7 +50,7 @@ use crate::{imp, syms};
         let mut l35: i32 = 0;
         l7 = ((*ph).sp.wrapping_sub(80i64));
         (*ph).sp = l7;
-        let t1: u128 = (*ph).read_splat(l2, 64);
+        let t1: u128 = (*ph).read_u64(l2) as u128;
         l29 = t1;
         l26 = l29;
         l28 = l29;
@@ -67,10 +67,10 @@ use crate::{imp, syms};
                 'L3: loop {
                     let t2: u128 = l26;
                     l8 = (l2.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))));
-                    let t3: u128 = (*ph).read_splat(l8, 64);
+                    let t3: u128 = (*ph).read_u64(l8) as u128;
                     l27 = t3;
                     let t4: u128 = simd::f32x4_pmax(t2, l27);
-                    let t5: u128 = (*ph).read_splat(l8 + 8, 64);
+                    let t5: u128 = (*ph).read_u64(l8 + 8) as u128;
                     l30 = t5;
                     let t6: u128 = simd::f32x4_pmax(t4, l30);
                     l26 = t6;
@@ -88,7 +88,7 @@ use crate::{imp, syms};
                     break 'L1;
                 }
             }
-            let t9: u128 = (*ph).read_splat((l2.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63)))), 64);
+            let t9: u128 = (*ph).read_u64((l2.wrapping_add((l5.wrapping_shl((3i64 as u32) & 63))))) as u128;
             let t10: u128 = l26;
             l27 = t9;
             let t11: u128 = simd::f32x4_pmax(t10, l27);

@@ -93,7 +93,7 @@ use crate::{imp, syms};
             let mut r39: i64 = 0;
             'L2: loop {
                 if l15 != 0 {
-                    let t40: u128 = (*ph).read_splat(l0 + 72, 32);
+                    let t40: u128 = (*ph).read_u32(l0 + 72) as u128;
                     let t41: u128 = (*ph).load_lane(l0 + 88, t40, 1, 32);
                     let t42: u128 = simd::i8x16_shuffle_static::<8,9,10,11,8,9,10,11,0,1,2,3,0,1,2,3>(l4, l3);
                     let t43: u128 = simd::f32x4_mul(t41, t42);
@@ -116,7 +116,7 @@ use crate::{imp, syms};
                     r39 = (l0.wrapping_add(104i64)); break 'L2;
                 }
                 l14 = (l1.wrapping_add(32i64));
-                let t55: u128 = (*ph).read_splat(l1 + 8, 32);
+                let t55: u128 = (*ph).read_u32(l1 + 8) as u128;
                 let t56: u128 = (*ph).load_lane(l1 + 24, t55, 1, 32);
                 let t57: u128 = simd::i8x16_shuffle_static::<8,9,10,11,8,9,10,11,0,1,2,3,0,1,2,3>(l4, l3);
                 let t58: u128 = simd::f32x4_mul(t56, t57);

@@ -14071,7 +14071,7 @@ use crate::{imp, syms};
                                                                                         l19 = (l18.wrapping_add((l17.wrapping_shl((3i64 as u32) & 63))));
                                                                                         let t5539: i64 = (*ph).read_u64(l19 + 8) as i64;
                                                                                         let t5540: i64 = (*ph).read_u64(l19) as i64;
-                                                                                        let t5541: u128 = (*ph).read_splat(t5540 + 492, 32);
+                                                                                        let t5541: u128 = (*ph).read_u32(t5540 + 492) as u128;
                                                                                         let t5542: u128 = (*ph).load_lane(t5539 + 492, t5541, 1, 32);
                                                                                         let t5543: u128 = simd::f32x4_le(t5542, 0x43af000343af000343af000343af0003u128);
                                                                                         let t5544: u128 = simd::i8x16_shuffle_static::<0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0>(t5543, l59);

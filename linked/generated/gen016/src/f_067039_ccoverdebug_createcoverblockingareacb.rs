@@ -59,7 +59,7 @@ use crate::{imp, syms};
                 l3 = t6;
                 let t7: f32 = (*ph).read_f32(l0 + 24);
                 l9 = t7;
-                let t8: u128 = (*ph).read_splat(0i64 + 25236431, 32);
+                let t8: u128 = (*ph).read_u32(0i64 + 25236431) as u128;
                 l10 = t8;
                 (*ph).write_u32(25236080i64, (l11.wrapping_add(1i32)) as u32);
                 let t9: f32 = (*ph).read_f32(l0);

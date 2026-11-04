@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_075141_ctaskvehiclegotopointwithavoidanceautomobile_tunables_onpostload(ph: *mut Phantom, mut l0: i64) {
         let mut l1: u128 = 0;
         let mut l2: f32 = 0.0;
-        let t1: u128 = (*ph).read_splat(l0 + 12, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 12) as u128;
         let t2: i64 = l0;
         l1 = t1;
         let t3: u128 = simd::f32x4_mul(l1, l1);

@@ -121,7 +121,7 @@ use crate::{imp, syms};
                     break 'L3;
                 break 'L5;
                 }
-                let t31: u128 = (*ph).read_splat(l1 + 124, 32);
+                let t31: u128 = (*ph).read_u32(l1 + 124) as u128;
                 let t32: u128 = (*ph).load_lane(l1 + 140, t31, 1, 32);
                 l2 = t32;
                 break 'L3;

@@ -871,7 +871,7 @@ use crate::{imp, syms};
                                                                     break 'L50;
                                                                 }
                                                                 l10 = (l10.wrapping_add(720i64));
-                                                                let t305: u128 = (*ph).read_splat(l12, 32);
+                                                                let t305: u128 = (*ph).read_u32(l12) as u128;
                                                                 l31 = t305;
                                                                 let t306: u128 = simd::f32x4_mul(l31, l31);
                                                                 let t307: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(t306, l31);

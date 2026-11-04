@@ -108,7 +108,7 @@ use crate::{imp, syms};
                 (*ph).write_u32(l0 + 296, (((((t22 as u32).wrapping_shr((14i32 as u32) & 31) as i32) & 8192i32) | (t23 & (-8193i32))) ^ 8192i32) as u32);
                 let t24: i32 = (*ph).read_u32(l2 + 5372) as i32;
                 (*ph).write_u32(l2 + 5372, (t24 | 4096i32) as u32);
-                let t25: u128 = (*ph).read_splat(l2 + 5392, 64);
+                let t25: u128 = (*ph).read_u64(l2 + 5392) as u128;
                 let t26: u128 = simd::v128_or(t25, 0x00000000000000001800000080000000u128);
                 (*ph).store_lane(l2 + 5392, t26, 0, 64);
                 let t27: i32 = syms::f_076773_ctaskaimgun_processprefsm(ph, l0);

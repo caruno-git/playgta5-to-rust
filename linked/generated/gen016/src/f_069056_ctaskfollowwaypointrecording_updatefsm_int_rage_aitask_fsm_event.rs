@@ -367,7 +367,7 @@ use crate::{imp, syms};
                                                         }
                                                         let t109: u128 = (*ph).read_v128(l0 + 160);
                                                         l18 = t109;
-                                                        let t110: u128 = (*ph).read_splat(l4, 64);
+                                                        let t110: u128 = (*ph).read_u64(l4) as u128;
                                                         l19 = t110;
                                                         let t111: f32 = (*ph).read_f32(l4 + 8);
                                                         let t112: f32 = (*ph).read_f32(l0 + 168);
@@ -925,7 +925,7 @@ use crate::{imp, syms};
                     }
                     let t254: u128 = (*ph).read_v128(l0 + 160);
                     l18 = t254;
-                    let t255: u128 = (*ph).read_splat(l3, 64);
+                    let t255: u128 = (*ph).read_u64(l3) as u128;
                     l19 = t255;
                     let t256: f32 = (*ph).read_f32(l3 + 8);
                     let t257: f32 = (*ph).read_f32(l0 + 168);
@@ -1048,7 +1048,7 @@ use crate::{imp, syms};
                 l9 = r284;
                 let t292: u128 = (*ph).read_v128(l0 + 160);
                 l18 = t292;
-                let t293: u128 = (*ph).read_splat(l4, 64);
+                let t293: u128 = (*ph).read_u64(l4) as u128;
                 l19 = t293;
                 let t294: f32 = (*ph).read_f32(l4 + 8);
                 let t295: f32 = (*ph).read_f32(l0 + 168);

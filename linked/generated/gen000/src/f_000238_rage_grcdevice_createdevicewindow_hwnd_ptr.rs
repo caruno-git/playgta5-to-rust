@@ -96,8 +96,8 @@ use crate::{imp, syms};
         let t25: i32 = (*ph).read_u8(12622832i64) as i32;
         if ((t25 == 0) as i32) != 0 {
             let t26: i32 = syms::f_000560_getclientrect_hwnd_ptr_tagrect_ptr(ph, (l1.wrapping_add(16i64)));
-            let t27: u128 = (*ph).read_splat(l1 + 24, 64);
-            let t28: u128 = (*ph).read_splat(l1 + 16, 64);
+            let t27: u128 = (*ph).read_u64(l1 + 24) as u128;
+            let t28: u128 = (*ph).read_u64(l1 + 16) as u128;
             let t29: u128 = simd::i32x4_sub(t27, t28);
             (*ph).store_lane(0i64 + 12622816, t29, 0, 64);
         }

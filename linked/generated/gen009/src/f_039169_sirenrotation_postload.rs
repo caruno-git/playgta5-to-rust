@@ -20,7 +20,7 @@ use crate::{imp, syms};
         let mut l1: i32 = 0;
         let mut l2: u128 = 0;
         let mut l3: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l0 + 44, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 44) as u128;
         let t2: u128 = simd::f32x4_mul(t1, 0x42652ee042652ee042652ee042652ee0u128);
         (*ph).store_lane(l0, t2, 0, 64);
         let t3: i32 = (*ph).read_u32(l0 + 56) as i32;

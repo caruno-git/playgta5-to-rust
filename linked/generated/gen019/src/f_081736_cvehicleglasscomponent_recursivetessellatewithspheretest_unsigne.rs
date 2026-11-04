@@ -79,9 +79,9 @@ use crate::{imp, syms};
                 if (((t5 as u32) <= (((((t8.wrapping_mul(t9)) as u64).wrapping_shr((24i64 as u32) & 63) as i64) as i32) as u32)) as i32) != 0 {
                     break 'L2;
                 }
-                let t10: u128 = (*ph).read_splat(l11, 64);
+                let t10: u128 = (*ph).read_u64(l11) as u128;
                 l33 = t10;
-                let t11: u128 = (*ph).read_splat(l9, 64);
+                let t11: u128 = (*ph).read_u64(l9) as u128;
                 l28 = t11;
                 let t12: f32 = (*ph).read_f32(l11);
                 l16 = t12;

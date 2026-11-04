@@ -150,7 +150,7 @@ use crate::{imp, syms};
             l2 = ((t43 != 255i32) as i32);
             let t44: i32 = (*ph).read_u8(l9 + 633) as i32;
             l4 = t44;
-            let t45: u128 = (*ph).read_splat(l9 + 634, 32);
+            let t45: u128 = (*ph).read_u32(l9 + 634) as u128;
             let t46: u128 = simd::i8x16_ne(t45, 0xffffffffffffffffffffffffffffffffu128);
             l16 = t46;
             let t47: i32 = simd::i32x4_extract_lane(l16, 0) as i32;

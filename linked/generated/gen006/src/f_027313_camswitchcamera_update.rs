@@ -1207,7 +1207,7 @@ use crate::{imp, syms};
                                         'L81: loop {
                                             let t330: i32 = (*ph).read_u8(l18 + 104) as i32;
                                             if ((t330 == 1i32) as i32) != 0 {
-                                                let t331: u128 = (*ph).read_splat(l18 + 88, 64);
+                                                let t331: u128 = (*ph).read_u64(l18 + 88) as u128;
                                                 let t332: u128 = simd::f32x4_mul(t331, 0x3c8efa353c8efa353c8efa353c8efa35u128);
                                                 l24 = t332;
                                                 break 'L81;

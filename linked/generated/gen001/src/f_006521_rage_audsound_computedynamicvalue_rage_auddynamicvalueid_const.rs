@@ -176,7 +176,7 @@ use crate::{imp, syms};
                                     return (t62 * 33.3300018f32);
                                 break 'L8;
                                 }
-                                let t63: u128 = (*ph).read_splat(l6 + 304, 64);
+                                let t63: u128 = (*ph).read_u64(l6 + 304) as u128;
                                 let t64: i64 = l6;
                                 l2 = t63;
                                 let t65: u128 = (*ph).load_lane(t64 + 312, l2, 2, 32);
@@ -195,7 +195,7 @@ use crate::{imp, syms};
                                 return t75;
                             break 'L7;
                             }
-                            let t76: u128 = (*ph).read_splat(l6 + 304, 64);
+                            let t76: u128 = (*ph).read_u64(l6 + 304) as u128;
                             let t77: i64 = l6;
                             l2 = t76;
                             let t78: u128 = (*ph).load_lane(t77 + 312, l2, 2, 32);
@@ -254,7 +254,7 @@ use crate::{imp, syms};
                             return t124;
                         break 'L6;
                         }
-                        let t125: u128 = (*ph).read_splat(l6 + 304, 64);
+                        let t125: u128 = (*ph).read_u64(l6 + 304) as u128;
                         let t126: i64 = l6;
                         l2 = t125;
                         let t127: u128 = (*ph).load_lane(t126 + 312, l2, 2, 32);

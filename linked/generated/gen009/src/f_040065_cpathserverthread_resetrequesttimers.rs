@@ -28,7 +28,7 @@ use crate::{imp, syms};
         'L1: loop {
             l2 = (l4.wrapping_mul(1664i64));
             l3 = (l2.wrapping_add(19919104i64));
-            let t2: u128 = (*ph).read_splat(l2 + 19919152, 32);
+            let t2: u128 = (*ph).read_u32(l2 + 19919152) as u128;
             let t3: u128 = (*ph).load_lane(l2 + 19920816, t2, 1, 32);
             let t4: u128 = (*ph).load_lane(l2 + 19922480, t3, 2, 32);
             let t5: u128 = (*ph).load_lane(l2 + 19924144, t4, 3, 32);
@@ -88,7 +88,7 @@ use crate::{imp, syms};
         if t18 != 0 {
             (*ph).write_u32(19977564i64, l0 as u32);
         }
-        let t19: u128 = (*ph).read_splat(0i64 + 19978288, 32);
+        let t19: u128 = (*ph).read_u32(0i64 + 19978288) as u128;
         let t20: u128 = (*ph).load_lane(0i64 + 19978768, t19, 1, 32);
         let t21: u128 = (*ph).load_lane(0i64 + 19979248, t20, 2, 32);
         let t22: u128 = (*ph).load_lane(0i64 + 19979728, t21, 3, 32);
@@ -110,7 +110,7 @@ use crate::{imp, syms};
         if (t27 & 1i32) != 0 {
             (*ph).write_u32(19979740i64, l0 as u32);
         }
-        let t28: u128 = (*ph).read_splat(0i64 + 19980208, 32);
+        let t28: u128 = (*ph).read_u32(0i64 + 19980208) as u128;
         let t29: u128 = (*ph).load_lane(0i64 + 19980688, t28, 1, 32);
         let t30: u128 = (*ph).load_lane(0i64 + 19981168, t29, 2, 32);
         let t31: u128 = (*ph).load_lane(0i64 + 19981648, t30, 3, 32);
@@ -132,7 +132,7 @@ use crate::{imp, syms};
         if (t36 & 1i32) != 0 {
             (*ph).write_u32(19981660i64, l0 as u32);
         }
-        let t37: u128 = (*ph).read_splat(0i64 + 19982128, 32);
+        let t37: u128 = (*ph).read_u32(0i64 + 19982128) as u128;
         let t38: u128 = (*ph).load_lane(0i64 + 19982608, t37, 1, 32);
         let t39: u128 = (*ph).load_lane(0i64 + 19983088, t38, 2, 32);
         let t40: u128 = (*ph).load_lane(0i64 + 19983568, t39, 3, 32);
@@ -154,7 +154,7 @@ use crate::{imp, syms};
         if (t45 & 1i32) != 0 {
             (*ph).write_u32(19983580i64, l0 as u32);
         }
-        let t46: u128 = (*ph).read_splat(0i64 + 19984048, 32);
+        let t46: u128 = (*ph).read_u32(0i64 + 19984048) as u128;
         let t47: u128 = (*ph).load_lane(0i64 + 19984528, t46, 1, 32);
         let t48: u128 = (*ph).load_lane(0i64 + 19985008, t47, 2, 32);
         let t49: u128 = (*ph).load_lane(0i64 + 19985488, t48, 3, 32);
@@ -176,7 +176,7 @@ use crate::{imp, syms};
         if (t54 & 1i32) != 0 {
             (*ph).write_u32(19985500i64, l0 as u32);
         }
-        let t55: u128 = (*ph).read_splat(0i64 + 19985968, 32);
+        let t55: u128 = (*ph).read_u32(0i64 + 19985968) as u128;
         let t56: u128 = (*ph).load_lane(0i64 + 19986448, t55, 1, 32);
         let t57: u128 = (*ph).load_lane(0i64 + 19986928, t56, 2, 32);
         let t58: u128 = (*ph).load_lane(0i64 + 19987408, t57, 3, 32);
@@ -198,7 +198,7 @@ use crate::{imp, syms};
         if (t63 & 1i32) != 0 {
             (*ph).write_u32(19987420i64, l0 as u32);
         }
-        let t64: u128 = (*ph).read_splat(0i64 + 19987888, 32);
+        let t64: u128 = (*ph).read_u32(0i64 + 19987888) as u128;
         let t65: u128 = (*ph).load_lane(0i64 + 19988368, t64, 1, 32);
         let t66: u128 = (*ph).load_lane(0i64 + 19988848, t65, 2, 32);
         let t67: u128 = (*ph).load_lane(0i64 + 19989328, t66, 3, 32);

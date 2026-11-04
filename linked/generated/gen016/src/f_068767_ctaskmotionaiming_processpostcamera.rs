@@ -40,7 +40,7 @@ use crate::{imp, syms};
         if (t2 & 1i32) != 0 {
             let t3: f32 = syms::f_045979_cped_getfacingdirectionheading_const(ph, l7);
             l1 = t3;
-            let t4: u128 = (*ph).read_splat(l7 + 1444, 32);
+            let t4: u128 = (*ph).read_u32(l7 + 1444) as u128;
             let t5: u128 = simd::f32x4_replace_lane(t4, 1, l1);
             let t6: i64 = l0;
             l9 = t5;

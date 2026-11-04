@@ -143,11 +143,11 @@ use crate::{imp, syms};
                             syms::f_001523_quitf_char_const_ptr(ph, 2120837i64, l10);
                             break 'L1;
                         }
-                        let t22: u128 = (*ph).read_splat(l2 + 28, 32);
+                        let t22: u128 = (*ph).read_u32(l2 + 28) as u128;
                         l12 = t22;
-                        let t23: u128 = (*ph).read_splat(l1 + 28, 32);
+                        let t23: u128 = (*ph).read_u32(l1 + 28) as u128;
                         l13 = t23;
-                        let t24: u128 = (*ph).read_splat(l0 + 28, 32);
+                        let t24: u128 = (*ph).read_u32(l0 + 28) as u128;
                         l14 = t24;
                         (*ph).write_u8(l3, 0i32 as u8);
                         let t25: i32 = simd::i16x8_extract_lane_s(l12, 0) as i32;

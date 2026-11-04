@@ -353,7 +353,7 @@ use crate::{imp, syms};
             if ((l8 == 0) as i32) != 0 {
                 break 'L12;
             }
-            let t105: u128 = (*ph).read_splat(0i64 + 12622840, 64);
+            let t105: u128 = (*ph).read_u64(0i64 + 12622840) as u128;
             let t106: u128 = (*ph).read_v128(12622816i64);
             let t107: i64 = (*ph).read_u64(((*ph).g[27] as i64)) as i64;
             let t108: u128 = simd::i32x4_splat(((t107 == 0) as i32) as i32);

@@ -466,7 +466,7 @@ use crate::{imp, syms};
                                     r169 = (l0.wrapping_add(12i64));
                                 break 'L27;
                                 }
-                                let t173: u128 = (*ph).read_splat(l0, 32);
+                                let t173: u128 = (*ph).read_u32(l0) as u128;
                                 let t174: u128 = (*ph).load_lane(l7, t173, 1, 32);
                                 let t175: u128 = (*ph).load_lane(l6, t174, 2, 32);
                                 let t176: u128 = (*ph).load_lane(r169, t175, 3, 32);

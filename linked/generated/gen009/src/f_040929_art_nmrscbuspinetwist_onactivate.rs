@@ -160,7 +160,7 @@ use crate::{imp, syms};
         let t106: f32 = t105(ph as *mut Phantom, l1);
         l2 = t106;
         (*ph).write_f32(t101 + 180, l2);
-        let t107: u128 = (*ph).read_splat(l0 + 168, 64);
+        let t107: u128 = (*ph).read_u64(l0 + 168) as u128;
         let t108: u128 = (*ph).read_splat(l0 + 176, 32);
         let t109: u128 = simd::f32x4_replace_lane(t108, 3, l2);
         let t110: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,24,25,26,27,28,29,30,31>(t107, t109);

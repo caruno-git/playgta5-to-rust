@@ -1481,14 +1481,14 @@ use crate::{imp, syms};
                                                                     l24 = 0i64;
                                                                     'L115: loop {
                                                                         l25 = ((l21.wrapping_sub((-64i64))).wrapping_add(l24));
-                                                                        let t371: u128 = (*ph).read_splat(l25, 64);
+                                                                        let t371: u128 = (*ph).read_u64(l25) as u128;
                                                                         let t372: u128 = simd::i64x2_add(l39, l35);
                                                                         let t373: i64 = l25;
                                                                         let t374: i64 = l20;
                                                                         l37 = t372;
                                                                         let t375: i64 = simd::i64x2_extract_lane(l37, 0) as i64;
                                                                         l25 = t375;
-                                                                        let t376: u128 = (*ph).read_splat((t374.wrapping_add(l25)), 64);
+                                                                        let t376: u128 = (*ph).read_u64((t374.wrapping_add(l25))) as u128;
                                                                         let t377: u128 = simd::i64x2_add(l42, l35);
                                                                         let t378: u128 = l38;
                                                                         l43 = t377;

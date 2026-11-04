@@ -153,7 +153,7 @@ use crate::{imp, syms};
                                 l2 = (t28.wrapping_add((l4.wrapping_mul(28i64))));
                                 let t29: f32 = (*ph).read_f32(l2 + 20);
                                 l22 = t29;
-                                let t30: u128 = (*ph).read_splat(l2 + 8, 32);
+                                let t30: u128 = (*ph).read_u32(l2 + 8) as u128;
                                 l19 = t30;
                                 let t31: i32 = (*ph).read_i16(l2 + 6) as i32;
                                 l9 = t31;

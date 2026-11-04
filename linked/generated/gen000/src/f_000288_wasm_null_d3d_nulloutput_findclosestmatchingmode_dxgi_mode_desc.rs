@@ -23,13 +23,13 @@ use crate::{imp, syms};
         let mut l7: i32 = 0;
         let mut l8: u128 = 0;
         let mut l9: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l1, 64);
+        let t1: u128 = (*ph).read_u64(l1) as u128;
         l9 = t1;
         l4 = (-1i32);
         l0 = 0i64;
         'L1: loop {
             l3 = (l0 | 1i64);
-            let t2: u128 = (*ph).read_splat(((l3.wrapping_shl((3i64 as u32) & 63))) + 4107600, 64);
+            let t2: u128 = (*ph).read_u64(((l3.wrapping_shl((3i64 as u32) & 63))) + 4107600) as u128;
             let t3: u128 = simd::i32x4_sub(t2, l9);
             let t4: u128 = simd::i32x4_abs(t3);
             l8 = t4;

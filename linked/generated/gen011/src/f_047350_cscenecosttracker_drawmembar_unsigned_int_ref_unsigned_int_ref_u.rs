@@ -222,7 +222,7 @@ use crate::{imp, syms};
         let t86: i64 = (*ph).read_u64(12374984i64) as i64;
         let t87: u128 = l17;
         l15 = t86;
-        let t88: u128 = (*ph).read_splat(l15 + 824, 64);
+        let t88: u128 = (*ph).read_u64(l15 + 824) as u128;
         let t89: u128 = (*ph).read_v128(l15 + 864);
         let t90: u128 = simd::f32x4_convert_i32x4_s(t89);
         let t91: u128 = simd::f32x4_mul(t88, t90);

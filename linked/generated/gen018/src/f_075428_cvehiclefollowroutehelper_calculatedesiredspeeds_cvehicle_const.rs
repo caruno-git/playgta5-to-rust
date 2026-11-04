@@ -520,7 +520,7 @@ use crate::{imp, syms};
                     let t172: u128 = simd::f32x4_sqrt(t171);
                     l26 = t172;
                     let t173: u128 = simd::f32x4_ge(l26, 0x358637bd358637bd358637bd358637bdu128);
-                    let t174: u128 = (*ph).read_splat(l12 + 8, 32);
+                    let t174: u128 = (*ph).read_u32(l12 + 8) as u128;
                     let t175: f32 = (*ph).read_f32((l12.wrapping_sub(40i64)));
                     l4 = t175;
                     let t176: u128 = simd::f32x4_replace_lane(t174, 1, l4);

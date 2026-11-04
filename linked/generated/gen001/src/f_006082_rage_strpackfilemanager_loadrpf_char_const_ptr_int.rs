@@ -425,7 +425,7 @@ use crate::{imp, syms};
                             'L25: loop {
                                 let t187: u128 = l16;
                                 l6 = (l9.wrapping_add((l2.wrapping_shl((4i64 as u32) & 63))));
-                                let t188: u128 = (*ph).read_splat(l6, 64);
+                                let t188: u128 = (*ph).read_u64(l6) as u128;
                                 let t189: u128 = (*ph).load_lane(l6 + 16, t188, 1, 64);
                                 let t190: u128 = simd::v128_and(t189, 0x7fffff00000000007fffff0000000000u128);
                                 let t191: u128 = simd::i64x2_ne(t190, 0x7fffff00000000007fffff0000000000u128);

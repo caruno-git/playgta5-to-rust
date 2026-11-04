@@ -100,10 +100,10 @@ use crate::{imp, syms};
                     }
                     let t36: i32 = (*ph).read_u8(7234538i64) as i32;
                     if ((t36 == 1i32) as i32) != 0 {
-                        let t37: u128 = (*ph).read_splat(0i64 + 21388312, 32);
+                        let t37: u128 = (*ph).read_u32(0i64 + 21388312) as u128;
                         let t38: u128 = (*ph).load_lane(0i64 + 21388316, t37, 1, 32);
                         let t39: u128 = simd::f32x4_convert_i32x4_s(t38);
-                        let t40: u128 = (*ph).read_splat(0i64 + 21388216, 64);
+                        let t40: u128 = (*ph).read_u64(0i64 + 21388216) as u128;
                         let t41: u128 = simd::f32x4_sub(t39, t40);
                         let t42: u128 = simd::f32x4_mul(t41, 0x3f0000003f0000003f0000003f000000u128);
                         l11 = t42;
@@ -271,10 +271,10 @@ use crate::{imp, syms};
                     let t100: i64 = (*ph).read_u64(l3 + 8) as i64;
                     let t101: i32 = (*ph).read_u32(21395380i64) as i32;
                     syms::f_009875_rage_grceffect_setlocalcommon_rage_grcinstancedata_ref_rage_grce(ph, l3, t101, l2, 16i32, 1i32);
-                    let t102: u128 = (*ph).read_splat(0i64 + 21388312, 32);
+                    let t102: u128 = (*ph).read_u32(0i64 + 21388312) as u128;
                     let t103: u128 = (*ph).load_lane(0i64 + 21388316, t102, 1, 32);
                     l11 = t103;
-                    let t104: u128 = (*ph).read_splat(21388208i64 + 8, 64);
+                    let t104: u128 = (*ph).read_u64(21388208i64 + 8) as u128;
                     l12 = t104;
                     let t105: u128 = (*ph).read_v128(21388208i64);
                     l13 = t105;

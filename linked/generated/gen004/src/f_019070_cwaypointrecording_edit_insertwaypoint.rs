@@ -53,9 +53,9 @@ use crate::{imp, syms};
                 l5 = (l3.wrapping_add(1i32));
                 if (((l5 as u32) < ((l4.wrapping_sub(1i32)) as u32)) as i32) != 0 {
                     l8 = (l8.wrapping_add((((l5 as u32) as i64).wrapping_mul(20i64))));
-                    let t6: u128 = (*ph).read_splat(l8, 64);
+                    let t6: u128 = (*ph).read_u64(l8) as u128;
                     l9 = t6;
-                    let t7: u128 = (*ph).read_splat(l6, 64);
+                    let t7: u128 = (*ph).read_u64(l6) as u128;
                     l10 = t7;
                     let t8: f32 = (*ph).read_f32(l6 + 8);
                     let t9: f32 = (*ph).read_f32(l8 + 8);
@@ -109,9 +109,9 @@ use crate::{imp, syms};
                 }
                 'L8: loop {
                     if l3 != 0 {
-                        let t31: u128 = (*ph).read_splat(l6, 64);
+                        let t31: u128 = (*ph).read_u64(l6) as u128;
                         l10 = t31;
-                        let t32: u128 = (*ph).read_splat((l6.wrapping_sub(20i64)), 64);
+                        let t32: u128 = (*ph).read_u64((l6.wrapping_sub(20i64))) as u128;
                         let t33: u128 = simd::f32x4_sub(l10, t32);
                         l9 = t33;
                         let t34: f32 = simd::f32x4_extract_lane(l9, 0) as f32;
@@ -146,7 +146,7 @@ use crate::{imp, syms};
                     let t52: i32 = (*ph).read_u8(l6 + 14) as i32;
                     let t53: f32 = syms::f_004727_rage_fwwaypointrecordingroute_uint8tohdg_unsigned_char(ph, t52);
                     l0 = t53;
-                    let t54: u128 = (*ph).read_splat(l6, 64);
+                    let t54: u128 = (*ph).read_u64(l6) as u128;
                     l10 = t54;
                 break 'L8;
                 }

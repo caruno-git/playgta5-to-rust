@@ -91,7 +91,7 @@ use crate::{imp, syms};
                 syms::f_003215_rage_crframe_setvector3_unsigned_char_unsigned_short_rage_vec3v(ph, l2, 8i32, 0i32, (l0.wrapping_add(112i64)));
                 let t23: f32 = (*ph).read_f32(l1 + 112);
                 let t24: i32 = syms::f_003218_rage_crframe_setfloat_unsigned_char_unsigned_short_float(ph, l2, 27i32, 0i32, t23);
-                let t25: u128 = (*ph).read_splat(l1 + 84, 32);
+                let t25: u128 = (*ph).read_u32(l1 + 84) as u128;
                 let t26: u128 = (*ph).load_lane(l1 + 88, t25, 1, 32);
                 (*ph).write_v128(l0 + 112, t26);
                 syms::f_003215_rage_crframe_setvector3_unsigned_char_unsigned_short_rage_vec3v(ph, l2, 28i32, 0i32, (l0.wrapping_add(112i64)));

@@ -1323,7 +1323,7 @@ use crate::{imp, syms};
             break 'L83;
             }
             (*ph).sp = (l3.wrapping_add(16i64));
-            let t363: u128 = (*ph).read_splat(l2 + 20, 32);
+            let t363: u128 = (*ph).read_u32(l2 + 20) as u128;
             let t364: u128 = (*ph).load_lane(l2 + 8, t363, 1, 32);
             let t365: u128 = (*ph).load_lane(l2 + 16, t364, 2, 32);
             let t366: u128 = (*ph).load_lane(l2 + 12, t365, 3, 32);

@@ -19,7 +19,7 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_073486_ctaskusescenario_clearscriptedtriggerflags_cped_ref(ph: *mut Phantom, mut l0: i64) {
         let t1: i32 = (*ph).read_u32(l0 + 5312) as i32;
         (*ph).write_u32(l0 + 5312, (t1 & (-49153i32)) as u32);
-        let t2: u128 = (*ph).read_splat(l0 + 5320, 64);
+        let t2: u128 = (*ph).read_u64(l0 + 5320) as u128;
         let t3: u128 = simd::v128_and(t2, 0x0000000000000000fbfffffffffffdffu128);
         (*ph).store_lane(l0 + 5320, t3, 0, 64);
     }

@@ -37,7 +37,7 @@ use crate::{imp, syms};
                     }
                     let t1: i64 = (*ph).read_u64(l0 + 104) as i64;
                     l0 = t1;
-                    let t2: u128 = (*ph).read_splat(l0, 64);
+                    let t2: u128 = (*ph).read_u64(l0) as u128;
                     let t3: u128 = simd::f32x4_neg(t2);
                     (*ph).store_lane(l0, t3, 0, 64);
                     return;

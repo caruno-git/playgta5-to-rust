@@ -1828,7 +1828,7 @@ use crate::{imp, syms};
                                     rt::wasm_unreachable();
                                 break 'L130;
                                 }
-                                let t426: u128 = (*ph).read_splat(l0 + 328, 64);
+                                let t426: u128 = (*ph).read_u64(l0 + 328) as u128;
                                 let t427: u128 = simd::v128_and(t426, 0x0000000000000000ffffff9fffffffdfu128);
                                 (*ph).store_lane(l0 + 328, t427, 0, 64);
                             break 'L129;

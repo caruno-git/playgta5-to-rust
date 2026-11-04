@@ -1026,7 +1026,7 @@ use crate::{imp, syms};
                     l15 = (l15 * t307);
                     let t308: f32 = (*ph).read_f32(l5 + 96);
                     l14 = t308;
-                    let t309: u128 = (*ph).read_splat(l5 + 84, 32);
+                    let t309: u128 = (*ph).read_u32(l5 + 84) as u128;
                     l32 = t309;
                     let t310: i32 = simd::i8x16_extract_lane_u(l32, 0) as i32;
                     let t311: u128 = simd::f32x4_splat(((t310 as u32) as f32) as f32);

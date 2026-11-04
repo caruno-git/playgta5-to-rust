@@ -1434,7 +1434,7 @@ use crate::{imp, syms};
                                     if ((r586 == 0) as i32) != 0 {
                                         break 'L67;
                                     }
-                                    let t597: u128 = (*ph).read_splat(l10 + 4, 64);
+                                    let t597: u128 = (*ph).read_u64(l10 + 4) as u128;
                                     l34 = t597;
                                     let t598: f32 = (*ph).read_f32(l10);
                                     let t599: u128 = l34;
@@ -1448,7 +1448,7 @@ use crate::{imp, syms};
                                     let t604: u128 = simd::f32x4_replace_lane(t599, 0, l19);
                                     l36 = t604;
                                     let t605: u128 = simd::f32x4_mul(l36, l36);
-                                    let t606: u128 = (*ph).read_splat(l2 + 1652, 64);
+                                    let t606: u128 = (*ph).read_u64(l2 + 1652) as u128;
                                     let t607: u128 = l34;
                                     l36 = t606;
                                     let t608: u128 = simd::i8x16_shuffle_static::<4,5,6,7,0,1,2,3,0,1,2,3,0,1,2,3>(l36, l34);
@@ -2032,7 +2032,7 @@ use crate::{imp, syms};
                                 }
                                 let t878: f32 = (*ph).read_f32(l3 + 4);
                                 l22 = t878;
-                                let t879: u128 = (*ph).read_splat(l3 + 4, 64);
+                                let t879: u128 = (*ph).read_u64(l3 + 4) as u128;
                                 l35 = t879;
                                 let t880: f32 = (*ph).read_f32(l3);
                                 l17 = t880;
@@ -2099,7 +2099,7 @@ use crate::{imp, syms};
                                     let t911: f32 = l22;
                                     l19 = t909;
                                     l20 = (t910 - (t911 * l19));
-                                    let t912: u128 = (*ph).read_splat(l2 + 1652, 64);
+                                    let t912: u128 = (*ph).read_u64(l2 + 1652) as u128;
                                     let t913: f32 = (l20 * l20);
                                     let t914: u128 = l35;
                                     l34 = t912;

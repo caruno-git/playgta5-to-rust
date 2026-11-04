@@ -328,7 +328,7 @@ use crate::{imp, syms};
                         let t82: u128 = simd::f32x4_splat(l24 as f32);
                         let t83: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,0,1,2,3,0,1,2,3>(t82, l21);
                         l22 = t83;
-                        let t84: u128 = (*ph).read_splat(l6 + 28, 64);
+                        let t84: u128 = (*ph).read_u64(l6 + 28) as u128;
                         l23 = t84;
                         'L22: loop {
                             'L23: loop {

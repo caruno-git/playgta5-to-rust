@@ -199,7 +199,7 @@ use crate::{imp, syms};
                                 (*ph).write_u32(l6 + 19503772, 0i32 as u32);
                                 break 'L16;
                             }
-                            let t33: u128 = (*ph).read_splat(l0 + 484, 32);
+                            let t33: u128 = (*ph).read_u32(l0 + 484) as u128;
                             let t34: u128 = (*ph).load_lane(l0 + 488, t33, 1, 32);
                             let t35: u128 = (*ph).load_lane(l0 + 492, t34, 2, 32);
                             let t36: u128 = (*ph).load_lane(l0 + 480, t35, 3, 32);

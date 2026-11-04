@@ -1384,7 +1384,7 @@ use crate::{imp, syms};
                             }
                             l6 = (l2.wrapping_add(l11));
                             'L32: loop {
-                                let t352: u128 = (*ph).read_splat(l1, 64);
+                                let t352: u128 = (*ph).read_u64(l1) as u128;
                                 let t353: u128 = simd::v128_and(t352, 0x0000000000000000ff000000ffc00000u128);
                                 let t354: u128 = simd::v128_or(t353, 0x000fffe0000fffe0000fffe0000fffe0u128);
                                 (*ph).store_lane(l1, t354, 0, 64);
@@ -1619,7 +1619,7 @@ use crate::{imp, syms};
                 'L50: loop {
                     l1 = (l3.wrapping_add((l8.wrapping_shl((2i64 as u32) & 63))));
                     let t408: u128 = (*ph).read_v128(l1);
-                    let t409: u128 = (*ph).read_splat(l1 + 16, 64);
+                    let t409: u128 = (*ph).read_u64(l1 + 16) as u128;
                     let t410: u128 = (*ph).load_lane(l1 + 24, t409, 2, 32);
                     let t411: u128 = simd::i8x16_shuffle_static::<0,1,4,5,8,9,12,13,16,17,20,21,24,25,0,1>(t408, t410);
                     let t412: i32 = (*ph).read_i16(l1 + 28) as i32;
@@ -4591,7 +4591,7 @@ use crate::{imp, syms};
         let t1130: u128 = (*ph).read_v128(20160548i64);
         let t1131: u128 = simd::v128_or(t1130, 0x9c0180e40f91f019c284422a585b0040u128);
         (*ph).write_v128(20160548i64, t1131);
-        let t1132: u128 = (*ph).read_splat(0i64 + 20160580, 64);
+        let t1132: u128 = (*ph).read_u64(0i64 + 20160580) as u128;
         let t1133: u128 = simd::v128_or(t1132, 0x000000000000000000000fd7fd593292u128);
         (*ph).store_lane(0i64 + 20160580, t1133, 0, 64);
         let t1134: u128 = (*ph).read_v128(20160592i64);

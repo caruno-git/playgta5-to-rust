@@ -43,8 +43,8 @@ use crate::{imp, syms};
             if ((t7 != 1i32) as i32) != 0 {
                 break 'L1;
             }
-            let t8: u128 = (*ph).read_splat(l2, 64);
-            let t9: u128 = (*ph).read_splat(l2 + 8, 64);
+            let t8: u128 = (*ph).read_u64(l2) as u128;
+            let t9: u128 = (*ph).read_u64(l2 + 8) as u128;
             let t10: u128 = simd::f32x4_add(t8, t9);
             let t11: u128 = simd::f32x4_mul(t10, 0x3f0000003f0000003f0000003f000000u128);
             let t12: u128 = simd::f32x4_mul(t11, 0x000000000000000040000000c0000000u128);
@@ -77,7 +77,7 @@ use crate::{imp, syms};
                 let t27: u128 = simd::f32x4_convert_i32x4_s(t26);
                 let t28: u128 = simd::f32x4_div(t24, t27);
                 let t29: u128 = simd::f32x4_mul(t28, 0x3f0000003f0000003f0000003f000000u128);
-                let t30: u128 = (*ph).read_splat(0i64 + 12622840, 64);
+                let t30: u128 = (*ph).read_u64(0i64 + 12622840) as u128;
                 let t31: u128 = (*ph).read_v128(12622816i64);
                 let t32: i64 = (*ph).read_u64(((*ph).g[27] as i64)) as i64;
                 let t33: u128 = simd::i32x4_splat(((t32 == 0) as i32) as i32);
@@ -96,10 +96,10 @@ use crate::{imp, syms};
             }
             let t40: i32 = (*ph).read_u8(l3 + 916) as i32;
             if ((t40 == 1i32) as i32) != 0 {
-                let t41: u128 = (*ph).read_splat(0i64 + 19417496, 32);
+                let t41: u128 = (*ph).read_u32(0i64 + 19417496) as u128;
                 let t42: u128 = (*ph).load_lane(0i64 + 19417500, t41, 1, 32);
                 let t43: u128 = simd::f32x4_mul(t42, 0x0000000000000000bf0000003f000000u128);
-                let t44: u128 = (*ph).read_splat(0i64 + 12622840, 64);
+                let t44: u128 = (*ph).read_u64(0i64 + 12622840) as u128;
                 let t45: u128 = (*ph).read_v128(12622816i64);
                 let t46: i64 = (*ph).read_u64(((*ph).g[27] as i64)) as i64;
                 let t47: u128 = simd::i32x4_splat(((t46 == 0) as i32) as i32);

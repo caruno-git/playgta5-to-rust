@@ -73,7 +73,7 @@ use crate::{imp, syms};
                                 if ((l1 == 0) as i32) != 0 {
                                     break 'L2;
                                 }
-                                let t5: u128 = (*ph).read_splat(l11 + 152, 32);
+                                let t5: u128 = (*ph).read_u32(l11 + 152) as u128;
                                 let t6: u128 = (*ph).load_lane(l1 + 152, t5, 1, 32);
                                 let t7: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t8: u128 = simd::f32x4_sub(t6, t7);
@@ -160,7 +160,7 @@ use crate::{imp, syms};
                                     if ((l8 == 0) as i32) != 0 {
                                         break 'L12;
                                     }
-                                    let t32: u128 = (*ph).read_splat(l1 + 152, 32);
+                                    let t32: u128 = (*ph).read_u32(l1 + 152) as u128;
                                     let t33: u128 = (*ph).load_lane(l8 + 152, t32, 1, 32);
                                     let t34: u128 = (*ph).read_splat(l10 + 8, 32);
                                     let t35: u128 = simd::f32x4_sub(t33, t34);
@@ -220,7 +220,7 @@ use crate::{imp, syms};
                                                 if ((l8 == 0) as i32) != 0 {
                                                     break 'L14;
                                                 }
-                                                let t58: u128 = (*ph).read_splat(l1 + 152, 32);
+                                                let t58: u128 = (*ph).read_u32(l1 + 152) as u128;
                                                 let t59: u128 = (*ph).load_lane(l8 + 152, t58, 1, 32);
                                                 let t60: u128 = (*ph).read_splat(l10 + 8, 32);
                                                 let t61: u128 = simd::f32x4_sub(t59, t60);
@@ -311,7 +311,7 @@ use crate::{imp, syms};
                                 if ((l11 == 0) as i32) != 0 {
                                     break 'L18;
                                 }
-                                let t83: u128 = (*ph).read_splat(l3 + 152, 32);
+                                let t83: u128 = (*ph).read_u32(l3 + 152) as u128;
                                 let t84: u128 = (*ph).load_lane(l11 + 152, t83, 1, 32);
                                 let t85: u128 = (*ph).read_splat(l10 + 8, 32);
                                 let t86: u128 = simd::f32x4_sub(t84, t85);
@@ -368,7 +368,7 @@ use crate::{imp, syms};
                                         if ((l11 == 0) as i32) != 0 {
                                             break 'L20;
                                         }
-                                        let t109: u128 = (*ph).read_splat(l3 + 152, 32);
+                                        let t109: u128 = (*ph).read_u32(l3 + 152) as u128;
                                         let t110: u128 = (*ph).load_lane(l11 + 152, t109, 1, 32);
                                         let t111: u128 = (*ph).read_splat(l10 + 8, 32);
                                         let t112: u128 = simd::f32x4_sub(t110, t111);
@@ -457,7 +457,7 @@ use crate::{imp, syms};
                                     if ((l12 == 0) as i32) != 0 {
                                         break 'L25;
                                     }
-                                    let t133: u128 = (*ph).read_splat(l13 + 152, 32);
+                                    let t133: u128 = (*ph).read_u32(l13 + 152) as u128;
                                     let t134: u128 = (*ph).load_lane(l12 + 152, t133, 1, 32);
                                     let t135: u128 = (*ph).read_splat(l2 + 8, 32);
                                     let t136: u128 = simd::f32x4_sub(t134, t135);
@@ -514,7 +514,7 @@ use crate::{imp, syms};
                                 if ((l12 == 0) as i32) != 0 {
                                     break 'L26;
                                 }
-                                let t157: u128 = (*ph).read_splat(l13 + 152, 32);
+                                let t157: u128 = (*ph).read_u32(l13 + 152) as u128;
                                 let t158: u128 = (*ph).load_lane(l12 + 152, t157, 1, 32);
                                 let t159: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t160: u128 = simd::f32x4_sub(t158, t159);
@@ -585,7 +585,7 @@ use crate::{imp, syms};
                                             if ((l15 == 0) as i32) != 0 {
                                                 break 'L31;
                                             }
-                                            let t183: u128 = (*ph).read_splat(l14 + 152, 32);
+                                            let t183: u128 = (*ph).read_u32(l14 + 152) as u128;
                                             let t184: u128 = (*ph).load_lane(l15 + 152, t183, 1, 32);
                                             let t185: u128 = (*ph).read_splat(l2 + 8, 32);
                                             let t186: u128 = simd::f32x4_sub(t184, t185);
@@ -639,7 +639,7 @@ use crate::{imp, syms};
                                         if ((l15 == 0) as i32) != 0 {
                                             break 'L32;
                                         }
-                                        let t206: u128 = (*ph).read_splat(l14 + 152, 32);
+                                        let t206: u128 = (*ph).read_u32(l14 + 152) as u128;
                                         let t207: u128 = (*ph).load_lane(l15 + 152, t206, 1, 32);
                                         let t208: u128 = (*ph).read_splat(l2 + 8, 32);
                                         let t209: u128 = simd::f32x4_sub(t207, t208);
@@ -734,7 +734,7 @@ use crate::{imp, syms};
                                     l10 = l9;
                                     break 'L35;
                                 }
-                                let t233: u128 = (*ph).read_splat(l10 + 152, 32);
+                                let t233: u128 = (*ph).read_u32(l10 + 152) as u128;
                                 let t234: u128 = (*ph).load_lane(l12 + 152, t233, 1, 32);
                                 let t235: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t236: u128 = simd::f32x4_sub(t234, t235);
@@ -816,7 +816,7 @@ use crate::{imp, syms};
                                 if ((l8 == 0) as i32) != 0 {
                                     break 'L43;
                                 }
-                                let t264: u128 = (*ph).read_splat(l9 + 152, 32);
+                                let t264: u128 = (*ph).read_u32(l9 + 152) as u128;
                                 let t265: u128 = (*ph).load_lane(l8 + 152, t264, 1, 32);
                                 let t266: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t267: u128 = simd::f32x4_sub(t265, t266);
@@ -877,7 +877,7 @@ use crate::{imp, syms};
                                         if ((l8 == 0) as i32) != 0 {
                                             break 'L45;
                                         }
-                                        let t291: u128 = (*ph).read_splat(l9 + 152, 32);
+                                        let t291: u128 = (*ph).read_u32(l9 + 152) as u128;
                                         let t292: u128 = (*ph).load_lane(l8 + 152, t291, 1, 32);
                                         let t293: u128 = (*ph).read_splat(l2 + 8, 32);
                                         let t294: u128 = simd::f32x4_sub(t292, t293);
@@ -973,7 +973,7 @@ use crate::{imp, syms};
                         if ((l8 == 0) as i32) != 0 {
                             break 'L49;
                         }
-                        let t319: u128 = (*ph).read_splat(l11 + 152, 32);
+                        let t319: u128 = (*ph).read_u32(l11 + 152) as u128;
                         let t320: u128 = (*ph).load_lane(l8 + 152, t319, 1, 32);
                         let t321: u128 = (*ph).read_splat(l2 + 8, 32);
                         let t322: u128 = simd::f32x4_sub(t320, t321);
@@ -1029,7 +1029,7 @@ use crate::{imp, syms};
                             if ((l9 == 0) as i32) != 0 {
                                 break 'L51;
                             }
-                            let t343: u128 = (*ph).read_splat(l10 + 152, 32);
+                            let t343: u128 = (*ph).read_u32(l10 + 152) as u128;
                             let t344: u128 = (*ph).load_lane(l9 + 152, t343, 1, 32);
                             let t345: u128 = (*ph).read_splat(l2 + 8, 32);
                             let t346: u128 = simd::f32x4_sub(t344, t345);
@@ -1077,7 +1077,7 @@ use crate::{imp, syms};
                                 if ((l8 == 0) as i32) != 0 {
                                     continue 'L52;
                                 }
-                                let t366: u128 = (*ph).read_splat(l9 + 152, 32);
+                                let t366: u128 = (*ph).read_u32(l9 + 152) as u128;
                                 let t367: u128 = (*ph).load_lane(l8 + 152, t366, 1, 32);
                                 let t368: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t369: u128 = simd::f32x4_sub(t367, t368);
@@ -1135,7 +1135,7 @@ use crate::{imp, syms};
                                 if ((l8 == 0) as i32) != 0 {
                                     break 'L54;
                                 }
-                                let t389: u128 = (*ph).read_splat(l9 + 152, 32);
+                                let t389: u128 = (*ph).read_u32(l9 + 152) as u128;
                                 let t390: u128 = (*ph).load_lane(l8 + 152, t389, 1, 32);
                                 let t391: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t392: u128 = simd::f32x4_sub(t390, t391);
@@ -1198,7 +1198,7 @@ use crate::{imp, syms};
                             if ((l8 == 0) as i32) != 0 {
                                 break 'L55;
                             }
-                            let t412: u128 = (*ph).read_splat(l9 + 152, 32);
+                            let t412: u128 = (*ph).read_u32(l9 + 152) as u128;
                             let t413: u128 = (*ph).load_lane(l8 + 152, t412, 1, 32);
                             let t414: u128 = (*ph).read_splat(l2 + 8, 32);
                             let t415: u128 = simd::f32x4_sub(t413, t414);
@@ -1259,7 +1259,7 @@ use crate::{imp, syms};
                                 if ((l8 == 0) as i32) != 0 {
                                     continue 'L59;
                                 }
-                                let t437: u128 = (*ph).read_splat(l9 + 152, 32);
+                                let t437: u128 = (*ph).read_u32(l9 + 152) as u128;
                                 let t438: u128 = (*ph).load_lane(l8 + 152, t437, 1, 32);
                                 let t439: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t440: u128 = simd::f32x4_sub(t438, t439);
@@ -1308,7 +1308,7 @@ use crate::{imp, syms};
                                     if ((l8 == 0) as i32) != 0 {
                                         break 'L61;
                                     }
-                                    let t460: u128 = (*ph).read_splat(l9 + 152, 32);
+                                    let t460: u128 = (*ph).read_u32(l9 + 152) as u128;
                                     let t461: u128 = (*ph).load_lane(l8 + 152, t460, 1, 32);
                                     let t462: u128 = (*ph).read_splat(l2 + 8, 32);
                                     let t463: u128 = simd::f32x4_sub(t461, t462);
@@ -1384,7 +1384,7 @@ use crate::{imp, syms};
                         if ((l13 == 0) as i32) != 0 {
                             break 'L64;
                         }
-                        let t485: u128 = (*ph).read_splat(l12 + 152, 32);
+                        let t485: u128 = (*ph).read_u32(l12 + 152) as u128;
                         let t486: u128 = (*ph).load_lane(l13 + 152, t485, 1, 32);
                         let t487: u128 = (*ph).read_splat(l2 + 8, 32);
                         let t488: u128 = simd::f32x4_sub(t486, t487);
@@ -1439,7 +1439,7 @@ use crate::{imp, syms};
                             if ((l13 == 0) as i32) != 0 {
                                 continue 'L67;
                             }
-                            let t508: u128 = (*ph).read_splat(l12 + 152, 32);
+                            let t508: u128 = (*ph).read_u32(l12 + 152) as u128;
                             let t509: u128 = (*ph).load_lane(l13 + 152, t508, 1, 32);
                             let t510: u128 = (*ph).read_splat(l2 + 8, 32);
                             let t511: u128 = simd::f32x4_sub(t509, t510);
@@ -1497,7 +1497,7 @@ use crate::{imp, syms};
                             if ((l13 == 0) as i32) != 0 {
                                 break 'L69;
                             }
-                            let t531: u128 = (*ph).read_splat(l12 + 152, 32);
+                            let t531: u128 = (*ph).read_u32(l12 + 152) as u128;
                             let t532: u128 = (*ph).load_lane(l13 + 152, t531, 1, 32);
                             let t533: u128 = (*ph).read_splat(l2 + 8, 32);
                             let t534: u128 = simd::f32x4_sub(t532, t533);
@@ -1570,7 +1570,7 @@ use crate::{imp, syms};
                                 if ((l14 == 0) as i32) != 0 {
                                     break 'L73;
                                 }
-                                let t556: u128 = (*ph).read_splat(l12 + 152, 32);
+                                let t556: u128 = (*ph).read_u32(l12 + 152) as u128;
                                 let t557: u128 = (*ph).load_lane(l14 + 152, t556, 1, 32);
                                 let t558: u128 = (*ph).read_splat(l2 + 8, 32);
                                 let t559: u128 = simd::f32x4_sub(t557, t558);
@@ -1623,7 +1623,7 @@ use crate::{imp, syms};
                             if ((l14 == 0) as i32) != 0 {
                                 continue 'L74;
                             }
-                            let t579: u128 = (*ph).read_splat(l12 + 152, 32);
+                            let t579: u128 = (*ph).read_u32(l12 + 152) as u128;
                             let t580: u128 = (*ph).load_lane(l14 + 152, t579, 1, 32);
                             let t581: u128 = (*ph).read_splat(l2 + 8, 32);
                             let t582: u128 = simd::f32x4_sub(t580, t581);

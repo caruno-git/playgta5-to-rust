@@ -30,7 +30,7 @@ use crate::{imp, syms};
         }
         let t3: i64 = syms::f_069009_ctaskparachute_ctaskparachute_int(ph, l3, 6i32);
         l3 = t3;
-        let t4: u128 = (*ph).read_splat(l1, 32);
+        let t4: u128 = (*ph).read_u32(l1) as u128;
         let t5: u128 = (*ph).load_lane(l1 + 8, t4, 1, 32);
         let t6: u128 = (*ph).load_lane(l1 + 16, t5, 2, 32);
         (*ph).write_v128(l2 + 16, t6);

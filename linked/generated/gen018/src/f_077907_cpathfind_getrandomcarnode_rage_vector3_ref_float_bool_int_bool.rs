@@ -177,7 +177,7 @@ use crate::{imp, syms};
                 break 'L1;
             }
             'L8: loop {
-                let t38: u128 = (*ph).read_splat(0i64 + 25872928, 32);
+                let t38: u128 = (*ph).read_u32(0i64 + 25872928) as u128;
                 l16 = t38;
                 let t39: i32 = syms::f_090911_rand(ph);
                 l2 = t39;

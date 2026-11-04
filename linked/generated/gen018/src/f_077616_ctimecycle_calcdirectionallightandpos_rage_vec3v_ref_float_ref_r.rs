@@ -83,7 +83,7 @@ use crate::{imp, syms};
         l7 = t10;
         let t11: f32 = syms::f_090918_sinf(ph, l5);
         l25 = t11;
-        let t12: u128 = (*ph).read_splat(25492320i64 + 7772, 64);
+        let t12: u128 = (*ph).read_u64(25492320i64 + 7772) as u128;
         l12 = t12;
         let t13: u128 = (*ph).load_lane(25492320i64 + 7780, l12, 2, 32);
         l16 = t13;

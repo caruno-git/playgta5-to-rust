@@ -564,13 +564,13 @@ use crate::{imp, syms};
                                                             l2 = (l10.wrapping_add((l4.wrapping_mul(152i64))));
                                                             let t117: i64 = (*ph).read_u64(l2 + 16) as i64;
                                                             if ((t116 == t117) as i32) != 0 {
-                                                                let t118: u128 = (*ph).read_splat(l2, 64);
+                                                                let t118: u128 = (*ph).read_u64(l2) as u128;
                                                                 let t119: u128 = simd::v128_and(t118, l20);
                                                                 (*ph).store_lane(l2, t119, 0, 64);
                                                             }
                                                             let t120: i64 = (*ph).read_u64(l2 + 168) as i64;
                                                             if ((l3 == t120) as i32) != 0 {
-                                                                let t121: u128 = (*ph).read_splat(l2 + 152, 64);
+                                                                let t121: u128 = (*ph).read_u64(l2 + 152) as u128;
                                                                 let t122: u128 = simd::v128_and(t121, l20);
                                                                 (*ph).store_lane(l2 + 152, t122, 0, 64);
                                                             }

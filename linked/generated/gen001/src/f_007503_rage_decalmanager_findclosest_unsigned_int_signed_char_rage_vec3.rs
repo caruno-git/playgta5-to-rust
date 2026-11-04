@@ -97,7 +97,7 @@ use crate::{imp, syms};
                                             let t22: i32 = rt::select_i32(l20, 0i32, 939524096i32);
                                             r20 = f32::from_bits(((t22.wrapping_add(((l20 as u32).wrapping_shr((3i32 as u32) & 31) as i32))) | (l19 & (-2147483648i32))) as u32); break 'L8;
                                         }
-                                        let t23: u128 = (*ph).read_splat(l0 + 64, 64);
+                                        let t23: u128 = (*ph).read_u64(l0 + 64) as u128;
                                         let t24: u128 = simd::i32x4_extend_low_i16x8_u(t23);
                                         let t25: u128 = simd::i32x4_shl(t24, 16i32);
                                         l10 = t25;

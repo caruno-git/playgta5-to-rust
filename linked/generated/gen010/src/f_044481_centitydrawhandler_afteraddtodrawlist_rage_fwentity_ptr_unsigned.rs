@@ -79,7 +79,7 @@ use crate::{imp, syms};
             l2 = t14;
             let t15: i32 = (*ph).read_u32(l2 + 16872) as i32;
             (*ph).write_u32(l2 + 16872, (t15.wrapping_add(1i32)) as u32);
-            let t16: u128 = (*ph).read_splat(l2 + 15912, 64);
+            let t16: u128 = (*ph).read_u64(l2 + 15912) as u128;
             let t17: u128 = simd::i32x4_add(t16, 0x00000000000000000000001400000001u128);
             (*ph).store_lane(l2 + 15912, t17, 0, 64);
         break 'L1;
@@ -104,7 +104,7 @@ use crate::{imp, syms};
             l0 = t29;
             let t30: i32 = (*ph).read_u32(l0 + 16872) as i32;
             (*ph).write_u32(l0 + 16872, (t30.wrapping_add(1i32)) as u32);
-            let t31: u128 = (*ph).read_splat(l0 + 14584, 64);
+            let t31: u128 = (*ph).read_u64(l0 + 14584) as u128;
             let t32: u128 = simd::i32x4_add(t31, 0x00000000000000000000001000000001u128);
             (*ph).store_lane(l0 + 14584, t32, 0, 64);
         }

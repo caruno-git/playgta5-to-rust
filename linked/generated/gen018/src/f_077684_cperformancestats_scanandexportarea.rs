@@ -53,7 +53,7 @@ use crate::{imp, syms};
         (*ph).write_u64(l0, 25515072i64 as u64);
         let t6: i32 = syms::f_090923_sscanf(ph, 25515280i64, 1565923i64, l0);
         let t7: u128 = (*ph).read_v128(25515056i64);
-        let t8: u128 = (*ph).read_splat(0i64 + 25515336, 64);
+        let t8: u128 = (*ph).read_u64(0i64 + 25515336) as u128;
         l5 = t8;
         let t9: u128 = simd::f32x4_div(t7, l5);
         let t10: u128 = simd::f32x4_floor(t9);

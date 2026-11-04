@@ -208,7 +208,7 @@ use crate::{imp, syms};
                             (*ph).write_u64((l11.wrapping_add((((l2 as u32) as i64).wrapping_shl((3i64 as u32) & 63)))), l6 as u64);
                         }
                         (*ph).write_u32(l1 + 240, (l2.wrapping_add(1i32)) as u32);
-                        let t65: u128 = (*ph).read_splat(l1 + 232, 64);
+                        let t65: u128 = (*ph).read_u64(l1 + 232) as u128;
                         let t66: u128 = simd::i32x4_add(t65, 0x00000001000000010000000100000001u128);
                         (*ph).store_lane(l1 + 232, t66, 0, 64);
                         let t67: i64 = (*ph).read_u64(l6) as i64;

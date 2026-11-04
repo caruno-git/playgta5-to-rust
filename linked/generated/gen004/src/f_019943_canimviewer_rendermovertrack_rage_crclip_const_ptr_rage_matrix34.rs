@@ -255,7 +255,7 @@ use crate::{imp, syms};
                     l10 = t76;
                     let t77: i32 = (*ph).read_u8(6737110i64) as i32;
                     if ((t77 == 1i32) as i32) != 0 {
-                        let t78: u128 = (*ph).read_splat(l2 + 164, 64);
+                        let t78: u128 = (*ph).read_u64(l2 + 164) as u128;
                         let t79: i64 = l2;
                         l8 = t78;
                         let t80: u128 = (*ph).read_v128(l2 + 160);
@@ -287,7 +287,7 @@ use crate::{imp, syms};
                     }
                     let t102: i32 = syms::f_003214_rage_crframe_getvector3_unsigned_char_unsigned_short_rage_vec3v(ph, l4, 1i32, 0i32, (l2.wrapping_add(96i64)));
                     syms::f_003161_rage_quaternion_frommatrix34_rage_matrix34_const_ref(ph, (l2.wrapping_add(80i64)), l1);
-                    let t103: u128 = (*ph).read_splat(l2 + 84, 64);
+                    let t103: u128 = (*ph).read_u64(l2 + 84) as u128;
                     let t104: i64 = l2;
                     l8 = t103;
                     let t105: u128 = (*ph).read_v128(l2 + 80);

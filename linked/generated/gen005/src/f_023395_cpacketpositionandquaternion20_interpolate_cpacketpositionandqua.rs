@@ -25,7 +25,7 @@ use crate::{imp, syms};
         (*ph).sp = l4;
         let t1: f32 = (*ph).read_f32(l1 + 8);
         l7 = t1;
-        let t2: u128 = (*ph).read_splat(l1, 64);
+        let t2: u128 = (*ph).read_u64(l1) as u128;
         l6 = t2;
         let t3: i64 = (*ph).read_u64(l1 + 16) as i64;
         syms::f_023568_dequantizequaternions3_20_rage_quaternion_ref_unsigned_long(ph, (l4.wrapping_add(32i64)), t3);

@@ -1600,7 +1600,7 @@ use crate::{imp, syms};
                                                 (*ph).write_f32(l9 + 56, t600);
                                                 let t601: i64 = (*ph).read_u64(19339168i64) as i64;
                                                 syms::f_011402_rage_cutsmanager_getsceneorientationmatrix_rage_matrix34_ref(ph, t601, l9);
-                                                let t602: u128 = (*ph).read_splat(l9 + 88, 64);
+                                                let t602: u128 = (*ph).read_u64(l9 + 88) as u128;
                                                 let t603: u128 = (*ph).load_lane(l9 + 104, t602, 1, 32);
                                                 l66 = t603;
                                                 let t604: u128 = (*ph).read_v128(l9 + 96);

@@ -39,7 +39,7 @@ use crate::{imp, syms};
                 'L4: loop {
                     let t3: u128 = l5;
                     l4 = (l2.wrapping_add((l3.wrapping_mul(160i64))));
-                    let t4: u128 = (*ph).read_splat(l4, 64);
+                    let t4: u128 = (*ph).read_u64(l4) as u128;
                     let t5: u128 = (*ph).load_lane(l4 + 160, t4, 1, 64);
                     let t6: u128 = simd::i64x2_ne(t5, 0x00000000000000000000000000000000u128);
                     let t7: u128 = simd::i8x16_shuffle_static::<0,1,2,3,8,9,10,11,0,1,2,3,0,1,2,3>(t6, l5);

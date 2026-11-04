@@ -235,7 +235,7 @@ use crate::{imp, syms};
                                         let t59: f32 = (l17 * l17);
                                         l27 = t58;
                                         let t60: u128 = simd::i8x16_shuffle_static::<0,1,2,3,16,17,18,19,0,1,2,3,0,1,2,3>(l27, l25);
-                                        let t61: u128 = (*ph).read_splat(l2 + 28, 32);
+                                        let t61: u128 = (*ph).read_u32(l2 + 28) as u128;
                                         l26 = t61;
                                         let t62: i32 = simd::i16x8_extract_lane_s(l26, 0) as i32;
                                         let t63: u128 = simd::f32x4_splat(((t62 as i32) as f32) as f32);

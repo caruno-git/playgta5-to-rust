@@ -17,7 +17,7 @@ use crate::{imp, syms};
 
     #[no_mangle]
     pub unsafe extern "C" fn f_039183_rage_wasm_cb_s_void_ptr_sirenrotation_ptr_refsirenrotation_updat(ph: *mut Phantom, mut l0: i64, mut l1: i64, mut l2: i64) {
-        let t1: u128 = (*ph).read_splat(l1, 64);
+        let t1: u128 = (*ph).read_u64(l1) as u128;
         let t2: u128 = simd::f32x4_mul(t1, 0x3c8efa353c8efa353c8efa353c8efa35u128);
         (*ph).store_lane(l1 + 44, t2, 0, 64);
     }

@@ -28,7 +28,7 @@ use crate::{imp, syms};
         let t1: f32 = (*ph).read_f32(l1);
         let t2: i64 = l0;
         l3 = (((t1 as f64) * 1.4142135623730951f64) as f32);
-        let t3: u128 = (*ph).read_splat(l1 + 4, 64);
+        let t3: u128 = (*ph).read_u64(l1 + 4) as u128;
         let t4: u128 = simd::f64x2_promote_low_f32x4(t3);
         let t5: u128 = simd::f64x2_mul(t4, 0x3ff6a09e667f3bcd3ff6a09e667f3bcdu128);
         let t6: f32 = l3;

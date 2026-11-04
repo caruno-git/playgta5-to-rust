@@ -50,7 +50,7 @@ use crate::{imp, syms};
             t8(ph as *mut Phantom, l0, l1, (l6.wrapping_add(16i64)));
             let t9: u128 = (*ph).read_v128(l2);
             l9 = t9;
-            let t10: u128 = (*ph).read_splat(8708i64 + 25492320, 64);
+            let t10: u128 = (*ph).read_u64(8708i64 + 25492320) as u128;
             l11 = t10;
             let t11: u128 = (*ph).read_v128(l2 + 16);
             l8 = t11;

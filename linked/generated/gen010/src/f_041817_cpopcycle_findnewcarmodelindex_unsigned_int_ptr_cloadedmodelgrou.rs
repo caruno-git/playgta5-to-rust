@@ -76,7 +76,7 @@ use crate::{imp, syms};
                     if (((l26 as u32) >= (4i32 as u32)) as i32) != 0 {
                         l6 = (l8 & 252i64);
                         'L5: loop {
-                            let t6: u128 = (*ph).read_splat((l5.wrapping_add(l12)), 32);
+                            let t6: u128 = (*ph).read_u32((l5.wrapping_add(l12))) as u128;
                             let t7: u128 = simd::i16x8_extend_low_i8x16_u(t6);
                             let t8: u128 = simd::i32x4_extend_low_i16x8_u(t7);
                             let t9: u128 = simd::f32x4_convert_i32x4_s(t8);

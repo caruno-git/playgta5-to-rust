@@ -33,11 +33,11 @@ use crate::{imp, syms};
         'L1: loop {
             'L2: loop {
                 if l2 != 0 {
-                    let t1: u128 = (*ph).read_splat(l0 + 4, 32);
+                    let t1: u128 = (*ph).read_u32(l0 + 4) as u128;
                     let t2: u128 = (*ph).load_lane(l0 + 12, t1, 1, 32);
                     let t3: u128 = (*ph).load_lane(l0 + 20, t2, 2, 32);
                     l9 = t3;
-                    let t4: u128 = (*ph).read_splat(l0, 32);
+                    let t4: u128 = (*ph).read_u32(l0) as u128;
                     let t5: u128 = (*ph).load_lane(l0 + 8, t4, 1, 32);
                     let t6: u128 = (*ph).load_lane(l0 + 16, t5, 2, 32);
                     l10 = t6;

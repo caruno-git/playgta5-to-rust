@@ -148,7 +148,7 @@ use crate::{imp, syms};
                                     let t22: i64 = l3;
                                     l19 = (((t21 as i32) as f32) * 0.03125f32);
                                     (*ph).write_f32(t22 + 15564840, l19);
-                                    let t23: u128 = (*ph).read_splat(l5 + 28, 32);
+                                    let t23: u128 = (*ph).read_u32(l5 + 28) as u128;
                                     let t24: i64 = l3;
                                     l16 = t23;
                                     let t25: i32 = simd::i16x8_extract_lane_s(l16, 0) as i32;
@@ -378,7 +378,7 @@ use crate::{imp, syms};
                             if (((t79 as i32) < (0i32 as i32)) as i32) != 0 {
                                 break 'L24;
                             }
-                            let t80: u128 = (*ph).read_splat(l3 + 28, 32);
+                            let t80: u128 = (*ph).read_u32(l3 + 28) as u128;
                             let t81: i64 = l1;
                             l16 = t80;
                             let t82: i32 = simd::i16x8_extract_lane_s(l16, 0) as i32;
@@ -470,7 +470,7 @@ use crate::{imp, syms};
                                 if (((t109 as i32) < (0i32 as i32)) as i32) != 0 {
                                     break 'L28;
                                 }
-                                let t110: u128 = (*ph).read_splat(l3 + 28, 32);
+                                let t110: u128 = (*ph).read_u32(l3 + 28) as u128;
                                 let t111: i64 = l1;
                                 l16 = t110;
                                 let t112: i32 = simd::i16x8_extract_lane_s(l16, 0) as i32;

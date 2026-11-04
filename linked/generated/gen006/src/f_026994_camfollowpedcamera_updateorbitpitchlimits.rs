@@ -48,7 +48,7 @@ use crate::{imp, syms};
         let t6: i64 = (*ph).read_u64(l0 + 1344) as i64;
         let t7: i64 = l0;
         l13 = t6;
-        let t8: u128 = (*ph).read_splat(l13 + 1800, 64);
+        let t8: u128 = (*ph).read_u64(l13 + 1800) as u128;
         l17 = 0x3c8efa353c8efa353c8efa353c8efa35u128;
         let t9: u128 = simd::f32x4_mul(t8, l17);
         let t10: u128 = simd::f32x4_splat(l4 as f32);
@@ -75,7 +75,7 @@ use crate::{imp, syms};
                 if ((t20 != 1i32) as i32) != 0 {
                     break 'L2;
                 }
-                let t21: u128 = (*ph).read_splat(l13 + 2056, 64);
+                let t21: u128 = (*ph).read_u64(l13 + 2056) as u128;
                 let t22: u128 = (*ph).read_v128(l13 + 2048);
                 l18 = t22;
                 let t23: u128 = simd::f32x4_sub(t21, l18);

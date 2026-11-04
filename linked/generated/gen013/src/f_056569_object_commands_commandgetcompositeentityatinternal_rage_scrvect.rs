@@ -31,7 +31,7 @@ use crate::{imp, syms};
         let t2: i32 = (*ph).read_u32(l2 + 32) as i32;
         l8 = t2;
         if l8 != 0 {
-            let t3: u128 = (*ph).read_splat(l0, 32);
+            let t3: u128 = (*ph).read_u32(l0) as u128;
             let t4: u128 = (*ph).load_lane(l0 + 8, t3, 1, 32);
             let t5: u128 = (*ph).load_lane(l0 + 16, t4, 2, 32);
             l6 = t5;

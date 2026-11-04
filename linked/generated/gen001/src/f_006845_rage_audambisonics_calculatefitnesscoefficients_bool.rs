@@ -324,7 +324,7 @@ use crate::{imp, syms};
             let t157: u128 = simd::v128_bitselect(t155, l13, t156);
             l13 = t157;
             let t158: u128 = simd::f32x4_mul(l13, l13);
-            let t159: u128 = (*ph).read_splat(l0 + 5524, 64);
+            let t159: u128 = (*ph).read_u64(l0 + 5524) as u128;
             let t160: u128 = simd::f32x4_add(t158, t159);
             (*ph).store_lane(t144 + 5524, t160, 0, 64);
             l10 = (((l18 as u64) as f32) * 0.0174532924f32);
@@ -338,7 +338,7 @@ use crate::{imp, syms};
             }
         break 'L1;
         }
-        let t163: u128 = (*ph).read_splat(l0 + 5524, 64);
+        let t163: u128 = (*ph).read_u64(l0 + 5524) as u128;
         let t164: u128 = simd::f32x4_mul(t163, 0x3c360b613c360b613c360b613c360b61u128);
         let t165: u128 = simd::f32x4_sqrt(t164);
         (*ph).store_lane(l0 + 5524, t165, 0, 64);

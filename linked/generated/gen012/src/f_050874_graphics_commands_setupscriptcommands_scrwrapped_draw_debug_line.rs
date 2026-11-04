@@ -34,12 +34,12 @@ use crate::{imp, syms};
             }
             let t3: i64 = (*ph).read_u64(l0 + 16) as i64;
             l0 = t3;
-            let t4: u128 = (*ph).read_splat(l0 + 64, 32);
+            let t4: u128 = (*ph).read_u32(l0 + 64) as u128;
             let t5: u128 = (*ph).load_lane(l0 + 56, t4, 1, 32);
             let t6: u128 = (*ph).load_lane(l0 + 48, t5, 2, 32);
             let t7: u128 = (*ph).load_lane(l0 + 72, t6, 3, 32);
             l2 = t7;
-            let t8: u128 = (*ph).read_splat(l0 + 96, 32);
+            let t8: u128 = (*ph).read_u32(l0 + 96) as u128;
             let t9: u128 = (*ph).load_lane(l0 + 88, t8, 1, 32);
             let t10: u128 = (*ph).load_lane(l0 + 80, t9, 2, 32);
             let t11: u128 = (*ph).load_lane(l0 + 104, t10, 3, 32);

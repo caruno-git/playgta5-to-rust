@@ -70,7 +70,7 @@ use crate::{imp, syms};
                     r2 = 0xffffffffffffffffffffffffffffffffu128; break 'L3;
                 break 'L4;
                 }
-                let t6: u128 = (*ph).read_splat(l5, 32);
+                let t6: u128 = (*ph).read_u32(l5) as u128;
                 let t7: u128 = simd::i32x4_replace_lane(t6, 1, l9);
                 r2 = t7;
             break 'L3;

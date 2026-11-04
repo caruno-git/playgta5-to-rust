@@ -55,7 +55,7 @@ use crate::{imp, syms};
         if ((l8 < 1.0f32) as i32) != 0 {
             let t13: f32 = (*ph).read_f32(l2 + 164);
             l14 = (l7 * t13);
-            let t14: u128 = (*ph).read_splat(l3, 32);
+            let t14: u128 = (*ph).read_u32(l3) as u128;
             let t15: u128 = (*ph).load_lane(l4, t14, 1, 32);
             l16 = t15;
             let t16: f32 = (*ph).read_f32(l6);
@@ -87,7 +87,7 @@ use crate::{imp, syms};
             let t31: f32 = rt::select_f32(((l8 < l12) as i32), t30, t23);
             l9 = t31;
             (*ph).write_f32(t19 + 4268, l9);
-            let t32: u128 = (*ph).read_splat(l1 + 4260, 64);
+            let t32: u128 = (*ph).read_u64(l1 + 4260) as u128;
             let t33: i64 = l1;
             l17 = t32;
             let t34: u128 = simd::f32x4_splat(l10 as f32);

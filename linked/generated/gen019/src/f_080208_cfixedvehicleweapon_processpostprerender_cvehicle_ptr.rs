@@ -1271,20 +1271,20 @@ use crate::{imp, syms};
                         break 'L69;
                     }
                 }
-                let t437: u128 = (*ph).read_splat(l3 + 1424, 64);
+                let t437: u128 = (*ph).read_u64(l3 + 1424) as u128;
                 l20 = t437;
                 let t438: i64 = (*ph).read_u64(19237856i64) as i64;
                 l4 = t438;
                 let t439: i64 = (l4.wrapping_add(16i64));
                 let mut r440: u128 = 0;
                 if l32 != 0 {
-                    let t441: u128 = (*ph).read_splat(l3 + 1432, 64);
+                    let t441: u128 = (*ph).read_u64(l3 + 1432) as u128;
                     let t442: u128 = simd::f32x4_add(l20, t441);
                     r440 = t442;
                 } else {
                     r440 = l20;
                 }
-                let t443: u128 = (*ph).read_splat(l4 + 840, 64);
+                let t443: u128 = (*ph).read_u64(l4 + 840) as u128;
                 let t444: u128 = (*ph).read_v128(l4 + 880);
                 let t445: u128 = simd::f32x4_convert_i32x4_s(t444);
                 let t446: u128 = simd::f32x4_mul(t443, t445);

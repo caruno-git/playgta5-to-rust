@@ -17,10 +17,10 @@ use crate::{imp, syms};
 
     #[no_mangle]
     pub unsafe extern "C" fn f_048238_rage_wasm_cb_m_void_cheightmapboundsinterface_ptr_refcheightmapb(ph: *mut Phantom, mut l0: i64, mut l1: i64, mut l2: i64) {
-        let t1: u128 = (*ph).read_splat(l0 + 116, 64);
-        let t2: u128 = (*ph).read_splat(l0 + 104, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 116) as u128;
+        let t2: u128 = (*ph).read_u64(l0 + 104) as u128;
         let t3: u128 = simd::f32x4_sub(t1, t2);
-        let t4: u128 = (*ph).read_splat(l0 + 88, 64);
+        let t4: u128 = (*ph).read_u64(l0 + 88) as u128;
         let t5: u128 = simd::f32x4_convert_i32x4_s(t4);
         let t6: u128 = simd::f32x4_div(t3, t5);
         (*ph).store_lane(l0 + 96, t6, 0, 64);

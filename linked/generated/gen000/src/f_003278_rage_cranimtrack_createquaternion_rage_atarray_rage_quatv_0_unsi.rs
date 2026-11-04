@@ -236,7 +236,7 @@ use crate::{imp, syms};
                                         l26 = t73;
                                         let t75: f32 = rt::select_f32(((l25 > l26) as i32), l26, t74);
                                         l25 = t75;
-                                        let t76: u128 = (*ph).read_splat(l4 + 24, 64);
+                                        let t76: u128 = (*ph).read_u64(l4 + 24) as u128;
                                         let t77: u128 = simd::f32x4_sub(l24, t76);
                                         let t78: f32 = l25;
                                         l22 = t77;

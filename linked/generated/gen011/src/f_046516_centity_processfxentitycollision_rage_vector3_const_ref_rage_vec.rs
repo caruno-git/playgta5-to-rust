@@ -688,7 +688,7 @@ use crate::{imp, syms};
                                 }
                                 let t247: u128 = (*ph).read_v128(l5 + 48);
                                 let t248: u128 = (*ph).read_v128(l5 + 32);
-                                let t249: u128 = (*ph).read_splat(l7 + 8, 64);
+                                let t249: u128 = (*ph).read_u64(l7 + 8) as u128;
                                 let t250: u128 = (*ph).load_lane(l7 + 16, t249, 2, 32);
                                 let t251: i64 = l5;
                                 l16 = t250;

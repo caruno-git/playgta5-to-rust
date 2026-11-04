@@ -551,7 +551,7 @@ use crate::{imp, syms};
                                     if ((((t184 < l10) as i32) == 0) as i32) != 0 {
                                         let t185: u128 = simd::f32x4_splat(l19 as f32);
                                         let t186: u128 = simd::f32x4_replace_lane(t185, 1, l21);
-                                        let t187: u128 = (*ph).read_splat(l4 + 1440, 32);
+                                        let t187: u128 = (*ph).read_u32(l4 + 1440) as u128;
                                         let t188: u128 = simd::f32x4_replace_lane(t187, 1, l19);
                                         let t189: u128 = simd::f32x4_sub(t186, t188);
                                         l32 = t189;
@@ -616,7 +616,7 @@ use crate::{imp, syms};
                                 let t216: f32 = (*ph).read_f32(l3 + 8);
                                 (*ph).write_f32(l3 + 8, (-t216));
                                 syms::f_003880_rage_fwanimhelpers_getmovertrackrotation_rage_crclip_const_ref_f(ph, (l3.wrapping_add(32i64)), l5, 1.0f32);
-                                let t217: u128 = (*ph).read_splat(l3 + 4, 64);
+                                let t217: u128 = (*ph).read_u64(l3 + 4) as u128;
                                 let t218: i64 = l3;
                                 l33 = t217;
                                 let t219: u128 = (*ph).read_v128(l3);
@@ -955,7 +955,7 @@ use crate::{imp, syms};
                                 if ((t338 == t339) as i32) != 0 {
                                     break 'L45;
                                 }
-                                let t340: u128 = (*ph).read_splat(l4 + 848, 32);
+                                let t340: u128 = (*ph).read_u32(l4 + 848) as u128;
                                 let t341: u128 = (*ph).load_lane(l4 + 852, t340, 1, 32);
                                 let t342: u128 = (*ph).load_lane(l4 + 860, t341, 3, 32);
                                 let t343: u128 = (*ph).read_v128(l4 + 1328);

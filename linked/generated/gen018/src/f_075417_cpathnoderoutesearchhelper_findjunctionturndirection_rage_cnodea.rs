@@ -112,11 +112,11 @@ use crate::{imp, syms};
                         if ((l1 == 0) as i32) != 0 {
                             break 'L1;
                         }
-                        let t17: u128 = (*ph).read_splat(l9 + 28, 32);
+                        let t17: u128 = (*ph).read_u32(l9 + 28) as u128;
                         l16 = t17;
-                        let t18: u128 = (*ph).read_splat(l1 + 28, 32);
+                        let t18: u128 = (*ph).read_u32(l1 + 28) as u128;
                         l18 = t18;
-                        let t19: u128 = (*ph).read_splat(l10 + 28, 32);
+                        let t19: u128 = (*ph).read_u32(l10 + 28) as u128;
                         l17 = t19;
                         (*ph).write_u16(l8 + 114, 65535i32 as u16);
                         let t20: i32 = syms::f_077864_cpathfind_findnodeslinkindexbetween2nodes_rage_cpathnode_const_p(ph, l9, l10, (l8.wrapping_add(114i64)));
@@ -167,7 +167,7 @@ use crate::{imp, syms};
                             if ((l3 == 0) as i32) != 0 {
                                 break 'L5;
                             }
-                            let t44: u128 = (*ph).read_splat(l3 + 28, 32);
+                            let t44: u128 = (*ph).read_u32(l3 + 28) as u128;
                             let t45: u128 = l16;
                             l17 = t44;
                             let t46: i32 = simd::i16x8_extract_lane_s(l17, 0) as i32;
@@ -205,7 +205,7 @@ use crate::{imp, syms};
                             if ((l1 == 0) as i32) != 0 {
                                 break 'L6;
                             }
-                            let t62: u128 = (*ph).read_splat(l1 + 28, 32);
+                            let t62: u128 = (*ph).read_u32(l1 + 28) as u128;
                             l16 = t62;
                             let t63: i32 = simd::i16x8_extract_lane_s(l16, 0) as i32;
                             let t64: u128 = simd::f32x4_splat(((t63 as i32) as f32) as f32);

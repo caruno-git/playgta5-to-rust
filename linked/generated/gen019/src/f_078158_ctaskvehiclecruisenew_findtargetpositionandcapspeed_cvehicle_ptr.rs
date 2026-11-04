@@ -1654,7 +1654,7 @@ use crate::{imp, syms};
                                     syms::f_001523_quitf_char_const_ptr(ph, 2120837i64, l11);
                                     break 'L94;
                                 }
-                                let t443: u128 = (*ph).read_splat(l14 + 28, 32);
+                                let t443: u128 = (*ph).read_u32(l14 + 28) as u128;
                                 l34 = t443;
                                 let t444: i32 = simd::i16x8_extract_lane_s(l34, 0) as i32;
                                 let t445: u128 = simd::f32x4_splat(((t444 as i32) as f32) as f32);
@@ -1674,7 +1674,7 @@ use crate::{imp, syms};
                                     let t454: f32 = (l27 * 0.0f32);
                                     l26 = t453;
                                     let t455: f32 = simd::f32x4_extract_lane(l34, 0) as f32;
-                                    let t456: u128 = (*ph).read_splat(l13 + 28, 32);
+                                    let t456: u128 = (*ph).read_u32(l13 + 28) as u128;
                                     let t457: f32 = (l26 - t455);
                                     l38 = t456;
                                     let t458: i32 = simd::i16x8_extract_lane_s(l38, 0) as i32;

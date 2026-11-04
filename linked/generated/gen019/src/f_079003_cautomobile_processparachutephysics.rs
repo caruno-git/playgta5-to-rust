@@ -504,7 +504,7 @@ use crate::{imp, syms};
         let t246: u128 = simd::f32x4_splat(l6 as f32);
         let t247: u128 = simd::f32x4_mul(t246, l24);
         let t248: u128 = simd::f32x4_mul(t247, 0xc59c4000c59c4000c59c4000c59c4000u128);
-        let t249: u128 = (*ph).read_splat(l22 + 24, 64);
+        let t249: u128 = (*ph).read_u64(l22 + 24) as u128;
         let t250: u128 = simd::f32x4_replace_lane(t249, 1, l4);
         let t251: u128 = simd::f32x4_mul(t250, 0x43150000431500004315000043150000u128);
         l24 = t251;

@@ -19,13 +19,13 @@ use crate::{imp, syms};
     pub unsafe extern "C" fn f_079331_cbikehandlingdata_converttogameunits(ph: *mut Phantom, mut l0: i64) {
         let mut l1: u128 = 0;
         let mut l2: u128 = 0;
-        let t1: u128 = (*ph).read_splat(l0 + 24, 64);
+        let t1: u128 = (*ph).read_u64(l0 + 24) as u128;
         let t2: i64 = l0;
         l1 = 0x3c8efa353c8efa353c8efa353c8efa35u128;
         let t3: u128 = simd::f32x4_mul(t1, l1);
         l2 = t3;
         (*ph).store_lane(t2 + 24, l2, 0, 64);
-        let t4: u128 = (*ph).read_splat(l0 + 52, 64);
+        let t4: u128 = (*ph).read_u64(l0 + 52) as u128;
         let t5: u128 = simd::f32x4_mul(t4, l1);
         (*ph).store_lane(l0 + 52, t5, 0, 64);
         let t6: f32 = (*ph).read_f32(l0 + 80);

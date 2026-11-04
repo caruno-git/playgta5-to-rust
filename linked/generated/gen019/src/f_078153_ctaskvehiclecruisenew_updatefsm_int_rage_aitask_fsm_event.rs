@@ -2495,7 +2495,7 @@ use crate::{imp, syms};
                                                                     let t842: f32 = simd::f32x4_extract_lane(l34, 3) as f32;
                                                                     r837 = t842; break 'L153;
                                                                 }
-                                                                let t843: u128 = (*ph).read_splat(l5 + 160, 32);
+                                                                let t843: u128 = (*ph).read_u32(l5 + 160) as u128;
                                                                 let t844: u128 = (*ph).load_lane(l5 + 164, t843, 1, 32);
                                                                 let t845: u128 = (*ph).load_lane(l5 + 168, t844, 2, 32);
                                                                 l35 = t845;

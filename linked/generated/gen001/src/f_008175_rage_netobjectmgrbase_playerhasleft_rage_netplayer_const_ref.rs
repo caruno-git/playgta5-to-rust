@@ -336,12 +336,12 @@ use crate::{imp, syms};
                     l3 = 0i64;
                     'L29: loop {
                         l5 = (l2.wrapping_add((l3.wrapping_mul(152i64))));
-                        let t90: u128 = (*ph).read_splat(l5, 64);
+                        let t90: u128 = (*ph).read_u64(l5) as u128;
                         let t91: u128 = simd::v128_and(t90, l17);
                         (*ph).store_lane(l5, t91, 0, 64);
                         let t92: i32 = (*ph).read_u32(l5 + 8) as i32;
                         (*ph).write_u32(l5 + 8, (t92 & l15) as u32);
-                        let t93: u128 = (*ph).read_splat(l5 + 152, 64);
+                        let t93: u128 = (*ph).read_u64(l5 + 152) as u128;
                         let t94: u128 = simd::v128_and(t93, l17);
                         (*ph).store_lane(l5 + 152, t94, 0, 64);
                         let t95: i32 = (*ph).read_u32(l5 + 160) as i32;

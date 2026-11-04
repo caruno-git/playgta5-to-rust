@@ -3050,7 +3050,7 @@ use crate::{imp, syms};
                                                     l6 = (l5.wrapping_add((l2.wrapping_shl((3i64 as u32) & 63))));
                                                     let t1076: i64 = (*ph).read_u64(l6 + 8) as i64;
                                                     let t1077: i64 = (*ph).read_u64(l6) as i64;
-                                                    let t1078: u128 = (*ph).read_splat(t1077, 32);
+                                                    let t1078: u128 = (*ph).read_u32(t1077) as u128;
                                                     let t1079: u128 = (*ph).load_lane(t1076, t1078, 1, 32);
                                                     let t1080: u128 = simd::v128_xor(t1079, l33);
                                                     let t1081: u128 = simd::i32x4_lt_u(t1080, 0x00000100000001000000010000000100u128);

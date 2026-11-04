@@ -45,7 +45,7 @@ use crate::{imp, syms};
             let t9: i64 = rt::select_i64(l3, 16i64, 0i64);
             let t10: u128 = (*ph).read_v128((l2.wrapping_add(t9)));
             l10 = t10;
-            let t11: u128 = (*ph).read_splat(8708i64 + 25492320, 64);
+            let t11: u128 = (*ph).read_u64(8708i64 + 25492320) as u128;
             l9 = t11;
             let t12: u128 = (*ph).read_v128(l2 + 32);
             l8 = t12;

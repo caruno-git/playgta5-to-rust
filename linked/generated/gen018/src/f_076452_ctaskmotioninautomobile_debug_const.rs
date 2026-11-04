@@ -779,7 +779,7 @@ use crate::{imp, syms};
             syms::f_078932_cvehicle_getvelocityincludingreferenceframe_const(ph, (l1.wrapping_add(816i64)), t289);
             let t290: u128 = (*ph).read_v128(l1 + 816);
             l12 = t290;
-            let t291: u128 = (*ph).read_splat(l1 + 824, 64);
+            let t291: u128 = (*ph).read_u64(l1 + 824) as u128;
             l13 = t291;
             let t292: i64 = (*ph).read_u64(l0 + 424) as i64;
             l2 = t292;

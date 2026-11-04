@@ -137,7 +137,7 @@ use crate::{imp, syms};
                 if ((l10 == 0) as i32) != 0 {
                     break 'L1;
                 }
-                let t29: u128 = (*ph).read_splat(l7 + 28, 32);
+                let t29: u128 = (*ph).read_u32(l7 + 28) as u128;
                 let t30: i64 = l8;
                 l11 = t29;
                 let t31: i32 = simd::i16x8_extract_lane_s(l11, 0) as i32;
@@ -146,7 +146,7 @@ use crate::{imp, syms};
                 let t34: u128 = simd::f32x4_replace_lane(t32, 1, ((t33 as i32) as f32));
                 l11 = 0x3e8000003e8000003e8000003e800000u128;
                 let t35: u128 = simd::f32x4_mul(t34, l11);
-                let t36: u128 = (*ph).read_splat(l10 + 28, 32);
+                let t36: u128 = (*ph).read_u32(l10 + 28) as u128;
                 l12 = t36;
                 let t37: i32 = simd::i16x8_extract_lane_s(l12, 0) as i32;
                 let t38: u128 = simd::f32x4_splat(((t37 as i32) as f32) as f32);

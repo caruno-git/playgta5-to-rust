@@ -119,7 +119,7 @@ use crate::{imp, syms};
                 (*ph).write_v128(l8, t42);
                 break 'L2;
             }
-            let t43: u128 = (*ph).read_splat(l0 + 148, 64);
+            let t43: u128 = (*ph).read_u64(l0 + 148) as u128;
             l11 = t43;
             let t44: f32 = (*ph).read_f32(l0 + 144);
             l4 = t44;

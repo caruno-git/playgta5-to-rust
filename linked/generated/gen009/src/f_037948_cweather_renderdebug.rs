@@ -58,7 +58,7 @@ use crate::{imp, syms};
                         l9 = (t8.wrapping_add(((((l5 & 7i32) as u32) as i64).wrapping_mul(6i64))));
                         let t9: u128 = (*ph).read_splat(l9 + 4, 16);
                         l11 = t9;
-                        let t10: u128 = (*ph).read_splat(l9, 32);
+                        let t10: u128 = (*ph).read_u32(l9) as u128;
                         l12 = t10;
                         let t11: u128 = (*ph).read_splat(l7 + 49796, 32);
                         l13 = t11;

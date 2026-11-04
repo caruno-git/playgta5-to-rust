@@ -23,12 +23,12 @@ use crate::{imp, syms};
         (*ph).sp = l1;
         let t1: i32 = (*ph).read_u32(l0 + 72) as i32;
         if ((t1 == 1i32) as i32) != 0 {
-            let t2: u128 = (*ph).read_splat(0i64 + 19440188, 64);
-            let t3: u128 = (*ph).read_splat(l0 + 76, 64);
+            let t2: u128 = (*ph).read_u64(0i64 + 19440188) as u128;
+            let t3: u128 = (*ph).read_u64(l0 + 76) as u128;
             let t4: u128 = simd::f32x4_sub(t2, t3);
             let t5: i64 = l1;
             l2 = t4;
-            let t6: u128 = (*ph).read_splat(l0 + 8, 64);
+            let t6: u128 = (*ph).read_u64(l0 + 8) as u128;
             let t7: u128 = simd::f32x4_sub(l2, t6);
             (*ph).store_lane(t5 + 8, t7, 0, 64);
             syms::f_030050_cuigadgetbase_applymovement_rage_vector2_const_ref(ph, l0, (l1.wrapping_add(8i64)));

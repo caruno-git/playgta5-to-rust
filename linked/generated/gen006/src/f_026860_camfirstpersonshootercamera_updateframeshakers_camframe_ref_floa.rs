@@ -684,7 +684,7 @@ use crate::{imp, syms};
             l4 = t215;
             let t216: f32 = (*ph).read_f32(l16 + 440);
             l6 = t216;
-            let t217: u128 = (*ph).read_splat(l16 + 444, 64);
+            let t217: u128 = (*ph).read_u64(l16 + 444) as u128;
             l24 = t217;
             syms::f_026279_rage_matrix34_toeulersyxz_rage_vector3_ref_const(ph, (l1.wrapping_add(16i64)), (l15.wrapping_add(128i64)));
             l3 = 0.0f32;

@@ -490,7 +490,7 @@ use crate::{imp, syms};
                 let t169: i64 = (*ph).read_u64(12374984i64) as i64;
                 let t170: f32 = l31;
                 l3 = t169;
-                let t171: u128 = (*ph).read_splat(l3 + 824, 64);
+                let t171: u128 = (*ph).read_u64(l3 + 824) as u128;
                 let t172: u128 = (*ph).read_v128(l3 + 864);
                 let t173: u128 = simd::f32x4_convert_i32x4_s(t172);
                 let t174: u128 = simd::f32x4_mul(t171, t173);

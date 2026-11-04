@@ -59,7 +59,7 @@ use crate::{imp, syms};
                     let mut r10: i64 = 0;
                     'L4: loop {
                         if l1 != 0 {
-                            let t11: u128 = (*ph).read_splat(l0 + 188, 64);
+                            let t11: u128 = (*ph).read_u64(l0 + 188) as u128;
                             l6 = t11;
                             let t12: i64 = (*ph).read_i32(11062176i64) as i64;
                             let t13: i64 = l2;
@@ -74,12 +74,12 @@ use crate::{imp, syms};
                             (*ph).write_v128(l2 + 16, t17);
                             syms::f_018493_gmatrix3d_matrixinverse_float_ptr_float_const_ptr_const(ph, (l2.wrapping_add(16i64)), (l2.wrapping_add(16i64)));
                             let t18: f32 = (*ph).read_f32(l2 + 64);
-                            let t19: u128 = (*ph).read_splat(l2 + 48, 64);
-                            let t20: u128 = (*ph).read_splat(l2 + 16, 64);
+                            let t19: u128 = (*ph).read_u64(l2 + 48) as u128;
+                            let t20: u128 = (*ph).read_u64(l2 + 16) as u128;
                             let t21: u128 = simd::i8x16_shuffle_static::<0,1,2,3,0,1,2,3,0,1,2,3,0,1,2,3>(l6, l6);
                             let t22: u128 = simd::f32x4_mul(t20, t21);
                             let t23: u128 = simd::i8x16_shuffle_static::<4,5,6,7,4,5,6,7,0,1,2,3,0,1,2,3>(l6, l6);
-                            let t24: u128 = (*ph).read_splat(l2 + 32, 64);
+                            let t24: u128 = (*ph).read_u64(l2 + 32) as u128;
                             let t25: u128 = simd::f32x4_mul(t23, t24);
                             let t26: u128 = simd::f32x4_add(t22, t25);
                             let t27: u128 = simd::f32x4_add(t19, t26);

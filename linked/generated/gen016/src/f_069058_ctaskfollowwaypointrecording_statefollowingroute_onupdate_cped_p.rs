@@ -428,7 +428,7 @@ use crate::{imp, syms};
                                 }
                                 let t141: f32 = (*ph).read_f32(l0 + 152);
                                 let t142: f32 = (*ph).read_f32(l0 + 144);
-                                let t143: u128 = (*ph).read_splat(l6, 64);
+                                let t143: u128 = (*ph).read_u64(l6) as u128;
                                 let t144: u128 = (*ph).read_v128(l0 + 160);
                                 let t145: u128 = simd::f32x4_add(t143, t144);
                                 let t146: u128 = (*ph).read_v128(l1 + 144);
@@ -747,7 +747,7 @@ use crate::{imp, syms};
                     l12 = t275;
                     let t276: u128 = (*ph).read_v128(l0 + 160);
                     l23 = t276;
-                    let t277: u128 = (*ph).read_splat(l5, 64);
+                    let t277: u128 = (*ph).read_u64(l5) as u128;
                     l24 = t277;
                     let t278: i64 = syms::f_075636_ctaskmovebase_ctaskmovebase_float(ph, l3, l9);
                     l2 = t278;
@@ -789,7 +789,7 @@ use crate::{imp, syms};
                     syms::f_005926_rage_aitask_setnewtask_rage_aitask_ptr(ph, t287, t288);
                     let t289: u128 = (*ph).read_v128(l1 + 144);
                     l23 = t289;
-                    let t290: u128 = (*ph).read_splat(l5, 64);
+                    let t290: u128 = (*ph).read_u64(l5) as u128;
                     l24 = t290;
                     (*ph).write_u32(l0 + 152, 0i32 as u32);
                     let t291: u128 = (*ph).read_v128(l0 + 160);
@@ -1009,7 +1009,7 @@ use crate::{imp, syms};
                                             }
                                         break 'L53;
                                         }
-                                        let t372: u128 = (*ph).read_splat(l4 + 96, 64);
+                                        let t372: u128 = (*ph).read_u64(l4 + 96) as u128;
                                         let t373: u128 = simd::f32x4_mul(t372, 0x3f0000003f0000003f0000003f000000u128);
                                         (*ph).store_lane(l4 + 96, t373, 0, 64);
                                         let t374: f32 = (*ph).read_f32(l4 + 104);

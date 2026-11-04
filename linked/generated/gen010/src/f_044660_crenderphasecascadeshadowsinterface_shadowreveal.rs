@@ -237,7 +237,7 @@ use crate::{imp, syms};
                             if ((l38 == 0) as i32) != 0 {
                                 break 'L11;
                             }
-                            let t81: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                            let t81: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                             l25 = t81;
                             let t82: i32 = (*ph).read_u32(19617728i64) as i32;
                             r75 = t82; break 'L12;
@@ -252,7 +252,7 @@ use crate::{imp, syms};
                         if ((((t86.wrapping_sub(13i32)) as u32) > (8i32 as u32)) as i32) != 0 {
                             break 'L11;
                         }
-                        let t87: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                        let t87: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                         l25 = t87;
                         let t88: i32 = (*ph).read_u32(19617728i64) as i32;
                         r75 = t88;
@@ -1247,13 +1247,13 @@ use crate::{imp, syms};
                                                     }
                                                     let t648: i32 = (*ph).read_u32(19617728i64) as i32;
                                                     l36 = t648;
-                                                    let t649: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                                                    let t649: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                                                     r638 = t649; break 'L39;
                                                 break 'L40;
                                                 }
                                                 let t650: i32 = (*ph).read_u32(19617728i64) as i32;
                                                 l36 = t650;
-                                                let t651: u128 = (*ph).read_splat(20i64 + 19617712, 64);
+                                                let t651: u128 = (*ph).read_u64(20i64 + 19617712) as u128;
                                                 r638 = t651;
                                             break 'L39;
                                             }
@@ -1525,7 +1525,7 @@ use crate::{imp, syms};
             l36 = t761;
             let t762: i64 = (*ph).read_u64(23122896i64) as i64;
             l2 = t762;
-            let t763: u128 = (*ph).read_splat(0i64 + 21388320, 32);
+            let t763: u128 = (*ph).read_u32(0i64 + 21388320) as u128;
             let t764: u128 = (*ph).load_lane(0i64 + 21388324, t763, 1, 32);
             let t765: u128 = simd::f32x4_convert_i32x4_s(t764);
             let t766: i64 = l5;

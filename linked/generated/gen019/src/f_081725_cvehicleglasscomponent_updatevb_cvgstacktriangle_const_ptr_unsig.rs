@@ -62,7 +62,7 @@ use crate::{imp, syms};
                                 l11 = t6;
                                 let t10: i64 = simd::i64x2_extract_lane(l11, 1) as i64;
                                 let t11: i64 = simd::i64x2_extract_lane(l11, 0) as i64;
-                                let t12: u128 = (*ph).read_splat(((l1.wrapping_add((t11.wrapping_mul(144i64))))) + 108, 32);
+                                let t12: u128 = (*ph).read_u32(((l1.wrapping_add((t11.wrapping_mul(144i64))))) + 108) as u128;
                                 let t13: u128 = (*ph).load_lane(((t9.wrapping_add((t10.wrapping_mul(144i64))))) + 108, t12, 1, 32);
                                 let t14: u128 = (*ph).load_lane(t8 + 108, t13, 2, 32);
                                 let t15: u128 = (*ph).load_lane(t7 + 108, t14, 3, 32);

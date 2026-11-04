@@ -3951,8 +3951,8 @@ use crate::{imp, syms};
                 break 'L215;
                 }
                 l33 = r1222;
-                let t1289: u128 = (*ph).read_splat(0i64 + 20217136, 64);
-                let t1290: u128 = (*ph).read_splat(0i64 + 20217120, 64);
+                let t1289: u128 = (*ph).read_u64(0i64 + 20217136) as u128;
+                let t1290: u128 = (*ph).read_u64(0i64 + 20217120) as u128;
                 let t1291: i64 = l1;
                 l44 = t1290;
                 let t1292: u128 = simd::f32x4_sub(t1289, l44);
@@ -4264,12 +4264,12 @@ use crate::{imp, syms};
                         if (((l52 as i32) > (0i32 as i32)) as i32) != 0 {
                             let t1434: i64 = l2;
                             l3 = ((l52 as u32) as i64);
-                            let t1435: u128 = (*ph).read_splat(((t1434.wrapping_add((l3.wrapping_shl((3i64 as u32) & 63)))).wrapping_sub(8i64)), 64);
+                            let t1435: u128 = (*ph).read_u64(((t1434.wrapping_add((l3.wrapping_shl((3i64 as u32) & 63)))).wrapping_sub(8i64))) as u128;
                             let t1436: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,24,25,26,27,0,1,2,3>(t1435, l45);
                             l44 = t1436;
                             l0 = 0i64;
                             'L249: loop {
-                                let t1437: u128 = (*ph).read_splat((l2.wrapping_add((l0.wrapping_shl((3i64 as u32) & 63)))), 64);
+                                let t1437: u128 = (*ph).read_u64((l2.wrapping_add((l0.wrapping_shl((3i64 as u32) & 63))))) as u128;
                                 l48 = t1437;
                                 (*ph).write_v128(l1 + 720, l44);
                                 let t1438: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,24,25,26,27,0,1,2,3>(l48, l45);

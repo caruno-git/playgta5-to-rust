@@ -57,7 +57,7 @@ use crate::{imp, syms};
                         r7 = l1;
                     }
                     l2 = (r7.wrapping_add((((((l6 as u32).wrapping_shr((16i32 as u32) & 31) as i32) as u32) as i64).wrapping_mul(40i64))));
-                    let t10: u128 = (*ph).read_splat(l2 + 28, 32);
+                    let t10: u128 = (*ph).read_u32(l2 + 28) as u128;
                     l7 = t10;
                     let t11: i32 = simd::i16x8_extract_lane_s(l7, 0) as i32;
                     let t12: u128 = simd::f32x4_splat(((t11 as i32) as f32) as f32);

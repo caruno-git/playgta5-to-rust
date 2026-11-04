@@ -92,10 +92,10 @@ use crate::{imp, syms};
                         'L5: loop {
                             let t21: u128 = l14;
                             l0 = (l2.wrapping_shl((5i64 as u32) & 63));
-                            let t22: u128 = (*ph).read_splat(l0 + 21435224, 64);
+                            let t22: u128 = (*ph).read_u64(l0 + 21435224) as u128;
                             let t23: u128 = simd::i32x4_extend_low_i16x8_s(t22);
                             l15 = t23;
-                            let t24: u128 = (*ph).read_splat(l0 + 21435228, 32);
+                            let t24: u128 = (*ph).read_u32(l0 + 21435228) as u128;
                             let t25: u128 = l15;
                             l16 = t24;
                             let t26: u128 = simd::i16x8_min_s(l16, 0x00000000000000000000000000000000u128);

@@ -406,7 +406,7 @@ use crate::{imp, syms};
                         if ((t104 <= 0.0f32) as i32) != 0 {
                             break 'L27;
                         }
-                        let t105: u128 = (*ph).read_splat(l0 + 180, 64);
+                        let t105: u128 = (*ph).read_u64(l0 + 180) as u128;
                         l23 = t105;
                         let t106: f32 = (*ph).read_f32(l0 + 176);
                         l1 = t106;
@@ -469,7 +469,7 @@ use crate::{imp, syms};
                     l23 = t123;
                     let t124: f32 = (*ph).read_f32(l0 + 160);
                     l6 = t124;
-                    let t125: u128 = (*ph).read_splat(l0 + 164, 64);
+                    let t125: u128 = (*ph).read_u64(l0 + 164) as u128;
                     r100 = t125;
                 break 'L26;
                 }

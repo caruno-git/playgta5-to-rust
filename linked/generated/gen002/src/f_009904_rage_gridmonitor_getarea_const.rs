@@ -18,16 +18,16 @@ use crate::{imp, syms};
     #[no_mangle]
     pub unsafe extern "C" fn f_009904_rage_gridmonitor_getarea_const(ph: *mut Phantom, mut l0: i64, mut l1: i64) {
         let mut l2: u128 = 0;
-        let t1: u128 = (*ph).read_splat(0i64 + 12622840, 64);
+        let t1: u128 = (*ph).read_u64(0i64 + 12622840) as u128;
         let t2: u128 = simd::f32x4_convert_i32x4_u(t1);
         let t3: u128 = simd::f32x4_div(0x3f8000003f8000003f8000003f800000u128, t2);
         let t4: i64 = l0;
         l2 = t3;
-        let t5: u128 = (*ph).read_splat(l1 + 20, 32);
+        let t5: u128 = (*ph).read_u32(l1 + 20) as u128;
         let t6: u128 = (*ph).load_lane(l1 + 32, t5, 1, 32);
         let t7: u128 = simd::f32x4_convert_i32x4_u(t6);
         let t8: u128 = simd::f32x4_mul(l2, t7);
-        let t9: u128 = (*ph).read_splat(l1 + 24, 64);
+        let t9: u128 = (*ph).read_u64(l1 + 24) as u128;
         let t10: u128 = simd::f32x4_convert_i32x4_u(t9);
         let t11: u128 = simd::f32x4_mul(l2, t10);
         let t12: u128 = simd::i8x16_shuffle_static::<0,1,2,3,4,5,6,7,16,17,18,19,20,21,22,23>(t8, t11);

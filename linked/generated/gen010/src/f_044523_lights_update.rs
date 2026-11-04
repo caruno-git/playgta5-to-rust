@@ -129,9 +129,9 @@ use crate::{imp, syms};
                             let t20: u128 = simd::f32x4_splat(l18 as f32);
                             let t21: u128 = simd::f32x4_replace_lane(t20, 1, l20);
                             l25 = t21;
-                            let t22: u128 = (*ph).read_splat(0i64 + 23420896, 64);
+                            let t22: u128 = (*ph).read_u64(0i64 + 23420896) as u128;
                             let t23: u128 = simd::f32x4_sub(l25, t22);
-                            let t24: u128 = (*ph).read_splat(0i64 + 23421004, 64);
+                            let t24: u128 = (*ph).read_u64(0i64 + 23421004) as u128;
                             let t25: u128 = simd::f32x4_mul(t23, t24);
                             let t26: u128 = simd::f32x4_floor(t25);
                             let t27: u128 = simd::i32x4_trunc_sat_f32x4_s(t26);
@@ -162,9 +162,9 @@ use crate::{imp, syms};
                             if ((t34 != 1i32) as i32) != 0 {
                                 break 'L12;
                             }
-                            let t35: u128 = (*ph).read_splat(0i64 + 23421928, 64);
+                            let t35: u128 = (*ph).read_u64(0i64 + 23421928) as u128;
                             let t36: u128 = simd::f32x4_sub(l25, t35);
-                            let t37: u128 = (*ph).read_splat(0i64 + 23422036, 64);
+                            let t37: u128 = (*ph).read_u64(0i64 + 23422036) as u128;
                             let t38: u128 = simd::f32x4_mul(t36, t37);
                             let t39: u128 = simd::f32x4_floor(t38);
                             let t40: u128 = simd::i32x4_trunc_sat_f32x4_s(t39);
@@ -180,7 +180,7 @@ use crate::{imp, syms};
                             if (t44 & 1i32) != 0 {
                                 break 'L12;
                             }
-                            let t45: u128 = (*ph).read_splat(0i64 + 23421912, 64);
+                            let t45: u128 = (*ph).read_u64(0i64 + 23421912) as u128;
                             let t46: u128 = simd::i32x4_le_s(t45, l24);
                             let t47: u128 = simd::i64x2_extend_low_i32x4_s(t46);
                             l23 = t47;
@@ -233,9 +233,9 @@ use crate::{imp, syms};
             let t57: f32 = simd::f32x4_extract_lane(l23, 0) as f32;
             let t58: f32 = simd::f32x4_extract_lane(l23, 1) as f32;
             syms::f_048044_cgameworldheightmap_getworldheightmapindex_int_ref_int_ref_float(ph, t55, t56, t57, t58);
-            let t59: u128 = (*ph).read_splat(l12 + 104, 64);
+            let t59: u128 = (*ph).read_u64(l12 + 104) as u128;
             let t60: u128 = simd::f32x4_sub(l23, t59);
-            let t61: u128 = (*ph).read_splat(l12 + 212, 64);
+            let t61: u128 = (*ph).read_u64(l12 + 212) as u128;
             let t62: u128 = simd::f32x4_mul(t60, t61);
             let t63: i32 = (*ph).read_u32(l14 + 76) as i32;
             l2 = t63;

@@ -268,7 +268,7 @@ use crate::{imp, syms};
                     let t59: i64 = syms::f_007559_rage_ptfxmanager_gettriggeredinst_rage_atnonfinalhashstring(ph, (l7.wrapping_add(108i64)));
                     l9 = t59;
                     if ((l9 != 0i64) as i32) != 0 {
-                        let t60: u128 = (*ph).read_splat(l6 + 28, 64);
+                        let t60: u128 = (*ph).read_u64(l6 + 28) as u128;
                         let t61: u128 = (*ph).load_lane(l6 + 36, t60, 2, 32);
                         l19 = t61;
                         let t62: u128 = (*ph).read_v128(l8 + 96);
