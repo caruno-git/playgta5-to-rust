@@ -1,50 +1,74 @@
-# FivePlay-to-rust
+# PlayGTA5 to Rust
 
-Current source snapshot of the PlayGTA5 WASM64 engine port to Rust.
+A Rust port of the PlayGTA5 browser engine. The game runs as WebAssembly in a
+WebGPU-capable browser. This repository contains the translated engine, runtime,
+browser streaming worker and build tools.
 
-## Included
+[Play online](https://gta.caruno.wtf:8443/?mode=sandbox) ·
+[Download a build](https://github.com/caruno-git/playgta5-to-rust/releases/latest) ·
+[Setup guide](docs/running.md) · [Project status](linked/STATUS.md)
 
-- Linear-memory runtime, atomics, passive-segment handling, SIMD helpers and tests.
-- Context-aware imports, checked indirect calls, browser export adapters and the
-  memory-isolating WASM packager.
-- Native host, ABI, fixed-timestep runtime and headless-server sources.
-- WAT translation, segment extraction and browser adapter generation tools.
+## Getting started
 
-## Verification Status
+The online version runs without a local installation. Use a recent desktop
+Chrome or Edge with hardware acceleration enabled. Loading time and performance
+depend on the browser, available memory and network connection.
 
-A prior Rust release loaded the real world in Chrome, rendered through WebGPU,
-accepted movement, and completed two minutes after world load without a WASM
-crash or GPU validation error. It was slower than the original in the comparison
-scene: approximately 32-42 FPS versus approximately 60 FPS.
+For local play, download **PlayGTA5-Rust-Web-2026.11.05.tar.gz** from
+[Releases](https://github.com/caruno-git/playgta5-to-rust/releases/latest).
+It contains the compiled `game.wasm`, browser adapter, GPU and IO workers,
+shaders, loading screen and Python launcher. Running this package requires
+Python 3.10 or newer; a Rust compiler is only needed to build from source.
+GitHub's automatically generated **Source code** archives contain the repository
+sources instead of the compiled build.
 
-This snapshot also includes the subsequent optimization: 86,035 shuffle sites
-use constant lane indices and the standard WASM SIMD intrinsic, with short memory
-operations inlined. A compiled fixture emits `i8x16.shuffle` and passes 256
-reference vectors. The latest complete SIMD-optimized build and its gameplay/FPS
-retest are not yet verified. The last complete build attempt stopped in the LLVM
-backend while compiling `gen005` (`Cannot select: v4f32 =
-WebAssemblyISD::CONVERT_LOW_S`). Runtime, SIMD fixture and workspace tests pass;
-the full optimized candidate still needs that compiler issue resolved. This is a
-development snapshot, not a finished performance release. See `linked/STATUS.md`.
+The original game data is separate. Local play requires a compatible PlayGTA5
+`data/` directory of about 21 GB, with manifest version `1791169379-5814`.
+The approximately 98 MB release archive contains the browser runtime, not those
+game data files. A symbolic link or directory junction can reuse an existing
+installation. See the [Linux and Windows setup instructions](docs/running.md).
 
-## External Inputs
+## Release status
 
-Game binaries, original JavaScript glue, the 21 GB game assets, segment blobs,
-save files, compiled outputs and local caches are deliberately not included.
-Supply the original build locally. The required original `game.wasm` SHA-256 is:
+The current development release is
+[2026.11.05](https://github.com/caruno-git/playgta5-to-rust/releases/tag/v2026.11.05-rust-web).
+It includes fixes for SIMD loads, character cloth geometry, GPU readback lifetime,
+map rendering and resource reuse, together with demand-prioritized streaming.
+
+The engine has loaded the game world, rendered through WebGPU and accepted player
+movement in browser tests. Map, cloth and fullscreen-transition checks have also
+passed. Cold loading can still be slow, and sustained driving and long-session
+stability are not fully verified. Test conditions and remaining limitations are
+listed in [Project status](linked/STATUS.md).
+
+## Repository contents
+
+| Path | Purpose |
+| --- | --- |
+| `linked/` | Translated engine, import bridge and browser build entry point |
+| `wasm-rt/` | Linear-memory runtime, atomics and SIMD support |
+| `wasm-imp/` | Supporting import implementations and tests |
+| `browser/` | Browser streaming worker |
+| `crates/` | Host, ABI, runtime and server components |
+| `tools/` | Translation, packaging, adapter generation and regression tests |
+| `docs/` | Installation and streaming documentation |
+
+## Building from source
+
+The verified build environment used Rust 1.99.1 with its matching `rust-src`,
+Python 3.12, Node.js and PowerShell 7. The target is `wasm64-unknown-unknown` with
+shared memory and SIMD. The build uses `-Z build-std` through `RUSTC_BOOTSTRAP=1`.
+
+Source builds require the matching original `game.wasm` and `game.js` as external
+inputs. The original WASM supplies passive data and module metadata during the
+build; translated Rust function bodies provide the executable engine code.
+The expected original WASM SHA-256 is:
 
 ```text
 11ca8d2c04c5e843d18ff4aea4899d72c86973c6b031df334e67c446b2ae83e0
 ```
 
-The original module is used for passive bytes and module metadata at build time;
-translated Rust function bodies provide the engine code. It is not used as a
-runtime fallback. Game assets and the remaining JS host/loader are separate.
-
-## Build
-
-Tested toolchain: Rust 1.99.1, its matching `rust-src` component, Python 3.12,
-Node.js and PowerShell 7. WASM64 uses `-Z build-std` with `RUSTC_BOOTSTRAP=1`.
+From the repository root in PowerShell:
 
 ```powershell
 rustup component add rust-src
@@ -53,17 +77,22 @@ npm ci --prefix tools
 ./linked/Build-Wasm.ps1
 ```
 
-Output: `linked/browser/game.wasm`, matching `game.js` and memory metadata.
-Keep those generated files together. They are intended for the existing
-PlayGTA5 loader and assets, not as a native Windows executable.
+The output is `linked/browser/game.wasm`, its matching `game.js` and
+`memory-config.json`. These files form one build and must be used together with
+the browser host, workers, shaders and game data. Linux commands and their
+verification status are documented in [BUILD-LINUX.md](BUILD-LINUX.md).
 
-For Linux, the commands and required flags are also shown in `BUILD-LINUX.md`.
+## Tests and technical notes
 
-## Tests
+The browser streaming tests run with Node.js and require no game files:
 
-Run input preparation first so `wasm-rt/src/segments.bin` exists.
+```sh
+node --test tools/test_streaming_worker.cjs
+```
 
-```powershell
+After preparing the external inputs, the runtime and build-tool tests include:
+
+```sh
 cargo test --workspace -- --test-threads=1
 cargo test --manifest-path wasm-imp/Cargo.toml -- --test-threads=1
 cargo test --manifest-path linked/Cargo.toml -p engine-imports --test context
@@ -71,19 +100,16 @@ cargo test --manifest-path tools/wasm-package/Cargo.toml --bin split_memory
 python tools/test_emitter_semantics.py
 ```
 
-The independent boot-image comparison additionally requires `inputs/va.bin`.
-Provide it with `-ReferenceImage` during preparation, then run:
+The optional boot-image comparison requires the matching `inputs/va.bin`;
+`Prepare-Inputs.ps1 -ReferenceImage` accepts that file. Regenerating translated
+bodies with `python tools/retranslate_linked.py` additionally requires the matching
+`inputs/game.wat` or a `WAT` environment variable pointing to it.
 
-```powershell
-cargo test -p wasm-rt --test original_engine -- --ignored
-cargo run -p wasm-rt --example init_check
-```
+- [Streaming behavior and measurements](docs/streaming.md)
+- [Engine ABI reference](crates/engine-abi/ABI-MAP.md)
+- [Map and task-upload changes](UPDATE-2026-11-04.md)
+- [GPU readback lifetime](UPDATE-2026-11-04-READBACK.md)
+- [Grass resource reuse](UPDATE-2026-11-04-GRASS-POOL.md)
+- [SIMD zero-load correction](UPDATE-2026-11-04-SIMD-ZERO-LOADS.md)
 
-Regenerating translated bodies is optional and needs the matching WAT in
-`inputs/game.wat` (or the `WAT` environment variable):
-
-```powershell
-python tools/retranslate_linked.py
-```
-
-Script author: carunodev @stfu.
+Project author: carunodev @stfu. License: [MIT](LICENSE).

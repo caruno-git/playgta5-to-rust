@@ -1,131 +1,132 @@
-# Browser streaming worker
+# Browser asset streaming
 
-Author: carunodev @stfu
+The [IO worker](../browser/io_worker.js) loads game files over HTTP and serves
+engine reads through shared WebAssembly memory. It caches downloaded blocks in
+the browser's Origin Private File System (OPFS). When persistent storage is
+unavailable, it uses a 48 MiB memory cache.
 
-`browser/io_worker.js` is the browser IO worker used with the Rust engine's
-existing shared-memory file protocol. It requires the existing loader, asset
-manifest and game files. Those inputs are not included here. This file is not a
-replacement for the engine, renderer or complete browser host.
+The worker is included in the
+[2026.11.05 browser release](https://github.com/caruno-git/playgta5-to-rust/releases/tag/v2026.11.05-rust-web),
+alongside the compiled engine and browser host. The original game data remains
+an external requirement. See the [README](../README.md) for installation and
+[release status](../linked/STATUS.md) for gameplay limitations.
 
-The published source matches the tested worker byte for byte:
+## Request priorities
 
-```text
-SHA-256: 9f5d4262c699ef8490dee16aca9b4cfa3e2d26e1d5c17cfa58f1d8e9c40103d6
-Bytes: 45155
-```
+The engine sends two kinds of work: a demand read is needed immediately, while
+a hint identifies data expected to be needed later. The worker also performs
+speculative read-ahead and startup prefetching.
 
-The scoped `browser/.gitattributes` preserves its existing mixed line endings
-so checkout normalization does not change that identity. No Rust build default
-or other repository text setting changes.
+The previous limit counted hint jobs. Each ordinary 1 MiB hint could start
+eight 128 KiB HTTP transfers, so 96 jobs could create 768 requests ahead of a
+blocking engine read. The current scheduler limits the transfers themselves.
 
-## Scheduling behavior
+| Work | Admission and HTTP priority |
+| --- | --- |
+| Demand read | High HTTP priority; eight of the 96 transfer slots are reserved for demand. |
+| Normal hint | Uses the remaining capacity and low HTTP priority. A queued hint needed by a demand is promoted in place without a duplicate transfer. |
+| Speculative work | Low HTTP priority; shares background capacity and has an additional 48-transfer cap. |
 
-Previously, the 96-hint limit applied to jobs. Each ordinary 1 MiB hint could
-start eight 128 KiB transfers, allowing 768 HTTP requests ahead of a blocking
-engine read. The worker now limits actual data-transfer operations to 96 and
-reserves eight admissions for demand reads. Normal hints and speculative work
-share the remaining capacity; speculative operations also retain their 48-slot
-cap.
+Normal archive hints retain their 128 KiB slices. Untouched compressible files
+can be fetched whole, up to 8 MiB. Large speculative reads retain the existing
+separate urgent fallback and recovery behavior.
 
-Normal hints and speculative transfers use low HTTP Fetch priority. A direct
-demand uses high priority. If a demand joins a normal hint still waiting in the
-worker queue, that queued transfer moves to demand priority in place and starts
-with high HTTP priority. It does not create a second transfer of the same slice.
+Once a normal hint is already fetching, this implementation cannot change its
+HTTP priority. A demand for the same slice joins that transfer. The scheduler
+therefore helps newly issued demands and queued hints more directly than it
+helps demands joining a transfer already in progress.
 
-An already-running normal hint cannot have its Fetch priority changed through
-this implementation. A joining demand waits for that transfer. Normal archive
-hints retain their 128 KiB slices. Untouched compressible files retain the
-existing whole-file path, up to 8 MiB. Speculative large reads retain the separate
-urgent retry and failure-recovery behavior.
+Blocks enter the persistent index only after complete writes. Independent
+slices can complete separately, and shared-memory views refresh after
+asynchronous work. The change preserves the existing asset bytes, graphics
+settings, read-ahead distances, cache format and native collision-loading
+barriers. The memory-cache fallback still reads its requested blocks
+sequentially.
 
-Persistent-cache blocks are still indexed only after complete writes. Individual
-normal slices can complete without waiting for unrelated slices. Shared-memory
-views refresh after asynchronous work. Graphics settings, assets, read-ahead
-distances, native collision barriers, block sizes and the 48 MiB fallback cache
-remain unchanged. The experimental parallel fallback for unavailable OPFS is
-not included.
+## Server configuration
 
-## Metadata compression
-
-The matching test deployment serves existing gzip sidecars for whole-file
-requests under `/data/` with these extensions:
+The hosted release uses existing gzip sidecars for whole-file requests with
+these metadata and effect-file extensions:
 
 ```text
 fxc meta xml dat ymt txt csv gfx sps cfg
 ```
 
-Its existing JS/JSON/WASM compression path remains separate. The added metadata
-location precedes that existing regex location and has the following behavior:
+The same files must retain raw byte offsets for partial reads. A compatible
+host implements the following response contract:
 
-```nginx
-location ~* ^/data/.*\.(?:fxc|meta|xml|dat|ymt|txt|csv|gfx|sps|cfg)$ {
-    if ($http_range != "") {
-        return 418;
-    }
-    try_files $uri =404;
-    gzip_static on;
-}
-```
+| Request | Response |
+| --- | --- |
+| Whole file, gzip accepted and a valid sidecar exists | Gzip body that decodes to the original file. |
+| Whole file, identity requested or sidecar absent | Original file bytes. |
+| Valid byte range, including requests accepting gzip | Uncompressed `206` with the exact `Content-Range` and bytes. |
+| Unsatisfiable byte range | `416` with the original file length. |
+| RPF archive range | Direct, uncompressed static range response. |
 
-This excerpt depends on the existing server's `error_page 418 = @lab_code_range`
-mapping and raw range handler; it is not a standalone server configuration.
-Range requests use raw 206/416 behavior even when the client accepts gzip.
-RPF archive ranges remain direct, uncompressed static responses. No dynamic
-compression or asset rewrite is introduced. Missing sidecars fall back to the
-raw file, and cross-origin isolation and cache headers remain inherited.
+For Nginx, range requests must reach the raw range handler before
+`gzip_static` selects a sidecar. The metadata location must take precedence
+over the general `/data/` location. Cross-origin isolation headers and the
+appropriate cache policy must also apply to these responses. The JS, JSON and
+WASM compression rules remain separate.
 
-Sidecar validation decoded and compared 3,560 existing metadata gzip files
-against their raw originals: 378,665,988 raw bytes versus 58,965,987 gzip bytes.
-Two missing sidecars retained raw fallback. Public protocol checks cover gzip
-decoded bytes, identity and gzip-q0 responses, raw prefix and suffix ranges,
-416 responses and the unchanged archive range path. Deployment-specific
-configuration generators, credentials and service-management scripts are not
-part of this source snapshot.
+Validation compared 3,560 metadata gzip files with their decoded originals:
+378,665,988 raw bytes and 58,965,987 gzip bytes. Two missing sidecars used raw
+fallback. Public checks covered identity, gzip and `gzip;q=0`, prefix and suffix
+ranges, `416` responses and the archive-range path. This change requires no
+dynamic compression or modification of game assets.
 
-When installing a new worker in the existing host, keep any served `.gz` copy
-consistent with the raw JavaScript. A stale compressed sidecar can otherwise
-serve different code from the visible source.
+Each deployed JavaScript file and its `.gz` sidecar must contain matching code.
+A stale sidecar can cause clients accepting gzip to execute a different worker.
+The current release uses a new versioned build directory so existing HTTP cache
+entries cannot mix its runtime files with an earlier release.
 
-## Verification and limits
+## Tests
 
-Portable tests need Node.js built-ins only, without game assets or a browser:
+The portable worker tests require Node.js and its built-in modules. Run from
+the repository root:
 
-```text
+```sh
 node --test tools/test_streaming_worker.cjs
 ```
 
-They execute the published worker with held synthetic network responses and the
-real shared-memory request protocol. They verify actual transfer admission,
-normal and demand HTTP priorities, queued promotion without duplication,
-independent slice completion, cache reuse, speculative fallback, required-read
-failure and shared-memory growth. The source identity is pinned by a separate
-test.
+The tests execute the worker with controlled network responses and the actual
+shared-memory request protocol. They check transfer limits, HTTP priorities,
+promotion without duplication, independent slice completion, cache reuse,
+speculative fallback, required-read failures and shared-memory growth.
 
-Five actual browser HTTP/2 contention runs used sixteen 1 MiB hints followed by
-one independent 128 KiB demand. All completed 129 exact ranges, indexed 4,128
-blocks and received 16.125 MiB. The urgent bytes matched an independently
-downloaded SHA-256 reference, all queues drained and owned browsers closed.
+The published source is 45,155 bytes, with SHA-256:
 
-| Worker | Urgent read | All background hints finished |
+```text
+9f5d4262c699ef8490dee16aca9b4cfa3e2d26e1d5c17cfa58f1d8e9c40103d6
+```
+
+The scoped [Git attributes](../browser/.gitattributes) preserve the file's exact
+bytes across checkouts, and the tests verify this identity.
+
+## Measured behavior
+
+A browser HTTP/2 test issued sixteen 1 MiB hints, followed by an independent
+128 KiB demand. Every accepted run completed 129 exact ranges, indexed 4,128
+blocks and received 16.125 MiB. The demand bytes matched an independently
+downloaded SHA-256 reference, and all queues drained.
+
+| Worker | Demand latency | All background hints finished |
 | --- | ---: | ---: |
 | Previous worker, two runs | 4.145–5.032 s | 4.251–5.116 s |
-| Admission limit alone, one run | 5.129 s | 6.935 s |
-| Published worker, two runs | 0.745–0.793 s | 6.257–7.082 s |
+| Transfer limit alone, one run | 5.129 s | 6.935 s |
+| Current worker, two runs | 0.745–0.793 s | 6.257–7.082 s |
 
-The published worker prioritized the blocking demand at the cost of a slower
-complete background queue in this fixture. The two-run descriptive median
-urgent latency was about six times lower; this is not a general throughput or
-FPS result. Client caches were fresh, while upstream cache state and link
-conditions were uncontrolled. The fixture used no engine, native decoding,
-placement or driving workload, and its demand range had not been hinted.
+The current worker completed the blocking demand sooner in these runs while
+taking longer to finish the background queue. A further check of the deployed
+worker passed the same integrity and completion requirements with a demand
+latency of 3.103 seconds.
 
-After this worker became the test site's default, a further public IO-only
-smoke run passed the same 129-range, 4,128-block, byte-count, urgent-hash and
-queue-drain checks. Its urgent read took 3.103 s. This additional observation
-shows the network variability and does not support a guaranteed sixfold gain.
+Network conditions and upstream cache state were uncontrolled. This test
+measures HTTP contention; it does not include native decoding, resource
+placement or driving. Its demand range had not been hinted. The results do not
+establish a fixed speedup, a general throughput gain or an FPS improvement.
 
-Driving acceptance remains separate. In particular, measurements must
-distinguish cold demands, promotion of queued hints and demands joining active
-hints before attributing a remaining stall to network priority. The inherited
-transport still has no explicit response deadline, and this change does not
-claim to recover indefinitely stalled connections or fix every driving freeze.
+Driving stability remains a separate validation task. Remaining stalls may
+involve new demands, queued hints or joins of active transfers. The transport
+also has no explicit response deadline, so this scheduler does not provide
+recovery from an indefinitely stalled connection.

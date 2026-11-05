@@ -1,17 +1,26 @@
-# ABI-MAP — every wasm import of the recovered engine, and what replaces it
+# Native host ABI reference
 
-Source of truth: the import section of the wasm64 module (`/tmp/game.wat`, lines
-1971–2056). 86 entries: **1 memory** + **85 functions**. Signatures were read out
-of the module's type table, not guessed from the import names — several of them
-are wider than the C call they serve (emscripten's syscall imports carry its
-JS-side padding), and this map records the *declared* wasm type.
+This reference maps the recovered engine's WebAssembly imports to the native
+host implementations in [`engine-abi`](src/lib.rs). It is intended for
+contributors working on host integration, memory access and import behavior.
+The released browser build uses the separate
+[`linked/imports`](../../linked/imports) bridge and JavaScript adapter.
 
-Implementation crate: `crates/engine-abi`. Every row is a `#[no_mangle]
-extern "C"` function whose Rust parameter list is byte-compatible with the wasm
-type: `i64` pointers become `*mut u8` (same width, no truncation), `i64` scalars
-become `u64`, `i32` becomes `u32`/`i32`, `f64` stays `f64`. Pointers are
-**linear-memory offsets**, resolved against the mapping published by
-`engine_abi::set_memory`; nothing is dereferenced unvalidated.
+The original WASM64 module declares 86 import entries: one shared memory and
+85 functions. The table records their declared WebAssembly types, including
+Emscripten's additional syscall parameters. The import-name manifest is also
+available as [`engine_abi::IMPORTS`](src/lib.rs).
+
+Function imports use `#[no_mangle] extern "C"` exports. On a 64-bit native
+host, pointer arguments use `*mut u8` or `*const u8`, scalar `i64` arguments use
+`u64`, `i32` uses `u32` or `i32`, and `f64` remains `f64`. Pointer values represent
+offsets into guest linear memory. The [`mem`](src/mem.rs) accessors check those
+offsets against the mapping installed through `engine_abi::set_memory`.
+
+These mappings describe this crate's native host behavior, including its
+headless limitations. Import coverage does not establish a playable native
+game release. See the [project README](../../README.md) for supported downloads
+and the [release status](../../linked/STATUS.md) for browser verification.
 
 ## Totals
 
@@ -21,8 +30,10 @@ become `u64`, `i32` becomes `u32`/`i32`, `f64` stays `f64`. Pointers are
 | **no-op** | **16** | Deliberately does nothing, with the reason recorded below: the effect only existed to talk to a browser worker, or the concept has no native counterpart. |
 | **not a function** | **1** | Index 0, the shared `memory` import, which the embedding runtime supplies rather than this crate. |
 
-No-op is not "unimplemented": each one is a decision, and each is counted at
-runtime (`engine_abi::state::count`) or logged, so an operator can see the call.
+The `real` classification identifies an implementation in this crate; it does
+not imply complete parity with every browser behavior. Each `no-op` entry has
+its return behavior and native-host rationale listed below. Counters and logs
+provide diagnostics for these calls.
 
 ## Legend
 
@@ -51,11 +62,11 @@ runtime (`engine_abi::state::count`) or logged, so an operator can see the call.
 | 10 | `(result i32)` | `wasm_has_page_js` | `userdata::wasm_has_page_js` | real | "persistent storage available?" — 1 when the store lists, else 0 |
 | 11 | `(param i64)` | `wasm_input_publish_js` | `input::wasm_input_publish_js` | no-op | engine→browser direction (input worklet + debug overlay); the server has no observer and `Host::input` is the opposite direction — counted |
 | 12 | `(param i64 i32) (result i32)` | `wasm_module_int_js` | `module_int::wasm_module_int_js` | real | `(key_cstr, fallback)` → `Host::module_int`, falling back when the key is unset |
-| 13 | `(result f64)` | `emscripten_get_now` | `emscripten_get_now` | real | same monotonic timeline as `wasm_now_ms` (they were never allowed to disagree) |
+| 13 | `(result f64)` | `emscripten_get_now` | `emscripten_get_now` | real | same monotonic timeline as `wasm_now_ms` |
 | 14 | `(param i64)` | `wasm_print_line_js` | `emscripten::wasm_print_line_js` | real | NUL-terminated line → `Host::log(Info, "engine")` |
 | 15 | `(result i64)` | `emscripten_stack_snapshot` | `emscripten::emscripten_stack_snapshot` | no-op | captured the wasm shadow-stack pointer for a JS backtrace walker; native unwinding makes the handle meaningless → 0 = "no snapshot" |
 | 16 | `(param i64 i64 i32) (result i32)` | `emscripten_stack_unwind_buffer` | `emscripten::emscripten_stack_unwind_buffer` | no-op | counterpart of the snapshot above → 0 frames, the documented value for an unusable handle |
-| 17 | `(param i64 i64 i64) (result i32)` | `emscripten_asm_const_int` | `emscripten::emscripten_asm_const_int` | no-op | `EM_ASM` snippet table lived in `game.js` and was UI-only (canvas, cursor, clipboard); the native port has that logic in Rust → 0, counted, warned once per code |
+| 17 | `(param i64 i64 i64) (result i32)` | `emscripten_asm_const_int` | `emscripten::emscripten_asm_const_int` | no-op | browser `EM_ASM` snippet table is unavailable in this native host → 0, counted, warned once per code |
 | 18 | `(result i64)` | `emscripten_get_heap_max` | `emscripten::emscripten_get_heap_max` | real | size of the published linear-memory reservation |
 | 19 | `(param i32)` | `exit` | `wasi::exit` | real | `std::process::exit`, or the installed exit hook (tests/embedders) |
 | 20 | `(param i64 i64 i64)` | `invoke_vjj` | `emscripten::invoke_vjj` | real | indirect-call trampoline → native `extern "C" fn(u64,u64)` |
@@ -80,7 +91,7 @@ runtime (`engine_abi::state::count`) or logged, so an operator can see the call.
 | 39 | `()` | `emscripten_exit_with_live_runtime` | `emscripten::emscripten_exit_with_live_runtime` | no-op | ended `set_main_loop` but kept the runtime alive for JS callbacks; returning from the frame is the native equivalent |
 | 40 | `(param i32 i32 i64) (result i32)` | `__syscall_fcntl64` | `syscall::__syscall_fcntl64` | real | F_GETFD/F_SETFD/F_GETFL/F_SETFL → 0; anything else → −EINVAL; unknown fd → −EBADF |
 | 41 | `(param i32 i64 i32 i64) (result i32)` | `__syscall_openat` | `syscall::__syscall_openat` | real | `OpenOptions` against the resolved host path; O_DIRECTORY opens a listing; errno-mapped failures |
-| 42 | `(param i32 i32 i64) (result i32)` | `__syscall_ioctl` | `syscall::__syscall_ioctl` | real | −ENOTTY: nothing in the module is a terminal, which is the correct answer, not a stub |
+| 42 | `(param i32 i32 i64) (result i32)` | `__syscall_ioctl` | `syscall::__syscall_ioctl` | real | returns −ENOTTY for unsupported terminal operations |
 | 43 | `(param i32 i64 i64 i64) (result i32)` | `fd_write` | `wasi::fd_write` | real | writes the iovec array in order to file/socket/stdio, reports the u64 total |
 | 44 | `(param i32 i64 i64 i64) (result i32)` | `fd_read` | `wasi::fd_read` | real | fills iovecs, stops at the first short read (`readv` contract) |
 | 45 | `(param i32 i64) (result i32)` | `__syscall_fstat64` | `syscall::__syscall_fstat64` | real | `Metadata` → wasm64 `struct stat`; sockets/stdio get a synthetic S_IFSOCK record |
@@ -115,40 +126,42 @@ runtime (`engine_abi::state::count`) or logged, so an operator can see the call.
 | 74 | `(param i64 i64)` | `_emscripten_notify_mailbox_postmessage` | `emscripten::_emscripten_notify_mailbox_postmessage` | no-op | posted a JS message queue to another worker; there is no queue between native threads — counted |
 | 75 | `(param i64) (result i32)` | `emscripten_resize_heap` | `emscripten::emscripten_resize_heap` | real | 1 when the request fits the reservation, 0 (logged) when it does not — "cannot grow" without aborting |
 | 76 | `()` | `_emscripten_throw_longjmp` | `emscripten::_emscripten_throw_longjmp` | real | no native `setjmp` target exists, so it panics — the trap-equivalent failure, as the wasm build did |
-| 77 | `(param i32 i64 i64 i32 i32 i32) (result i32)` | `__syscall_accept4` | `syscall::__syscall_accept4` | no-op | unreachable by this module: there is no `bind`/`listen` import, so no listening socket can exist; answers −EINVAL rather than pretending |
+| 77 | `(param i32 i64 i64 i32 i32 i32) (result i32)` | `__syscall_accept4` | `syscall::__syscall_accept4` | no-op | this import set has no `bind`/`listen` operation; the native host returns −EINVAL |
 | 78 | `(param i32 i64 i32 i32 i32 i32) (result i32)` | `__syscall_connect` | `syscall::__syscall_connect` | real | `TcpStream::connect` for a STREAM descriptor (TCP_NODELAY on), UDP → −EOPNOTSUPP |
 | 79 | `(param i32 i64 i64 i32 i32 i32) (result i32)` | `__syscall_getsockname` | `syscall::__syscall_getsockname` | real | `local_addr()` → `sockaddr_in{,6}` plus the socklen |
 | 80 | `(param i32 i32 i32 i64 i64 i32) (result i32)` | `__syscall_getsockopt` | `syscall::__syscall_getsockopt` | real | SO_ERROR → 0 (connect failures are synchronous here); other options → −EOPNOTSUPP |
 | 81 | `(param i32 i64 i64 i32 i64 i64) (result i32)` | `__syscall_recvfrom` | `syscall::__syscall_recvfrom` | real | `recv_from` on UDP (source address filled), `read` on a connected stream |
 | 82 | `(param i32 i64 i64 i32 i64 i32) (result i32)` | `__syscall_sendto` | `syscall::__syscall_sendto` | real | `send_to` on UDP, `write` on a connected stream (address ignored, as `sendto` specifies) |
-| 83 | `(param i32 i32 i32 i64 i32 i32) (result i32)` | `__syscall_setsockopt` | `syscall::__syscall_setsockopt` | real | validates the descriptor and accepts: the options were transport hints and std applies its own defaults, so nothing the engine can observe is lost |
+| 83 | `(param i32 i32 i32 i64 i32 i32) (result i32)` | `__syscall_setsockopt` | `syscall::__syscall_setsockopt` | real | validates the descriptor and accepts the request; sockets retain the host standard library's option defaults |
 | 84 | `(param i32 i32 i32 i32 i32 i32) (result i32)` | `__syscall_shutdown` | `syscall::__syscall_shutdown` | real | `Shutdown::{Read,Write,Both}` |
 | 85 | `(param i32 i32 i32 i32 i32 i32) (result i32)` | `__syscall_socket` | `syscall::__syscall_socket` | real | STREAM → not-yet-connected descriptor, DGRAM → ephemeral-bound `UdpSocket` |
 
 ## The 16 no-ops, grouped by reason
 
-| reason | imports | why it is safe |
+| reason | imports | native-host behavior |
 |---|---|---|
 | Browser worker handshake | `wasm_httpfs_io_start_js`, `wgpu_start_worker` | Both exist to wake a JS worker (`io_worker.js`, `wgpu_worker.js`) that read a queue out of linear memory. The server performs the same work synchronously through `Host::assets` and drains GPU commands through `Host::gpu`, so there is no worker and no queue. |
 | Browser-only observer | `wasm_input_publish_js` | Pushes the engine's input snapshot *to* the browser (input worklet, debug overlay). Host→engine input is `Host::input`, a different direction, and works. |
-| JS-side snippet table | `emscripten_asm_const_int`, `emscripten_asm_const_int_sync_on_main_thread`, `_emscripten_receive_on_main_thread_js` | `EM_ASM` bodies were strings in `game.js` (canvas sizing, cursor, clipboard). The native port has that logic compiled in; there is no table to index and no main thread to proxy to. Counted and warned once per code. |
+| JS-side snippet table | `emscripten_asm_const_int`, `emscripten_asm_const_int_sync_on_main_thread`, `_emscripten_receive_on_main_thread_js` | Browser `EM_ASM` bodies and their JavaScript dispatch table are unavailable. These calls return zero and are counted; unsupported snippet codes produce a warning. |
 | JS thread/pool bookkeeping | `_emscripten_thread_set_strongref`, `_emscripten_init_main_thread_js`, `_emscripten_thread_mailbox_await`, `_emscripten_notify_mailbox_postmessage`, `_emscripten_thread_cleanup`, `emscripten_check_blocking_allowed`, `emscripten_exit_with_live_runtime` | These are the proxying-queue protocol between workers. Native threads share memory directly, `Host::spawn` owns their lifetime, and a server thread is always allowed to block. Reproducing the protocol would add a mailbox that nothing reads. |
-| Wasm shadow stack | `emscripten_stack_snapshot`, `emscripten_stack_unwind_buffer` | Captured a wasm stack pointer so JS could walk frames. Native Rust unwinding is not that stack, so `0` / zero frames (the documented "unusable snapshot" values) is the only honest answer. |
+| Wasm shadow stack | `emscripten_stack_snapshot`, `emscripten_stack_unwind_buffer` | The JavaScript stack walker is unavailable in the native host. These calls return `0` or zero frames to indicate an unusable snapshot. |
 | Unreachable by this module | `__syscall_accept4` | The module imports no `bind`/`listen`, so it can never own a listening socket; it is a client. Answering `−EINVAL` matches what the browser build did outside that path. |
 
-## Call-site evidence used for the signatures
+## Recovered argument conventions
 
-The map is not purely nominal — where an import's meaning depends on its
-arguments, the call sites in `/tmp/game.wat` were read:
+The following conventions were identified in the original module's call sites.
+They describe the external input identified by the original engine SHA-256 in
+the [build guide](../../BUILD-LINUX.md); WAT line numbers depend on the
+disassembler and are not used as stable identifiers.
 
-* `wasm_audio_publish_js` @268980 — descriptor at `8153472`, `byte_len`
+* `wasm_audio_publish_js` — descriptor at `8153472`, `byte_len`
   (`16384`) stored at `+8`, capacity passed as the second argument.
-* `wasm_input_publish_js` @268974 — single pointer to the engine's input block.
-* `wgpu_start_worker` @321648 — `(ring_base, 32 MiB, input_state)`.
-* `wasm_httpfs_manifest_js` @283889/@283905 — query with `(0, 0)`, then
+* `wasm_input_publish_js` — single pointer to the engine's input block.
+* `wgpu_start_worker` — `(ring_base, 32 MiB, input_state)`.
+* `wasm_httpfs_manifest_js` — query with `(0, 0)`, then
   `malloc(needed + 1)` and fill; a negative answer aborts the load.
-* `wasm_userdata_put_js` @272630 — `(key_cstr, data, len, seconds)`.
-* `wasm_module_int_js` @268404 — `(key_cstr, fallback)`, fallback `1024`.
+* `wasm_userdata_put_js` — `(key_cstr, data, len, seconds)`.
+* `wasm_module_int_js` — `(key_cstr, fallback)`, fallback `1024`.
 * `__syscall_socket`/`connect`/`sendto`/`recvfrom` — the leading parameters are the
   POSIX ones; the trailing `i32`s are emscripten's padding (that is why
   `__syscall_socket` is declared with six parameters).
@@ -167,14 +180,19 @@ arguments, the call sites in `/tmp/game.wat` were read:
 
 ## Verification
 
-```
-cd crates/engine-abi
-cargo test          # 20 integration tests: every implemented import called once
+After preparing the external inputs described in the [build guide](../../BUILD-LINUX.md),
+run the crate's tests from the repository root:
+
+```bash
+cargo test -p engine-abi -- --test-threads=1
 ```
 
-`tests/imports.rs` installs a real `HeadlessHost`, publishes a 1 MiB memory
-reservation, and calls each implemented import with assertions on the documented
-behaviour — including the negative cases (out-of-range pointers → `−EFAULT`,
+[`tests/imports.rs`](tests/imports.rs) installs a `HeadlessHost`, publishes a
+1 MiB memory reservation and checks import behavior, including negative cases
+(out-of-range pointers → `−EFAULT`,
 closed descriptors → `−EBADF`, unregistered trampoline targets → `0`, a bad
 `resize_heap` → `0`). It also embeds this file with `include_str!` and fails if a
 name in `engine_abi::IMPORTS` is missing from the table above.
+
+These tests cover host-side ABI behavior and documentation coverage. They do
+not execute the full browser game or establish native rendering support.
